@@ -2,53 +2,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombatManager : MonoBehaviour
+public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 {
-    [SerializeField]
     Animator playerAnimator;
+
     static int clicksCnt;
 
-    // Start is called before the first frame update
+    [SerializeField]
+    GameObject[] weaponCollider;
+
+    public bool isAttacking;
+    public bool isBlocking;
+
     void Start()
     {
         clicksCnt = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        playerAnimator = FindObjectOfType<PlayerGamePlayManager>().GetComponent<Animator>();
+        weaponCollider = GameObject.FindGameObjectsWithTag("PlayerWeapon");
+        weaponCollider[0].SetActive(false);
+        weaponCollider[1].SetActive(false);
     }
 
     public void OnLightAttackBtnPressed()
     {
-        Debug.Log("Light attack!!");
+        StartCoroutine(LightAttack());
+        StopCoroutine(LightAttack());
+    }
+
+    IEnumerator LightAttack()
+    {
+        isAttacking = true;
         playerAnimator.SetTrigger("isLightAttack");
+        weaponCollider[1].SetActive(true);
         clicksCnt++;
-        isComboCheck();
-        //call method to inflict damage on other player
+        //isComboCheck();
+        yield return new WaitForSeconds(1f);
+        weaponCollider[1].SetActive(false);
     }
 
     public void OnHeavyAttackBtnPressed()
     {
-        Debug.Log("Heavy attack!!");
+        StartCoroutine(HeavyAttack());
+        StopCoroutine(HeavyAttack());
+    }
+
+    IEnumerator HeavyAttack()
+    {
+        isAttacking = true;
         playerAnimator.SetTrigger("isHeavyAttack");
+        weaponCollider[0].SetActive(true);
         clicksCnt++;
-        isComboCheck();
-        //call method to inflict damage on other player
+        //isComboCheck();
+        yield return new WaitForSeconds(1f);
+        weaponCollider[0].SetActive(false);
     }
 
     public void OnBlockAttackBtnPressed()
     {
-        Debug.Log("Player blocked attack!!");
+        isBlocking = true;
         playerAnimator.SetTrigger("isBlocking");
         clicksCnt = 0;
     }
 
-    public void isComboCheck()
+    void isComboCheck()
     {
         if (clicksCnt == 3)
         {
+            isAttacking = true;
             playerAnimator.SetTrigger("isComboAttack");
             clicksCnt = 0;
         }
