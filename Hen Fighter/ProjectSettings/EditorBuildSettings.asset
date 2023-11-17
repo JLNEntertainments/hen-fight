@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Hen_Ui_Screen_1.unity
+    guid: 4f7daec6414f18e4cb3aa16843dcb600
   m_configObjects: {}
