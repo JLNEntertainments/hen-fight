@@ -107,8 +107,8 @@ public class UIManager : MonoBehaviour
 		}
 	}
 
-	public void SceneChange()
+	public void SceneChange(string ScreneName)
 	{
-		SceneManager.LoadScene("Game Scene");
+		SceneManager.LoadScene(ScreneName);
 	}
 }
