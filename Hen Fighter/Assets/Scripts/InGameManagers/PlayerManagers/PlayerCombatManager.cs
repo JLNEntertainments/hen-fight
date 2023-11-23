@@ -19,8 +19,8 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         clicksCnt = 0;
         playerAnimator = FindObjectOfType<PlayerGamePlayManager>().GetComponent<Animator>();
         weaponCollider = FindObjectsOfType<DamageGeneric>();
-        /*weaponCollider[0].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(false);
-        weaponCollider[1].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(false);*/
+        weaponCollider[0].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(false);
+        weaponCollider[1].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(false);
     }
 
     public void OnLightAttackBtnPressed()
