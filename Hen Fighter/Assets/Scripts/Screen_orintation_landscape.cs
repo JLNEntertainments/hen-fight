@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Screen_orintation_landscape : MonoBehaviour
 {
-   
+    
     void Start()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -14,7 +14,6 @@ public class Screen_orintation_landscape : MonoBehaviour
             {
                 // Insert Code Here (I.E. Load Scene, Etc)
                 Application.Quit();
-
                 return;
             }
         }
