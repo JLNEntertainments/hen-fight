@@ -9,7 +9,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     static int clicksCnt;
 
     [SerializeField]
-    GameObject[] weaponCollider;
+    DamageGeneric[] weaponCollider;
 
     public bool isAttacking;
     public bool isBlocking;
@@ -18,9 +18,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         clicksCnt = 0;
         playerAnimator = FindObjectOfType<PlayerGamePlayManager>().GetComponent<Animator>();
-        weaponCollider = GameObject.FindGameObjectsWithTag("PlayerWeapon");
-        weaponCollider[0].SetActive(false);
-        weaponCollider[1].SetActive(false);
+        weaponCollider = FindObjectsOfType<DamageGeneric>();
+        /*weaponCollider[0].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(false);
+        weaponCollider[1].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(false);*/
     }
 
     public void OnLightAttackBtnPressed()
@@ -33,11 +33,10 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         isAttacking = true;
         playerAnimator.SetTrigger("isLightAttack");
-        weaponCollider[1].SetActive(true);
+        weaponCollider[0].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(true);
         clicksCnt++;
         //isComboCheck();
         yield return new WaitForSeconds(1f);
-        weaponCollider[1].SetActive(false);
     }
 
     public void OnHeavyAttackBtnPressed()
@@ -50,11 +49,10 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         isAttacking = true;
         playerAnimator.SetTrigger("isHeavyAttack");
-        weaponCollider[0].SetActive(true);
+        weaponCollider[1].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(true);
         clicksCnt++;
         //isComboCheck();
         yield return new WaitForSeconds(1f);
-        weaponCollider[0].SetActive(false);
     }
 
     public void OnBlockAttackBtnPressed()

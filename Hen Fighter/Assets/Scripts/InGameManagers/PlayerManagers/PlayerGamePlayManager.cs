@@ -23,7 +23,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         joystick = FindObjectOfType<VariableJoystick>().GetComponent<VariableJoystick>();
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
         
-        playerAnimator = this.GetComponent<Animator>();
+        playerAnimator = this.GetComponentInParent<Animator>();
         playerRb = this.GetComponent<Rigidbody>();
         speed = 2;
     }
@@ -75,15 +75,14 @@ public class PlayerGamePlayManager : MonoBehaviour
     void UpdateMovementParameters(float horizontal)
     {
         Vector2 move_position = transform.position;
-
         playerAnimator.SetFloat("joystickDrag", horizontal);
         move_position.x += horizontal * speed * Time.deltaTime;
-        transform.position = new Vector3(move_position.x, this.transform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(move_position.x, this.transform.position.y, this.transform.position.z);
     }
 
     public void InflictPlayerDamage()
     {
-        playerAnimator.SetInteger("isHurt", 1);
+        playerAnimator.SetTrigger("isHurt");
         healthBar.fillAmount -= 0.1f;
     }
 
