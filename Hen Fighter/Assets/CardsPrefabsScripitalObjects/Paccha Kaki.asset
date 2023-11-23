@@ -16,4 +16,4 @@ MonoBehaviour:
   HenCard: {fileID: 21300000, guid: d347b6984d2ece04b990ea20dcded7a0, type: 3}
   Power: 40
   Defense: 80
-  DropDown: This is Paccha Kaki
+  DropDown: '1.High Energy level  2.High Anxiety Level '
