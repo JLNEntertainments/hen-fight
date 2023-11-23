@@ -8,15 +8,17 @@ TagManager:
   - P_HealthBar
   - E_HealthBar
   - PlayerWeapon
+  - Left Arm
+  - Right Arm
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - Ground
   - Water
   - UI
-  - Ground
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
