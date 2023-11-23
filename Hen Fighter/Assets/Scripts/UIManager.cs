@@ -3,7 +3,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
+
 using UnityEngine.SceneManagement;
 
 public delegate void OnStateChangeHandler ();
