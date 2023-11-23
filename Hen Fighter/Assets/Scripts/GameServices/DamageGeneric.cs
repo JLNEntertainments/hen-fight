@@ -4,35 +4,31 @@ using UnityEngine;
 
 public class DamageGeneric : MonoBehaviour
 {
-    int cnt = 0;
-    private void OnTriggerEnter(Collider collision)
+    public LayerMask collisionLayer;
+    public float radius = 1f;
+    public float damage = 2f;
+
+    public bool is_Player, is_Enemy;
+
+    void Update()
     {
-        
-        //When Enemy attacks
-        if (collision.gameObject.CompareTag("Player") && EnemyGamePlayManager.Instance.isAttacking)
-        {
-            collision.gameObject.GetComponentInParent<PlayerGamePlayManager>().InflictPlayerDamage();
-        }
-        //When Player attacks
-        else if (collision.gameObject.CompareTag("EnemyAI") && PlayerCombatManager.Instance.isAttacking && cnt == 0)
-        {
-            cnt++;
-            collision.gameObject.GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage();
-        }
+        DetectCollision();
     }
 
-    private void OnTriggerExit(Collider collision)
+    void DetectCollision()
     {
-        if (collision.gameObject.GetComponentInParent<PlayerGamePlayManager>() != null)
+        Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
+        if (hit.Length > 0)
         {
-            collision.gameObject.GetComponentInParent<PlayerGamePlayManager>().GetComponent<Animator>().SetInteger("isHurt", 0);
-            PlayerCombatManager.Instance.isAttacking = false;
+            if (is_Enemy && hit != null)
+            {
+                hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictPlayerDamage();   
+            }
+            if (is_Player && hit != null)
+            {
+                hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage();
+            }
+            gameObject.SetActive(false);
         }
-        else if (collision.gameObject.GetComponentInParent<EnemyGamePlayManager>() != null)
-        {
-            collision.gameObject.GetComponentInParent<EnemyGamePlayManager>().GetComponent<Animator>().SetInteger("isHurt", 0);
-            EnemyGamePlayManager.Instance.isAttacking = false;
-        }
-        cnt = 0;
     }
 }

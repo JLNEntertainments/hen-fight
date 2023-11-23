@@ -4,22 +4,38 @@ using UnityEngine;
 
 public class ScaleAtPostion : MonoBehaviour
 {
-    public Vector3 targetPosition = new Vector3(0.006387268f, 7.614214e-10f, 1.522843e-09f);
-    public float scaleFactor = 2.0f;
+    // Set the original and different scale values
+    public Vector3 originalScale = new Vector3(1f, 1f, 1f);
+    public Vector3 scaledPosition = new Vector3(5f, 2f, 3f);
+
+
+
+    //  public Vector3 oldTargetPosition = new Vector3(0f, 0f, 0f);
 
     void Update()
     {
-       /* // Check if the GameObject is at the target position
-        if (transform.position == targetPosition)
+        // Check the current position of the object
+        Vector3 currentPosition = transform.position;
+
+        // Check if the object is at a specific position
+        if (currentPosition.x >= scaledPosition.x && currentPosition.y >= scaledPosition.y && currentPosition.z >= scaledPosition.z)
         {
-            // Scale the GameObject at the target position
-            //  transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
-            transform.localScale = Vector3.one;
+            // Change the scale of the game object
+            ChangeScale(scaledPosition);
         }
         else
         {
-            // Reset the scale if not at the target position
-            transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
-        }*/
+            // Reset the scale to the original scale if not at the desired position
+            ChangeScale(originalScale);
+        }
+    }
+
+    void ChangeScale(Vector3 scale)
+    {
+        // Access the Transform component of the game object
+        Transform objTransform = transform;
+
+        // Modify the localScale property to change the scale
+        objTransform.localScale = scale;
     }
 }

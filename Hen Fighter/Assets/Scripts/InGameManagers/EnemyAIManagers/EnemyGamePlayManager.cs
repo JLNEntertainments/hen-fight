@@ -1,121 +1,132 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 {
-    [HideInInspector]
-    public Transform playerGamePlayManager;
-
     Animator enemyAnimator;
+
+    Rigidbody myBody;
+    
+    Transform playerTarget;
 
     Image healthBar;
 
-    float moveSpeed;
-    float raycastDistance;
-    float timeBetweenAttacks;
-    float moveXPos;
+    float speed = 5f;
+    float attack_Distance = 3f;
+    float chase_Player_After_Attack = 1f;
+    float targetDist;
+    float current_Attack_Time;
+    float default_Attack_Time = 3f;
 
-    int randomAttack;
-    int colCnt;
-    static int cnt;
+    bool followPlayer, attackPlayer;
 
-    [HideInInspector]
-    public bool isAttacking;
+    public DamageGeneric[] enemyWeapons;
 
-    Vector3 minDist;
-    Vector3 movePosition;
+    void Awake()
+    {
+        enemyAnimator = GetComponent<Animator>();
+        myBody = GetComponent<Rigidbody>();
+
+        playerTarget = GameObject.FindWithTag("Player").transform;
+    }
 
     void Start()
     {
-        playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>().GetComponent<PlayerGamePlayManager>().transform;
+        enemyWeapons = gameObject.GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
-        enemyAnimator = GetComponent<Animator>();
 
-        minDist = new Vector3(4f, 0f, 0f);
-        
-        moveSpeed = 1f;
-        raycastDistance = 10f;
-        timeBetweenAttacks = 5f;
-        moveXPos = 1f;
+        followPlayer = true;
+        current_Attack_Time = default_Attack_Time;
+       
+        enemyWeapons[0].gameObject.SetActive(false);
+        enemyWeapons[1].gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        Attack();
     }
 
     void FixedUpdate()
     {
-        MoveToTarget();
-        UpdateZAxis();
+        FollowTarget();
+        UpdateEnemyRotation();
     }
 
-    void MoveToTarget()
+    void FollowTarget()
     {
-        Vector3 direction = playerGamePlayManager.position - this.transform.position;
-        movePosition = this.transform.position;
+        if (!followPlayer)
+            return;
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, direction, out hit, raycastDistance))
+        targetDist = Vector3.Distance(transform.position, playerTarget.position);
+
+        if (targetDist > attack_Distance)
         {
-            Debug.DrawRay(transform.position, direction * raycastDistance, Color.red);
-            if(!hit.collider.gameObject.GetComponent<PlayerGamePlayManager>() && (Mathf.Abs(direction.x) > minDist.x))
+            transform.LookAt(playerTarget.transform);
+            myBody.velocity = transform.forward * speed;
+
+            if (myBody.velocity.sqrMagnitude != 0)
             {
                 enemyAnimator.SetBool("inMotion", true);
-                movePosition.x += moveXPos * moveSpeed * Time.deltaTime;
-                this.transform.position = movePosition;
             }
-            else if(Mathf.Abs(direction.x) <= minDist.x)
-            {
-                enemyAnimator.SetBool("inMotion", false);
-                InvokeRepeating("AttackPlayer", 0.1f, timeBetweenAttacks);
-            }
-        }
-    }
 
-    void AttackPlayer()
-    {
-        randomAttack = Random.Range(0, 3);
-        switch(randomAttack) 
+        }
+        else if (Vector3.Distance(transform.position, playerTarget.position) <= attack_Distance)
         {
-            case 0:
-                enemyAnimator.SetTrigger("isLightAttack");
-                isAttacking = true;
-                cnt++;
-                break;
+            myBody.velocity = Vector3.zero;
+            enemyAnimator.SetBool("inMotion", false);
 
-            case 1:
-                enemyAnimator.SetTrigger("isBlocking");
-                isAttacking = true;
-                cnt++;
-                break;
-
-            case 2:
-                enemyAnimator.SetTrigger("isHeavyAttack");
-                isAttacking = true;
-                cnt++;
-                break;
+            followPlayer = false;
+            attackPlayer = true;
         }
-        if( cnt % 3 == 0 )
-            ResetAllAnimatorTriggers();
     }
 
-    void ResetAllAnimatorTriggers()
+    void Attack()
     {
-        foreach (var trigger in enemyAnimator.parameters)
+        if (!attackPlayer)
+            return;
+
+        current_Attack_Time += Time.deltaTime;
+
+        if (current_Attack_Time > default_Attack_Time)
         {
-            if (trigger.type == AnimatorControllerParameterType.Trigger)
-            {
-                enemyAnimator.ResetTrigger(trigger.name);
-            }
+            EnemyAttack(Random.Range(0, 2));
+            current_Attack_Time = 0f;
+        }
+
+        if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance + chase_Player_After_Attack)
+        {
+            attackPlayer = false;
+            followPlayer = true;
         }
     }
 
-    void UpdateZAxis()
+    void EnemyAttack(int attack)
     {
-        transform.position = new Vector3(this.transform.position.x, this.transform.position.y, playerGamePlayManager.transform.position.z);
+        if (attack == 0 && enemyWeapons[1].gameObject.CompareTag("Right Arm"))
+        {
+            enemyWeapons[0].gameObject.SetActive(true);
+            enemyAnimator.SetTrigger("isLightAttack");
+        }
+
+        else if(attack == 1 && enemyWeapons[0].gameObject.CompareTag("Left Arm"))
+        {
+            enemyWeapons[1].gameObject.SetActive(true);
+            enemyAnimator.SetTrigger("isHeavyAttack");
+        }
+    }
+
+    void UpdateEnemyRotation()
+    {
+        transform.eulerAngles = new Vector3(0, 90f, 0);
     }
 
     public void InflictEnemyDamage()
     {
-        enemyAnimator.SetInteger("isHurt", 1);
+        enemyAnimator.SetTrigger("isHurt");
         healthBar.fillAmount -= 0.1f;
     }
 }
