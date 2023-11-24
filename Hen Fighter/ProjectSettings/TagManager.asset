@@ -7,9 +7,8 @@ TagManager:
   - EnemyAI
   - P_HealthBar
   - E_HealthBar
-  - PlayerWeapon
-  - Left Arm
-  - Right Arm
+  - Beak
+  - Foot
   layers:
   - Default
   - TransparentFX

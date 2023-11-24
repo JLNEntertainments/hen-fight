@@ -14,12 +14,7 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     Image healthBar;
 
-    float speed = 5f;
-    float attack_Distance = 3f;
-    float chase_Player_After_Attack = 1f;
-    float targetDist;
-    float current_Attack_Time;
-    float default_Attack_Time = 3f;
+    float speed, attack_Distance, chase_Player_After_Attack, targetDist, current_Attack_Time, default_Attack_Time;
 
     bool followPlayer, attackPlayer;
 
@@ -39,10 +34,15 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
 
         followPlayer = true;
+        
+        speed = 3f;
+        attack_Distance = 2.5f;
+        chase_Player_After_Attack = 1f;
+        default_Attack_Time = 3f;
+
         current_Attack_Time = default_Attack_Time;
-       
-        enemyWeapons[0].gameObject.SetActive(false);
-        enemyWeapons[1].gameObject.SetActive(false);
+
+        TurnOffAttackpoints();
     }
 
     void Update()
@@ -53,7 +53,7 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
     void FixedUpdate()
     {
        FollowTarget();
-      UpdateEnemyRotation();
+       UpdateEnemyRotation();
     }
 
     void FollowTarget()
@@ -93,7 +93,7 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
         if (current_Attack_Time > default_Attack_Time)
         {
-            EnemyAttack(Random.Range(0, 2));
+            EnemyAttack(Random.Range(0, 2)); //0 for LightAttack, 1 for HeavyAttack
             current_Attack_Time = 0f;
         }
 
@@ -106,17 +106,22 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     void EnemyAttack(int attack)
     {
-        if (attack == 0 && enemyWeapons[1].gameObject.CompareTag("Right Arm"))
+        foreach(var obj in enemyWeapons) 
         {
-            enemyWeapons[0].gameObject.SetActive(true);
-            enemyAnimator.SetTrigger("isLightAttack");
-        }
+            if (attack == 0 && obj.gameObject.CompareTag("Beak"))
+            {
+                obj.gameObject.SetActive(true);
+                enemyAnimator.SetTrigger("isLightAttack");
+                return;
+            }
 
-        else if(attack == 1 && enemyWeapons[0].gameObject.CompareTag("Left Arm"))
-        {
-            enemyWeapons[1].gameObject.SetActive(true);
-            enemyAnimator.SetTrigger("isHeavyAttack");
-        }
+            else if (attack == 1 && obj.gameObject.CompareTag("Foot"))
+            {
+                obj.gameObject.SetActive(true);
+                enemyAnimator.SetTrigger("isHeavyAttack");
+                return;
+            }
+        } 
     }
 
     void UpdateEnemyRotation()
@@ -128,5 +133,11 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
     {
         enemyAnimator.SetTrigger("isHurt");
         healthBar.fillAmount -= 0.1f;
+    }
+
+    void TurnOffAttackpoints()
+    {
+        foreach(var obj in enemyWeapons)
+            obj.gameObject.SetActive(false);
     }
 }
