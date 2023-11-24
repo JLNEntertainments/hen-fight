@@ -11,48 +11,51 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     [SerializeField]
     DamageGeneric[] weaponCollider;
 
-    public bool isAttacking;
-    public bool isBlocking;
+    bool isHeavyAttack, isLightAttack, isBlocking;
+    float currentAttackTime, defaultAttackTime;
 
     void Start()
     {
         clicksCnt = 0;
         playerAnimator = FindObjectOfType<PlayerGamePlayManager>().GetComponent<Animator>();
-        weaponCollider = FindObjectsOfType<DamageGeneric>();
-        weaponCollider[0].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(false);
-        weaponCollider[1].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(false);
+        weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
+
+        defaultAttackTime = 1f;
+        currentAttackTime = defaultAttackTime;
+
+        //weaponCollider = FindObjectsOfType<DamageGeneric>();
+        TurnOffAttackpoints();
+    }
+
+    void Update()
+    {
+        currentAttackTime += Time.deltaTime;
     }
 
     public void OnLightAttackBtnPressed()
     {
-        StartCoroutine(LightAttack());
-        StopCoroutine(LightAttack());
-    }
-
-    IEnumerator LightAttack()
-    {
-        isAttacking = true;
-        playerAnimator.SetTrigger("isLightAttack");
-        weaponCollider[0].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(true);
-        clicksCnt++;
-        //isComboCheck();
-        yield return new WaitForSeconds(1f);
+        if(currentAttackTime > defaultAttackTime)
+        {
+            isLightAttack = true;
+            isHeavyAttack = false;
+            clicksCnt++;
+            //isComboCheck();
+            PlayAttackAnimation(isHeavyAttack, isLightAttack);
+            currentAttackTime = 0;
+        } 
     }
 
     public void OnHeavyAttackBtnPressed()
     {
-        StartCoroutine(HeavyAttack());
-        StopCoroutine(HeavyAttack());
-    }
-
-    IEnumerator HeavyAttack()
-    {
-        isAttacking = true;
-        playerAnimator.SetTrigger("isHeavyAttack");
-        weaponCollider[1].GetComponentInChildren<DamageGeneric>().gameObject.SetActive(true);
-        clicksCnt++;
-        //isComboCheck();
-        yield return new WaitForSeconds(1f);
+        if(currentAttackTime > defaultAttackTime ) 
+        {
+            isHeavyAttack = true;
+            isLightAttack = false;
+            clicksCnt++;
+            //isComboCheck();
+            PlayAttackAnimation(isHeavyAttack, isLightAttack);
+            currentAttackTime = 0;
+        }
     }
 
     public void OnBlockAttackBtnPressed()
@@ -66,9 +69,33 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         if (clicksCnt == 3)
         {
-            isAttacking = true;
             playerAnimator.SetTrigger("isComboAttack");
             clicksCnt = 0;
+        }
+    }
+
+    void TurnOffAttackpoints()
+    {
+        foreach(var obj in weaponCollider)
+            obj.gameObject.SetActive(false);
+    }
+
+    void PlayAttackAnimation(bool heavyAttack, bool lightAttack)
+    {
+        foreach(var obj in weaponCollider)
+        {
+            if(lightAttack && obj.gameObject.CompareTag("Beak"))
+            {
+                obj.gameObject.SetActive(true);
+                playerAnimator.SetTrigger("isLightAttack");
+                return;
+            }
+            else if(heavyAttack && obj.gameObject.CompareTag("Foot"))
+            {
+                obj.gameObject.SetActive(true);
+                playerAnimator.SetTrigger("isHeavyAttack");
+                return;
+            }
         }
     }
 }
