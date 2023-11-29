@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Staminbar : MonoBehaviour
 {
     public GameObject CharactherObj;
-    Animator CharactherAnima;
+   [SerializeField] Animator CharactherAnima;
     public Image StaminaBarImage;
 
     [Space]
