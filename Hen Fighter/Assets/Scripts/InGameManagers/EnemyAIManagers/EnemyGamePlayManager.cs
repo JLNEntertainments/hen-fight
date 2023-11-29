@@ -20,6 +20,17 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     public DamageGeneric[] enemyWeapons;
 
+    string currentAnimaton;
+
+    //Animation States
+    const string ENEMY_IDLE = "Idle";
+    const string ENEMY_WALK = "Walking";
+    const string ENEMY_BACKWALK = "BackWalk";
+    const string ENEMY_LIGHTATTACK = "LightAttack";
+    const string ENEMY_HEAVYATTACK = "HeavyAttack";
+    const string ENEMY_BLOCK = "Block";
+    const string ENEMY_HURT = "Hurt";
+
     void Awake()
     {
         enemyAnimator = GetComponent<Animator>();
@@ -35,10 +46,10 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
         followPlayer = true;
         
-        speed = 3f;
+        speed = 1f;
         attack_Distance = 2.5f;
         chase_Player_After_Attack = 1f;
-        default_Attack_Time = 3f;
+        default_Attack_Time = 2f;
 
         current_Attack_Time = default_Attack_Time;
 
@@ -52,7 +63,7 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     void FixedUpdate()
     {
-       FollowTarget();
+       //FollowTarget();
        UpdateEnemyRotation();
     }
 
@@ -70,15 +81,15 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
             if (myBody.velocity.sqrMagnitude != 0)
             {
+                //ChangeAnimationState(ENEMY_WALK);
                 enemyAnimator.SetBool("inMotion", true);
             }
-
         }
-        else if (Vector3.Distance(transform.position, playerTarget.position) <= attack_Distance)
+        else if (targetDist <= attack_Distance)
         {
             myBody.velocity = Vector3.zero;
+            //ChangeAnimationState(ENEMY_IDLE);
             enemyAnimator.SetBool("inMotion", false);
-
             followPlayer = false;
             attackPlayer = true;
         }
@@ -93,11 +104,13 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
         if (current_Attack_Time > default_Attack_Time)
         {
-            EnemyAttack(Random.Range(0, 2)); //0 for LightAttack, 1 for HeavyAttack
+            /*StartCoroutine(EnemyAttack()); //0 for LightAttack, 1 for HeavyAttack
+            StopCoroutine(EnemyAttack());*/
+            EnemyAttack(Random.Range(0, 2));
             current_Attack_Time = 0f;
         }
 
-        if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance + chase_Player_After_Attack)
+        if (Vector3.Distance(transform.position, playerTarget.position) < attack_Distance + chase_Player_After_Attack)
         {
             attackPlayer = false;
             followPlayer = true;
@@ -106,27 +119,33 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     void EnemyAttack(int attack)
     {
-        foreach(var obj in enemyWeapons) 
+        //int attack = (Random.Range(0, 2));
+
+        foreach (var obj in enemyWeapons) 
         {
             if (attack == 0 && obj.gameObject.CompareTag("Beak"))
             {
                 obj.gameObject.SetActive(true);
                 enemyAnimator.SetTrigger("isLightAttack");
-                return;
+                //ChangeAnimationState(ENEMY_LIGHTATTACK);
+                
+                //yield return new WaitForSeconds(2f);
             }
 
             else if (attack == 1 && obj.gameObject.CompareTag("Foot"))
             {
                 obj.gameObject.SetActive(true);
                 enemyAnimator.SetTrigger("isHeavyAttack");
-                return;
+                //ChangeAnimationState(ENEMY_HEAVYATTACK);
+                
+                //yield return new WaitForSeconds(2f);
             }
         } 
     }
 
     void UpdateEnemyRotation()
     {
-        transform.eulerAngles = new Vector3(0, 90f, 0);
+        //transform.eulerAngles = new Vector3(0, 90f, 0);
     }
 
     public void InflictEnemyDamage()
@@ -139,5 +158,13 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
     {
         foreach(var obj in enemyWeapons)
             obj.gameObject.SetActive(false);
+    }
+
+    void ChangeAnimationState(string newAnimation)
+    {
+        if (currentAnimaton == newAnimation) return;
+
+        enemyAnimator.Play(newAnimation);
+        currentAnimaton = newAnimation;
     }
 }

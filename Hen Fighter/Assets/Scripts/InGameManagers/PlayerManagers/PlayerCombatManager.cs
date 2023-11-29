@@ -16,14 +16,13 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     void Start()
     {
-        clicksCnt = 0;
         playerAnimator = FindObjectOfType<PlayerGamePlayManager>().GetComponent<Animator>();
         weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
 
+        clicksCnt = 0;
         defaultAttackTime = 1f;
         currentAttackTime = defaultAttackTime;
 
-        //weaponCollider = FindObjectsOfType<DamageGeneric>();
         TurnOffAttackpoints();
     }
 
@@ -34,7 +33,14 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnLightAttackBtnPressed()
     {
-        if(currentAttackTime > defaultAttackTime)
+
+        StartCoroutine(LightAttack());
+        StopCoroutine(LightAttack());
+    }
+
+    IEnumerator LightAttack()
+    {
+        if (currentAttackTime > defaultAttackTime)
         {
             isLightAttack = true;
             isHeavyAttack = false;
@@ -42,12 +48,20 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             //isComboCheck();
             PlayAttackAnimation(isHeavyAttack, isLightAttack);
             currentAttackTime = 0;
-        } 
+            yield return new WaitForSeconds(0.5f);
+            PlayerGamePlayManager.Instance.ResetAnimationState();
+        }
     }
 
     public void OnHeavyAttackBtnPressed()
     {
-        if(currentAttackTime > defaultAttackTime ) 
+        StartCoroutine(HeavyAttack());
+        StopCoroutine(HeavyAttack());
+    }
+
+    IEnumerator HeavyAttack()
+    {
+        if (currentAttackTime > defaultAttackTime)
         {
             isHeavyAttack = true;
             isLightAttack = false;
@@ -55,13 +69,16 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             //isComboCheck();
             PlayAttackAnimation(isHeavyAttack, isLightAttack);
             currentAttackTime = 0;
+            yield return new WaitForSeconds(1f);
+            PlayerGamePlayManager.Instance.ResetAnimationState();
+            PlayerGamePlayManager.Instance.transform.position = new Vector3(PlayerGamePlayManager.Instance.transform.position.x + 1.85f, PlayerGamePlayManager.Instance.transform.position.y, PlayerGamePlayManager.Instance.transform.position.z);
         }
     }
 
     public void OnBlockAttackBtnPressed()
     {
         isBlocking = true;
-        playerAnimator.SetTrigger("isBlocking");
+        PlayerGamePlayManager.Instance.ChangeAnimationState(PlayerGamePlayManager.PLAYER_BLOCK);
         clicksCnt = 0;
     }
 
@@ -87,13 +104,13 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             if(lightAttack && obj.gameObject.CompareTag("Beak"))
             {
                 obj.gameObject.SetActive(true);
-                playerAnimator.SetTrigger("isLightAttack");
+                PlayerGamePlayManager.Instance.ChangeAnimationState(PlayerGamePlayManager.PLAYER_LIGHTATTACK);
                 return;
             }
             else if(heavyAttack && obj.gameObject.CompareTag("Foot"))
             {
                 obj.gameObject.SetActive(true);
-                playerAnimator.SetTrigger("isHeavyAttack");
+                PlayerGamePlayManager.Instance.ChangeAnimationState(PlayerGamePlayManager.PLAYER_HEAVYATTACK);
                 return;
             }
         }

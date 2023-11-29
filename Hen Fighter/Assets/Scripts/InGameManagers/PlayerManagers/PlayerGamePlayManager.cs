@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerGamePlayManager : MonoBehaviour
+public class PlayerGamePlayManager : SingletonGeneric<PlayerGamePlayManager>
 {
     Joystick joystick;
 
@@ -18,12 +18,24 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     Rigidbody playerRb;
 
+    [HideInInspector]
+    public string currentAnimaton;
+
+    //Animation States
+    public const string PLAYER_IDLE = "Idle";
+    const string PLAYER_WALK = "Walking";
+    const string PLAYER_BACKWALK = "BackWalk";
+    public const string PLAYER_LIGHTATTACK = "LightAttack";
+    public const string PLAYER_HEAVYATTACK = "HeavyAttack";
+    public const string PLAYER_BLOCK = "Block";
+    const string PLAYER_HURT = "Hurt";
+
     void Start()
     {
         joystick = FindObjectOfType<VariableJoystick>().GetComponent<VariableJoystick>();
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
         
-        playerAnimator = this.GetComponentInParent<Animator>();
+        playerAnimator = this.GetComponentInChildren<Animator>();
         playerRb = this.GetComponent<Rigidbody>();
         speed = 2;
     }
@@ -38,20 +50,17 @@ public class PlayerGamePlayManager : MonoBehaviour
         //For Player Movement Operations
         if (joystick.Horizontal > 0.5f) 
         {
-            playerAnimator.SetBool("inMotion", false);
-            playerAnimator.SetBool("inMotionBackwards", true);
+            ChangeAnimationState(PLAYER_WALK);
             UpdateMovementParameters(joystick.Horizontal);
         }
         else if(joystick.Horizontal < -0.5f) 
         {
-            playerAnimator.SetBool("inMotion", true);
-            playerAnimator.SetBool("inMotionBackwards", false);
+            ChangeAnimationState(PLAYER_BACKWALK);
             UpdateMovementParameters(joystick.Horizontal);
         }
         else
         {
-            playerAnimator.SetBool("inMotion", false);
-            playerAnimator.SetBool("inMotionBackwards", false);
+            ChangeAnimationState(PLAYER_IDLE);
         }
 
         //For Player Jump Operation
@@ -82,7 +91,7 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     public void InflictPlayerDamage()
     {
-        playerAnimator.SetTrigger("isHurt");
+        ChangeAnimationState(PLAYER_HURT);
         healthBar.fillAmount -= 0.1f;
     }
 
@@ -94,5 +103,19 @@ public class PlayerGamePlayManager : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         isGrounded = false;
+    }
+
+    public void ChangeAnimationState(string newAnimation)
+    {
+        if (currentAnimaton == newAnimation) return;
+
+        playerAnimator.Play(newAnimation);
+        currentAnimaton = newAnimation;
+    }
+
+    public void ResetAnimationState()
+    {
+        playerAnimator.Play(PLAYER_IDLE);
+        currentAnimaton = PLAYER_IDLE;
     }
 }
