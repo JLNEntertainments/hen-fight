@@ -12,7 +12,7 @@ public class LetsGo : MonoBehaviour
     IEnumerator StartDelay ()
     {
         Time.timeScale = 0;
-        float pauseTime = Time.realtimeSinceStartup + 4.5f;
+        float pauseTime = Time.realtimeSinceStartup + 4f;
         while (Time.realtimeSinceStartup < pauseTime)
             yield return 0;
         CountDown.gameObject.SetActive(false);

@@ -892,7 +892,7 @@ Animator:
   m_GameObject: {fileID: 163120447}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 94404d31f1f9ace4696694f9d3ec6a75, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1315,6 +1315,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   on: {fileID: 1251543543}
   off: {fileID: 2048184338}
+--- !u!1 &344337142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7008586810727550702, guid: 2b636b2a8daf3284a86522b58a78f54c, type: 3}
+  m_PrefabInstance: {fileID: 1145169719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &344337145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344337142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.10794904, y: 0.07597998, z: 0.11911971}
+  m_Center: {x: -0.010238749, y: -0.0000000011935314, z: -0.000000001074445}
 --- !u!1 &357981702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1369,7 @@ RectTransform:
   - {fileID: 223946354}
   - {fileID: 836289396}
   m_Father: {fileID: 718238622}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1805,6 +1823,19 @@ MonoBehaviour:
   MediumAttackDamage: 10
   HeavyAttackDamage: 20
   BlockDamageOffset: 4
+--- !u!65 &489145021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489145012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08747154, y: 0.07597997, z: 0.11911971}
+  m_Center: {x: -0.0003827155, y: 0.0783297, z: -0.013052363}
 --- !u!1 &501146062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,7 +1984,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Hen_Ui_Screen_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &517375054
@@ -2603,8 +2634,8 @@ RectTransform:
   - {fileID: 835160795}
   - {fileID: 127693377}
   - {fileID: 2111209824}
-  - {fileID: 12911746}
   - {fileID: 357981703}
+  - {fileID: 12911746}
   - {fileID: 469652169}
   - {fileID: 1894072739}
   - {fileID: 841159645}
@@ -3601,7 +3632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DO YOU REALLY WANT TO QUIT
+  m_text: DO YOU REALLY WANT TO QUIT ?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2feb010c72f902f4cb8812b5abd2311b, type: 2}
   m_sharedMaterial: {fileID: 3330785018486391323, guid: 2feb010c72f902f4cb8812b5abd2311b, type: 2}
@@ -5028,6 +5059,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7008586810727550703, guid: 2b636b2a8daf3284a86522b58a78f54c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296355148868491262, guid: 2b636b2a8daf3284a86522b58a78f54c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b636b2a8daf3284a86522b58a78f54c, type: 3}
 --- !u!1 &1147781147
@@ -5726,6 +5765,7 @@ GameObject:
   - component: {fileID: 1369082958}
   - component: {fileID: 1369082962}
   - component: {fileID: 1369082961}
+  - component: {fileID: 1369082963}
   m_Layer: 5
   m_Name: YesButton
   m_TagString: Untagged
@@ -5798,16 +5838,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1061067216}
-        m_TargetAssemblyTypeName: Gamepass, Assembly-CSharp
-        m_MethodName: GameQuitButton
-        m_Mode: 1
+      - m_Target: {fileID: 1369082963}
+        m_TargetAssemblyTypeName: Scene_changeScript, Assembly-CSharp
+        m_MethodName: SceneChange
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Hen_Ui_Screen_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1369082959
@@ -5882,6 +5922,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Animator: {fileID: 1369082961}
+--- !u!114 &1369082963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369082956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557cd4006e82cc64c803194eb56e9798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1370451699
 GameObject:
   m_ObjectHideFlags: 0
@@ -6537,6 +6589,19 @@ MonoBehaviour:
   MediumAttackDamage: 10
   HeavyAttackDamage: 20
   BlockDamageOffset: 4
+--- !u!65 &1486299753
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486299742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.025938544, y: 0.07597997, z: 0.06395983}
+  m_Center: {x: 0.00023401083, y: 0.0783297, z: 0.014527598}
 --- !u!1 &1496687712
 GameObject:
   m_ObjectHideFlags: 0
@@ -6703,6 +6768,7 @@ GameObject:
   - component: {fileID: 1613575646}
   - component: {fileID: 1613575650}
   - component: {fileID: 1613575649}
+  - component: {fileID: 1613575651}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -6774,7 +6840,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1613575647}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1613575651}
+        m_TargetAssemblyTypeName: Scene_changeScript, Assembly-CSharp
+        m_MethodName: SceneChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hen_Ui_Screen_1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1613575647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6836,7 +6914,7 @@ Animator:
   m_GameObject: {fileID: 1613575644}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 94404d31f1f9ace4696694f9d3ec6a75, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6847,6 +6925,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1613575651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613575644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557cd4006e82cc64c803194eb56e9798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1662289747
 GameObject:
   m_ObjectHideFlags: 0
@@ -7821,7 +7911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d246ffea3e4d404c934495af248438f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 100
+  startingTime: 10
   gameoverImage: {fileID: 1052413052}
   CountTimeText: {fileID: 1894072740}
 --- !u!1 &1922056749
