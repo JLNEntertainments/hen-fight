@@ -73,7 +73,7 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     void FixedUpdate()
     {
-        FollowTarget();
+        //FollowTarget();
         UpdateEnemyRotation();
         Attack();
     }

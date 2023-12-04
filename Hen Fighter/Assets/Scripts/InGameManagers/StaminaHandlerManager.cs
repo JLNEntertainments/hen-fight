@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class StaminaHandlerManager : MonoBehaviour
 {
-    public GameObject characterObj;
-    
-    [SerializeField] 
+    GameObject characterObj;
+ 
     Animator characterAnim;
     public Image StaminaBarImage;
 

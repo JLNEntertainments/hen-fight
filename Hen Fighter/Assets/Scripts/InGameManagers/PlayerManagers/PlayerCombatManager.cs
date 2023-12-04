@@ -50,7 +50,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             //isComboCheck();
             PlayAttackAnimation(isHeavyAttack, isLightAttack);
             currentAttackTime = 0;
-            yield return new WaitForSeconds(1f); //use waitforframeends
+            yield return new WaitForSeconds(0.5f); //use waitforframeends
 
             PlayerGamePlayManager.Instance.ResetAnimationState();
             isAttacking = false;
@@ -74,7 +74,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             //isComboCheck();
             PlayAttackAnimation(isHeavyAttack, isLightAttack);
             currentAttackTime = 0;
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(0.8f);
             PlayerGamePlayManager.Instance.ResetAnimationState();
             PlayerGamePlayManager.Instance.transform.position = new Vector3(PlayerGamePlayManager.Instance.transform.position.x + 1.85f, PlayerGamePlayManager.Instance.transform.position.y, PlayerGamePlayManager.Instance.transform.position.z);
             isAttacking = false;
