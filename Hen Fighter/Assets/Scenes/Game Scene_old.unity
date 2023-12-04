@@ -5108,6 +5108,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1486299748, guid: 20f61a4e6a77c9d46bae6f4c2c3a1b74, type: 3}
+      propertyPath: StaminaBarImage
+      value: 
+      objectReference: {fileID: 395522068}
     - target: {fileID: 3744857568791666323, guid: 20f61a4e6a77c9d46bae6f4c2c3a1b74, type: 3}
       propertyPath: m_Name
       value: Final Player Hen 1
@@ -5975,6 +5979,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375244518}
   m_CullTransparentMesh: 1
+--- !u!1 &1376236545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376236547}
+  - component: {fileID: 1376236546}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1376236546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376236545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d328c584ec2b96c4b9b7926b31777022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1376236547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376236545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4367566, y: 2.8933895, z: 1.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1397202633
 GameObject:
   m_ObjectHideFlags: 0
@@ -6492,45 +6540,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459891549}
   m_CullTransparentMesh: 1
---- !u!1 &1486299742 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3744857568791666323, guid: 20f61a4e6a77c9d46bae6f4c2c3a1b74, type: 3}
-  m_PrefabInstance: {fileID: 1195510810}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1486299748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486299742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8babb4b523b224242b84ef854d30c444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterObj: {fileID: 0}
-  characterAnim: {fileID: 0}
-  StaminaBarImage: {fileID: 781292078}
-  characterStamina: 0
-  maxStamina: 0
-  LightAttackDamage: 5
-  MediumAttackDamage: 10
-  HeavyAttackDamage: 20
-  BlockDamageOffset: 4
---- !u!65 &1486299753
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486299742}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.025938544, y: 0.07597997, z: 0.06395983}
-  m_Center: {x: 0.00023401083, y: 0.0783297, z: 0.014527598}
 --- !u!1 &1496687712
 GameObject:
   m_ObjectHideFlags: 0
@@ -8925,9 +8934,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4427170153933124909, guid: 12b7a4c74d34f2d47afee5a27b492e3f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d9526fffe0b96a64fb4f617c7a464e12, type: 2}
     - target: {fileID: 4427170153933125329, guid: 12b7a4c74d34f2d47afee5a27b492e3f, type: 3}
       propertyPath: m_Name
       value: 'Dega AI '
       objectReference: {fileID: 0}
+    - target: {fileID: 4427170153933125330, guid: 12b7a4c74d34f2d47afee5a27b492e3f, type: 3}
+      propertyPath: StaminaBarImage
+      value: 
+      objectReference: {fileID: 781292078}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b7a4c74d34f2d47afee5a27b492e3f, type: 3}
