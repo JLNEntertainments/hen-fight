@@ -8551,7 +8551,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &465306681
 GameObject:
@@ -10918,6 +10918,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCollider: []
+  isHeavyAttack: 0
+  isLightAttack: 0
+  isBlocking: 0
+  isAttacking: 0
 --- !u!1 &722263815
 GameObject:
   m_ObjectHideFlags: 0
@@ -20958,7 +20962,7 @@ Transform:
   - {fileID: 1502557921}
   - {fileID: 883085977}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &2024882858
 MonoBehaviour:
@@ -20972,7 +20976,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f72089bce45d44fbf64e4453757c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  current_Stamina_Regen_Time: 0
+  default_Stamina_Regen_Time: 0
+  followPlayer: 0
+  attackPlayer: 0
+  isHeavyAttack: 0
+  isLightAttack: 0
   enemyWeapons: []
+  currentAnimaton: 
 --- !u!1 &2027738303
 GameObject:
   m_ObjectHideFlags: 0
@@ -27075,6 +27086,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 208858346511247271, guid: b9fc8855019f03c4596d023efe817c4a, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 208858346511247271, guid: b9fc8855019f03c4596d023efe817c4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -0.0000014565048
@@ -41188,7 +41203,7 @@ Transform:
   - {fileID: 3468756338384679807}
   - {fileID: 872728264024411414}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &5660366818988210139
 MonoBehaviour:
@@ -41202,7 +41217,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f72089bce45d44fbf64e4453757c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  current_Stamina_Regen_Time: 0
+  default_Stamina_Regen_Time: 0
+  followPlayer: 0
+  attackPlayer: 0
+  isHeavyAttack: 0
+  isLightAttack: 0
   enemyWeapons: []
+  currentAnimaton: 
 --- !u!54 &5660366818988210140
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41709,7 +41731,7 @@ Transform:
   - {fileID: 2056427174470167708}
   - {fileID: 8220713492372506689}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &5798328385723505270
 GameObject:

@@ -5,8 +5,8 @@ using UnityEngine;
 public class DamageGeneric : MonoBehaviour
 {
     public LayerMask collisionLayer;
-    public float radius = 1f;
-    public float damage = 2f;
+    public float radius;
+    public float damage;
 
     public bool is_Player, is_Enemy;
 
@@ -22,11 +22,15 @@ public class DamageGeneric : MonoBehaviour
         {
             if (is_Enemy && hit != null)
             {
-                hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictPlayerDamage();   
+                hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictPlayerDamage();
             }
             if (is_Player && hit != null)
             {
                 hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage();
+                if (PlayerCombatManager.Instance.isHeavyAttack)
+                    ScoreManager.Instance.UpdatePlayerScore("isHeavy");
+                else
+                    ScoreManager.Instance.UpdatePlayerScore("isLight");
             }
             gameObject.SetActive(false);
         }

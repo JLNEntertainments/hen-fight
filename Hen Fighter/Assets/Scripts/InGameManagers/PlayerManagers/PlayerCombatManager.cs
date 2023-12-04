@@ -11,7 +11,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     [SerializeField]
     DamageGeneric[] weaponCollider;
 
-    bool isHeavyAttack, isLightAttack, isBlocking;
+    [HideInInspector]
+    public bool isHeavyAttack, isLightAttack, isBlocking;
+    public bool isAttacking;
     float currentAttackTime, defaultAttackTime;
 
     void Start()
@@ -33,7 +35,6 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnLightAttackBtnPressed()
     {
-
         StartCoroutine(LightAttack());
         StopCoroutine(LightAttack());
     }
@@ -42,14 +43,17 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         if (currentAttackTime > defaultAttackTime)
         {
+            isAttacking = true;
             isLightAttack = true;
             isHeavyAttack = false;
             clicksCnt++;
             //isComboCheck();
             PlayAttackAnimation(isHeavyAttack, isLightAttack);
             currentAttackTime = 0;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f); //use waitforframeends
+
             PlayerGamePlayManager.Instance.ResetAnimationState();
+            isAttacking = false;
         }
     }
 
@@ -63,15 +67,17 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         if (currentAttackTime > defaultAttackTime)
         {
+            isAttacking = true;
             isHeavyAttack = true;
             isLightAttack = false;
             clicksCnt++;
             //isComboCheck();
             PlayAttackAnimation(isHeavyAttack, isLightAttack);
             currentAttackTime = 0;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.2f);
             PlayerGamePlayManager.Instance.ResetAnimationState();
             PlayerGamePlayManager.Instance.transform.position = new Vector3(PlayerGamePlayManager.Instance.transform.position.x + 1.85f, PlayerGamePlayManager.Instance.transform.position.y, PlayerGamePlayManager.Instance.transform.position.z);
+            isAttacking = false;
         }
     }
 
