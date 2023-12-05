@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1327,8 +1327,8 @@ GameObject:
   - component: {fileID: 357981704}
   - component: {fileID: 357981705}
   m_Layer: 5
-  m_Name: Player_HealthBar
-  m_TagString: P_HealthBar
+  m_Name: Enemy_HealthBar
+  m_TagString: E_HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1432,7 +1432,7 @@ GameObject:
   - component: {fileID: 395522069}
   - component: {fileID: 395522068}
   m_Layer: 5
-  m_Name: StaminBarINside
+  m_Name: StaminBarINsideEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1681,8 +1681,8 @@ GameObject:
   - component: {fileID: 469652170}
   - component: {fileID: 469652171}
   m_Layer: 5
-  m_Name: EnemyAI_HealthBar
-  m_TagString: E_HealthBar
+  m_Name: PLayer_HealthBar
+  m_TagString: P_HealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1705,7 +1705,7 @@ RectTransform:
   - {fileID: 45892434}
   - {fileID: 1870709416}
   m_Father: {fileID: 718238622}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -2573,8 +2573,8 @@ RectTransform:
   - {fileID: 127693377}
   - {fileID: 2111209824}
   - {fileID: 357981703}
-  - {fileID: 12911746}
   - {fileID: 469652169}
+  - {fileID: 12911746}
   - {fileID: 1894072739}
   - {fileID: 841159645}
   - {fileID: 1664392538}
@@ -2739,7 +2739,7 @@ GameObject:
   - component: {fileID: 781292079}
   - component: {fileID: 781292078}
   m_Layer: 5
-  m_Name: StaminBarINside
+  m_Name: StaminBarInsidePlayerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4993,14 +4993,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7008586810727550703, guid: 2b636b2a8daf3284a86522b58a78f54c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296355148868491262, guid: 2b636b2a8daf3284a86522b58a78f54c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b636b2a8daf3284a86522b58a78f54c, type: 3}
 --- !u!1 &1147781147
@@ -5108,13 +5100,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1486299748, guid: 20f61a4e6a77c9d46bae6f4c2c3a1b74, type: 3}
-      propertyPath: StaminaBarImage
-      value: 
-      objectReference: {fileID: 395522068}
     - target: {fileID: 3744857568791666323, guid: 20f61a4e6a77c9d46bae6f4c2c3a1b74, type: 3}
       propertyPath: m_Name
       value: Final Player Hen 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744857568791666323, guid: 20f61a4e6a77c9d46bae6f4c2c3a1b74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4085812364701778985, guid: 20f61a4e6a77c9d46bae6f4c2c3a1b74, type: 3}
       propertyPath: m_RootOrder
@@ -6008,6 +6000,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d328c584ec2b96c4b9b7926b31777022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyStaminaBarImage: {fileID: 395522068}
+  PlayerStaminaBarImage: {fileID: 781292078}
+  LightAttackDamage: 0.1
+  HeavyAttackDamage: 0.2
+  maxStamina: 0
 --- !u!4 &1376236547
 Transform:
   m_ObjectHideFlags: 0
@@ -7634,7 +7631,7 @@ GameObject:
   - component: {fileID: 1870709418}
   - component: {fileID: 1870709417}
   m_Layer: 5
-  m_Name: StaminBarBackground_Player
+  m_Name: StaminBarBackground_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7849,7 +7846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d246ffea3e4d404c934495af248438f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 1000
+  startingTime: 100
   gameoverImage: {fileID: 1052413052}
   CountTimeText: {fileID: 1894072740}
 --- !u!1 &1922056749
@@ -8934,17 +8931,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4427170153933124909, guid: 12b7a4c74d34f2d47afee5a27b492e3f, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d9526fffe0b96a64fb4f617c7a464e12, type: 2}
     - target: {fileID: 4427170153933125329, guid: 12b7a4c74d34f2d47afee5a27b492e3f, type: 3}
       propertyPath: m_Name
       value: 'Dega AI '
       objectReference: {fileID: 0}
-    - target: {fileID: 4427170153933125330, guid: 12b7a4c74d34f2d47afee5a27b492e3f, type: 3}
-      propertyPath: StaminaBarImage
-      value: 
-      objectReference: {fileID: 781292078}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b7a4c74d34f2d47afee5a27b492e3f, type: 3}
