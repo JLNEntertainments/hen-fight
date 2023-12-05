@@ -12,24 +12,31 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
     
     Transform playerTarget;
 
+    StaminaHandlerManager enemyStaminaHandler;
+
     Image healthBar;
 
     float speed, attack_Distance, chase_Player_After_Attack, targetDist, current_Attack_Time, default_Attack_Time;
 
-    bool followPlayer, attackPlayer;
+    [HideInInspector]
+    public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
+
+    [HideInInspector]
+    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack;
 
     public DamageGeneric[] enemyWeapons;
 
+    [SerializeField]
     string currentAnimaton;
 
     //Animation States
     const string ENEMY_IDLE = "Idle";
-    const string ENEMY_WALK = "Walking";
+    const string ENEMY_WALK = "Walk";
     const string ENEMY_BACKWALK = "BackWalk";
-    const string ENEMY_LIGHTATTACK = "LightAttack";
-    const string ENEMY_HEAVYATTACK = "HeavyAttack";
+    const string ENEMY_LIGHTATTACK = "BeakAttack";
+    const string ENEMY_HEAVYATTACK = "ClawAttack";
     const string ENEMY_BLOCK = "Block";
-    const string ENEMY_HURT = "Hurt";
+    const string ENEMY_HURT = "React";
 
     void Awake()
     {
@@ -41,37 +48,38 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     void Start()
     {
-        enemyWeapons = gameObject.GetComponentsInChildren<DamageGeneric>();
+        enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
-
-        followPlayer = true;
+        enemyStaminaHandler = GetComponent<StaminaHandlerManager>();
         
         speed = 1f;
-        attack_Distance = 2.5f;
+        attack_Distance = 3f;
         chase_Player_After_Attack = 1f;
-        default_Attack_Time = 2f;
+        default_Attack_Time = 4f;
+        default_Stamina_Regen_Time = 8f;
 
         current_Attack_Time = default_Attack_Time;
+        current_Stamina_Regen_Time = 0;
 
         TurnOffAttackpoints();
     }
 
     void Update()
     {
-        Attack();
+        //Attack();
+        if (!attackPlayer && !followPlayer)
+            StaminaRegeneration();
     }
 
     void FixedUpdate()
     {
-       FollowTarget();
-       UpdateEnemyRotation();
+        //FollowTarget();
+        UpdateEnemyRotation();
+        Attack();
     }
 
     void FollowTarget()
     {
-        if (!followPlayer)
-            return;
-
         targetDist = Vector3.Distance(transform.position, playerTarget.position);
 
         if (targetDist > attack_Distance)
@@ -81,15 +89,16 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
             if (myBody.velocity.sqrMagnitude != 0)
             {
-                //ChangeAnimationState(ENEMY_WALK);
-                enemyAnimator.SetBool("inMotion", true);
+                ChangeAnimationState(ENEMY_WALK);
+                //enemyAnimator.SetBool("inMotion", true);
+                followPlayer = true;
             }
         }
         else if (targetDist <= attack_Distance)
         {
             myBody.velocity = Vector3.zero;
-            //ChangeAnimationState(ENEMY_IDLE);
-            enemyAnimator.SetBool("inMotion", false);
+            ChangeAnimationState(ENEMY_IDLE);
+            //enemyAnimator.SetBool("inMotion", false);
             followPlayer = false;
             attackPlayer = true;
         }
@@ -104,10 +113,11 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
         if (current_Attack_Time > default_Attack_Time)
         {
-            /*StartCoroutine(EnemyAttack()); //0 for LightAttack, 1 for HeavyAttack
-            StopCoroutine(EnemyAttack());*/
+            //StartCoroutine(EnemyAttack()); //0 for LightAttack, 1 for HeavyAttack
+            //StopCoroutine(EnemyAttack());
             EnemyAttack(Random.Range(0, 2));
             current_Attack_Time = 0f;
+            attackPlayer = true;
         }
 
         if (Vector3.Distance(transform.position, playerTarget.position) < attack_Distance + chase_Player_After_Attack)
@@ -123,34 +133,51 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
         foreach (var obj in enemyWeapons) 
         {
-            if (attack == 0 && obj.gameObject.CompareTag("Beak"))
+            if (attack == 1 && obj.gameObject.CompareTag("Beak"))
             {
                 obj.gameObject.SetActive(true);
-                enemyAnimator.SetTrigger("isLightAttack");
-                //ChangeAnimationState(ENEMY_LIGHTATTACK);
-                
-                //yield return new WaitForSeconds(2f);
+                //enemyAnimator.SetTrigger("isLightAttack");
+                ChangeAnimationState(ENEMY_LIGHTATTACK);
+                isLightAttack = true;
+                isHeavyAttack = false;
+                ScoreManager.Instance.UpdateEnemyScore("isLight");
+                //yield return new WaitForSeconds(1f);
             }
 
-            else if (attack == 1 && obj.gameObject.CompareTag("Foot"))
+            else if (attack == 0 && obj.gameObject.CompareTag("Foot"))
             {
                 obj.gameObject.SetActive(true);
-                enemyAnimator.SetTrigger("isHeavyAttack");
-                //ChangeAnimationState(ENEMY_HEAVYATTACK);
+                //enemyAnimator.SetTrigger("isHeavyAttack");
+                ChangeAnimationState(ENEMY_HEAVYATTACK);
+                isHeavyAttack = true;
+                isLightAttack = false;
+                ScoreManager.Instance.UpdateEnemyScore("isHeavy");
+                //yield return new WaitForSeconds(1f);
+                //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
                 
-                //yield return new WaitForSeconds(2f);
             }
         } 
     }
 
+    void StaminaRegeneration()
+    {
+        current_Stamina_Regen_Time += Time.deltaTime;
+        if (current_Stamina_Regen_Time >= default_Stamina_Regen_Time && enemyStaminaHandler.characterStamina < enemyStaminaHandler.maxStamina)
+        {
+            enemyStaminaHandler.IncreaseStamina();
+            current_Stamina_Regen_Time = 0;
+        }
+    }
+
     void UpdateEnemyRotation()
     {
-        //transform.eulerAngles = new Vector3(0, 90f, 0);
+        transform.eulerAngles = new Vector3(0, -90f, 0);
     }
 
     public void InflictEnemyDamage()
     {
-        enemyAnimator.SetTrigger("isHurt");
+        //enemyAnimator.SetTrigger("isHurt");
+        ChangeAnimationState(ENEMY_HURT);
         healthBar.fillAmount -= 0.1f;
     }
 
@@ -164,7 +191,7 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
     {
         if (currentAnimaton == newAnimation) return;
 
-        enemyAnimator.Play(newAnimation);
+        enemyAnimator.PlayInFixedTime(newAnimation);
         currentAnimaton = newAnimation;
     }
 }
