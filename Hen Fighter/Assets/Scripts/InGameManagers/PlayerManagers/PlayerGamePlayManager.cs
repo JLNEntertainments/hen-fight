@@ -4,8 +4,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerGamePlayManager : SingletonGeneric<PlayerGamePlayManager>
+public class PlayerGamePlayManager : MonoBehaviour
 {
+    [HideInInspector]
+    public EnemyGamePlayManager enemyGamePlayManager;
+
     Joystick joystick;
 
     Image healthBar;
@@ -16,27 +19,25 @@ public class PlayerGamePlayManager : SingletonGeneric<PlayerGamePlayManager>
 
     int speed;
 
-    bool isGrounded, isMoving;
+    bool isGrounded;
 
     Rigidbody playerRb;
 
     [HideInInspector]
     public string currentAnimaton;
 
+    [HideInInspector]
+    public bool isHeavyAttack, isLightAttack, isBlocking;
+
     float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
 
     //Animation States
-    public const string PLAYER_IDLE = "Idle";
-    const string PLAYER_WALK = "Walking";
-    const string PLAYER_BACKWALK = "BackWalk";
-    public const string PLAYER_LIGHTATTACK = "LightAttack";
-    public const string PLAYER_HEAVYATTACK = "HeavyAttack";
-    public const string PLAYER_BLOCK = "Block";
-    const string PLAYER_HURT = "Hurt";
-    const string PLAYER_CROUCH = "Crouch";
+    [HideInInspector]
+    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_HURT, PLAYER_CROUCH;
 
     void Start()
     {
+        enemyGamePlayManager = FindObjectOfType<EnemyGamePlayManager>();
         joystick = FindObjectOfType<VariableJoystick>().GetComponent<VariableJoystick>();
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
 
@@ -47,13 +48,22 @@ public class PlayerGamePlayManager : SingletonGeneric<PlayerGamePlayManager>
         speed = 2;
         default_Stamina_Regen_Time = 8f;
         current_Stamina_Regen_Time = 0;
+
+        PLAYER_IDLE = "Idle";
+        PLAYER_WALK = "Walking";
+        PLAYER_BACKWALK = "BackWalk";
+        PLAYER_LIGHTATTACK = "LightAttack";
+        PLAYER_HEAVYATTACK = "HeavyAttack";
+        PLAYER_BLOCK = "Block";
+        PLAYER_HURT = "Hurt";
+        PLAYER_CROUCH = "Crouch";
     }
 
     void Update()
     {
         CheckMovement();
-        if (!PlayerCombatManager.Instance.isAttacking && !isMoving)
-            StaminaRegeneration();
+        /*if (!PlayerCombatManager.Instance.isAttacking && !isMoving)
+            StaminaRegeneration();*/
     }
 
     void CheckMovement()
@@ -63,18 +73,15 @@ public class PlayerGamePlayManager : SingletonGeneric<PlayerGamePlayManager>
         {
             ChangeAnimationState(PLAYER_WALK);
             UpdateMovementParameters(joystick.Horizontal);
-            isMoving = true;
         }
         else if(joystick.Horizontal < -0.5f) 
         {
             ChangeAnimationState(PLAYER_BACKWALK);
             UpdateMovementParameters(joystick.Horizontal);
-            isMoving = true;
         }
         else
         {
             ChangeAnimationState(PLAYER_IDLE);
-            isMoving= false;
         }
 
         //For Player Jump Operation
@@ -88,8 +95,6 @@ public class PlayerGamePlayManager : SingletonGeneric<PlayerGamePlayManager>
         //For Player Crouch Operations
         else if (joystick.Vertical < -0.5f && isGrounded)
         {
-            //playerAnimator.SetBool("isCrouching", true);
-            //playerAnimator.SetFloat("joystickDrag", joystick.Vertical);
             ChangeAnimationState(PLAYER_CROUCH);
         }
         else
@@ -104,7 +109,7 @@ public class PlayerGamePlayManager : SingletonGeneric<PlayerGamePlayManager>
         this.transform.position = new Vector3(move_position.x, this.transform.position.y, this.transform.position.z);
     }
 
-    void StaminaRegeneration()
+    /*void StaminaRegeneration()
     {
         current_Stamina_Regen_Time += Time.deltaTime;
         if (current_Stamina_Regen_Time >= default_Stamina_Regen_Time && playerStaminaHandler.characterStamina < playerStaminaHandler.maxStamina)
@@ -112,13 +117,13 @@ public class PlayerGamePlayManager : SingletonGeneric<PlayerGamePlayManager>
             playerStaminaHandler.IncreaseStamina();
             current_Stamina_Regen_Time = 0;
         }
-    }
+    }*/
 
     public void InflictPlayerDamage()
     {
-        StartCoroutine(PlayHurtAnimation());
-        //ChangeAnimationState(PLAYER_HURT);
-        healthBar.fillAmount -= 0.1f;
+        ChangeAnimationState(PLAYER_HURT);
+        //StartCoroutine(PlayHurtAnimation());
+        healthBar.fillAmount -= 0.1f; 
     }
 
     private void OnCollisionEnter(Collision collision)

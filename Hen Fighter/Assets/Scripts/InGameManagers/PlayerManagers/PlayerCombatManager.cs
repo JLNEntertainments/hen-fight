@@ -5,20 +5,22 @@ using UnityEngine;
 public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 {
     Animator playerAnimator;
+    PlayerGamePlayManager playerGamePlayManager;
 
     static int clicksCnt;
 
     [SerializeField]
     DamageGeneric[] weaponCollider;
 
-    [HideInInspector]
-    public bool isHeavyAttack, isLightAttack, isBlocking;
+    /*[HideInInspector]
+    public bool isHeavyAttack, isLightAttack, isBlocking;*/
     public bool isAttacking;
     float currentAttackTime, defaultAttackTime;
 
     void Start()
     {
-        playerAnimator = FindObjectOfType<PlayerGamePlayManager>().GetComponent<Animator>();
+        playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
+        playerAnimator = playerGamePlayManager.GetComponent<Animator>();
         weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
 
         clicksCnt = 0;
@@ -44,15 +46,15 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         if (currentAttackTime > defaultAttackTime)
         {
             isAttacking = true;
-            isLightAttack = true;
-            isHeavyAttack = false;
+            playerGamePlayManager.isLightAttack = true;
+            playerGamePlayManager.isHeavyAttack = false;
             clicksCnt++;
             //isComboCheck();
-            PlayAttackAnimation(isHeavyAttack, isLightAttack);
+            PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.5f); //use waitforframeends
 
-            PlayerGamePlayManager.Instance.ResetAnimationState();
+            playerGamePlayManager.ResetAnimationState();
             isAttacking = false;
         }
     }
@@ -68,23 +70,23 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         if (currentAttackTime > defaultAttackTime)
         {
             isAttacking = true;
-            isHeavyAttack = true;
-            isLightAttack = false;
+            playerGamePlayManager.isHeavyAttack = true;
+            playerGamePlayManager.isLightAttack = false;
             clicksCnt++;
             //isComboCheck();
-            PlayAttackAnimation(isHeavyAttack, isLightAttack);
+            PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.8f);
-            PlayerGamePlayManager.Instance.ResetAnimationState();
-            PlayerGamePlayManager.Instance.transform.position = new Vector3(PlayerGamePlayManager.Instance.transform.position.x + 1.85f, PlayerGamePlayManager.Instance.transform.position.y, PlayerGamePlayManager.Instance.transform.position.z);
+            playerGamePlayManager.ResetAnimationState();
+            playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.transform.position.x + 1.85f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
             isAttacking = false;
         }
     }
 
     public void OnBlockAttackBtnPressed()
     {
-        isBlocking = true;
-        PlayerGamePlayManager.Instance.ChangeAnimationState(PlayerGamePlayManager.PLAYER_BLOCK);
+        playerGamePlayManager.isBlocking = true;
+        playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_BLOCK);
         clicksCnt = 0;
     }
 
@@ -110,13 +112,13 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             if(lightAttack && obj.gameObject.CompareTag("Beak"))
             {
                 obj.gameObject.SetActive(true);
-                PlayerGamePlayManager.Instance.ChangeAnimationState(PlayerGamePlayManager.PLAYER_LIGHTATTACK);
+                playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_LIGHTATTACK);
                 return;
             }
             else if(heavyAttack && obj.gameObject.CompareTag("Foot"))
             {
                 obj.gameObject.SetActive(true);
-                PlayerGamePlayManager.Instance.ChangeAnimationState(PlayerGamePlayManager.PLAYER_HEAVYATTACK);
+                playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_HEAVYATTACK);
                 return;
             }
         }

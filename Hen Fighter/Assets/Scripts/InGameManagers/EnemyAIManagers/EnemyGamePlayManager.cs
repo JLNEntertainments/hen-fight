@@ -4,13 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
+public class EnemyGamePlayManager : MonoBehaviour
 {
+    [HideInInspector]
+    public PlayerGamePlayManager playerGamePlayManager;
+
     Animator enemyAnimator;
 
     Rigidbody myBody;
-    
-    Transform playerTarget;
 
     StaminaHandlerManager enemyStaminaHandler;
 
@@ -43,7 +44,7 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
         enemyAnimator = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody>();
 
-        playerTarget = GameObject.FindWithTag("Player").transform;
+        playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
     }
 
     void Start()
@@ -52,7 +53,7 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         enemyStaminaHandler = GetComponent<StaminaHandlerManager>();
         
-        speed = 1f;
+        speed = 3f;
         attack_Distance = 3f;
         chase_Player_After_Attack = 1f;
         default_Attack_Time = 4f;
@@ -62,43 +63,35 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
         current_Stamina_Regen_Time = 0;
 
         TurnOffAttackpoints();
+        InvokeRepeating("Attack", 5f, default_Attack_Time);
+        InvokeRepeating("FollowTarget", 1f, 0.1f);
     }
 
     void Update()
     {
-        //Attack();
-        if (!attackPlayer && !followPlayer)
-            StaminaRegeneration();
-    }
-
-    void FixedUpdate()
-    {
-        //FollowTarget();
         UpdateEnemyRotation();
-        Attack();
     }
 
     void FollowTarget()
     {
-        targetDist = Vector3.Distance(transform.position, playerTarget.position);
+        targetDist = Vector3.Distance(transform.position, playerGamePlayManager.transform.position);
 
         if (targetDist > attack_Distance)
         {
-            transform.LookAt(playerTarget.transform);
+            transform.LookAt(playerGamePlayManager.transform);
             myBody.velocity = transform.forward * speed;
 
             if (myBody.velocity.sqrMagnitude != 0)
             {
                 ChangeAnimationState(ENEMY_WALK);
-                //enemyAnimator.SetBool("inMotion", true);
                 followPlayer = true;
             }
         }
-        else if (targetDist <= attack_Distance)
+        
+        if (targetDist <= attack_Distance)
         {
             myBody.velocity = Vector3.zero;
             ChangeAnimationState(ENEMY_IDLE);
-            //enemyAnimator.SetBool("inMotion", false);
             followPlayer = false;
             attackPlayer = true;
         }
@@ -106,67 +99,43 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     void Attack()
     {
-        if (!attackPlayer)
-            return;
+        StartCoroutine(EnemyAttack());
 
-        current_Attack_Time += Time.deltaTime;
-
-        if (current_Attack_Time > default_Attack_Time)
-        {
-            //StartCoroutine(EnemyAttack()); //0 for LightAttack, 1 for HeavyAttack
-            //StopCoroutine(EnemyAttack());
-            EnemyAttack(Random.Range(0, 2));
-            current_Attack_Time = 0f;
-            attackPlayer = true;
-        }
-
-        if (Vector3.Distance(transform.position, playerTarget.position) < attack_Distance + chase_Player_After_Attack)
+        if (Vector3.Distance(transform.position, playerGamePlayManager.transform.position) < attack_Distance + chase_Player_After_Attack)
         {
             attackPlayer = false;
             followPlayer = true;
         }
     }
 
-    void EnemyAttack(int attack)
+    IEnumerator EnemyAttack()
     {
-        //int attack = (Random.Range(0, 2));
+        int attack = (Random.Range(0, 2));
 
         foreach (var obj in enemyWeapons) 
         {
             if (attack == 1 && obj.gameObject.CompareTag("Beak"))
             {
                 obj.gameObject.SetActive(true);
-                //enemyAnimator.SetTrigger("isLightAttack");
                 ChangeAnimationState(ENEMY_LIGHTATTACK);
                 isLightAttack = true;
                 isHeavyAttack = false;
-                ScoreManager.Instance.UpdateEnemyScore("isLight");
-                //yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.8f);
+                ResetAnimationState();
             }
 
             else if (attack == 0 && obj.gameObject.CompareTag("Foot"))
             {
                 obj.gameObject.SetActive(true);
-                //enemyAnimator.SetTrigger("isHeavyAttack");
                 ChangeAnimationState(ENEMY_HEAVYATTACK);
                 isHeavyAttack = true;
                 isLightAttack = false;
-                ScoreManager.Instance.UpdateEnemyScore("isHeavy");
-                //yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(1.2f);
+                ResetAnimationState();
                 //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
-                
+
             }
         } 
-    }
-
-    void StaminaRegeneration()
-    {
-        current_Stamina_Regen_Time += Time.deltaTime;
-        if (current_Stamina_Regen_Time >= default_Stamina_Regen_Time && enemyStaminaHandler.characterStamina < enemyStaminaHandler.maxStamina)
-        {
-            enemyStaminaHandler.IncreaseStamina();
-            current_Stamina_Regen_Time = 0;
-        }
     }
 
     void UpdateEnemyRotation()
@@ -176,8 +145,8 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
 
     public void InflictEnemyDamage()
     {
-        //enemyAnimator.SetTrigger("isHurt");
-        ChangeAnimationState(ENEMY_HURT);
+        //ChangeAnimationState(ENEMY_HURT);
+        //StartCoroutine(PlayHurtAnimation());
         healthBar.fillAmount -= 0.1f;
     }
 
@@ -190,8 +159,27 @@ public class EnemyGamePlayManager : SingletonGeneric<EnemyGamePlayManager>
     void ChangeAnimationState(string newAnimation)
     {
         if (currentAnimaton == newAnimation) return;
-
-        enemyAnimator.PlayInFixedTime(newAnimation);
+        
+        enemyAnimator.Play(newAnimation);
         currentAnimaton = newAnimation;
+    }
+
+    public void ResetAnimationState()
+    {
+        enemyAnimator.Play(ENEMY_IDLE);
+        currentAnimaton = ENEMY_IDLE;
+    }
+
+    IEnumerator PlayHurtAnimation()
+    {
+        ChangeAnimationState(ENEMY_HURT);
+        yield return new WaitForSeconds(2f);
+        ResetAnimationState();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponentInParent<PlayerGamePlayManager>())
+            ChangeAnimationState(ENEMY_HURT);
     }
 }
