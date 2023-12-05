@@ -6698,7 +6698,6 @@ GameObject:
   - component: {fileID: 4427170153933124909}
   - component: {fileID: 4427170153933124908}
   - component: {fileID: 4427170153933125331}
-  - component: {fileID: 4427170153933125330}
   m_Layer: 0
   m_Name: 'Dega AI '
   m_TagString: Untagged
@@ -6734,7 +6733,7 @@ Animator:
   m_GameObject: {fileID: 4427170153933125329}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6cb67fcd34839834fa05f4356f38c5b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: d9526fffe0b96a64fb4f617c7a464e12, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6781,27 +6780,6 @@ MonoBehaviour:
   isLightAttack: 0
   enemyWeapons: []
   currentAnimaton: 
---- !u!114 &4427170153933125330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4427170153933125329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8babb4b523b224242b84ef854d30c444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterObj: {fileID: 0}
-  characterAnim: {fileID: 0}
-  StaminaBarImage: {fileID: 0}
-  characterStamina: 0
-  maxStamina: 0
-  LightAttackDamage: 5
-  MediumAttackDamage: 10
-  HeavyAttackDamage: 20
-  BlockDamageOffset: 4
 --- !u!1 &4467515095446981995
 GameObject:
   m_ObjectHideFlags: 0

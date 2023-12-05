@@ -31,6 +31,7 @@ public class StaminaHandlerManager : MonoBehaviour
 
     void Start()
     {
+
         characterStamina = 50f;
         maxStamina = 100f;
         characterObj = this.gameObject;
