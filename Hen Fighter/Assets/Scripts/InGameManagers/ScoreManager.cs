@@ -6,12 +6,16 @@ using TMPro;
 
 public class ScoreManager : SingletonGeneric<ScoreManager>
 {
+    [SerializeField] GameObject GameOverGameobject;
+
+
     static int enemyScore, playerScore;
     [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage;
 
     public float LightAttackDamage;
     public float HeavyAttackDamage;
 
+    float staminaRegenRate, defaultStaminRegenRate;
 
     public TMP_Text Scoretext;
     [SerializeField]
@@ -26,14 +30,28 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     public float StaminaBarCharingRate;
     public Coroutine StaminaBarRecharge;
+
     void Start()
     {
-       
+        defaultStaminRegenRate = 2f;
+        staminaRegenRate = defaultStaminRegenRate;
+
         maxStamina = 1;
         characterStaminaValueEnemy = maxStamina;
         characterStaminaValuePlayer = maxStamina;
         enemyScore = 0;
         playerScore = 0;
+    }
+
+    private void Update()
+    {
+        staminaRegenRate += Time.deltaTime;
+        if (staminaRegenRate > defaultStaminRegenRate)
+        {
+            RegenerateStamina();
+            staminaRegenRate = 0;
+        }
+            
     }
 
     public void UpdateEnemyScore(string attackType)
@@ -63,13 +81,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
       
     }
 
-
-
     public void UpdatePlayerScore(string attackType)
     {
-        if (StaminaBarRecharge != null) StopCoroutine(StaminaBarRecharge);
-        StaminaBarRecharge = StartCoroutine(RechargeStamina());
-
         if (attackType.Equals("isLight"))
         {
             playerScore += 20;
@@ -86,21 +99,25 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         Debug.Log("Player : " + playerScore);
         Scoretext.text = playerScore.ToString();
         EnemyHealthBarText.text = characterStaminaValueEnemy.ToString();
-
-        if (StaminaBarRecharge != null) StopCoroutine(StaminaBarRecharge);
-        StaminaBarRecharge = StartCoroutine(RechargeStamina());
     }
 
-
-    private IEnumerator RechargeStamina()
+    void RegenerateStamina()
     {
-        yield return new WaitForSeconds(1f);
-        while(characterStaminaValueEnemy  < maxStamina)
+        if(characterStaminaValueEnemy < maxStamina)
+        {
+            characterStaminaValueEnemy += StaminaBarCharingRate / 10f;
+            EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
+        }
+
+        if(characterStaminaValuePlayer < maxStamina)
         {
             characterStaminaValuePlayer += StaminaBarCharingRate / 10f;
-            if (characterStaminaValuePlayer > maxStamina) characterStaminaValuePlayer = maxStamina;
-            PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer = maxStamina;
-            yield return new WaitForSeconds(1f);
+            PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
+    }
+
+    public void ShowGameOverPanel()
+    {
+        GameOverGameobject.SetActive(true);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LetsGo : MonoBehaviour
+public class GameStartCountDown : MonoBehaviour
 {
     public GameObject CountDown;
     void Start()

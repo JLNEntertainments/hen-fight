@@ -84,7 +84,12 @@ public class EnemyAIDecision : MonoBehaviour
         // Logic for the defend action
     }
 
-    private void Dodge()
+    private void Attack2()
+    {
+        // Logic for the attack2 action
+    }
+
+     private void Dodge()
     {
         // Logic for the dodge action
     }
