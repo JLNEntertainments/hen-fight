@@ -24,7 +24,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
 
         clicksCnt = 0;
-        defaultAttackTime = 1f;
+        defaultAttackTime = 3f;
         currentAttackTime = defaultAttackTime;
 
         TurnOffAttackpoints();
@@ -43,7 +43,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     IEnumerator LightAttack()
     {
-        if (currentAttackTime > defaultAttackTime)
+        if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
         {
             isAttacking = true;
             playerGamePlayManager.isLightAttack = true;
@@ -67,7 +67,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     IEnumerator HeavyAttack()
     {
-        if (currentAttackTime > defaultAttackTime)
+        if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
         {
             isAttacking = true;
             playerGamePlayManager.isHeavyAttack = true;

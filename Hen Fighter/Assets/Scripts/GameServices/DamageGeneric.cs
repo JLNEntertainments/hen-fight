@@ -37,7 +37,7 @@ public class DamageGeneric : MonoBehaviour
                 else
                     ScoreManager.Instance.UpdatePlayerScore("isLight");
             }
-            gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 }
