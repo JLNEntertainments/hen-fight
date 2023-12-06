@@ -17,13 +17,13 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     Image healthBar;
 
-    float speed, attack_Distance, chase_Player_After_Attack, targetDist, current_Attack_Time, default_Attack_Time;
+    float speed, attack_Distance, chase_Player_After_Attack, targetDist, current_Attack_Time, default_Attack_Time, enemy_Start;
 
     [HideInInspector]
     public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
 
     [HideInInspector]
-    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack;
+    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage;
 
     public DamageGeneric[] enemyWeapons;
 
@@ -53,7 +53,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         enemyStaminaHandler = GetComponent<StaminaHandlerManager>();
         
-        speed = 3f;
+        speed = 2f;
         attack_Distance = 3f;
         chase_Player_After_Attack = 1f;
         default_Attack_Time = 4f;
@@ -61,15 +61,30 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         current_Attack_Time = default_Attack_Time;
         current_Stamina_Regen_Time = 0;
+        enemy_Start = 0;
 
         TurnOffAttackpoints();
-        InvokeRepeating("Attack", 5f, default_Attack_Time);
-        InvokeRepeating("FollowTarget", 1f, 0.1f);
+        //InvokeRepeating("Attack", 5f, default_Attack_Time);
+        //InvokeRepeating("FollowTarget", 1f, 0.1f);
     }
 
     void Update()
     {
+        current_Attack_Time += Time.deltaTime;
+        enemy_Start += Time.deltaTime;
+
         UpdateEnemyRotation();
+        if (enemy_Start > 4f)
+            FollowTarget();
+    }
+
+    void FixedUpdate()
+    {
+        if (current_Attack_Time > default_Attack_Time && !isTakingDamage)
+        {
+            Attack();
+            current_Attack_Time = 0;
+        }
     }
 
     void FollowTarget()
@@ -99,6 +114,9 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void Attack()
     {
+        if (!attackPlayer)
+            return;
+
         StartCoroutine(EnemyAttack());
 
         if (Vector3.Distance(transform.position, playerGamePlayManager.transform.position) < attack_Distance + chase_Player_After_Attack)
@@ -120,18 +138,20 @@ public class EnemyGamePlayManager : MonoBehaviour
                 ChangeAnimationState(ENEMY_LIGHTATTACK);
                 isLightAttack = true;
                 isHeavyAttack = false;
-                yield return new WaitForSeconds(0.8f);
+                yield return new WaitForSeconds(0.5f);
                 ResetAnimationState();
+                obj.gameObject.SetActive(false);
             }
 
-            else if (attack == 0 && obj.gameObject.CompareTag("Foot"))
+            if (attack == 0 && obj.gameObject.CompareTag("Foot"))
             {
                 obj.gameObject.SetActive(true);
                 ChangeAnimationState(ENEMY_HEAVYATTACK);
                 isHeavyAttack = true;
                 isLightAttack = false;
-                yield return new WaitForSeconds(1.2f);
+                yield return new WaitForSeconds(1f);
                 ResetAnimationState();
+                obj.gameObject.SetActive(false);
                 //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
 
             }
@@ -145,8 +165,9 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public void InflictEnemyDamage()
     {
+        isTakingDamage = true;
         //ChangeAnimationState(ENEMY_HURT);
-        //StartCoroutine(PlayHurtAnimation());
+        StartCoroutine(PlayHurtAnimation());
         healthBar.fillAmount -= 0.1f;
     }
 
@@ -172,14 +193,10 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     IEnumerator PlayHurtAnimation()
     {
-        ChangeAnimationState(ENEMY_HURT);
+        //ChangeAnimationState(ENEMY_HURT);
+        enemyAnimator.SetTrigger("isHurt");
         yield return new WaitForSeconds(2f);
         ResetAnimationState();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponentInParent<PlayerGamePlayManager>())
-            ChangeAnimationState(ENEMY_HURT);
+        isTakingDamage = false;
     }
 }

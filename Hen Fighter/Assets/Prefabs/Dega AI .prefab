@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 41685872098549867}
   - component: {fileID: 1748423048525567542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8170240700119054220}
   - component: {fileID: 7551502599989043888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5573854519827069225}
   - component: {fileID: 2862234990608099737}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5311692584938593827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7693727256730098638}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail21_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ Transform:
   - {fileID: 1521119133525975713}
   m_Father: {fileID: 6148699594216421035}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.455291, y: 1.3426527, z: 37.990192}
 --- !u!1 &323148033220553695
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2817115682809356530}
   - component: {fileID: 761686923018027679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5399628735685213349}
   - component: {fileID: 2652719048706446648}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4804764687054895014}
   - component: {fileID: 8271905309857534886}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing64
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -841,7 +841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5741027164489362132}
   - component: {fileID: 1106549613685689591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5269944223801093629}
   - component: {fileID: 1781216632067280269}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6585880791213200676}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wrist_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1116,7 @@ Transform:
   - {fileID: 8347218012719717035}
   m_Father: {fileID: 2806745869124721376}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.5593796, y: -1.1318302, z: 12.25565}
 --- !u!1 &575276866795414644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9211716529120006332}
   - component: {fileID: 6178164165706813830}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5680329002161187764}
   - component: {fileID: 584892582282100274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Root_M
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1279,7 +1279,7 @@ Transform:
   - {fileID: 6148699594216421035}
   m_Father: {fileID: 4100663139132624684}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.0345651, y: -88.24332, z: -148.3639}
 --- !u!136 &584892582282100274
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1290,10 +1290,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.03
-  m_Height: 0.05
+  m_Radius: 0.02
+  m_Height: 0.06
   m_Direction: 1
-  m_Center: {x: -0.03, y: 0.01, z: 0}
+  m_Center: {x: -0.01, y: 0.01, z: 0}
 --- !u!1 &613168861451452234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5006619589562819925}
   - component: {fileID: 5715602397635135913}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing80
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,7 +1430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697159789509240725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_wings2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5309771442662647731}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3SideEnd_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1516,7 +1516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3732354179418741976}
   - component: {fileID: 7140116702649636650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing74
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8328321784141113425}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: joint4_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1664,7 +1664,7 @@ Transform:
   - {fileID: 3891065877742078228}
   m_Father: {fileID: 2220685187054416875}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.3163412, y: -114.12413, z: -1.4839853}
 --- !u!1 &1061274484360810313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,7 +1675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8088461592090809740}
   - component: {fileID: 6633118072592801200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1802,7 +1802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6676690457020093196}
   - component: {fileID: 5774051858118413199}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing76
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1929,7 +1929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2412579887613498033}
   - component: {fileID: 3055371792136910797}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2056,7 +2056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7535113002818993057}
   - component: {fileID: 8934910695999690298}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2182,7 +2182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5230211075410749646}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Geometry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,7 +2214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3891065877742078228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: joint5_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2245,7 +2245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3276676392038955969}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail32_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2267,7 +2267,7 @@ Transform:
   - {fileID: 8071811864081631289}
   m_Father: {fileID: 6307514053597869693}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.9239884, y: 2.6465564, z: 1.6676636}
 --- !u!1 &1457144924709780144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,7 +2278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2993519674836783884}
   - component: {fileID: 6393942209966499507}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2405,7 +2405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3045663574401139225}
   - component: {fileID: 5841429178837396371}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2532,7 +2532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8003510958444059950}
   - component: {fileID: 5989453648401607095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing88
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2658,7 +2658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5294344394901181007}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ankle_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2680,7 +2680,7 @@ Transform:
   - {fileID: 8980749688754813217}
   m_Father: {fileID: 7896297428545232189}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.51271844, y: 175.70247, z: 156.78575}
 --- !u!1 &1552899432146745997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,7 +2690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1521119133525975713}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail22_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2712,7 +2712,7 @@ Transform:
   - {fileID: 5350988703729415291}
   m_Father: {fileID: 7693727256730098638}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.5953192, y: 0.61530995, z: 24.529898}
 --- !u!1 &1573481862441841067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,7 +2722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8227105523943280094}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ToesEnd_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2755,7 +2755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2814911665698090512}
   - component: {fileID: 5188142555974493064}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing84
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2882,7 +2882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7002160496471451129}
   - component: {fileID: 5528933456465065737}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing87
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3008,7 +3008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6890246534115573155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hip_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3030,7 +3030,7 @@ Transform:
   - {fileID: 2041017215102370074}
   m_Father: {fileID: 5680329002161187764}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.0285163, y: -175.81836, z: 100.63096}
 --- !u!1 &1874704940934630275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6273174213902346144}
   - component: {fileID: 4133035663261259814}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing65
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3168,7 +3168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1143183055541136129}
   - component: {fileID: 2594713663344882095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3295,7 +3295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7339243065762938936}
   - component: {fileID: 1358290379778542853}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing77
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3421,7 +3421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2022831583301120491}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hip_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3443,7 +3443,7 @@ Transform:
   - {fileID: 7896297428545232189}
   m_Father: {fileID: 5680329002161187764}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.3781116, y: -177.91805, z: -3.549867}
 --- !u!1 &1962658527588313255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3454,7 +3454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8507808615781017138}
   - component: {fileID: 6028443274748047617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing69
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3580,7 +3580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8275968989880478778}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3SideEnd_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3612,7 +3612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5090435547250367765}
   - component: {fileID: 4168115935650275180}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: heckles18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3738,7 +3738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7150568727279499110}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3770,7 +3770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6936177926343303890}
   - component: {fileID: 5596889349635567803}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3897,7 +3897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5786025151518498164}
   - component: {fileID: 3456998538951602016}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4024,7 +4024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4055082491784294977}
   - component: {fileID: 7281007584598811711}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4150,7 +4150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2104173631556301315}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4205,7 +4205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5559867355292177789}
   - component: {fileID: 474933404785668384}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4331,7 +4331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6148699594216421035}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail2_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4355,7 +4355,7 @@ Transform:
   - {fileID: 7693727256730098638}
   m_Father: {fileID: 5680329002161187764}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.5017458, y: 1.6556368, z: 103.4943}
 --- !u!1 &2512720207777367901
 GameObject:
   m_ObjectHideFlags: 0
@@ -4366,7 +4366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1072472237822408324}
   - component: {fileID: 9001964233395450510}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4493,7 +4493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5304800400307841957}
   - component: {fileID: 2615453117139961258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4619,7 +4619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7604944387591498784}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ankle_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4641,7 +4641,7 @@ Transform:
   - {fileID: 4220637617841643696}
   m_Father: {fileID: 2041017215102370074}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.5765443, y: 176.06154, z: -166.10335}
 --- !u!1 &2826743600538108784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,7 +4652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069018226878825458}
   - component: {fileID: 3938595175487822}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4779,7 +4779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4185827307205594177}
   - component: {fileID: 5311523863825132672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4905,7 +4905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3985192314858433828}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wrist_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4927,7 +4927,7 @@ Transform:
   - {fileID: 161151605114413926}
   m_Father: {fileID: 3610878695628184841}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.5415027, y: -1.3907375, z: 13.259146}
 --- !u!1 &3105906524378523217
 GameObject:
   m_ObjectHideFlags: 0
@@ -4938,7 +4938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6466976222939988810}
   - component: {fileID: 5155415924822303389}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing70
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5064,7 +5064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9093829120094393370}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3ASide2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5086,7 +5086,7 @@ Transform:
   - {fileID: 5959190618123649682}
   m_Father: {fileID: 8496505176206089943}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.8604015, y: 4.523353, z: 20.369986}
 --- !u!1 &3163172800555310078
 GameObject:
   m_ObjectHideFlags: 0
@@ -5097,7 +5097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5147857453300196966}
   - component: {fileID: 556419139036146200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5224,7 +5224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1044524805995222650}
   - component: {fileID: 4492618039477345052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5350,7 +5350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8071811864081631289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3End_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5382,7 +5382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844491439873511113}
   - component: {fileID: 7829743945266381496}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5509,7 +5509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4720271064772223817}
   - component: {fileID: 4283165592668927036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5636,7 +5636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5249886599593671595}
   - component: {fileID: 5699385664520745999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: eye_deets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5763,7 +5763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7859543202668053044}
   - component: {fileID: 3000517102739673814}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5889,7 +5889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3610878695628184841}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elbow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5911,7 +5911,7 @@ Transform:
   - {fileID: 3985192314858433828}
   m_Father: {fileID: 1520439849801732290}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.025722, y: 45.754105, z: -11.26534}
 --- !u!1 &3913072415595633981
 GameObject:
   m_ObjectHideFlags: 0
@@ -5922,7 +5922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8553220046329758027}
   - component: {fileID: 3512390370539724024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: heckles2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6049,7 +6049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5229157468148452837}
   - component: {fileID: 8876392522004877907}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6176,7 +6176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5211736948588067547}
   - component: {fileID: 2955907079906228078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: L_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6303,7 +6303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3596198211111648873}
   - component: {fileID: 2041699192607508595}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing72
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6429,7 +6429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6890670707673854271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6470,7 +6470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4220637617841643696}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Toes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6492,7 +6492,7 @@ Transform:
   - {fileID: 8227105523943280094}
   m_Father: {fileID: 7604944387591498784}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.013233722, y: -179.99998, z: 94.98406}
 --- !u!1 &4280104102164689518
 GameObject:
   m_ObjectHideFlags: 0
@@ -6502,7 +6502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2220685187054416875}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6527,7 +6527,7 @@ Transform:
   - {fileID: 7803659008393029816}
   m_Father: {fileID: 7234148597159226207}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.7230954, y: 0.5316906, z: -30.469828}
 --- !u!1 &4353865702319367057
 GameObject:
   m_ObjectHideFlags: 0
@@ -6538,7 +6538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5458082372502433451}
   - component: {fileID: 8123558550809429876}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6664,7 +6664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4351809605221571818}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: joint5_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6698,7 +6698,7 @@ GameObject:
   - component: {fileID: 4427170153933124909}
   - component: {fileID: 4427170153933124908}
   - component: {fileID: 4427170153933125331}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Dega AI '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6714,7 +6714,7 @@ Transform:
   m_GameObject: {fileID: 4427170153933125329}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.21, y: 2, z: 1.25}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4100663139132624684}
@@ -6772,12 +6772,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f72089bce45d44fbf64e4453757c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGamePlayManager: {fileID: 0}
   current_Stamina_Regen_Time: 0
   default_Stamina_Regen_Time: 0
   followPlayer: 0
   attackPlayer: 0
   isHeavyAttack: 0
   isLightAttack: 0
+  isTakingDamage: 0
   enemyWeapons: []
   currentAnimaton: 
 --- !u!1 &4467515095446981995
@@ -6789,7 +6791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2861920475797954581}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3ASide_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6811,7 +6813,7 @@ Transform:
   - {fileID: 5924970695214127746}
   m_Father: {fileID: 6148699594216421035}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.4688501, y: -163.41855, z: -3.68096}
 --- !u!1 &4531902954359492653
 GameObject:
   m_ObjectHideFlags: 0
@@ -6822,7 +6824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8147988153449065931}
   - component: {fileID: 7978376539295663439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: heckles19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6949,7 +6951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6705345898237794273}
   - component: {fileID: 1139361182177041735}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7075,7 +7077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7234148597159226207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Neck_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7097,7 +7099,7 @@ Transform:
   - {fileID: 2220685187054416875}
   m_Father: {fileID: 1942859453304336147}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.4795248, y: -0.9218906, z: 50.122036}
 --- !u!1 &4703579597749797468
 GameObject:
   m_ObjectHideFlags: 0
@@ -7108,7 +7110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3245884073197838412}
   - component: {fileID: 8211275979202127282}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: head_muscle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7234,7 +7236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4378045036966558133}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MainSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7267,7 +7269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1600565556386628979}
   - component: {fileID: 1456509918666929270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing59
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7394,7 +7396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6138798228124746714}
   - component: {fileID: 1010849205419297151}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7521,7 +7523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752679562091662724}
   - component: {fileID: 1452708277600333547}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing81
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7647,7 +7649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 161151605114413926}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IndexFinger1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7679,7 +7681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4776783748305236467}
   - component: {fileID: 4127603163767977266}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7806,7 +7808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4658457399340521471}
   - component: {fileID: 5479762959513662850}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: heckles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7932,7 +7934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2041017215102370074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Knee_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7954,7 +7956,7 @@ Transform:
   - {fileID: 7604944387591498784}
   m_Father: {fileID: 6890246534115573155}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.328186}
 --- !u!1 &4963694148224118552
 GameObject:
   m_ObjectHideFlags: 0
@@ -7964,7 +7966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6394036628343163419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_wings2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8018,7 +8020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8322680164185160742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3ASide_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8040,7 +8042,7 @@ Transform:
   - {fileID: 8496505176206089943}
   m_Father: {fileID: 6148699594216421035}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.468852, y: 163.41855, z: 176.31905}
 --- !u!1 &5049207216817507644
 GameObject:
   m_ObjectHideFlags: 0
@@ -8050,7 +8052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5440252681811743667}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scapula_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8072,7 +8074,7 @@ Transform:
   - {fileID: 1520439849801732290}
   m_Father: {fileID: 1942859453304336147}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 65.086754, y: 147.27116, z: -106.42517}
 --- !u!1 &5109564830178078211
 GameObject:
   m_ObjectHideFlags: 0
@@ -8083,7 +8085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6566920011024073534}
   - component: {fileID: 654196173421574143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing78
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8210,7 +8212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4101793697866622523}
   - component: {fileID: 3109982800016789256}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8336,7 +8338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5350988703729415291}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8358,7 +8360,7 @@ Transform:
   - {fileID: 6307514053597869693}
   m_Father: {fileID: 1521119133525975713}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.7316933, y: -0.45484573, z: 26.67109}
 --- !u!1 &5250914440111203592
 GameObject:
   m_ObjectHideFlags: 0
@@ -8369,7 +8371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6809338558002081012}
   - component: {fileID: 9111850249884604908}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8496,7 +8498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9182702096427823642}
   - component: {fileID: 5057518327414850834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8623,7 +8625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401228884613250231}
   - component: {fileID: 6728141394941833610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8749,7 +8751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8980749688754813217}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Toes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8771,7 +8773,7 @@ Transform:
   - {fileID: 8583208055720269984}
   m_Father: {fileID: 5294344394901181007}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.013233189, y: -179.99998, z: 94.98406}
 --- !u!1 &5340590324206244574
 GameObject:
   m_ObjectHideFlags: 0
@@ -8781,7 +8783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5348892821257323088}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: joint2_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8814,7 +8816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 591257782201745234}
   - component: {fileID: 7533408741389688125}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8940,7 +8942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605245714101650060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3ASide2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8962,7 +8964,7 @@ Transform:
   - {fileID: 953121411363028137}
   m_Father: {fileID: 5924970695214127746}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.022286456, y: 4.0673, z: 20.63942}
 --- !u!1 &5549892502049933686
 GameObject:
   m_ObjectHideFlags: 0
@@ -8972,7 +8974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6570367677234897285}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: joint1_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8994,7 +8996,7 @@ Transform:
   - {fileID: 5348892821257323088}
   m_Father: {fileID: 2220685187054416875}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.561539}
 --- !u!1 &5785444082471907610
 GameObject:
   m_ObjectHideFlags: 0
@@ -9005,7 +9007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6393825148470662484}
   - component: {fileID: 4268539304251831872}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9132,7 +9134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6856204223991772139}
   - component: {fileID: 8703160003883194937}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9259,7 +9261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4858959340750978695}
   - component: {fileID: 1190663632920701295}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing61
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9385,7 +9387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 978877573096025959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scapula_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9407,7 +9409,7 @@ Transform:
   - {fileID: 6785456622634196644}
   m_Father: {fileID: 1942859453304336147}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -65.08673, y: -147.27118, z: 73.57482}
 --- !u!1 &6283225378420779821
 GameObject:
   m_ObjectHideFlags: 0
@@ -9418,7 +9420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372630564553551814}
   - component: {fileID: 3555440967821350911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing86
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9545,7 +9547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7425748885438408185}
   - component: {fileID: 8429156845691488991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9672,7 +9674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7533919670427721871}
   - component: {fileID: 4223530855042269331}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9798,7 +9800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8496505176206089943}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3ASide1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9820,7 +9822,7 @@ Transform:
   - {fileID: 9093829120094393370}
   m_Father: {fileID: 8322680164185160742}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -7.770261, y: 175.43495, z: -143.55476}
 --- !u!1 &6464144986997747349
 GameObject:
   m_ObjectHideFlags: 0
@@ -9830,7 +9832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6307514053597869693}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail31_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9852,7 +9854,7 @@ Transform:
   - {fileID: 3276676392038955969}
   m_Father: {fileID: 5350988703729415291}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.2140826, y: 0.42531443, z: 36.673424}
 --- !u!1 &6489224169279099035
 GameObject:
   m_ObjectHideFlags: 0
@@ -9863,7 +9865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3069485251053342602}
   - component: {fileID: 2388763174750666209}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing71
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9989,7 +9991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4100663139132624684}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DeformationSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10022,7 +10024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1407027199405880285}
   - component: {fileID: 8321869387044900469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing92
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10148,7 +10150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4545559146098277330}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3Side2_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10170,7 +10172,7 @@ Transform:
   - {fileID: 5309771442662647731}
   m_Father: {fileID: 2795955993015526268}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.7881057, y: 3.7622397, z: -27.094933}
 --- !u!1 &6708670617095825124
 GameObject:
   m_ObjectHideFlags: 0
@@ -10181,7 +10183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4786534258236495899}
   - component: {fileID: 4834754165690438814}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing83
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10308,7 +10310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179602170747021038}
   - component: {fileID: 8825658611039831535}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing89
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10435,7 +10437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5119118203243354961}
   - component: {fileID: 2097014269542899535}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: eye_deets1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10562,7 +10564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653406668143370359}
   - component: {fileID: 6577675210166832611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10689,7 +10691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3858211448901309867}
   - component: {fileID: 659724453818744902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10816,7 +10818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7436277490944834764}
   - component: {fileID: 3625200838192861285}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10942,7 +10944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5924970695214127746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3ASide1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10964,7 +10966,7 @@ Transform:
   - {fileID: 2605245714101650060}
   m_Father: {fileID: 2861920475797954581}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.5749, y: 176.8269, z: -143.00279}
 --- !u!1 &7063830801436760468
 GameObject:
   m_ObjectHideFlags: 0
@@ -10975,7 +10977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9037338747932372862}
   - component: {fileID: 4668796250724926200}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11139,7 +11141,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 64
-  radius: 0.5
+  radius: 1
   damage: 2
   is_Player: 0
   is_Enemy: 1
@@ -11204,7 +11206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4594262161066944635}
   - component: {fileID: 8406605861363446823}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11330,7 +11332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8124594562685199241}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: joint3_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11351,7 +11353,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2220685187054416875}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.6328886, y: -90, z: 180}
 --- !u!1 &7221363236397277952
 GameObject:
   m_ObjectHideFlags: 0
@@ -11362,7 +11364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484862352743173965}
   - component: {fileID: 3951422068380512944}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11489,7 +11491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730792106334061672}
   - component: {fileID: 7191519283169455695}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11615,7 +11617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2323424540149934168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3Side2_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11637,7 +11639,7 @@ Transform:
   - {fileID: 8275968989880478778}
   m_Father: {fileID: 5524180838860677323}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.7756106, y: 6.117917, z: -27.199797}
 --- !u!1 &7554093860295213029
 GameObject:
   m_ObjectHideFlags: 0
@@ -11648,7 +11650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3091669786746340247}
   - component: {fileID: 7027783649533972959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: heckles20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11775,7 +11777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2599658836302468084}
   - component: {fileID: 4804742608569860184}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: heckles7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11902,7 +11904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514197507738258352}
   - component: {fileID: 5555681702899421485}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12029,7 +12031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2331746879425449826}
   - component: {fileID: 5423060944315109944}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12156,7 +12158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9128038492361941995}
   - component: {fileID: 3814813593687064825}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12283,7 +12285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8010637363931765792}
   - component: {fileID: 3246654516799534195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12410,7 +12412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6239351069037216756}
   - component: {fileID: 3891801139368747644}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing75
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12536,7 +12538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8583208055720269984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ToesEnd_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12568,7 +12570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274437641510122288}
   - component: {fileID: 7880783316133632238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12695,7 +12697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3207451731692070833}
   - component: {fileID: 955678535732282847}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: heckles17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12821,7 +12823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4237055541470802689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_wings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12876,7 +12878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 541229333581543012}
   - component: {fileID: 3749722740211850517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13003,7 +13005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3597178406024922494}
   - component: {fileID: 4405860879512123869}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing58
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13130,7 +13132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 802813781204348863}
   - component: {fileID: 2356034324078669368}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing73
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13256,7 +13258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7472820802258214943}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: feathers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13292,7 +13294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7338007852713747028}
   - component: {fileID: 3158237362701639262}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13419,7 +13421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71483860907894985}
   - component: {fileID: 7857774847151432157}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing79
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13546,7 +13548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2632901449245555652}
   - component: {fileID: 7298293801968460894}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13673,7 +13675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7029171680464888709}
   - component: {fileID: 861177787653253655}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13799,7 +13801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2795955993015526268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3Side1_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13821,7 +13823,7 @@ Transform:
   - {fileID: 4545559146098277330}
   m_Father: {fileID: 5959190618123649682}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.8152555, y: 4.09617, z: -33.518555}
 --- !u!1 &8027860737958130598
 GameObject:
   m_ObjectHideFlags: 0
@@ -13832,7 +13834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2120484847725749785}
   - component: {fileID: 6546745654739892342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13958,7 +13960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8499559268962848143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spine1_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13980,7 +13982,7 @@ Transform:
   - {fileID: 1942859453304336147}
   m_Father: {fileID: 5680329002161187764}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.011881113, y: 0.8633251, z: -25.872906}
 --- !u!1 &8190088346119140745
 GameObject:
   m_ObjectHideFlags: 0
@@ -13991,7 +13993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6754401709950530707}
   - component: {fileID: 6329605218639922279}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14117,7 +14119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5524180838860677323}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3Side1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14139,7 +14141,7 @@ Transform:
   - {fileID: 2323424540149934168}
   m_Father: {fileID: 953121411363028137}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.6611663, y: 5.9743857, z: -33.47966}
 --- !u!1 &8237156198362341574
 GameObject:
   m_ObjectHideFlags: 0
@@ -14149,7 +14151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7896297428545232189}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Knee_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14171,7 +14173,7 @@ Transform:
   - {fileID: 5294344394901181007}
   m_Father: {fileID: 2022831583301120491}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -78.07247}
 --- !u!1 &8320477155790011837
 GameObject:
   m_ObjectHideFlags: 0
@@ -14181,7 +14183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520439849801732290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shoulder_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14203,7 +14205,7 @@ Transform:
   - {fileID: 3610878695628184841}
   m_Father: {fileID: 5440252681811743667}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -20.757946, y: 30.667952, z: -1.9241638}
 --- !u!1 &8347161204099066240
 GameObject:
   m_ObjectHideFlags: 0
@@ -14214,7 +14216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5729463563424045498}
   - component: {fileID: 7109341748503462960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing62
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14340,7 +14342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942859453304336147}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chest_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14364,7 +14366,7 @@ Transform:
   - {fileID: 5440252681811743667}
   m_Father: {fileID: 8499559268962848143}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.058161717, y: -0.3086413, z: 6.3121567}
 --- !u!1 &8361600249684271511
 GameObject:
   m_ObjectHideFlags: 0
@@ -14374,7 +14376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 953121411363028137}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3Side_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14396,7 +14398,7 @@ Transform:
   - {fileID: 5524180838860677323}
   m_Father: {fileID: 2605245714101650060}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.6446705, y: 178.14264, z: 134.01228}
 --- !u!1 &8463890212670932194
 GameObject:
   m_ObjectHideFlags: 0
@@ -14407,7 +14409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2932265134219317651}
   - component: {fileID: 495380613902735359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14533,7 +14535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2806745869124721376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elbow_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14555,7 +14557,7 @@ Transform:
   - {fileID: 6585880791213200676}
   m_Father: {fileID: 6785456622634196644}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.025721, y: 45.754112, z: -11.265332}
 --- !u!1 &8493439927996445268
 GameObject:
   m_ObjectHideFlags: 0
@@ -14566,7 +14568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5852625005388990841}
   - component: {fileID: 3512993409443063546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing91
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14692,7 +14694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8406676217158702759}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MotionSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14724,7 +14726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8347218012719717035}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IndexFinger1_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14755,7 +14757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5959190618123649682}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail3Side_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14777,7 +14779,7 @@ Transform:
   - {fileID: 2795955993015526268}
   m_Father: {fileID: 9093829120094393370}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.6446705, y: 178.14264, z: 134.01228}
 --- !u!1 &8758041315550142653
 GameObject:
   m_ObjectHideFlags: 0
@@ -14788,7 +14790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3754069107600701311}
   - component: {fileID: 629254565783039047}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14915,7 +14917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6345140922551842519}
   - component: {fileID: 5221867646936540493}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15042,7 +15044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8233183797776181405}
   - component: {fileID: 5653561709253713194}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing67
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15169,7 +15171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5767918736969738657}
   - component: {fileID: 1714196705871950389}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15296,7 +15298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3668344519739947017}
   - component: {fileID: 2373071381393327166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rwing15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15422,7 +15424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6785456622634196644}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shoulder_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15444,7 +15446,7 @@ Transform:
   - {fileID: 2806745869124721376}
   m_Father: {fileID: 978877573096025959}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -20.757946, y: 30.667952, z: -1.9241638}
 --- !u!1 &9091836713155670696
 GameObject:
   m_ObjectHideFlags: 0
@@ -15455,7 +15457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2778190525799125866}
   - component: {fileID: 5125327429557688999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: R_eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15582,7 +15584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110286162022371853}
   - component: {fileID: 4425915729634908938}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15709,7 +15711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6478139167597181424}
   - component: {fileID: 5685899246666969056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lwing63
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15835,7 +15837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7803659008393029816}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: joint4_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15857,4 +15859,4 @@ Transform:
   - {fileID: 4351809605221571818}
   m_Father: {fileID: 2220685187054416875}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.3163416, y: 114.12412, z: 178.516}

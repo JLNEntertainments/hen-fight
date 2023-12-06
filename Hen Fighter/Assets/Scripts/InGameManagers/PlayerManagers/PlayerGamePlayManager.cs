@@ -12,7 +12,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     Joystick joystick;
 
     Image healthBar;
-    
+
     Animator playerAnimator;
 
     StaminaHandlerManager playerStaminaHandler;
@@ -27,9 +27,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     public string currentAnimaton;
 
     [HideInInspector]
-    public bool isHeavyAttack, isLightAttack, isBlocking;
-
-    float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
+    public bool isHeavyAttack, isLightAttack, isBlocking, isTakingDamage;
 
     //Animation States
     [HideInInspector]
@@ -46,8 +44,6 @@ public class PlayerGamePlayManager : MonoBehaviour
         playerRb = this.GetComponent<Rigidbody>();
 
         speed = 2;
-        default_Stamina_Regen_Time = 8f;
-        current_Stamina_Regen_Time = 0;
 
         PLAYER_IDLE = "Idle";
         PLAYER_WALK = "Walking";
@@ -62,19 +58,17 @@ public class PlayerGamePlayManager : MonoBehaviour
     void Update()
     {
         CheckMovement();
-        /*if (!PlayerCombatManager.Instance.isAttacking && !isMoving)
-            StaminaRegeneration();*/
     }
 
     void CheckMovement()
     {
         //For Player Movement Operations
-        if (joystick.Horizontal > 0.5f) 
+        if (joystick.Horizontal > 0.5f)
         {
             ChangeAnimationState(PLAYER_WALK);
             UpdateMovementParameters(joystick.Horizontal);
         }
-        else if(joystick.Horizontal < -0.5f) 
+        else if (joystick.Horizontal < -0.5f)
         {
             ChangeAnimationState(PLAYER_BACKWALK);
             UpdateMovementParameters(joystick.Horizontal);
@@ -109,22 +103,12 @@ public class PlayerGamePlayManager : MonoBehaviour
         this.transform.position = new Vector3(move_position.x, this.transform.position.y, this.transform.position.z);
     }
 
-    /*void StaminaRegeneration()
-    {
-        current_Stamina_Regen_Time += Time.deltaTime;
-        if (current_Stamina_Regen_Time >= default_Stamina_Regen_Time && playerStaminaHandler.characterStamina < playerStaminaHandler.maxStamina)
-        {
-            playerStaminaHandler.IncreaseStamina();
-            current_Stamina_Regen_Time = 0;
-        }
-    }*/
-
     public void InflictPlayerDamage()
     {
-        ChangeAnimationState(PLAYER_HURT);
-        //StartCoroutine(PlayHurtAnimation());
-        healthBar.fillAmount -= 0.1f; 
-        
+        isTakingDamage = true;
+        //ChangeAnimationState(PLAYER_HURT);
+        StartCoroutine(PlayHurtAnimation());
+        healthBar.fillAmount -= 0.1f;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -153,8 +137,10 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     IEnumerator PlayHurtAnimation()
     {
-        ChangeAnimationState(PLAYER_HURT);
-        yield return new WaitForSeconds(2f);
+        //ChangeAnimationState(PLAYER_HURT);
+        playerAnimator.SetTrigger("isHurt");
+        yield return new WaitForSeconds(0.8f);
         ResetAnimationState();
+        isTakingDamage = false;
     }
 }
