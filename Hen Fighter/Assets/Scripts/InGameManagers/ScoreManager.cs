@@ -6,6 +6,9 @@ using TMPro;
 
 public class ScoreManager : SingletonGeneric<ScoreManager>
 {
+    [SerializeField] GameObject GameOverGameobject;
+
+
     static int enemyScore, playerScore;
     [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage;
 
@@ -27,6 +30,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     public float StaminaBarCharingRate;
     public Coroutine StaminaBarRecharge;
+
     void Start()
     {
         defaultStaminRegenRate = 2f;
@@ -110,5 +114,10 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValuePlayer += StaminaBarCharingRate / 10f;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
+    }
+
+    public void ShowGameOverPanel()
+    {
+        GameOverGameobject.SetActive(true);
     }
 }

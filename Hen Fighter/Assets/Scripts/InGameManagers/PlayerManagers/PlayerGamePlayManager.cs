@@ -124,6 +124,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         ChangeAnimationState(PLAYER_HURT);
         //StartCoroutine(PlayHurtAnimation());
         healthBar.fillAmount -= 0.1f; 
+        
     }
 
     private void OnCollisionEnter(Collision collision)

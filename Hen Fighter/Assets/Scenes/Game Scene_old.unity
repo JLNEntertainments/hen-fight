@@ -6517,6 +6517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d328c584ec2b96c4b9b7926b31777022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOverGameobject: {fileID: 1052413052}
   EnemyStaminaBarImage: {fileID: 395522068}
   PlayerStaminaBarImage: {fileID: 781292078}
   LightAttackDamage: 0.1
