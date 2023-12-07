@@ -12,6 +12,7 @@ TagManager:
   - Left Arm
   - Right Arm
   - Enemy
+  - TopFloor
   layers:
   - Default
   - TransparentFX
