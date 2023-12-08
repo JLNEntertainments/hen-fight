@@ -17,3 +17,4 @@ MonoBehaviour:
   Power: 40
   Defense: 80
   DropDown: '1.High Energy level  2.High Anxiety Level '
+  particles: {fileID: 1723392146576908007, guid: 62db0b2fb65f2fa47a28d492d3254642, type: 3}
