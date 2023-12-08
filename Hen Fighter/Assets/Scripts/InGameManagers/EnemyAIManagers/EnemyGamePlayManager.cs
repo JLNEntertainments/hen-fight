@@ -9,21 +9,30 @@ public class EnemyGamePlayManager : MonoBehaviour
     [HideInInspector]
     public PlayerGamePlayManager playerGamePlayManager;
 
+    EnemyAIDecision enemyAIDecision;
+
     Animator enemyAnimator;
 
     Rigidbody myBody;
 
-    StaminaHandlerManager enemyStaminaHandler;
-
     Image healthBar;
 
-    float speed, attack_Distance, chase_Player_After_Attack, targetDist, current_Attack_Time, default_Attack_Time, enemy_Start;
+    [HideInInspector]
+    public float enemyHealth;
 
+    float speed, chase_Player_After_Attack, targetDist;
+
+    [HideInInspector]
+    public float default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina;
+
+    [HideInInspector]
+    public float attack_Distance;
+    
     [HideInInspector]
     public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
 
     [HideInInspector]
-    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage;
+    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage, isAttacking;
 
     public DamageGeneric[] enemyWeapons;
 
@@ -43,6 +52,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         enemyAnimator = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody>();
+        enemyAIDecision = GetComponent<EnemyAIDecision>();
 
         playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
     }
@@ -51,47 +61,47 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
-        enemyStaminaHandler = GetComponent<StaminaHandlerManager>();
         
         speed = 2f;
-        attack_Distance = 3f;
+        enemyHealth = 1f;
+        attack_Distance = 2.5f;
         chase_Player_After_Attack = 1f;
-        default_Attack_Time = 4f;
-        default_Stamina_Regen_Time = 8f;
+        enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
+        default_Attack_Time = 3f;
+        default_Stamina_Regen_Time = 8f;
         current_Attack_Time = default_Attack_Time;
         current_Stamina_Regen_Time = 0;
         enemy_Start = 0;
 
         TurnOffAttackpoints();
-        //InvokeRepeating("Attack", 5f, default_Attack_Time);
-        //InvokeRepeating("FollowTarget", 1f, 0.1f);
     }
 
     void Update()
     {
-        current_Attack_Time += Time.deltaTime;
-        enemy_Start += Time.deltaTime;
+        /*current_Attack_Time += Time.deltaTime;
+        enemy_Start += Time.deltaTime;*/
 
         UpdateEnemyRotation();
-        if (enemy_Start > 4f)
-            FollowTarget();
+
+        /*if (enemy_Start > 4f)
+            FollowTarget();*/
     }
 
     void FixedUpdate()
     {
-        if (current_Attack_Time > default_Attack_Time && !isTakingDamage)
+        /*if ((current_Attack_Time > default_Attack_Time) && !isTakingDamage && (enemy_Stamina > 0))
         {
             Attack();
             current_Attack_Time = 0;
-        }
+        }*/
     }
 
-    void FollowTarget()
+    public void FollowTarget()
     {
         targetDist = Vector3.Distance(transform.position, playerGamePlayManager.transform.position);
 
-        if (targetDist > attack_Distance)
+        if (enemyAIDecision.IsPlayerInChaseRange())
         {
             transform.LookAt(playerGamePlayManager.transform);
             myBody.velocity = transform.forward * speed;
@@ -102,24 +112,33 @@ public class EnemyGamePlayManager : MonoBehaviour
                 followPlayer = true;
             }
         }
-        
-        if (targetDist <= attack_Distance)
+
+        /*else if(enemyAIDecision.IsPlayerInAttackRange())
         {
             myBody.velocity = Vector3.zero;
             ChangeAnimationState(ENEMY_IDLE);
             followPlayer = false;
             attackPlayer = true;
-        }
+        }*/
     }
 
-    void Attack()
+    public void PrepareAttack()
+    {
+        myBody.velocity = Vector3.zero;
+        ChangeAnimationState(ENEMY_IDLE);
+        followPlayer = false;
+        attackPlayer = true;
+    }
+
+    public void Attack()
     {
         if (!attackPlayer)
             return;
 
         StartCoroutine(EnemyAttack());
-
-        if (Vector3.Distance(transform.position, playerGamePlayManager.transform.position) < attack_Distance + chase_Player_After_Attack)
+        //Vector3.Distance(transform.position, playerGamePlayManager.transform.position) < attack_Distance + chase_Player_After_Attack
+        
+        if (!enemyAIDecision.IsPlayerInAttackRange())
         {
             attackPlayer = false;
             followPlayer = true;
@@ -153,7 +172,6 @@ public class EnemyGamePlayManager : MonoBehaviour
                 ResetAnimationState();
                 obj.gameObject.SetActive(false);
                 //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
-
             }
         } 
     }
@@ -161,14 +179,6 @@ public class EnemyGamePlayManager : MonoBehaviour
     void UpdateEnemyRotation()
     {
         transform.eulerAngles = new Vector3(0, -90f, 0);
-    }
-
-    public void InflictEnemyDamage()
-    {
-        isTakingDamage = true;
-        //ChangeAnimationState(ENEMY_HURT);
-        StartCoroutine(PlayHurtAnimation());
-        healthBar.fillAmount -= 0.1f;
     }
 
     void TurnOffAttackpoints()
@@ -191,10 +201,17 @@ public class EnemyGamePlayManager : MonoBehaviour
         currentAnimaton = ENEMY_IDLE;
     }
 
+    public void InflictEnemyDamage()
+    {
+        isTakingDamage = true;
+        StartCoroutine(PlayHurtAnimation());
+        enemyHealth -= 0.1f;
+        healthBar.fillAmount = enemyHealth;
+    }
+
     IEnumerator PlayHurtAnimation()
     {
-        //ChangeAnimationState(ENEMY_HURT);
-        enemyAnimator.SetTrigger("isHurt");
+        ChangeAnimationState(ENEMY_HURT);
         yield return new WaitForSeconds(2f);
         ResetAnimationState();
         isTakingDamage = false;

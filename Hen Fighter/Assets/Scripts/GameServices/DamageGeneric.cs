@@ -11,7 +11,7 @@ public class DamageGeneric : MonoBehaviour
 
     public bool is_Player, is_Enemy;
 
-    void Update()
+    void FixedUpdate()
     {
         DetectCollision();
     }
@@ -23,11 +23,18 @@ public class DamageGeneric : MonoBehaviour
         {
             if (is_Enemy && hit != null)
             {
-                hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictPlayerDamage();
+                
                 if (hit[0].GetComponentInParent<PlayerGamePlayManager>().enemyGamePlayManager.isHeavyAttack)
+                {
+                    hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictHeavyDamage();
                     ScoreManager.Instance.UpdateEnemyScore("isHeavy");
-                else
+                }
+                else if(hit[0].GetComponentInParent<PlayerGamePlayManager>().enemyGamePlayManager.isLightAttack)
+                {
+                    hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictLightDamage();
                     ScoreManager.Instance.UpdateEnemyScore("isLight");
+                }
+                    
             }
             if (is_Player && hit != null)
             {
