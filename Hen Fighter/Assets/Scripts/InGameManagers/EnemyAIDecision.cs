@@ -4,73 +4,100 @@ using UnityEngine;
 
 public class EnemyAIDecision : MonoBehaviour
 {
-    private Transform player; // Reference to the player's transform
-    private PlayerGamePlayManager playerController; // Reference to the player's controller
-    private float attackRange = 5f; // The range at which the enemy can initiate attacks
-    private float lowHealthThreshold = 30f; // The health threshold below which the enemy considers itself low on health
-    private float specialAttackThreshold = 0.5f; // The threshold probability for the enemy to detect a special attack from the player
-    private float distanceToPlayer; // The current distance to the player
-    private float currentHealth; // The current health of the enemy
+    EnemyGamePlayManager enemyGamePlayManager;
 
-    // Other properties may include variables related to movement speed, animation references, etc.
+    float lowHealthThreshold = 0.2f;
+    float lowStaminaThreshold = 0.3f;
+    float specialAttackThreshold = 0.5f;
+    float distanceToPlayer;
 
     private void Start()
     {
-        // Initialization logic, such as finding the player object and setting up initial values
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerController = player.GetComponent<PlayerGamePlayManager>();
-        // Additional initialization code...
+        enemyGamePlayManager = this.GetComponent<EnemyGamePlayManager>();
     }
 
-    private void Update()
+    void Update()
     {
-        // Update logic that needs to happen every frame
-        distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        // Additional update code...
-        MakeDecision();
+        distanceToPlayer = Vector3.Distance(this.transform.position, enemyGamePlayManager.playerGamePlayManager.transform.position);
+
+        enemyGamePlayManager.current_Attack_Time += Time.deltaTime;
+        enemyGamePlayManager.enemy_Start += Time.deltaTime;
+
+        if (enemyGamePlayManager.enemy_Start > 2.5f)
+            MakeMovementDecision();
     }
 
-    private void MakeDecision()
+    void FixedUpdate()
     {
-        // The decision-making logic based on the player's state, health, and other factors
-        if (IsPlayerInRange())
+        if ((enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time) && !enemyGamePlayManager.isTakingDamage /*&& (enemyGamePlayManager.enemy_Stamina > 0)*/)
         {
-            if (IsLowOnHealth())
-            {
-                Defend();
-            }
-            else if (IsPlayerPerformingSpecialAttack())
-            {
-                Dodge();
-            }
-            else
-            {
-                Attack();
-            }
-        }
-        else
-        {
-            MoveTowardsPlayer();
+            MakeCombatDecision();
+            enemyGamePlayManager.current_Attack_Time = 0;
         }
     }
 
-    // Other methods may include functions for handling specific actions, animations, etc.
-
-    private bool IsPlayerInRange()
+    private void MakeCombatDecision()
     {
-        // Logic to check if the player is within attack range
-        return distanceToPlayer < attackRange;
+        //For making decisions when player is in attack range
+        if (IsPlayerInAttackRange() && !IsEnemyLowOnHealth())
+        {
+            enemyGamePlayManager.Attack();
+
+            /*if (IsPlayerPerformingSpecialAttack())
+                Dodge();*/
+        }
+
+        if (IsEnemyLowOnHealth())
+        {
+            Defend();
+        }
     }
 
-    private bool IsLowOnHealth()
+    void MakeMovementDecision()
     {
-        // Logic to check if the enemy is low on health
-        return currentHealth < lowHealthThreshold;
+        //For making decisions when player is not in attack range
+        if (IsPlayerInChaseRange() && !IsPlayerLowOnStamina() && !IsEnemyLowOnHealth())
+        {
+            enemyGamePlayManager.FollowTarget();
+        }
+        else if (!IsPlayerLowOnStamina())
+        {
+            enemyGamePlayManager.PrepareAttack();
+        }
+        /*else if (IsPlayerLowOnStamina())
+        {
+            Debug.Log("----Moving away");
+            //move away from player
+        }*/
     }
 
-    private bool IsPlayerPerformingSpecialAttack()
+    public bool IsPlayerInAttackRange()
     {
-        // Logic to check if the player is performing a special attack (this is a placeholder)
+        return distanceToPlayer <= enemyGamePlayManager.attack_Distance ;
+    }
+
+    public bool IsPlayerInChaseRange()
+    {
+        return distanceToPlayer > enemyGamePlayManager.attack_Distance;
+    }
+
+    bool IsPlayerLowOnHealth()
+    {
+        return enemyGamePlayManager.playerGamePlayManager.playerHealth < lowHealthThreshold;
+    }
+
+    bool IsEnemyLowOnHealth()
+    {
+        return enemyGamePlayManager.enemyHealth < lowHealthThreshold;
+    }
+
+    bool IsPlayerLowOnStamina()
+    {
+        return ScoreManager.Instance.characterStaminaValuePlayer < lowStaminaThreshold;
+    }
+
+    bool IsPlayerPerformingSpecialAttack()
+    {
         return Random.value < specialAttackThreshold;
     }
 
@@ -81,6 +108,7 @@ public class EnemyAIDecision : MonoBehaviour
 
     private void Defend()
     {
+        Debug.Log("----Defending");
         // Logic for the defend action
     }
 
@@ -89,7 +117,7 @@ public class EnemyAIDecision : MonoBehaviour
         // Logic for the attack2 action
     }
 
-     private void Dodge()
+    private void Dodge()
     {
         // Logic for the dodge action
     }

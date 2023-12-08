@@ -15,11 +15,10 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     Animator playerAnimator;
 
-    StaminaHandlerManager playerStaminaHandler;
-
     int speed;
 
-    bool isGrounded;
+    [HideInInspector]
+    public float playerHealth;
 
     Rigidbody playerRb;
 
@@ -31,7 +30,7 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     //Animation States
     [HideInInspector]
-    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_HURT, PLAYER_CROUCH;
+    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH;
 
     void Start()
     {
@@ -39,19 +38,19 @@ public class PlayerGamePlayManager : MonoBehaviour
         joystick = FindObjectOfType<VariableJoystick>().GetComponent<VariableJoystick>();
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
 
-        playerStaminaHandler = this.GetComponent<StaminaHandlerManager>();
         playerAnimator = this.GetComponentInChildren<Animator>();
         playerRb = this.GetComponent<Rigidbody>();
 
         speed = 2;
-
+        playerHealth = 1f;
         PLAYER_IDLE = "Idle";
         PLAYER_WALK = "Walking";
         PLAYER_BACKWALK = "BackWalk";
         PLAYER_LIGHTATTACK = "LightAttack";
         PLAYER_HEAVYATTACK = "HeavyAttack";
         PLAYER_BLOCK = "Block";
-        PLAYER_HURT = "Hurt";
+        PLAYER_LIGHTREACT = "LightReact";
+        PLAYER_HEAVYREACT = "HeavyReact";
         PLAYER_CROUCH = "Crouch";
     }
 
@@ -73,26 +72,19 @@ public class PlayerGamePlayManager : MonoBehaviour
             ChangeAnimationState(PLAYER_BACKWALK);
             UpdateMovementParameters(joystick.Horizontal);
         }
-        else
-        {
-            ChangeAnimationState(PLAYER_IDLE);
-        }
-
         //For Player Jump Operation
-        if (joystick.Vertical > 0.5f && isGrounded)
+        else if (joystick.Vertical > 0.5f)
         {
             playerAnimator.SetTrigger("isJumping");
             playerRb.AddForce(new Vector3(0f, 3.0f, 0f) * 3.0f, ForceMode.Impulse);
-            isGrounded = false;
         }
-
         //For Player Crouch Operations
-        else if (joystick.Vertical < -0.5f && isGrounded)
+        else if (joystick.Vertical < -0.5f)
         {
             ChangeAnimationState(PLAYER_CROUCH);
         }
         else
-            playerAnimator.SetBool("isCrouching", false);
+            ChangeAnimationState(PLAYER_IDLE);
     }
 
     void UpdateMovementParameters(float horizontal)
@@ -101,24 +93,6 @@ public class PlayerGamePlayManager : MonoBehaviour
         playerAnimator.SetFloat("joystickDrag", horizontal);
         move_position.x += horizontal * speed * Time.deltaTime;
         this.transform.position = new Vector3(move_position.x, this.transform.position.y, this.transform.position.z);
-    }
-
-    public void InflictPlayerDamage()
-    {
-        isTakingDamage = true;
-        //ChangeAnimationState(PLAYER_HURT);
-        StartCoroutine(PlayHurtAnimation());
-        healthBar.fillAmount -= 0.1f;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        isGrounded = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
     }
 
     public void ChangeAnimationState(string newAnimation)
@@ -135,11 +109,34 @@ public class PlayerGamePlayManager : MonoBehaviour
         currentAnimaton = PLAYER_IDLE;
     }
 
-    IEnumerator PlayHurtAnimation()
+    public void InflictLightDamage()
     {
-        //ChangeAnimationState(PLAYER_HURT);
-        playerAnimator.SetTrigger("isHurt");
+        isTakingDamage = true;
+        StartCoroutine(PlayLightReactAnimation());
+        playerHealth -= 0.1f;
+        healthBar.fillAmount = playerHealth;
+    }
+
+    IEnumerator PlayLightReactAnimation()
+    {
+        ChangeAnimationState(PLAYER_LIGHTREACT);
         yield return new WaitForSeconds(0.8f);
+        ResetAnimationState();
+        isTakingDamage = false;
+    }
+
+    public void InflictHeavyDamage()
+    {
+        isTakingDamage = true;
+        StartCoroutine(PlayHeavyReactAnimation());
+        playerHealth -= 0.2f;
+        healthBar.fillAmount = playerHealth;
+    }
+
+    IEnumerator PlayHeavyReactAnimation()
+    {
+        ChangeAnimationState(PLAYER_HEAVYREACT);
+        yield return new WaitForSeconds(1.2f);
         ResetAnimationState();
         isTakingDamage = false;
     }

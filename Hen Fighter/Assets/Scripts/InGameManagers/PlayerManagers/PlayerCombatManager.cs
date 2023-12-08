@@ -24,7 +24,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
 
         clicksCnt = 0;
-        defaultAttackTime = 3f;
+        defaultAttackTime = 1f;
         currentAttackTime = defaultAttackTime;
 
         TurnOffAttackpoints();
