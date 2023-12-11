@@ -16,7 +16,8 @@ public class Display : MonoBehaviour
     public TMP_Text DespText;
     public TMP_Text DropDownText;
 
-   
+
+
     void Start()
     {
         nameText.text = HenCarPrefab[dataCnt].name.ToString();
@@ -24,7 +25,10 @@ public class Display : MonoBehaviour
         DespText.text = HenCarPrefab[dataCnt].Defense.ToString();
         DropDownText.text = HenCarPrefab[dataCnt].DropDown.ToString();
         henImage.sprite = HenCarPrefab[dataCnt].HenCard;
-        
+
+        //For hen Selection For next screen
+       
+
     }
     public void Next()
     {
@@ -48,7 +52,13 @@ public class Display : MonoBehaviour
             DropDownText.text = HenCarPrefab[dataCnt].DropDown.ToString();
             henImage.sprite = HenCarPrefab[dataCnt].HenCard;
         }
+
+        
+
+
     }
+
+
 
     public void Previous()
     {
@@ -75,6 +85,9 @@ public class Display : MonoBehaviour
             henImage.sprite = HenCarPrefab[dataCnt].HenCard;
             
         }
+
+
+
 
 
     }

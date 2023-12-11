@@ -17,3 +17,6 @@ MonoBehaviour:
   Power: 55
   Defense: 36
   DropDown: '1.High Energy Level  2.flying capacity and it will attack in air '
+  Character:
+  - characterName: Sethuva
+    CharacterofHen: {fileID: 798768614454926236, guid: e1580db767d0cf44e9d56f29def2ea58, type: 3}

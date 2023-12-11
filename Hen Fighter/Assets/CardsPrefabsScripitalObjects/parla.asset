@@ -17,3 +17,6 @@ MonoBehaviour:
   Power: 86
   Defense: 96
   DropDown: '1.High Energy Level  2.Manipulating Capacity '
+  Character:
+  - characterName: Parla
+    CharacterofHen: {fileID: 7900909639798985839, guid: 81981945ece02504bb418abce13742b7, type: 3}

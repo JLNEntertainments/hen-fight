@@ -17,4 +17,6 @@ MonoBehaviour:
   Power: 99
   Defense: 85
   DropDown: 1.Super Sharp 2.Matured Moves  3.Sharp Eyes
-  particles: {fileID: 1254331175244878320, guid: 9a69425c48e13d44e8e10b61099cf08c, type: 3}
+  Character:
+  - characterName: Dega
+    CharacterofHen: {fileID: 4926560672710180886, guid: 3921960ab3c126f49933b9971d334695, type: 3}
