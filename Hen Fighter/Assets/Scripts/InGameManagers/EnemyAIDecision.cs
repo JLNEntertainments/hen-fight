@@ -64,11 +64,11 @@ public class EnemyAIDecision : MonoBehaviour
         {
             enemyGamePlayManager.PrepareAttack();
         }
-        /*else if (IsPlayerLowOnStamina())
+        else if (IsPlayerLowOnStamina())
         {
-            Debug.Log("----Moving away");
-            //move away from player
-        }*/
+            enemyGamePlayManager.UnFollowTarget();
+            
+        }
     }
 
     public bool IsPlayerInAttackRange()

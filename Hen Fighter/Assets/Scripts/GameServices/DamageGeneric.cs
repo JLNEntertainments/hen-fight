@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class DamageGeneric : MonoBehaviour
 {
-    public LayerMask collisionLayer;
-    public float radius;
-    public float damage;
+    [SerializeField]
+    LayerMask collisionLayer;
+    
+    [SerializeField]
+    float colliderRadius;
 
-    public bool is_Player, is_Enemy;
+    [SerializeField]
+    bool is_Player, is_Enemy;
 
     void FixedUpdate()
     {
@@ -18,10 +21,10 @@ public class DamageGeneric : MonoBehaviour
 
     void DetectCollision()
     {
-        Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
+        Collider[] hit = Physics.OverlapSphere(transform.position, colliderRadius, collisionLayer);
         if (hit.Length > 0)
         {
-            if (is_Enemy && hit != null)
+            if (is_Enemy && hit != null && !hit[0].GetComponentInParent<PlayerGamePlayManager>().isBlocking)
             {
                 
                 if (hit[0].GetComponentInParent<PlayerGamePlayManager>().enemyGamePlayManager.isHeavyAttack)

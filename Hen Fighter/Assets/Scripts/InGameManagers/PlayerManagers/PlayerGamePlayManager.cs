@@ -39,7 +39,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
 
         playerAnimator = this.GetComponentInChildren<Animator>();
-        playerRb = this.GetComponent<Rigidbody>();
+        //playerRb = this.GetComponent<Rigidbody>();
 
         speed = 2;
         playerHealth = 1f;
@@ -76,7 +76,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         else if (joystick.Vertical > 0.5f)
         {
             playerAnimator.SetTrigger("isJumping");
-            playerRb.AddForce(new Vector3(0f, 3.0f, 0f) * 3.0f, ForceMode.Impulse);
+            //playerRb.AddForce(new Vector3(0f, 3.0f, 0f) * 3.0f, ForceMode.Impulse);
         }
         //For Player Crouch Operations
         else if (joystick.Vertical < -0.5f)
@@ -103,7 +103,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         currentAnimaton = newAnimation;
     }
 
-    public void ResetAnimationState()
+    public void SetDefaultAnimationState()
     {
         playerAnimator.Play(PLAYER_IDLE);
         currentAnimaton = PLAYER_IDLE;
@@ -115,13 +115,20 @@ public class PlayerGamePlayManager : MonoBehaviour
         StartCoroutine(PlayLightReactAnimation());
         playerHealth -= 0.1f;
         healthBar.fillAmount = playerHealth;
+
+        if (playerHealth < 0)
+        {
+            ScoreManager.Instance.ShowGameOverPanel();
+            enemyGamePlayManager.gameObject.SetActive(false);
+            this.gameObject.SetActive(true);
+        }
     }
 
     IEnumerator PlayLightReactAnimation()
     {
         ChangeAnimationState(PLAYER_LIGHTREACT);
         yield return new WaitForSeconds(0.8f);
-        ResetAnimationState();
+        SetDefaultAnimationState();
         isTakingDamage = false;
     }
 
@@ -137,7 +144,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     {
         ChangeAnimationState(PLAYER_HEAVYREACT);
         yield return new WaitForSeconds(1.2f);
-        ResetAnimationState();
+        SetDefaultAnimationState();
         isTakingDamage = false;
     }
 }

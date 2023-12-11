@@ -20,7 +20,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     [HideInInspector]
     public float enemyHealth;
 
-    float speed, chase_Player_After_Attack, targetDist;
+    float speed;
 
     [HideInInspector]
     public float default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina;
@@ -65,7 +65,6 @@ public class EnemyGamePlayManager : MonoBehaviour
         speed = 2f;
         enemyHealth = 1f;
         attack_Distance = 2.5f;
-        chase_Player_After_Attack = 1f;
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
         default_Attack_Time = 3f;
@@ -99,12 +98,10 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public void FollowTarget()
     {
-        targetDist = Vector3.Distance(transform.position, playerGamePlayManager.transform.position);
-
         if (enemyAIDecision.IsPlayerInChaseRange())
         {
             transform.LookAt(playerGamePlayManager.transform);
-            myBody.velocity = transform.forward * speed;
+            myBody.velocity = Vector3.left * speed;
 
             if (myBody.velocity.sqrMagnitude != 0)
             {
@@ -112,14 +109,17 @@ public class EnemyGamePlayManager : MonoBehaviour
                 followPlayer = true;
             }
         }
+    }
 
-        /*else if(enemyAIDecision.IsPlayerInAttackRange())
-        {
-            myBody.velocity = Vector3.zero;
-            ChangeAnimationState(ENEMY_IDLE);
+    public void UnFollowTarget()
+    {
+        //myBody.velocity = Vector3.right * speed;
+
+        /*if (myBody.velocity.sqrMagnitude != 0)
+        {*/
+            ChangeAnimationState(ENEMY_BACKWALK);
             followPlayer = false;
-            attackPlayer = true;
-        }*/
+        //}
     }
 
     public void PrepareAttack()
@@ -136,7 +136,6 @@ public class EnemyGamePlayManager : MonoBehaviour
             return;
 
         StartCoroutine(EnemyAttack());
-        //Vector3.Distance(transform.position, playerGamePlayManager.transform.position) < attack_Distance + chase_Player_After_Attack
         
         if (!enemyAIDecision.IsPlayerInAttackRange())
         {
@@ -158,7 +157,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isLightAttack = true;
                 isHeavyAttack = false;
                 yield return new WaitForSeconds(0.5f);
-                ResetAnimationState();
+                SetDefaultAnimationState();
                 obj.gameObject.SetActive(false);
             }
 
@@ -169,7 +168,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isHeavyAttack = true;
                 isLightAttack = false;
                 yield return new WaitForSeconds(1f);
-                ResetAnimationState();
+                SetDefaultAnimationState();
                 obj.gameObject.SetActive(false);
                 //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
             }
@@ -195,7 +194,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         currentAnimaton = newAnimation;
     }
 
-    public void ResetAnimationState()
+    public void SetDefaultAnimationState()
     {
         enemyAnimator.Play(ENEMY_IDLE);
         currentAnimaton = ENEMY_IDLE;
@@ -213,7 +212,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         ChangeAnimationState(ENEMY_HURT);
         yield return new WaitForSeconds(2f);
-        ResetAnimationState();
+        SetDefaultAnimationState();
         isTakingDamage = false;
     }
 }
