@@ -17,7 +17,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     float staminaRegenRate, defaultStaminRegenRate;
 
-    public TMP_Text Scoretext;
+    public TMP_Text Scoretext,ScoreTextDisplayOnHealth;
     [SerializeField]
     private TMP_Text EnemyHealthBarText,PlayerHealthBarText;
 
@@ -76,7 +76,9 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         }
         Debug.Log("Enemy : " + enemyScore);
         Scoretext.text =playerScore.ToString();
-       
+        ScoreTextDisplayOnHealth.text = playerScore.ToString();
+
+
         EnemyHealthBarText.text = HealthBarValue.ToString();
       
     }
@@ -98,6 +100,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         }
         Debug.Log("Player : " + playerScore);
         Scoretext.text = playerScore.ToString();
+        ScoreTextDisplayOnHealth.text = playerScore.ToString();
         EnemyHealthBarText.text = characterStaminaValueEnemy.ToString();
     }
 
