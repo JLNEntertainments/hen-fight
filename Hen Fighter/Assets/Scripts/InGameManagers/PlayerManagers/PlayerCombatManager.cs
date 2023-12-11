@@ -54,7 +54,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.5f); //use waitforframeends
 
-            playerGamePlayManager.ResetAnimationState();
+            playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
         }
     }
@@ -77,7 +77,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.8f);
-            playerGamePlayManager.ResetAnimationState();
+            playerGamePlayManager.SetDefaultAnimationState();
             playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.transform.position.x + 1.85f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
             isAttacking = false;
         }
@@ -85,9 +85,17 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnBlockAttackBtnPressed()
     {
+        StartCoroutine(BlockAttack());
+        StopCoroutine (BlockAttack());
+    }
+
+    IEnumerator BlockAttack()
+    {
         playerGamePlayManager.isBlocking = true;
         playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_BLOCK);
-        clicksCnt = 0;
+        yield return new WaitForSeconds(1f);
+        playerGamePlayManager.SetDefaultAnimationState();
+        playerGamePlayManager.isBlocking = false;
     }
 
     void isComboCheck()
