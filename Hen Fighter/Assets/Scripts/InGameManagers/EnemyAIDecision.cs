@@ -8,12 +8,13 @@ public class EnemyAIDecision : MonoBehaviour
 
     float lowHealthThreshold = 0.2f;
     float lowStaminaThreshold = 0.3f;
-    float specialAttackThreshold = 0.5f;
     float distanceToPlayer;
+    float defendAttackRandom;
 
     private void Start()
     {
         enemyGamePlayManager = this.GetComponent<EnemyGamePlayManager>();
+        defendAttackRandom = 5f;
     }
 
     void Update()
@@ -22,6 +23,7 @@ public class EnemyAIDecision : MonoBehaviour
 
         enemyGamePlayManager.current_Attack_Time += Time.deltaTime;
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
+        enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
 
         if (enemyGamePlayManager.enemy_Start > 2.5f)
             MakeMovementDecision();
@@ -47,9 +49,10 @@ public class EnemyAIDecision : MonoBehaviour
                 Dodge();*/
         }
 
-        if (IsEnemyLowOnHealth())
+        if (IsEnemyLowOnHealth() && (enemyGamePlayManager.block_Attack_Time > defendAttackRandom) && IsPlayerInAttackRange())
         {
             Defend();
+            enemyGamePlayManager.block_Attack_Time = 0;
         }
     }
 
@@ -67,7 +70,6 @@ public class EnemyAIDecision : MonoBehaviour
         else if (IsPlayerLowOnStamina())
         {
             enemyGamePlayManager.UnFollowTarget();
-            
         }
     }
 
@@ -98,7 +100,7 @@ public class EnemyAIDecision : MonoBehaviour
 
     bool IsPlayerPerformingSpecialAttack()
     {
-        return Random.value < specialAttackThreshold;
+        return enemyGamePlayManager.playerGamePlayManager.isSpecialAttack;
     }
 
     private void Attack()
@@ -108,8 +110,8 @@ public class EnemyAIDecision : MonoBehaviour
 
     private void Defend()
     {
-        Debug.Log("----Defending");
-        // Logic for the defend action
+        float random = Random.Range(0, defendAttackRandom);
+        enemyGamePlayManager.Defend(random);
     }
 
     private void Attack2()

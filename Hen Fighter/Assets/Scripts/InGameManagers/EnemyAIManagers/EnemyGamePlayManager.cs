@@ -23,7 +23,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     float speed;
 
     [HideInInspector]
-    public float default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina;
+    public float default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time;
 
     [HideInInspector]
     public float attack_Distance;
@@ -32,7 +32,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
 
     [HideInInspector]
-    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage, isAttacking;
+    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking;
 
     public DamageGeneric[] enemyWeapons;
 
@@ -40,13 +40,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     string currentAnimaton;
 
     //Animation States
-    const string ENEMY_IDLE = "Idle";
-    const string ENEMY_WALK = "Walk";
-    const string ENEMY_BACKWALK = "BackWalk";
-    const string ENEMY_LIGHTATTACK = "BeakAttack";
-    const string ENEMY_HEAVYATTACK = "ClawAttack";
-    const string ENEMY_BLOCK = "Block";
-    const string ENEMY_HURT = "React";
+    string ENEMY_IDLE, ENEMY_WALK, ENEMY_BACKWALK, ENEMY_LIGHTATTACK, ENEMY_HEAVYATTACK, ENEMY_BLOCK, ENEMY_LIGHTREACT, ENEMY_HEAVYREACT;
 
     void Awake()
     {
@@ -63,7 +57,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         
         speed = 2f;
-        enemyHealth = 1f;
+        enemyHealth = 0.1f;
         attack_Distance = 2.5f;
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
@@ -72,6 +66,15 @@ public class EnemyGamePlayManager : MonoBehaviour
         current_Attack_Time = default_Attack_Time;
         current_Stamina_Regen_Time = 0;
         enemy_Start = 0;
+
+        ENEMY_IDLE = "Idle";
+        ENEMY_WALK = "Walk";
+        ENEMY_BACKWALK = "BackWalk";
+        ENEMY_LIGHTATTACK = "BeakAttack";
+        ENEMY_HEAVYATTACK = "ClawAttack";
+        ENEMY_BLOCK = "Block";
+        ENEMY_LIGHTREACT = "LightReact";
+        ENEMY_HEAVYREACT = "HeavyReact";
 
         TurnOffAttackpoints();
     }
@@ -175,6 +178,21 @@ public class EnemyGamePlayManager : MonoBehaviour
         } 
     }
 
+    public void Defend(float random)
+    {
+        isBlocking = true;
+        StartCoroutine(DefendAttack());
+        StopCoroutine(DefendAttack());
+        
+    }
+
+    IEnumerator DefendAttack()
+    {
+        ChangeAnimationState(ENEMY_BLOCK);
+        yield return new WaitForSeconds(1f);
+        SetDefaultAnimationState();
+        isBlocking = false;
+    }
     void UpdateEnemyRotation()
     {
         transform.eulerAngles = new Vector3(0, -90f, 0);
@@ -200,18 +218,38 @@ public class EnemyGamePlayManager : MonoBehaviour
         currentAnimaton = ENEMY_IDLE;
     }
 
-    public void InflictEnemyDamage()
+    public void InflictEnemyDamage(string damageType)
     {
         isTakingDamage = true;
-        StartCoroutine(PlayHurtAnimation());
-        enemyHealth -= 0.1f;
+
+        if (damageType == "isLight")
+        {
+            StartCoroutine(PlayLightReactAnimation());
+            StopCoroutine(PlayLightReactAnimation());
+            enemyHealth -= 0.1f;
+        }
+        else if (damageType == "isHeavy")
+        {
+            StartCoroutine(PlayHeavyReactAnimation());
+            StopCoroutine(PlayHeavyReactAnimation());
+            enemyHealth -= 0.2f;
+        }
+
         healthBar.fillAmount = enemyHealth;
     }
 
-    IEnumerator PlayHurtAnimation()
+    IEnumerator PlayLightReactAnimation()
     {
-        ChangeAnimationState(ENEMY_HURT);
-        yield return new WaitForSeconds(2f);
+        ChangeAnimationState(ENEMY_LIGHTREACT);
+        yield return new WaitForSeconds(0.8f);
+        SetDefaultAnimationState();
+        isTakingDamage = false;
+    }
+
+    IEnumerator PlayHeavyReactAnimation()
+    {
+        ChangeAnimationState(ENEMY_HEAVYREACT);
+        yield return new WaitForSeconds(1.2f);
         SetDefaultAnimationState();
         isTakingDamage = false;
     }
