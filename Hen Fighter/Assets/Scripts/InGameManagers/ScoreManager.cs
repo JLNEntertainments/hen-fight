@@ -17,7 +17,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     float staminaRegenRate, defaultStaminRegenRate;
 
-    public TMP_Text Scoretext,ScoreTextDisplayOnHealth;
+    public TMP_Text ScoretextForPlayer,ScoreTextDisplayOnHealthForPlayer,ScoreTextForEnemy, ScoreTextDisplayOnHealthForEnemy;
     [SerializeField]
     private TMP_Text EnemyHealthBarText,PlayerHealthBarText;
 
@@ -75,12 +75,15 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             EnemyStaminaBarImage.fillAmount = EnemyStaminaBarImage.fillAmount - (HealthBarValue * 0.01f);
         }
         Debug.Log("Enemy : " + enemyScore);
-        Scoretext.text =playerScore.ToString();
-        ScoreTextDisplayOnHealth.text = playerScore.ToString();
-
-
+        //score for player
+        ScoretextForPlayer.text =playerScore.ToString();
+        ScoreTextDisplayOnHealthForPlayer.text = playerScore.ToString();
         EnemyHealthBarText.text = HealthBarValue.ToString();
-      
+
+        //score for enemy
+        ScoreTextForEnemy.text = enemyScore.ToString();
+        ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
+
     }
 
     public void UpdatePlayerScore(string attackType)
@@ -99,9 +102,14 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
         Debug.Log("Player : " + playerScore);
-        Scoretext.text = playerScore.ToString();
-        ScoreTextDisplayOnHealth.text = playerScore.ToString();
+        //score for palyer
+        ScoretextForPlayer.text = playerScore.ToString();
+        ScoreTextDisplayOnHealthForPlayer.text = playerScore.ToString();
         EnemyHealthBarText.text = characterStaminaValueEnemy.ToString();
+
+        //score for enemy
+        ScoreTextForEnemy.text = enemyScore.ToString();
+        ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
     }
 
     void RegenerateStamina()
