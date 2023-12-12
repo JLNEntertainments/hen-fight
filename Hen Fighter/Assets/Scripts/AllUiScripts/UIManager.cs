@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject specialAttackBtnAnim;
+
     void Start()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -17,15 +20,12 @@ public class UIManager : MonoBehaviour
                 return;
             }
         }
-
-
     }
+
     public void SceneChange(string ScreneName)
 	{
 		SceneManager.LoadScene(ScreneName);
 	}
-
-
 
     public void RestartGame()
     {

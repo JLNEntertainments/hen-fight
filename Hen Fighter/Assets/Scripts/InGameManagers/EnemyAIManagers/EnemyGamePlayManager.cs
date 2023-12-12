@@ -57,7 +57,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         
         speed = 2f;
-        enemyHealth = 0.1f;
+        enemyHealth = 1f;
         attack_Distance = 2.5f;
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
