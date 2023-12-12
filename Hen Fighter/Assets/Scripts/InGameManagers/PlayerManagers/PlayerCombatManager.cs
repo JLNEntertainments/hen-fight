@@ -73,12 +73,31 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isHeavyAttack = true;
             playerGamePlayManager.isLightAttack = false;
             clicksCnt++;
-            //isComboCheck();
+            canHitSpecialAttack();
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.8f);
             playerGamePlayManager.SetDefaultAnimationState();
             playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.transform.position.x + 1.85f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+            isAttacking = false;
+        }
+    }
+
+    public void OnSpecialAttackBtnPressed()
+    {
+        StartCoroutine(SpecialAttack());
+        StopCoroutine(SpecialAttack());
+    }
+
+    IEnumerator SpecialAttack()
+    {
+        if (canHitSpecialAttack())
+        {
+            isAttacking = true;
+            playerGamePlayManager.isSpecialAttack = true;
+            playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_SPECIALATTACK);
+            yield return new WaitForSeconds(2f); 
+            playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
         }
     }
@@ -98,12 +117,16 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         playerGamePlayManager.isBlocking = false;
     }
 
-    void isComboCheck()
+    bool canHitSpecialAttack()
     {
-        if (clicksCnt == 3)
+        if (clicksCnt == 3 && ScoreManager.Instance.characterStaminaValuePlayer >= (ScoreManager.Instance.characterStaminaValuePlayer/2))
         {
-            playerAnimator.SetTrigger("isComboAttack");
-            clicksCnt = 0;
+            playerGamePlayManager.isSpecialAttack = true;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

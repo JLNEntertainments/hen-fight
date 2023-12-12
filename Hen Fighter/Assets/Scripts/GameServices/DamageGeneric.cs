@@ -29,23 +29,28 @@ public class DamageGeneric : MonoBehaviour
                 
                 if (hit[0].GetComponentInParent<PlayerGamePlayManager>().enemyGamePlayManager.isHeavyAttack)
                 {
-                    hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictHeavyDamage();
+                    hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictPlayerDamage("isHeavy");
                     ScoreManager.Instance.UpdateEnemyScore("isHeavy");
                 }
                 else if(hit[0].GetComponentInParent<PlayerGamePlayManager>().enemyGamePlayManager.isLightAttack)
                 {
-                    hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictLightDamage();
+                    hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictPlayerDamage("isLight");
                     ScoreManager.Instance.UpdateEnemyScore("isLight");
                 }
                     
             }
             if (is_Player && hit != null)
             {
-                hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage();
                 if(hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isHeavyAttack)
+                {
+                    hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isHeavy");
                     ScoreManager.Instance.UpdatePlayerScore("isHeavy");
+                }
                 else
+                {
+                    hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isLight");
                     ScoreManager.Instance.UpdatePlayerScore("isLight");
+                }
             }
             this.gameObject.SetActive(false);
         }
