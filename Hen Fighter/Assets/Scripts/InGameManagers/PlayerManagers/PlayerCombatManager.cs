@@ -97,7 +97,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             isAttacking = true;
             playerGamePlayManager.isSpecialAttack = true;
             playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_SPECIALATTACK);
-            yield return new WaitForSeconds(2f); 
+            yield return new WaitForSeconds(2f);
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
             uiManager.specialAttackBtnAnim.SetActive(false);
@@ -108,7 +108,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     public void OnBlockAttackBtnPressed()
     {
         StartCoroutine(BlockAttack());
-        StopCoroutine (BlockAttack());
+        StopCoroutine(BlockAttack());
     }
 
     IEnumerator BlockAttack()
@@ -137,21 +137,21 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     void TurnOffAttackpoints()
     {
-        foreach(var obj in weaponCollider)
+        foreach (var obj in weaponCollider)
             obj.gameObject.SetActive(false);
     }
 
     void PlayAttackAnimation(bool heavyAttack, bool lightAttack)
     {
-        foreach(var obj in weaponCollider)
+        foreach (var obj in weaponCollider)
         {
-            if(lightAttack && obj.gameObject.CompareTag("Beak"))
+            if (lightAttack && obj.gameObject.CompareTag("Beak"))
             {
                 obj.gameObject.SetActive(true);
                 playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_LIGHTATTACK);
                 return;
             }
-            else if(heavyAttack && obj.gameObject.CompareTag("Foot"))
+            else if (heavyAttack && obj.gameObject.CompareTag("Foot"))
             {
                 obj.gameObject.SetActive(true);
                 playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_HEAVYATTACK);

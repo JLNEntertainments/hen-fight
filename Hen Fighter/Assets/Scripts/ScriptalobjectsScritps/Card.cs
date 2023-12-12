@@ -6,15 +6,8 @@ using UnityEngine;
 public class Card : ScriptableObject
 {
     public string HenName;
-   // public string Description;
-
     public Sprite HenCard;
-
     public string Power;
     public string Defense;
     public string DropDown;
-
-
-   
-   
 }

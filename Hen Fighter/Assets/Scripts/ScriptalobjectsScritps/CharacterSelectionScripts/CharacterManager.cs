@@ -9,11 +9,8 @@ public class CharacterManager : MonoBehaviour
 {   
     //for character selection management
     public CharacterDataBase CharacterDB;
-
     public TMP_Text nameOfTheHen;
     public GameObject networkHenGameObject;
-    
-
     private int selectedOption;
 
 
@@ -34,7 +31,6 @@ public class CharacterManager : MonoBehaviour
     {
         Character character = CharacterDB.Getcharacter(selectedOption);
         networkHenGameObject = character.CharacterofHen;
-       
         nameOfTheHen.text = character.characterName;
     }
 

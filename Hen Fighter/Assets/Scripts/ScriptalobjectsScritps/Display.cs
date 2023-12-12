@@ -15,7 +15,6 @@ public class Display : SingletonGeneric<Display>
     public TMP_Text PowerText;
     public TMP_Text DespText;
     public TMP_Text DropDownText;
-
     public int tempDataCnt;
 
     void Start()
@@ -25,10 +24,6 @@ public class Display : SingletonGeneric<Display>
         DespText.text = HenCarPrefab[dataCnt].Defense.ToString();
         DropDownText.text = HenCarPrefab[dataCnt].DropDown.ToString();
         henImage.sprite = HenCarPrefab[dataCnt].HenCard;
-
-        //For hen Selection For next screen
-       
-
     }
 
     private void Update()
@@ -58,10 +53,6 @@ public class Display : SingletonGeneric<Display>
             DropDownText.text = HenCarPrefab[dataCnt].DropDown.ToString();
             henImage.sprite = HenCarPrefab[dataCnt].HenCard;
         }
-
-        
-
-
     }
 
 
@@ -91,11 +82,6 @@ public class Display : SingletonGeneric<Display>
             henImage.sprite = HenCarPrefab[dataCnt].HenCard;
             
         }
-
-
-
-
-
     }
 
    
