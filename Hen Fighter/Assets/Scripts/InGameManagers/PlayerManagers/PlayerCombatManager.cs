@@ -6,19 +6,21 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 {
     Animator playerAnimator;
     PlayerGamePlayManager playerGamePlayManager;
+    UIManager uiManager;
 
     static int clicksCnt;
 
     [SerializeField]
     DamageGeneric[] weaponCollider;
     public bool isAttacking;
-    float currentAttackTime, defaultAttackTime;
+    float currentAttackTime, defaultAttackTime, remainingStamina;
 
     void Start()
     {
         playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
         playerAnimator = playerGamePlayManager.GetComponent<Animator>();
         weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
+        uiManager = GetComponent<UIManager>();
 
         clicksCnt = 0;
         defaultAttackTime = 1f;
@@ -30,6 +32,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     void Update()
     {
         currentAttackTime += Time.deltaTime;
+
+        if (clicksCnt == 3)
+            canHitSpecialAttack();
     }
 
     public void OnLightAttackBtnPressed()
@@ -46,10 +51,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isLightAttack = true;
             playerGamePlayManager.isHeavyAttack = false;
             clicksCnt++;
-            //isComboCheck();
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             currentAttackTime = 0;
-            yield return new WaitForSeconds(0.5f); //use waitforframeends
+            yield return new WaitForSeconds(0.5f);
 
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
@@ -96,6 +100,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             yield return new WaitForSeconds(2f); 
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
+            uiManager.specialAttackBtnAnim.SetActive(false);
         }
     }
 
@@ -116,9 +121,11 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     bool canHitSpecialAttack()
     {
-        if (clicksCnt == 3 && ScoreManager.Instance.characterStaminaValuePlayer >= (ScoreManager.Instance.characterStaminaValuePlayer/2))
+        remainingStamina = (ScoreManager.Instance.maxStamina / 2);
+        if (ScoreManager.Instance.characterStaminaValuePlayer >= remainingStamina)
         {
             playerGamePlayManager.isSpecialAttack = true;
+            uiManager.specialAttackBtnAnim.SetActive(true);
             return true;
         }
         else
