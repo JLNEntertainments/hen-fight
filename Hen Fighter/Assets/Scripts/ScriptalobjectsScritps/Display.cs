@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Display : MonoBehaviour
+public class Display : SingletonGeneric<Display>
 {
     public Card[] HenCarPrefab ;
     public Card card;
@@ -16,7 +16,7 @@ public class Display : MonoBehaviour
     public TMP_Text DespText;
     public TMP_Text DropDownText;
 
-
+    public int tempDataCnt;
 
     void Start()
     {
@@ -30,6 +30,12 @@ public class Display : MonoBehaviour
        
 
     }
+
+    private void Update()
+    {
+        tempDataCnt = dataCnt;    
+    }
+
     public void Next()
     {
         isNextPressed = true;

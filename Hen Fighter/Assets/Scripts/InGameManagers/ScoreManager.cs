@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreManager : SingletonGeneric<ScoreManager>
 {
-    [SerializeField] GameObject GameOverGameobject;
+    [SerializeField] GameObject YouWinPanel;
 
 
     static int enemyScore, playerScore;
@@ -129,6 +129,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     public void ShowGameOverPanel()
     {
-        GameOverGameobject.SetActive(true);
+        YouWinPanel.SetActive(true);
     }
 }
