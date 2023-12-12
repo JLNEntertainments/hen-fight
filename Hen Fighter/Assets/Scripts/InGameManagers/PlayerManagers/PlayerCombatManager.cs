@@ -11,9 +11,6 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     [SerializeField]
     DamageGeneric[] weaponCollider;
-
-    /*[HideInInspector]
-    public bool isHeavyAttack, isLightAttack, isBlocking;*/
     public bool isAttacking;
     float currentAttackTime, defaultAttackTime;
 

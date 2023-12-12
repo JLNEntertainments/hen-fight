@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
         Character character = CharacterDB.Getcharacter(selectedOption);
         networkHenGameObject = character.CharacterofHen;
         nameOfTheHen.text = character.characterName;
+       // Assignplayer(networkHenGameObject);
     }
 
 

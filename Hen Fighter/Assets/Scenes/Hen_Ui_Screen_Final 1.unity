@@ -1875,6 +1875,7 @@ MonoBehaviour:
   PowerText: {fileID: 759555245}
   DespText: {fileID: 688577521}
   DropDownText: {fileID: 1555713388}
+  tempDataCnt: 0
 --- !u!114 &881578127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2549,7 +2550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterDB: {fileID: 11400000, guid: d4242b428ab8efd49b69db9620377057, type: 2}
   nameOfTheHen: {fileID: 1696350364}
-  networkHenGameObject: {fileID: 0}
+  networkHenGameObject: {fileID: 4926560672710180886, guid: 3921960ab3c126f49933b9971d334695, type: 3}
 --- !u!4 &1163307635
 Transform:
   m_ObjectHideFlags: 0
@@ -3189,7 +3190,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Game Scene_old
+          m_StringArgument: Game Scene_Final
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1401605380
@@ -4193,7 +4194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1696350363
 RectTransform:
   m_ObjectHideFlags: 0
