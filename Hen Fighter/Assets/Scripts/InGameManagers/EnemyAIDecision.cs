@@ -21,6 +21,8 @@ public class EnemyAIDecision : MonoBehaviour
     {
         distanceToPlayer = Vector3.Distance(this.transform.position, enemyGamePlayManager.playerGamePlayManager.transform.position);
 
+        defendAttackRandom = Random.Range(0, 5f);
+
         enemyGamePlayManager.current_Attack_Time += Time.deltaTime;
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
@@ -49,10 +51,13 @@ public class EnemyAIDecision : MonoBehaviour
                 Dodge();*/
         }
 
-        if (IsEnemyLowOnHealth() && (enemyGamePlayManager.block_Attack_Time > defendAttackRandom) && IsPlayerInAttackRange())
+        if (IsEnemyLowOnHealth() && IsPlayerInAttackRange())
         {
-            Defend();
-            enemyGamePlayManager.block_Attack_Time = 0;
+            if(enemyGamePlayManager.block_Attack_Time > defendAttackRandom)
+            {
+                Defend();
+                enemyGamePlayManager.block_Attack_Time = 0;
+            }
         }
     }
 
@@ -110,8 +115,8 @@ public class EnemyAIDecision : MonoBehaviour
 
     private void Defend()
     {
-        float random = Random.Range(0, defendAttackRandom);
-        enemyGamePlayManager.Defend(random);
+        
+        enemyGamePlayManager.Defend();
     }
 
     private void Attack2()

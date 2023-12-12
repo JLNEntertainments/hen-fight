@@ -40,7 +40,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     string currentAnimaton;
 
     //Animation States
-    string ENEMY_IDLE, ENEMY_WALK, ENEMY_BACKWALK, ENEMY_LIGHTATTACK, ENEMY_HEAVYATTACK, ENEMY_BLOCK, ENEMY_LIGHTREACT, ENEMY_HEAVYREACT;
+    string ENEMY_IDLE, ENEMY_WALK, ENEMY_BACKWALK, ENEMY_LIGHTATTACK, ENEMY_HEAVYATTACK, ENEMY_BLOCK, ENEMY_LIGHTREACT, ENEMY_HEAVYREACT, ENEMY_SPECIALREACT;
 
     void Awake()
     {
@@ -58,7 +58,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         
         speed = 2f;
         enemyHealth = 1f;
-        attack_Distance = 2.5f;
+        attack_Distance = 3f;
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
         default_Attack_Time = 3f;
@@ -72,31 +72,17 @@ public class EnemyGamePlayManager : MonoBehaviour
         ENEMY_BACKWALK = "BackWalk";
         ENEMY_LIGHTATTACK = "BeakAttack";
         ENEMY_HEAVYATTACK = "ClawAttack";
-        ENEMY_BLOCK = "Block";
+        ENEMY_BLOCK = "Defend";
         ENEMY_LIGHTREACT = "LightReact";
         ENEMY_HEAVYREACT = "HeavyReact";
+        ENEMY_SPECIALREACT = "SpecialReact";
 
         TurnOffAttackpoints();
     }
 
     void Update()
     {
-        /*current_Attack_Time += Time.deltaTime;
-        enemy_Start += Time.deltaTime;*/
-
         UpdateEnemyRotation();
-
-        /*if (enemy_Start > 4f)
-            FollowTarget();*/
-    }
-
-    void FixedUpdate()
-    {
-        /*if ((current_Attack_Time > default_Attack_Time) && !isTakingDamage && (enemy_Stamina > 0))
-        {
-            Attack();
-            current_Attack_Time = 0;
-        }*/
     }
 
     public void FollowTarget()
@@ -178,7 +164,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         } 
     }
 
-    public void Defend(float random)
+    public void Defend()
     {
         isBlocking = true;
         StartCoroutine(DefendAttack());
@@ -189,13 +175,14 @@ public class EnemyGamePlayManager : MonoBehaviour
     IEnumerator DefendAttack()
     {
         ChangeAnimationState(ENEMY_BLOCK);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         SetDefaultAnimationState();
         isBlocking = false;
     }
     void UpdateEnemyRotation()
     {
-        transform.eulerAngles = new Vector3(0, -90f, 0);
+        if(!playerGamePlayManager.isSpecialAttack)
+            transform.eulerAngles = new Vector3(0, -90f, 0);
     }
 
     void TurnOffAttackpoints()
@@ -250,6 +237,21 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         ChangeAnimationState(ENEMY_HEAVYREACT);
         yield return new WaitForSeconds(1.2f);
+        SetDefaultAnimationState();
+        isTakingDamage = false;
+    }
+    
+    public void SpecialAttackPlaying()
+    {
+        isTakingDamage = true;
+        StartCoroutine(PlaySpecialAttackReactAnim());
+        StopCoroutine(PlaySpecialAttackReactAnim());
+    }
+
+    IEnumerator PlaySpecialAttackReactAnim()
+    {
+        ChangeAnimationState(ENEMY_SPECIALREACT);
+        yield return new WaitForSeconds(1.5f);
         SetDefaultAnimationState();
         isTakingDamage = false;
     }
