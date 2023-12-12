@@ -101,6 +101,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
             uiManager.specialAttackBtnAnim.SetActive(false);
+            clicksCnt = 0;
         }
     }
 
@@ -122,7 +123,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     bool canHitSpecialAttack()
     {
         remainingStamina = (ScoreManager.Instance.maxStamina / 2);
-        if (ScoreManager.Instance.characterStaminaValuePlayer >= remainingStamina)
+        if (ScoreManager.Instance.characterStaminaValuePlayer >= remainingStamina && clicksCnt == 3)
         {
             playerGamePlayManager.isSpecialAttack = true;
             uiManager.specialAttackBtnAnim.SetActive(true);
