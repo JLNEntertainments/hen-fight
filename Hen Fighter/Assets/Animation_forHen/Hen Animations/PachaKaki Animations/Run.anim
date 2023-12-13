@@ -108,7 +108,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -133,7 +133,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -230,7 +230,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -354,7 +354,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -451,7 +451,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -476,7 +476,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:HeadEnd_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:HeadEnd_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -501,7 +501,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint1_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint1_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -526,7 +526,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint1_M/run_cycle:dbn_1:joint2_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint1_M/dbn_1:joint2_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -551,7 +551,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint3_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint3_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -576,7 +576,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint3_R/run_cycle:dbn_1:joint4_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint3_R/dbn_1:joint4_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -601,7 +601,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint3_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint3_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -626,7 +626,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint3_L/run_cycle:dbn_1:joint4_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint3_L/dbn_1:joint4_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -651,7 +651,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -676,7 +676,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R/run_cycle:dbn_1:Shoulder_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R/dbn_1:Shoulder_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -728,7 +728,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R/run_cycle:dbn_1:Shoulder_R/run_cycle:dbn_1:Elbow_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R/dbn_1:Shoulder_R/dbn_1:Elbow_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -789,7 +789,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R/run_cycle:dbn_1:Shoulder_R/run_cycle:dbn_1:Elbow_R/run_cycle:dbn_1:Wrist_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R/dbn_1:Shoulder_R/dbn_1:Elbow_R/dbn_1:Wrist_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -814,7 +814,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R/run_cycle:dbn_1:Shoulder_R/run_cycle:dbn_1:Elbow_R/run_cycle:dbn_1:Wrist_R/run_cycle:dbn_1:IndexFinger1_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R/dbn_1:Shoulder_R/dbn_1:Elbow_R/dbn_1:Wrist_R/dbn_1:IndexFinger1_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -839,7 +839,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -864,7 +864,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L/run_cycle:dbn_1:Shoulder_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L/dbn_1:Shoulder_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -916,7 +916,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L/run_cycle:dbn_1:Shoulder_L/run_cycle:dbn_1:Elbow_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L/dbn_1:Shoulder_L/dbn_1:Elbow_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -941,7 +941,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L/run_cycle:dbn_1:Shoulder_L/run_cycle:dbn_1:Elbow_L/run_cycle:dbn_1:Wrist_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L/dbn_1:Shoulder_L/dbn_1:Elbow_L/dbn_1:Wrist_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -966,7 +966,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L/run_cycle:dbn_1:Shoulder_L/run_cycle:dbn_1:Elbow_L/run_cycle:dbn_1:Wrist_L/run_cycle:dbn_1:IndexFinger1_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L/dbn_1:Shoulder_L/dbn_1:Elbow_L/dbn_1:Wrist_L/dbn_1:IndexFinger1_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -991,7 +991,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1016,7 +1016,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1176,7 +1176,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1345,7 +1345,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1370,7 +1370,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R/run_cycle:dbn_1:Tail3Side_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R/dbn_1:Tail3Side_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1548,7 +1548,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R/run_cycle:dbn_1:Tail3Side_R/run_cycle:dbn_1:Tail3Side1_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R/dbn_1:Tail3Side_R/dbn_1:Tail3Side1_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1717,7 +1717,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R/run_cycle:dbn_1:Tail3Side_R/run_cycle:dbn_1:Tail3Side1_R/run_cycle:dbn_1:Tail3Side2_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R/dbn_1:Tail3Side_R/dbn_1:Tail3Side1_R/dbn_1:Tail3Side2_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1742,7 +1742,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R/run_cycle:dbn_1:Tail3Side_R/run_cycle:dbn_1:Tail3Side1_R/run_cycle:dbn_1:Tail3Side2_R/run_cycle:dbn_1:Tail3SideEnd_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R/dbn_1:Tail3Side_R/dbn_1:Tail3Side1_R/dbn_1:Tail3Side2_R/dbn_1:Tail3SideEnd_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1902,7 +1902,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2062,7 +2062,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2222,7 +2222,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M/run_cycle:dbn_1:Tail3_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M/dbn_1:Tail3_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2391,7 +2391,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M/run_cycle:dbn_1:Tail3_M/run_cycle:dbn_1:Tail31_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M/dbn_1:Tail3_M/dbn_1:Tail31_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2542,7 +2542,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M/run_cycle:dbn_1:Tail3_M/run_cycle:dbn_1:Tail31_M/run_cycle:dbn_1:Tail32_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M/dbn_1:Tail3_M/dbn_1:Tail31_M/dbn_1:Tail32_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2567,7 +2567,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M/run_cycle:dbn_1:Tail3_M/run_cycle:dbn_1:Tail31_M/run_cycle:dbn_1:Tail32_M/run_cycle:dbn_1:Tail3End_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M/dbn_1:Tail3_M/dbn_1:Tail31_M/dbn_1:Tail32_M/dbn_1:Tail3End_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2592,7 +2592,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2752,7 +2752,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2921,7 +2921,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2946,7 +2946,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L/run_cycle:dbn_1:Tail3Side_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L/dbn_1:Tail3Side_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3124,7 +3124,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L/run_cycle:dbn_1:Tail3Side_L/run_cycle:dbn_1:Tail3Side1_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L/dbn_1:Tail3Side_L/dbn_1:Tail3Side1_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3302,7 +3302,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L/run_cycle:dbn_1:Tail3Side_L/run_cycle:dbn_1:Tail3Side1_L/run_cycle:dbn_1:Tail3Side2_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L/dbn_1:Tail3Side_L/dbn_1:Tail3Side1_L/dbn_1:Tail3Side2_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3327,7 +3327,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L/run_cycle:dbn_1:Tail3Side_L/run_cycle:dbn_1:Tail3Side1_L/run_cycle:dbn_1:Tail3Side2_L/run_cycle:dbn_1:Tail3SideEnd_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L/dbn_1:Tail3Side_L/dbn_1:Tail3Side1_L/dbn_1:Tail3Side2_L/dbn_1:Tail3SideEnd_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3514,7 +3514,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3701,7 +3701,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R/run_cycle:dbn_1:Knee_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R/dbn_1:Knee_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3888,7 +3888,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R/run_cycle:dbn_1:Knee_R/run_cycle:dbn_1:Ankle_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R/dbn_1:Knee_R/dbn_1:Ankle_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3958,7 +3958,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R/run_cycle:dbn_1:Knee_R/run_cycle:dbn_1:Ankle_R/run_cycle:dbn_1:Toes_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R/dbn_1:Knee_R/dbn_1:Ankle_R/dbn_1:Toes_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3983,7 +3983,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R/run_cycle:dbn_1:Knee_R/run_cycle:dbn_1:Ankle_R/run_cycle:dbn_1:Toes_R/run_cycle:dbn_1:ToesEnd_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R/dbn_1:Knee_R/dbn_1:Ankle_R/dbn_1:Toes_R/dbn_1:ToesEnd_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4161,7 +4161,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4339,7 +4339,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L/run_cycle:dbn_1:Knee_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L/dbn_1:Knee_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4508,7 +4508,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L/run_cycle:dbn_1:Knee_L/run_cycle:dbn_1:Ankle_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L/dbn_1:Knee_L/dbn_1:Ankle_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4533,7 +4533,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L/run_cycle:dbn_1:Knee_L/run_cycle:dbn_1:Ankle_L/run_cycle:dbn_1:Toes_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L/dbn_1:Knee_L/dbn_1:Ankle_L/dbn_1:Toes_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4558,7 +4558,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L/run_cycle:dbn_1:Knee_L/run_cycle:dbn_1:Ankle_L/run_cycle:dbn_1:Toes_L/run_cycle:dbn_1:ToesEnd_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L/dbn_1:Knee_L/dbn_1:Ankle_L/dbn_1:Toes_L/dbn_1:ToesEnd_L
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves:
@@ -4567,16 +4567,16 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -4.3037574e-18, y: 0.07157552, z: -0.00076353067}
-        inSlope: {x: 3.5140037e-11, y: 0.00000043936305, z: 0.0000000013209601}
-        outSlope: {x: 3.5140037e-11, y: 0.00000043936305, z: 0.0000000013209601}
+        value: {x: -1.7210644e-19, y: 0.07295019, z: -0.00076353067}
+        inSlope: {x: 3.5139464e-11, y: 0.00000043936305, z: 0.0000000013209601}
+        outSlope: {x: 3.5139464e-11, y: 0.00000043936305, z: 0.0000000013209601}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.041666668
-        value: {x: 0.0000019901584, y: 0.069101445, z: -0.0007267116}
+        value: {x: 0.0000019901584, y: 0.07047612, z: -0.0007267116}
         inSlope: {x: 0.00005174384, y: -0.059402566, z: 0.0010545863}
         outSlope: {x: 0.0000517438, y: -0.059403107, z: 0.0010545866}
         tangentMode: 0
@@ -4585,26 +4585,26 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.08333333
-        value: {x: 0.0000043119794, y: 0.06662528, z: -0.000675649}
+        value: {x: 0.0000043119794, y: 0.06799996, z: -0.000675649}
         inSlope: {x: 7.706002e-11, y: -0.000000094685596, z: 0.0005097235}
-        outSlope: {x: 0.0000000033796155, y: -0.00000054707675, z: 0.00050970714}
+        outSlope: {x: 0.0000000033796155, y: 0.0000005210383, z: 0.00050970714}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.125
-        value: {x: -0.0005166921, y: 0.06736474, z: -0.0006685696}
-        inSlope: {x: -0.012505195, y: 0.035343163, z: 0.00015574077}
-        outSlope: {x: -0.012505243, y: 0.03534386, z: 0.00015574091}
+        value: {x: -0.0005166921, y: 0.068739414, z: -0.0006685696}
+        inSlope: {x: -0.012505195, y: 0.035344232, z: 0.00015574077}
+        outSlope: {x: -0.012505243, y: 0.03534415, z: 0.00015574091}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.16666666
-        value: {x: -0.0010377883, y: 0.069570616, z: -0.00066267065}
-        inSlope: {x: -0.000000036411087, y: 0.09661227, z: 0.0004247197}
+        value: {x: -0.0010377883, y: 0.07094529, z: -0.00066267065}
+        inSlope: {x: -0.000000036411087, y: 0.096612565, z: 0.0004247197}
         outSlope: {x: -0.000000027553126, y: 0.096611686, z: 0.00042468857}
         tangentMode: 0
         weightedMode: 0
@@ -4612,44 +4612,44 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.20833333
-        value: {x: 0.00000086365446, y: 0.075415775, z: 0.0003376096}
+        value: {x: 0.00000086365446, y: 0.076790445, z: 0.0003376096}
         inSlope: {x: 0.000000025873184, y: 0.10000131, z: 0.000000017230807}
-        outSlope: {x: 9.064829e-11, y: 0.100001544, z: 0.0000000128743}
+        outSlope: {x: 9.064829e-11, y: 0.10000195, z: 0.0000000128743}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.24999999
-        value: {x: -0.00000047550944, y: 0.077904105, z: 0.00014744146}
-        inSlope: {x: -0.000036146066, y: 0.041177265, z: -0.0061087683}
-        outSlope: {x: -0.000036146197, y: 0.041177537, z: -0.0061087897}
+        value: {x: -0.00000047550944, y: 0.079278775, z: 0.00014744146}
+        inSlope: {x: -0.000036146066, y: 0.04117822, z: -0.0061087683}
+        outSlope: {x: -0.000036146197, y: 0.04117779, z: -0.0061087897}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.2916667
-        value: {x: -0.000002148521, y: 0.07884727, z: -0.00017145486}
-        inSlope: {x: -1.3101802e-10, y: -0.0000004605839, z: -0.0077229603}
-        outSlope: {x: -2.6973665e-11, y: 0.00000028465422, z: -0.0077229235}
+        value: {x: -0.000002148521, y: 0.08022194, z: -0.00017145486}
+        inSlope: {x: -1.3101802e-10, y: -0.0000012998169, z: -0.0077229603}
+        outSlope: {x: -2.6973665e-11, y: -0.00000012406346, z: -0.0077229235}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.33333334
-        value: {x: -0.0000015745368, y: 0.075289704, z: -0.0004961368}
-        inSlope: {x: 0.000025782214, y: -0.103737704, z: -0.006248081}
-        outSlope: {x: 0.00002578213, y: -0.103737265, z: -0.00624808}
+        value: {x: -0.0000015745368, y: 0.07666438, z: -0.0004961368}
+        inSlope: {x: 0.000025782214, y: -0.10373866, z: -0.006248081}
+        outSlope: {x: 0.00002578213, y: -0.10373792, z: -0.00624808}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.375
-        value: {x: -1.7181446e-18, y: 0.07020245, z: -0.0006921294}
-        inSlope: {x: 0.000037621914, y: -0.091676824, z: 0.000000008190634}
+        value: {x: 1.6262341e-19, y: 0.07157712, z: -0.0006921294}
+        inSlope: {x: 0.000037621914, y: -0.091676936, z: 0.000000008190634}
         outSlope: {x: 0.00003762203, y: -0.0916769, z: -0.0000000017209336}
         tangentMode: 0
         weightedMode: 0
@@ -4657,7 +4657,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.4166667
-        value: {x: 0.0000015606264, y: 0.06764999, z: -0.0006865746}
+        value: {x: 0.0000015606264, y: 0.06902466, z: -0.0006865746}
         inSlope: {x: 0.000051743842, y: -0.04292618, z: 0.00019776638}
         outSlope: {x: 0.000051743704, y: -0.042925518, z: 0.00019776668}
         tangentMode: 0
@@ -4666,7 +4666,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.45833334
-        value: {x: 0.0000043119794, y: 0.06662528, z: -0.000675649}
+        value: {x: 0.0000043119794, y: 0.06799996, z: -0.000675649}
         inSlope: {x: 0.00019809738, y: 0.0000007333605, z: 0.00016268509}
         outSlope: {x: 0.00019804857, y: -0.0000003399947, z: 0.0001626775}
         tangentMode: 0
@@ -4675,7 +4675,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.5
-        value: {x: 0.00034399124, y: 0.06736511, z: -0.0006730179}
+        value: {x: 0.00034399124, y: 0.06873979, z: -0.0006730179}
         inSlope: {x: 0.008129877, y: 0.035343356, z: 0.00015574634}
         outSlope: {x: 0.008129981, y: 0.035344087, z: 0.00015574391}
         tangentMode: 0
@@ -4684,7 +4684,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.5416666
-        value: {x: 0.000681808, y: 0.069570616, z: -0.00066267065}
+        value: {x: 0.000681808, y: 0.07094529, z: -0.00066267065}
         inSlope: {x: 0.00000002344334, y: 0.09660763, z: 0.00074500445}
         outSlope: {x: 0.00000015934855, y: 0.096607015, z: 0.0007447607}
         tangentMode: 0
@@ -4693,35 +4693,35 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.5833333
-        value: {x: 0.00000086365446, y: 0.075415775, z: 0.0003376096}
+        value: {x: 0.00000086365446, y: 0.076790445, z: 0.0003376096}
         inSlope: {x: -0.00016809256, y: 0.09999774, z: -0.0000001352304}
-        outSlope: {x: -0.00016818647, y: 0.099998236, z: 0.000000025037465}
+        outSlope: {x: -0.00016818647, y: 0.09999835, z: 0.000000025037465}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.625
-        value: {x: -0.0000014722733, y: 0.0779038, z: 0.0001381162}
-        inSlope: {x: -0.000036145924, y: 0.041177265, z: -0.0061087315}
-        outSlope: {x: -0.000036146175, y: 0.04117825, z: -0.006108799}
+        value: {x: -0.0000014722733, y: 0.07927848, z: 0.0001381162}
+        inSlope: {x: -0.000036145924, y: 0.04117793, z: -0.0061087315}
+        outSlope: {x: -0.000036146175, y: 0.04117743, z: -0.006108799}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.6666666
-        value: {x: -0.000002148521, y: 0.07884727, z: -0.00017145486}
-        inSlope: {x: -3.5261728e-11, y: 0.0000007328706, z: -0.0067306543}
-        outSlope: {x: -9.143262e-11, y: 0.00000092713145, z: -0.0067305756}
+        value: {x: -0.000002148521, y: 0.08022194, z: -0.00017145486}
+        inSlope: {x: -3.5261728e-11, y: -0.0000011744798, z: -0.0067306543}
+        outSlope: {x: -9.143262e-11, y: -0.00000014098327, z: -0.0067305756}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7083333
-        value: {x: -0.0000016382346, y: 0.076964304, z: -0.00042276908}
-        inSlope: {x: 0.000018903052, y: -0.06461947, z: -0.005849743}
+        value: {x: -0.0000016382346, y: 0.07833898, z: -0.00042276908}
+        inSlope: {x: 0.000018903052, y: -0.06462054, z: -0.005849743}
         outSlope: {x: 0.000018902956, y: -0.06461949, z: -0.0058497386}
         tangentMode: 0
         weightedMode: 0
@@ -4729,7 +4729,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.75
-        value: {x: -0.0000005732612, y: 0.07346222, z: -0.0006589357}
+        value: {x: -0.0000005732612, y: 0.074836895, z: -0.0006589357}
         inSlope: {x: 0.000019658613, y: -0.064665265, z: -0.004089104}
         outSlope: {x: 0.000019658868, y: -0.06466584, z: -0.004089146}
         tangentMode: 0
@@ -4738,9 +4738,9 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -4.3037574e-18, y: 0.07157552, z: -0.00076353067}
-        inSlope: {x: 3.959811e-11, y: -0.0000001246201, z: -0.00000000818795}
-        outSlope: {x: 3.959811e-11, y: -0.0000001246201, z: -0.00000000818795}
+        value: {x: -1.7210644e-19, y: 0.07295019, z: -0.00076353067}
+        inSlope: {x: 3.959868e-11, y: -0.0000001246201, z: -0.00000000818795}
+        outSlope: {x: 3.959868e-11, y: -0.0000001246201, z: -0.00000000818795}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -4748,7 +4748,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4773,13 +4773,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.016710594, y: 5.3290704e-17, z: 6.1062266e-18}
+        value: {x: -0.016710594, y: 6.217249e-17, z: 6.1062266e-18}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4788,7 +4788,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.016710594, y: 5.3290704e-17, z: 6.1062266e-18}
+        value: {x: -0.016710594, y: 6.217249e-17, z: 6.1062266e-18}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4798,13 +4798,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.011098522, y: -1.7763568e-17, z: 1.8318679e-17}
+        value: {x: -0.011098522, y: -1.7763568e-17, z: 1.8873792e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4813,7 +4813,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.011098522, y: -1.7763568e-17, z: 1.8318679e-17}
+        value: {x: -0.011098522, y: -1.7763568e-17, z: 1.8873792e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4823,13 +4823,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.019918326, y: 2.4424906e-17, z: -6.106227e-17}
+        value: {x: -0.019918326, y: 2.8865798e-17, z: -5.995204e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4838,7 +4838,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.019918326, y: 2.4424906e-17, z: -6.106227e-17}
+        value: {x: -0.019918326, y: 2.8865798e-17, z: -5.995204e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4848,7 +4848,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4873,13 +4873,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:HeadEnd_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:HeadEnd_M
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.006286564, y: 0.009278113, z: 1.2767564e-17}
+        value: {x: -0.006286564, y: 0.009278113, z: 1.2212453e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4888,7 +4888,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.006286564, y: 0.009278113, z: 1.2767564e-17}
+        value: {x: -0.006286564, y: 0.009278113, z: 1.2212453e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4898,7 +4898,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint1_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint1_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4923,7 +4923,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint1_M/run_cycle:dbn_1:joint2_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint1_M/dbn_1:joint2_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4948,7 +4948,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint3_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint3_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4973,7 +4973,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint3_R/run_cycle:dbn_1:joint4_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint3_R/dbn_1:joint4_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4998,7 +4998,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint3_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint3_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5023,7 +5023,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Neck_M/run_cycle:dbn_1:Head_M/run_cycle:dbn_1:joint3_L/run_cycle:dbn_1:joint4_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Neck_M/dbn_1:Head_M/dbn_1:joint3_L/dbn_1:joint4_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5048,13 +5048,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.0059871143, y: 8.881784e-18, z: 3.5527136e-17}
+        value: {x: -0.0059871143, y: 8.881784e-18, z: 8.881784e-18}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5063,7 +5063,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.0059871143, y: 8.881784e-18, z: 3.5527136e-17}
+        value: {x: -0.0059871143, y: 8.881784e-18, z: 8.881784e-18}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5073,13 +5073,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R/run_cycle:dbn_1:Shoulder_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R/dbn_1:Shoulder_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.0110662915, y: 2.220446e-18, z: -2.6645352e-17}
+        value: {x: -0.0110662915, y: -6.661338e-18, z: -1.7763568e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5088,7 +5088,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.0110662915, y: 2.220446e-18, z: -2.6645352e-17}
+        value: {x: -0.0110662915, y: -6.661338e-18, z: -1.7763568e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5098,13 +5098,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R/run_cycle:dbn_1:Shoulder_R/run_cycle:dbn_1:Elbow_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R/dbn_1:Shoulder_R/dbn_1:Elbow_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.013932591, y: 2.6645352e-17, z: -1.7763568e-17}
+        value: {x: -0.013932591, y: 1.7763568e-17, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5113,7 +5113,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.013932591, y: 2.6645352e-17, z: -1.7763568e-17}
+        value: {x: -0.013932591, y: 1.7763568e-17, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5123,7 +5123,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R/run_cycle:dbn_1:Shoulder_R/run_cycle:dbn_1:Elbow_R/run_cycle:dbn_1:Wrist_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R/dbn_1:Shoulder_R/dbn_1:Elbow_R/dbn_1:Wrist_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5148,7 +5148,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_R/run_cycle:dbn_1:Shoulder_R/run_cycle:dbn_1:Elbow_R/run_cycle:dbn_1:Wrist_R/run_cycle:dbn_1:IndexFinger1_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_R/dbn_1:Shoulder_R/dbn_1:Elbow_R/dbn_1:Wrist_R/dbn_1:IndexFinger1_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5173,13 +5173,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.0059871143, y: -1.7763568e-17, z: -1.0658141e-16}
+        value: {x: 0.0059871143, y: -8.881784e-18, z: -8.8817837e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5188,7 +5188,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.0059871143, y: -1.7763568e-17, z: -1.0658141e-16}
+        value: {x: 0.0059871143, y: -8.881784e-18, z: -8.8817837e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5198,13 +5198,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L/run_cycle:dbn_1:Shoulder_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L/dbn_1:Shoulder_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.0110662915, y: 4.2743585e-17, z: 4.4408918e-17}
+        value: {x: 0.0110662915, y: 4.3298696e-17, z: 3.5527136e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5213,7 +5213,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.0110662915, y: 4.2743585e-17, z: 4.4408918e-17}
+        value: {x: 0.0110662915, y: 4.3298696e-17, z: 3.5527136e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5223,13 +5223,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L/run_cycle:dbn_1:Shoulder_L/run_cycle:dbn_1:Elbow_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L/dbn_1:Shoulder_L/dbn_1:Elbow_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.013932591, y: 3.5527136e-17, z: 8.881784e-18}
+        value: {x: 0.013932591, y: 3.1086245e-17, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5238,7 +5238,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.013932591, y: 3.5527136e-17, z: 8.881784e-18}
+        value: {x: 0.013932591, y: 3.1086245e-17, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5248,7 +5248,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L/run_cycle:dbn_1:Shoulder_L/run_cycle:dbn_1:Elbow_L/run_cycle:dbn_1:Wrist_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L/dbn_1:Shoulder_L/dbn_1:Elbow_L/dbn_1:Wrist_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5273,13 +5273,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Spine1_M/run_cycle:dbn_1:Chest_M/run_cycle:dbn_1:Scapula_L/run_cycle:dbn_1:Shoulder_L/run_cycle:dbn_1:Elbow_L/run_cycle:dbn_1:Wrist_L/run_cycle:dbn_1:IndexFinger1_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Spine1_M/dbn_1:Chest_M/dbn_1:Scapula_L/dbn_1:Shoulder_L/dbn_1:Elbow_L/dbn_1:Wrist_L/dbn_1:IndexFinger1_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.010631003, y: -0.00036428444, z: -4.9960034e-18}
+        value: {x: 0.010631003, y: -0.00036428444, z: -3.8857806e-18}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5288,7 +5288,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.010631003, y: -0.00036428444, z: -4.9960034e-18}
+        value: {x: 0.010631003, y: -0.00036428444, z: -3.8857806e-18}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5298,7 +5298,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5323,13 +5323,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.014595623, y: 2.2204459e-17, z: -5.884182e-17}
+        value: {x: -0.014595623, y: 8.881784e-18, z: -6.217249e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5338,7 +5338,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.014595623, y: 2.2204459e-17, z: -5.884182e-17}
+        value: {x: -0.014595623, y: 8.881784e-18, z: -6.217249e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5348,13 +5348,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.01062978, y: -8.881784e-18, z: 2.2204459e-17}
+        value: {x: -0.01062978, y: -3.5527136e-17, z: 2.2204459e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5363,7 +5363,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.01062978, y: -8.881784e-18, z: 2.2204459e-17}
+        value: {x: -0.01062978, y: -3.5527136e-17, z: 2.2204459e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5373,13 +5373,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.008656742, y: -3.5527136e-17, z: -1.9984014e-17}
+        value: {x: -0.008656742, y: -3.5527136e-17, z: -2.3314683e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5388,7 +5388,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.008656742, y: -3.5527136e-17, z: -1.9984014e-17}
+        value: {x: -0.008656742, y: -3.5527136e-17, z: -2.3314683e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5398,13 +5398,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R/run_cycle:dbn_1:Tail3Side_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R/dbn_1:Tail3Side_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.010731967, y: 3.5527136e-17, z: 3.330669e-17}
+        value: {x: -0.010731967, y: 7.105427e-17, z: 2.6645352e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5413,7 +5413,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.010731967, y: 3.5527136e-17, z: 3.330669e-17}
+        value: {x: -0.010731967, y: 7.105427e-17, z: 2.6645352e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5423,13 +5423,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R/run_cycle:dbn_1:Tail3Side_R/run_cycle:dbn_1:Tail3Side1_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R/dbn_1:Tail3Side_R/dbn_1:Tail3Side1_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.009265307, y: 3.5527136e-17, z: -1.11022296e-17}
+        value: {x: -0.009265307, y: 3.5527136e-17, z: -1.3322676e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5438,7 +5438,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.009265307, y: 3.5527136e-17, z: -1.11022296e-17}
+        value: {x: -0.009265307, y: 3.5527136e-17, z: -1.3322676e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5448,7 +5448,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R/run_cycle:dbn_1:Tail3Side_R/run_cycle:dbn_1:Tail3Side1_R/run_cycle:dbn_1:Tail3Side2_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R/dbn_1:Tail3Side_R/dbn_1:Tail3Side1_R/dbn_1:Tail3Side2_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5473,7 +5473,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_R/run_cycle:dbn_1:Tail3ASide1_R/run_cycle:dbn_1:Tail3ASide2_R/run_cycle:dbn_1:Tail3Side_R/run_cycle:dbn_1:Tail3Side1_R/run_cycle:dbn_1:Tail3Side2_R/run_cycle:dbn_1:Tail3SideEnd_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_R/dbn_1:Tail3ASide1_R/dbn_1:Tail3ASide2_R/dbn_1:Tail3Side_R/dbn_1:Tail3Side1_R/dbn_1:Tail3Side2_R/dbn_1:Tail3SideEnd_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5498,13 +5498,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.010546085, y: -1.7763568e-17, z: -2.8865798e-17}
+        value: {x: -0.010546085, y: -4.4408918e-17, z: -2.8865798e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5513,7 +5513,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.010546085, y: -1.7763568e-17, z: -2.8865798e-17}
+        value: {x: -0.010546085, y: -4.4408918e-17, z: -2.8865798e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5523,13 +5523,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.013524774, y: -2.6645352e-17, z: 4.6074255e-17}
+        value: {x: -0.013524774, y: -3.5527136e-17, z: 4.8294702e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5538,7 +5538,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.013524774, y: -2.6645352e-17, z: 4.6074255e-17}
+        value: {x: -0.013524774, y: -3.5527136e-17, z: 4.8294702e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5548,13 +5548,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M/run_cycle:dbn_1:Tail3_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M/dbn_1:Tail3_M
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.012253857, y: 3.5527136e-17, z: 1.9428903e-17}
+        value: {x: -0.012253857, y: 3.5527136e-17, z: 1.7763568e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5563,7 +5563,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.012253857, y: 3.5527136e-17, z: 1.9428903e-17}
+        value: {x: -0.012253857, y: 3.5527136e-17, z: 1.7763568e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5573,13 +5573,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M/run_cycle:dbn_1:Tail3_M/run_cycle:dbn_1:Tail31_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M/dbn_1:Tail3_M/dbn_1:Tail31_M
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.01142888, y: -1.2434498e-16, z: -3.8857805e-17}
+        value: {x: -0.01142888, y: -1.0658141e-16, z: -3.9412916e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5588,7 +5588,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.01142888, y: -1.2434498e-16, z: -3.8857805e-17}
+        value: {x: -0.01142888, y: -1.0658141e-16, z: -3.9412916e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5598,7 +5598,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M/run_cycle:dbn_1:Tail3_M/run_cycle:dbn_1:Tail31_M/run_cycle:dbn_1:Tail32_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M/dbn_1:Tail3_M/dbn_1:Tail31_M/dbn_1:Tail32_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5623,7 +5623,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail21_M/run_cycle:dbn_1:Tail22_M/run_cycle:dbn_1:Tail3_M/run_cycle:dbn_1:Tail31_M/run_cycle:dbn_1:Tail32_M/run_cycle:dbn_1:Tail3End_M
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail21_M/dbn_1:Tail22_M/dbn_1:Tail3_M/dbn_1:Tail31_M/dbn_1:Tail32_M/dbn_1:Tail3End_M
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5648,13 +5648,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.014595623, y: 3.9968027e-17, z: 1.2656542e-16}
+        value: {x: 0.014595623, y: 8.881784e-18, z: 1.1324275e-16}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5663,7 +5663,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.014595623, y: 3.9968027e-17, z: 1.2656542e-16}
+        value: {x: 0.014595623, y: 8.881784e-18, z: 1.1324275e-16}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5673,13 +5673,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.01062978, y: -2.6645352e-17, z: -4.2188474e-17}
+        value: {x: 0.01062978, y: -8.881784e-18, z: -5.1070257e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5688,7 +5688,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.01062978, y: -2.6645352e-17, z: -4.2188474e-17}
+        value: {x: 0.01062978, y: -8.881784e-18, z: -5.1070257e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5698,13 +5698,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.008656742, y: 5.3290704e-17, z: -1.11022296e-17}
+        value: {x: 0.008656742, y: 3.5527136e-17, z: -1.11022296e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5713,7 +5713,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.008656742, y: 5.3290704e-17, z: -1.11022296e-17}
+        value: {x: 0.008656742, y: 3.5527136e-17, z: -1.11022296e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5723,13 +5723,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L/run_cycle:dbn_1:Tail3Side_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L/dbn_1:Tail3Side_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.010731967, y: 0, z: -4.440892e-18}
+        value: {x: 0.010731967, y: -3.5527136e-17, z: -1.7763568e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5738,7 +5738,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.010731967, y: 0, z: -4.440892e-18}
+        value: {x: 0.010731967, y: -3.5527136e-17, z: -1.7763568e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5748,13 +5748,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L/run_cycle:dbn_1:Tail3Side_L/run_cycle:dbn_1:Tail3Side1_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L/dbn_1:Tail3Side_L/dbn_1:Tail3Side1_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.009265307, y: -1.7763568e-17, z: 3.5527136e-17}
+        value: {x: 0.009265307, y: -1.7763568e-17, z: 2.3869794e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5763,7 +5763,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.009265307, y: -1.7763568e-17, z: 3.5527136e-17}
+        value: {x: 0.009265307, y: -1.7763568e-17, z: 2.3869794e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5773,7 +5773,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L/run_cycle:dbn_1:Tail3Side_L/run_cycle:dbn_1:Tail3Side1_L/run_cycle:dbn_1:Tail3Side2_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L/dbn_1:Tail3Side_L/dbn_1:Tail3Side1_L/dbn_1:Tail3Side2_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5798,7 +5798,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Tail2_M/run_cycle:dbn_1:Tail3ASide_L/run_cycle:dbn_1:Tail3ASide1_L/run_cycle:dbn_1:Tail3ASide2_L/run_cycle:dbn_1:Tail3Side_L/run_cycle:dbn_1:Tail3Side1_L/run_cycle:dbn_1:Tail3Side2_L/run_cycle:dbn_1:Tail3SideEnd_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Tail2_M/dbn_1:Tail3ASide_L/dbn_1:Tail3ASide1_L/dbn_1:Tail3ASide2_L/dbn_1:Tail3Side_L/dbn_1:Tail3Side1_L/dbn_1:Tail3Side2_L/dbn_1:Tail3SideEnd_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5823,13 +5823,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.0240468, y: -2.6645352e-17, z: -1.9984014e-17}
+        value: {x: -0.0240468, y: -2.6645352e-17, z: -1.5543122e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5838,7 +5838,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.0240468, y: -2.6645352e-17, z: -1.9984014e-17}
+        value: {x: -0.0240468, y: -2.6645352e-17, z: -1.5543122e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5848,13 +5848,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R/run_cycle:dbn_1:Knee_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R/dbn_1:Knee_R
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.025539914, y: 8.881784e-18, z: -2.4424906e-17}
+        value: {x: -0.025539914, y: 1.7763568e-17, z: -2.8865798e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5863,7 +5863,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: -0.025539914, y: 8.881784e-18, z: -2.4424906e-17}
+        value: {x: -0.025539914, y: 1.7763568e-17, z: -2.8865798e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5873,7 +5873,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R/run_cycle:dbn_1:Knee_R/run_cycle:dbn_1:Ankle_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R/dbn_1:Knee_R/dbn_1:Ankle_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5898,7 +5898,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R/run_cycle:dbn_1:Knee_R/run_cycle:dbn_1:Ankle_R/run_cycle:dbn_1:Toes_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R/dbn_1:Knee_R/dbn_1:Ankle_R/dbn_1:Toes_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5923,7 +5923,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_R/run_cycle:dbn_1:Knee_R/run_cycle:dbn_1:Ankle_R/run_cycle:dbn_1:Toes_R/run_cycle:dbn_1:ToesEnd_R
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_R/dbn_1:Knee_R/dbn_1:Ankle_R/dbn_1:Toes_R/dbn_1:ToesEnd_R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5948,13 +5948,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.0240468, y: 6.661338e-18, z: 2.1094237e-17}
+        value: {x: 0.0240468, y: 0, z: 2.3314683e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5963,7 +5963,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.0240468, y: 6.661338e-18, z: 2.1094237e-17}
+        value: {x: 0.0240468, y: 0, z: 2.3314683e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5973,13 +5973,13 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L/run_cycle:dbn_1:Knee_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L/dbn_1:Knee_L
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.025539914, y: -2.6645352e-17, z: 3.1086245e-17}
+        value: {x: 0.025539914, y: -3.9968027e-17, z: 3.330669e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5988,7 +5988,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.7916666
-        value: {x: 0.025539914, y: -2.6645352e-17, z: 3.1086245e-17}
+        value: {x: 0.025539914, y: -3.9968027e-17, z: 3.330669e-17}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -5998,7 +5998,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L/run_cycle:dbn_1:Knee_L/run_cycle:dbn_1:Ankle_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L/dbn_1:Knee_L/dbn_1:Ankle_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -6023,7 +6023,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L/run_cycle:dbn_1:Knee_L/run_cycle:dbn_1:Ankle_L/run_cycle:dbn_1:Toes_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L/dbn_1:Knee_L/dbn_1:Ankle_L/dbn_1:Toes_L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -6048,7 +6048,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:DeformationSystem/run_cycle:dbn_1:Root_M/run_cycle:dbn_1:Hip_L/run_cycle:dbn_1:Knee_L/run_cycle:dbn_1:Ankle_L/run_cycle:dbn_1:Toes_L/run_cycle:dbn_1:ToesEnd_L
+    path: dbn_1:Group/dbn_1:DeformationSystem/dbn_1:Root_M/dbn_1:Hip_L/dbn_1:Knee_L/dbn_1:Ankle_L/dbn_1:Toes_L/dbn_1:ToesEnd_L
   m_ScaleCurves: []
   m_FloatCurves:
   - curve:
@@ -6064,7 +6064,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.7916667
+        time: 0.7916666
         value: 1
         inSlope: 0
         outSlope: 0
@@ -6076,7 +6076,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:body4
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:body4
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -6175,8 +6175,1380 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:mouth_open.mouth_open
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:body4
+    attribute: blendShape.mouth_open.mouth_open
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:body4
+    classID: 137
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings51
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings69
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings72
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings73
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings49
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings29
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings39
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings46
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings62
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings55
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings41
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings74
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings42
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings34
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings66
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings35
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings28
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings58
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings65
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings45
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings36
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings56
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings33
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings48
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings43
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings68
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings71
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings30
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings57
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings67
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings63
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings44
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings32
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings59
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings27
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings60
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings53
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings52
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings38
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings64
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings50
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings61
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings37
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings54
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings70
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings31
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916666
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_wing/dbn_1:right_wings40
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916667
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles8
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: blendShape.blendShape9.heckles28
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles8
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -6204,1323 +7576,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings51
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings69
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings72
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings73
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings49
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings29
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings39
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings46
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings62
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings55
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings41
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings74
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings42
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings34
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings66
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings35
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings28
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings58
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings65
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings45
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings36
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings56
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings33
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings48
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings43
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings68
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings71
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings30
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings57
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings67
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings63
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings44
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings32
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings59
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings27
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings60
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings53
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings52
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings38
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings64
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings50
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings61
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings37
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings54
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings70
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings31
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_wing/run_cycle:dbn_1:right_wings40
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles8
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles7
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -7547,8 +7603,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape9.heckles28
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles8
+    attribute: blendShape.blendShape5.heckles32
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles7
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -7576,7 +7632,35 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles7
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles13
+    classID: 25
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7916667
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles2
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -7603,8 +7687,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape5.heckles32
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles7
+    attribute: blendShape.blendShape8.heckles26
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles2
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -7632,35 +7716,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles13
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles2
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles10
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -7687,8 +7743,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape8.heckles26
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles2
+    attribute: blendShape.blendShape10.heckles30
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles10
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -7716,7 +7772,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles10
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles19
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -7743,8 +7799,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape10.heckles30
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles10
+    attribute: blendShape.blendShape12.heckles31
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles19
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -7772,7 +7828,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles19
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles17
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -7799,8 +7855,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape12.heckles31
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles19
+    attribute: blendShape.blendShape13.heckles29
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles17
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -7828,7 +7884,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles17
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles9
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -7855,8 +7911,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape13.heckles29
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles17
+    attribute: blendShape.blendShape6.heckles33
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles9
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -7884,7 +7940,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles9
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles12
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -7911,8 +7967,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape6.heckles33
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles9
+    attribute: blendShape.blendShape11.heckles24
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles12
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -7940,7 +7996,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles12
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles11
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -7967,8 +8023,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape11.heckles24
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles12
+    attribute: blendShape.blendShape4.heckles23
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles11
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -7996,7 +8052,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles11
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles18
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8023,8 +8079,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape4.heckles23
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles11
+    attribute: blendShape.blendShape1.heckles22
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles18
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -8052,7 +8108,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles18
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles20
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8079,8 +8135,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape1.heckles22
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles18
+    attribute: blendShape.blendShape2.heckles27
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:hair1/dbn_1:heckles20
     classID: 137
     script: {fileID: 0}
   - curve:
@@ -8108,7 +8164,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles20
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers34
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8116,62 +8172,6 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: blendShape.run_cycle:blendShape2.heckles27
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:hair1/run_cycle:dbn_1:heckles20
-    classID: 137
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7916667
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers34
-    classID: 25
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
         value: 1
         inSlope: 0
         outSlope: 0
@@ -8192,7 +8192,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers37
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers37
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8220,7 +8220,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers41
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers41
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8248,7 +8248,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers55
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers55
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8276,7 +8276,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers57
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers57
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8304,7 +8304,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers42
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers42
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8332,7 +8332,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers54
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers54
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8360,7 +8360,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers49
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers49
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8388,7 +8388,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers52
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers52
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8416,7 +8416,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers40
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers40
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8444,7 +8444,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers48
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers48
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8472,7 +8472,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers46
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers46
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8500,7 +8500,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers50
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers50
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8528,7 +8528,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers33
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers33
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8556,7 +8556,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers56
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers56
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8584,7 +8584,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers47
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers47
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8612,7 +8612,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers45
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers45
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8640,7 +8640,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers39
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers39
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8668,7 +8668,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers51
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers51
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8696,7 +8696,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers38
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers38
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8724,7 +8724,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:tail1/run_cycle:dbn_1:tail_feathers58
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:tail1/dbn_1:tail_feathers58
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8752,7 +8752,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings93
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings93
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8780,7 +8780,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings89
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings89
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8808,7 +8808,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings110
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings110
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8836,7 +8836,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings104
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings104
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8864,7 +8864,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings117
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings117
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8892,7 +8892,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings83
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings83
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8920,7 +8920,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings94
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings94
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8948,7 +8948,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings77
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings77
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -8976,7 +8976,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings95
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings95
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9004,7 +9004,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings80
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings80
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9032,7 +9032,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings90
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings90
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9060,7 +9060,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings81
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings81
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9088,7 +9088,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings101
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings101
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9116,7 +9116,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings106
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings106
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9144,7 +9144,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings75
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings75
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9172,7 +9172,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings120
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings120
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9200,7 +9200,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings107
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings107
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9228,7 +9228,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings96
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings96
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9256,7 +9256,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings76
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings76
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9284,7 +9284,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings105
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings105
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9312,7 +9312,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings102
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings102
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9340,7 +9340,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings114
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings114
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9368,7 +9368,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings92
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings92
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9396,7 +9396,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings111
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings111
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9424,7 +9424,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings84
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings84
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9452,7 +9452,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings99
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings99
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9480,7 +9480,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings82
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings82
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9508,7 +9508,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings79
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings79
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9536,7 +9536,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings113
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings113
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9564,7 +9564,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings97
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings97
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9592,7 +9592,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings103
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings103
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9620,7 +9620,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings115
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings115
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9648,7 +9648,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings112
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings112
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9676,7 +9676,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings87
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings87
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9704,7 +9704,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings78
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings78
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9732,7 +9732,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings85
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings85
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9760,7 +9760,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings116
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings116
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9788,7 +9788,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings98
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings98
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9816,7 +9816,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings121
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings121
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9844,7 +9844,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings108
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings108
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9872,7 +9872,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings100
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings100
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9900,7 +9900,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings118
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings118
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9928,7 +9928,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings86
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings86
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9956,7 +9956,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings91
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings91
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -9984,7 +9984,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings109
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings109
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -10012,7 +10012,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings119
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings119
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -10040,7 +10040,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_wing/run_cycle:dbn_1:left_wings88
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_wing/dbn_1:left_wings88
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -10068,7 +10068,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:right_eye
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:right_eye
     classID: 25
     script: {fileID: 0}
   - curve:
@@ -10096,7 +10096,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: run_cycle:dbn_1:Group/run_cycle:dbn_1:Geometry/run_cycle:dbn_1:geo/run_cycle:dbn_1:left_eye
+    path: dbn_1:Group/dbn_1:Geometry/dbn_1:geo/dbn_1:left_eye
     classID: 25
     script: {fileID: 0}
   m_PPtrCurves: []
