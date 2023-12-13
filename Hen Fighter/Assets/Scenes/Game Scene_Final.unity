@@ -4247,63 +4247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Animator: {fileID: 517375056}
---- !u!1001 &532536504
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1527871968777219480, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2197694879940638498, guid: 15ff1246968a45c439020fa467750507, type: 3}
-      propertyPath: m_Name
-      value: PachaKaki Final Model
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 15ff1246968a45c439020fa467750507, type: 3}
 --- !u!1 &570334585
 GameObject:
   m_ObjectHideFlags: 0
@@ -84263,6 +84206,67 @@ Transform:
   m_Father: {fileID: 5917768660786961375}
   m_RootOrder: 399
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7126927943224451336
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634517871830044712, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977970856198228626, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_Name
+      value: PachaKaki Final Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977970856198228626, guid: 15ff1246968a45c439020fa467750507, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15ff1246968a45c439020fa467750507, type: 3}
 --- !u!4 &7129881949307637479
 Transform:
   m_ObjectHideFlags: 0

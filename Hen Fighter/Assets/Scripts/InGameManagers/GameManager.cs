@@ -8,7 +8,7 @@ public class GameManager : SingletonGeneric<GameManager>
     public CharacterDataBase CharacterDB;
     public TMP_Text nameOfTheHen;
     private GameObject networkHenGameObject;
-    private int selectedOption = 0;
+    //private int selectedOption = 0;
 
     public void Assignplayer(GameObject Player)
     {

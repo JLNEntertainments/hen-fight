@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAIDecision : MonoBehaviour
 {
     EnemyGamePlayManager enemyGamePlayManager;
+    
 
     float lowHealthThreshold = 0.2f;
     float lowStaminaThreshold = 0.3f;

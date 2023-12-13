@@ -32,7 +32,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
 
     [HideInInspector]
-    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking;
+    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking, isPlayerFound;
 
     public DamageGeneric[] enemyWeapons;
 
@@ -48,7 +48,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         myBody = GetComponent<Rigidbody>();
         enemyAIDecision = GetComponent<EnemyAIDecision>();
 
-        playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
+        
     }
 
     void Start()
@@ -82,6 +82,12 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void Update()
     {
+        if (!isPlayerFound && FindObjectOfType<PlayerGamePlayManager>())
+        {
+            playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
+            isPlayerFound = true;
+        }
+
         UpdateEnemyRotation();
     }
 
