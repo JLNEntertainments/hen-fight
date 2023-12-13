@@ -26,11 +26,11 @@ public class PlayerGamePlayManager : MonoBehaviour
     public string currentAnimaton;
 
     [HideInInspector]
-    public bool isHeavyAttack, isLightAttack, isBlocking, isTakingDamage, isSpecialAttack;
+    public bool isHeavyAttack, isLightAttack, isBlocking, isTakingDamage, isSpecialAttack, isPlayingAnotherAnimation;
 
     //Animation States
     [HideInInspector]
-    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK;
+    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK;
 
     void Start()
     {
@@ -53,6 +53,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         PLAYER_BLOCK = "Block";
         PLAYER_JUMP = "Jump";
         PLAYER_LIGHTREACT = "LightReact";
+        PLAYER_LIGHTATTACKTOP = "LightAttackTop";
         PLAYER_HEAVYREACT = "HeavyReact";
         PLAYER_CROUCH = "Crouch";
         PLAYER_SPECIALATTACK = "SpecialAttack";
@@ -129,17 +130,21 @@ public class PlayerGamePlayManager : MonoBehaviour
         {
             isTakingDamage = true;
 
-            if (damageType == "isLight")
+            if (damageType == "isLight" && !isPlayingAnotherAnimation)
             {
+                isPlayingAnotherAnimation = true;
                 StartCoroutine(PlayLightReactAnimation());
                 StopCoroutine(PlayLightReactAnimation());
                 playerHealth -= 0.1f;
+                isPlayingAnotherAnimation = false;
             }
-            else if (damageType == "isHeavy")
+            else if (damageType == "isHeavy" && !isPlayingAnotherAnimation)
             {
+                isPlayingAnotherAnimation = true;
                 StartCoroutine(PlayHeavyReactAnimation());
                 StopCoroutine(PlayHeavyReactAnimation());
                 playerHealth -= 0.2f;
+                isPlayingAnotherAnimation = false;
             }
 
             healthBar.fillAmount = playerHealth;

@@ -9,7 +9,8 @@ public class EnemyGamePlayManager : MonoBehaviour
     [HideInInspector]
     public PlayerGamePlayManager playerGamePlayManager;
 
-    EnemyAIDecision enemyAIDecision;
+    [HideInInspector]
+    public EnemyAIDecision enemyAIDecision;
 
     Animator enemyAnimator;
 
@@ -32,7 +33,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
 
     [HideInInspector]
-    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking, isPlayerFound;
+    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking, isPlayerFound, isPlayingAnotherAnimation;
 
     public DamageGeneric[] enemyWeapons;
 
@@ -47,8 +48,6 @@ public class EnemyGamePlayManager : MonoBehaviour
         enemyAnimator = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody>();
         enemyAIDecision = GetComponent<EnemyAIDecision>();
-
-        
     }
 
     void Start()
@@ -68,11 +67,11 @@ public class EnemyGamePlayManager : MonoBehaviour
         enemy_Start = 0;
 
         ENEMY_IDLE = "Idle";
-        ENEMY_WALK = "Walk";
+        ENEMY_WALK = "Walking";
         ENEMY_BACKWALK = "BackWalk";
-        ENEMY_LIGHTATTACK = "BeakAttack";
-        ENEMY_HEAVYATTACK = "ClawAttack";
-        ENEMY_BLOCK = "Defend";
+        ENEMY_LIGHTATTACK = "LightAttack";
+        ENEMY_HEAVYATTACK = "HeavyAttack";
+        ENEMY_BLOCK = "Crouch";
         ENEMY_LIGHTREACT = "LightReact";
         ENEMY_HEAVYREACT = "HeavyReact";
         ENEMY_SPECIALREACT = "SpecialReact";
@@ -145,8 +144,9 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         foreach (var obj in enemyWeapons) 
         {
-            if (attack == 1 && obj.gameObject.CompareTag("Beak"))
+            if (attack == 1 && obj.gameObject.CompareTag("Beak") && !isPlayingAnotherAnimation)
             {
+                isPlayingAnotherAnimation = true;
                 obj.gameObject.SetActive(true);
                 ChangeAnimationState(ENEMY_LIGHTATTACK);
                 isLightAttack = true;
@@ -154,10 +154,12 @@ public class EnemyGamePlayManager : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 SetDefaultAnimationState();
                 obj.gameObject.SetActive(false);
+                isPlayingAnotherAnimation = false;
             }
 
-            if (attack == 0 && obj.gameObject.CompareTag("Foot"))
+            if (attack == 0 && obj.gameObject.CompareTag("Foot") && !isPlayingAnotherAnimation)
             {
+                isPlayingAnotherAnimation = true;
                 obj.gameObject.SetActive(true);
                 ChangeAnimationState(ENEMY_HEAVYATTACK);
                 isHeavyAttack = true;
@@ -165,6 +167,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 yield return new WaitForSeconds(1f);
                 SetDefaultAnimationState();
                 obj.gameObject.SetActive(false);
+                isPlayingAnotherAnimation = false;
                 //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
             }
         } 
@@ -180,11 +183,17 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     IEnumerator DefendAttack()
     {
-        ChangeAnimationState(ENEMY_BLOCK);
-        yield return new WaitForSeconds(1.5f);
-        SetDefaultAnimationState();
-        isBlocking = false;
+        if(!isPlayingAnotherAnimation)
+        {
+            isPlayingAnotherAnimation = true;
+            ChangeAnimationState(ENEMY_BLOCK);
+            yield return new WaitForSeconds(1.5f);
+            SetDefaultAnimationState();
+            isBlocking = false;
+            isPlayingAnotherAnimation = false;
+        }
     }
+
     void UpdateEnemyRotation()
     {
         if(!playerGamePlayManager.isSpecialAttack)
@@ -215,17 +224,21 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         isTakingDamage = true;
 
-        if (damageType == "isLight")
+        if (damageType == "isLight" && !isPlayingAnotherAnimation)
         {
+            isPlayingAnotherAnimation = true;
             StartCoroutine(PlayLightReactAnimation());
             StopCoroutine(PlayLightReactAnimation());
             enemyHealth -= 0.1f;
+            isPlayingAnotherAnimation = false;
         }
-        else if (damageType == "isHeavy")
+        else if (damageType == "isHeavy" && !isPlayingAnotherAnimation)
         {
+            isPlayingAnotherAnimation = true;
             StartCoroutine(PlayHeavyReactAnimation());
             StopCoroutine(PlayHeavyReactAnimation());
             enemyHealth -= 0.2f;
+            isPlayingAnotherAnimation = false;
         }
 
         healthBar.fillAmount = enemyHealth;
@@ -249,15 +262,20 @@ public class EnemyGamePlayManager : MonoBehaviour
     
     public void SpecialAttackPlaying()
     {
-        isTakingDamage = true;
-        StartCoroutine(PlaySpecialAttackReactAnim());
-        StopCoroutine(PlaySpecialAttackReactAnim());
+        if (!isPlayingAnotherAnimation)
+        {
+            isPlayingAnotherAnimation = true;
+            isTakingDamage = true;
+            StartCoroutine(PlaySpecialAttackReactAnim());
+            StopCoroutine(PlaySpecialAttackReactAnim());
+            isPlayingAnotherAnimation = false;
+        }
     }
 
     IEnumerator PlaySpecialAttackReactAnim()
     {
         ChangeAnimationState(ENEMY_SPECIALREACT);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(4.5f);
         SetDefaultAnimationState();
         isTakingDamage = false;
     }
