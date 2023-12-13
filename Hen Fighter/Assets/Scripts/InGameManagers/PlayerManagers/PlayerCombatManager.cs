@@ -14,8 +14,28 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     DamageGeneric[] weaponCollider;
     public bool isAttacking;
     float currentAttackTime, defaultAttackTime, remainingStamina;
+    int assignmentCnt;
 
+    private void Awake()
+    {
+        //playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
+    }
     void Start()
+    {
+
+        /*playerAnimator = playerGamePlayManager.GetComponent<Animator>();
+        weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
+        uiManager = GetComponent<UIManager>();
+
+        clicksCnt = 0;
+        defaultAttackTime = 1f;
+        currentAttackTime = defaultAttackTime;
+
+        TurnOffAttackpoints();*/
+        assignmentCnt = 0;
+    }
+
+    public void AssignplayerAttributes()
     {
         playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
         playerAnimator = playerGamePlayManager.GetComponent<Animator>();
@@ -31,6 +51,12 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     void Update()
     {
+        if(FindObjectOfType<PlayerGamePlayManager>() == true && assignmentCnt == 0)
+        {
+            AssignplayerAttributes();
+            assignmentCnt++;
+        }
+            
         currentAttackTime += Time.deltaTime;
 
         if (clicksCnt == 3)

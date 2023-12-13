@@ -41,6 +41,8 @@ public class DamageGeneric : MonoBehaviour
             }
             if (is_Player && hit != null)
             {
+                if (hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager == null)
+                    Debug.LogError("----------Player Is Null");
                 if(hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isHeavyAttack)
                 {
                     hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isHeavy");
