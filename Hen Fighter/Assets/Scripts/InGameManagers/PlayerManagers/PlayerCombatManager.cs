@@ -14,7 +14,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     DamageGeneric[] weaponCollider;
     public bool isAttacking;
     float currentAttackTime, defaultAttackTime, remainingStamina;
-    int assignmentCnt;
+    int assignmentCnt, randomLightAttack;
 
     private void Awake()
     {
@@ -56,17 +56,23 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             AssignplayerAttributes();
             assignmentCnt++;
         }
-            
+
+        randomLightAttack = Random.Range(0, 2);
         currentAttackTime += Time.deltaTime;
 
-        if (clicksCnt == 3)
+        if (clicksCnt >= 3)
             canHitSpecialAttack();
     }
 
     public void OnLightAttackBtnPressed()
     {
-        StartCoroutine(LightAttack());
-        StopCoroutine(LightAttack());
+        if (!playerGamePlayManager.isPlayingAnotherAnimation)
+        {
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            StartCoroutine(LightAttack());
+            StopCoroutine(LightAttack());
+            playerGamePlayManager.isPlayingAnotherAnimation = false;
+        }
     }
 
     IEnumerator LightAttack()
@@ -79,17 +85,22 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             currentAttackTime = 0;
-            yield return new WaitForSeconds(0.5f);
-
+            yield return new WaitForSeconds(0.8f);
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
+            TurnOffAttackpoints();
         }
     }
 
     public void OnHeavyAttackBtnPressed()
     {
-        StartCoroutine(HeavyAttack());
-        StopCoroutine(HeavyAttack());
+        if(!playerGamePlayManager.isPlayingAnotherAnimation)
+        {
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            StartCoroutine(HeavyAttack());
+            StopCoroutine(HeavyAttack());
+            playerGamePlayManager.isPlayingAnotherAnimation = false;
+        }
     }
 
     IEnumerator HeavyAttack()
@@ -100,25 +111,30 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isHeavyAttack = true;
             playerGamePlayManager.isLightAttack = false;
             clicksCnt++;
-            canHitSpecialAttack();
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.8f);
             playerGamePlayManager.SetDefaultAnimationState();
             playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.transform.position.x + 1.85f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
             isAttacking = false;
+            TurnOffAttackpoints();
         }
     }
 
     public void OnSpecialAttackBtnPressed()
     {
-        StartCoroutine(SpecialAttack());
-        StopCoroutine(SpecialAttack());
+        if (!playerGamePlayManager.isPlayingAnotherAnimation)
+        {
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            StartCoroutine(SpecialAttack());
+            StopCoroutine(SpecialAttack());
+            playerGamePlayManager.isPlayingAnotherAnimation = false;
+        }
     }
 
     IEnumerator SpecialAttack()
     {
-        if (canHitSpecialAttack())
+        if (canHitSpecialAttack() && playerGamePlayManager.enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
         {
             isAttacking = true;
             playerGamePlayManager.isSpecialAttack = true;
@@ -140,17 +156,22 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     IEnumerator BlockAttack()
     {
-        playerGamePlayManager.isBlocking = true;
-        playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_BLOCK);
-        yield return new WaitForSeconds(1f);
-        playerGamePlayManager.SetDefaultAnimationState();
-        playerGamePlayManager.isBlocking = false;
+        if(!playerGamePlayManager.isPlayingAnotherAnimation)
+        {
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            playerGamePlayManager.isBlocking = true;
+            playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_BLOCK);
+            yield return new WaitForSeconds(1f);
+            playerGamePlayManager.SetDefaultAnimationState();
+            playerGamePlayManager.isBlocking = false;
+            playerGamePlayManager.isPlayingAnotherAnimation = false;
+        }
     }
 
     bool canHitSpecialAttack()
     {
         remainingStamina = (ScoreManager.Instance.maxStamina / 2);
-        if (ScoreManager.Instance.characterStaminaValuePlayer >= remainingStamina && clicksCnt == 3)
+        if (ScoreManager.Instance.characterStaminaValuePlayer >= remainingStamina && clicksCnt >= 3)
         {
             uiManager.specialAttackBtnAnim.SetActive(true);
             return true;
@@ -173,9 +194,18 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         {
             if (lightAttack && obj.gameObject.CompareTag("Beak"))
             {
-                obj.gameObject.SetActive(true);
-                playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_LIGHTATTACK);
-                return;
+                if (randomLightAttack == 0)
+                {
+                    playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_LIGHTATTACK);
+                    obj.gameObject.SetActive(true);
+                    return;
+                }
+                else if(randomLightAttack == 1)
+                {
+                    playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_LIGHTATTACKTOP);
+                    obj.gameObject.SetActive(true);
+                    return;
+                }
             }
             else if (heavyAttack && obj.gameObject.CompareTag("Foot"))
             {

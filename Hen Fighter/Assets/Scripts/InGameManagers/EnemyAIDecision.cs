@@ -28,8 +28,8 @@ public class EnemyAIDecision : MonoBehaviour
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
 
-        if (enemyGamePlayManager.enemy_Start > 2.5f)
-            MakeMovementDecision();
+        /*if (enemyGamePlayManager.enemy_Start > 2.5f)
+            MakeMovementDecision();*/
     }
 
     void FixedUpdate()
@@ -47,7 +47,6 @@ public class EnemyAIDecision : MonoBehaviour
         if (IsPlayerInAttackRange() && !IsEnemyLowOnHealth())
         {
             enemyGamePlayManager.Attack();
-
             /*if (IsPlayerPerformingSpecialAttack())
                 Dodge();*/
         }
@@ -66,17 +65,14 @@ public class EnemyAIDecision : MonoBehaviour
     {
         //For making decisions when player is not in attack range
         if (IsPlayerInChaseRange() && !IsPlayerLowOnStamina() && !IsEnemyLowOnHealth())
-        {
             enemyGamePlayManager.FollowTarget();
-        }
         else if (!IsPlayerLowOnStamina())
-        {
             enemyGamePlayManager.PrepareAttack();
-        }
         else if (IsPlayerLowOnStamina())
-        {
             enemyGamePlayManager.UnFollowTarget();
-        }
+
+        if (IsPlayerPerformingSpecialAttack())
+            enemyGamePlayManager.SpecialAttackPlaying();
     }
 
     public bool IsPlayerInAttackRange()
@@ -116,7 +112,6 @@ public class EnemyAIDecision : MonoBehaviour
 
     private void Defend()
     {
-        
         enemyGamePlayManager.Defend();
     }
 
