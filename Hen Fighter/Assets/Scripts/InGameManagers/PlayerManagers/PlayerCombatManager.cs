@@ -122,18 +122,19 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     IEnumerator SpecialAttack()
     {
-        if (canHitSpecialAttack() && playerGamePlayManager.enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
+        if (canHitSpecialAttack())
         {
             isAttacking = true;
             playerGamePlayManager.isSpecialAttack = true;
             playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_SPECIALATTACK);
+            playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1.2f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
             yield return new WaitForSeconds(3f);
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
             uiManager.specialAttackBtnAnim.SetActive(false);
             clicksCnt = 0;
             playerGamePlayManager.isSpecialAttack = false;
-            playerGamePlayManager.isTakingDamage = true;
+            playerGamePlayManager.isTakingDamage = false;
         }
     }
 
