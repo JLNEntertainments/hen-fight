@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyAIDecision : MonoBehaviour
 {
     EnemyGamePlayManager enemyGamePlayManager;
-    
 
     float lowHealthThreshold = 0.2f;
     float lowStaminaThreshold = 0.3f;
@@ -28,13 +27,13 @@ public class EnemyAIDecision : MonoBehaviour
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
 
-        /*if (enemyGamePlayManager.enemy_Start > 2.5f)
-            MakeMovementDecision();*/
+        if (enemyGamePlayManager.enemy_Start > 2.5f)
+            MakeMovementDecision();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if ((enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time) && !enemyGamePlayManager.isTakingDamage /*&& (enemyGamePlayManager.enemy_Stamina > 0)*/)
+        if ((enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time) /*&& !enemyGamePlayManager.isTakingDamage*/)
         {
             MakeCombatDecision();
             enemyGamePlayManager.current_Attack_Time = 0;
@@ -44,16 +43,14 @@ public class EnemyAIDecision : MonoBehaviour
     private void MakeCombatDecision()
     {
         //For making decisions when player is in attack range
-        if (IsPlayerInAttackRange() && !IsEnemyLowOnHealth())
+        if (!IsEnemyLowOnHealth())
         {
             enemyGamePlayManager.Attack();
-            /*if (IsPlayerPerformingSpecialAttack())
-                Dodge();*/
         }
 
-        if (IsEnemyLowOnHealth() && IsPlayerInAttackRange())
+        if (IsEnemyLowOnHealth())
         {
-            if(enemyGamePlayManager.block_Attack_Time > defendAttackRandom)
+            if (enemyGamePlayManager.block_Attack_Time > defendAttackRandom)
             {
                 Defend();
                 enemyGamePlayManager.block_Attack_Time = 0;
@@ -64,20 +61,25 @@ public class EnemyAIDecision : MonoBehaviour
     void MakeMovementDecision()
     {
         //For making decisions when player is not in attack range
-        if (IsPlayerInChaseRange() && !IsPlayerLowOnStamina() && !IsEnemyLowOnHealth())
-            enemyGamePlayManager.FollowTarget();
-        else if (!IsPlayerLowOnStamina())
-            enemyGamePlayManager.PrepareAttack();
-        else if (IsPlayerLowOnStamina())
-            enemyGamePlayManager.UnFollowTarget();
+        if(!IsPlayerPerformingSpecialAttack())
+        {
+            if (IsPlayerInChaseRange() && !IsPlayerLowOnStamina() && !IsEnemyLowOnHealth())
+                enemyGamePlayManager.FollowTarget();
+            else if (!IsPlayerLowOnStamina())
+                enemyGamePlayManager.PrepareAttack();
+            else if (IsPlayerLowOnStamina())
+                enemyGamePlayManager.UnFollowTarget();
+        }
 
-        if (IsPlayerPerformingSpecialAttack())
+        if (IsPlayerPerformingSpecialAttack() && IsPlayerInAttackRange())
+        {
             enemyGamePlayManager.SpecialAttackPlaying();
+        }
     }
 
     public bool IsPlayerInAttackRange()
     {
-        return distanceToPlayer <= enemyGamePlayManager.attack_Distance ;
+        return distanceToPlayer <= enemyGamePlayManager.attack_Distance;
     }
 
     public bool IsPlayerInChaseRange()

@@ -28,7 +28,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     [HideInInspector]
     public float attack_Distance;
-    
+
     [HideInInspector]
     public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
 
@@ -54,7 +54,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
-        
+
         speed = 2f;
         enemyHealth = 1f;
         attack_Distance = 3f;
@@ -107,13 +107,8 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public void UnFollowTarget()
     {
-        //myBody.velocity = Vector3.right * speed;
-
-        /*if (myBody.velocity.sqrMagnitude != 0)
-        {*/
-            ChangeAnimationState(ENEMY_BACKWALK);
-            followPlayer = false;
-        //}
+        ChangeAnimationState(ENEMY_BACKWALK);
+        followPlayer = false;
     }
 
     public void PrepareAttack()
@@ -130,7 +125,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             return;
 
         StartCoroutine(EnemyAttack());
-        
+
         if (!enemyAIDecision.IsPlayerInAttackRange())
         {
             attackPlayer = false;
@@ -142,7 +137,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         int attack = (Random.Range(0, 2));
 
-        foreach (var obj in enemyWeapons) 
+        foreach (var obj in enemyWeapons)
         {
             if (attack == 1 && obj.gameObject.CompareTag("Beak") && !isPlayingAnotherAnimation)
             {
@@ -170,7 +165,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isPlayingAnotherAnimation = false;
                 //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
             }
-        } 
+        }
     }
 
     public void Defend()
@@ -178,12 +173,12 @@ public class EnemyGamePlayManager : MonoBehaviour
         isBlocking = true;
         StartCoroutine(DefendAttack());
         StopCoroutine(DefendAttack());
-        
+
     }
 
     IEnumerator DefendAttack()
     {
-        if(!isPlayingAnotherAnimation)
+        if (!isPlayingAnotherAnimation)
         {
             isPlayingAnotherAnimation = true;
             ChangeAnimationState(ENEMY_BLOCK);
@@ -196,20 +191,19 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void UpdateEnemyRotation()
     {
-        if(!playerGamePlayManager.isSpecialAttack)
-            transform.eulerAngles = new Vector3(0, -90f, 0);
+        transform.eulerAngles = new Vector3(0, -90f, 0);
     }
 
     void TurnOffAttackpoints()
     {
-        foreach(var obj in enemyWeapons)
+        foreach (var obj in enemyWeapons)
             obj.gameObject.SetActive(false);
     }
 
     void ChangeAnimationState(string newAnimation)
     {
         if (currentAnimaton == newAnimation) return;
-        
+
         enemyAnimator.Play(newAnimation);
         currentAnimaton = newAnimation;
     }
@@ -224,52 +218,48 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         isTakingDamage = true;
 
-        if (damageType == "isLight" && !isPlayingAnotherAnimation)
+        if (damageType == "isLight")
         {
-            isPlayingAnotherAnimation = true;
             StartCoroutine(PlayLightReactAnimation());
             StopCoroutine(PlayLightReactAnimation());
             enemyHealth -= 0.1f;
-            isPlayingAnotherAnimation = false;
         }
-        else if (damageType == "isHeavy" && !isPlayingAnotherAnimation)
+        else if (damageType == "isHeavy")
         {
-            isPlayingAnotherAnimation = true;
             StartCoroutine(PlayHeavyReactAnimation());
             StopCoroutine(PlayHeavyReactAnimation());
             enemyHealth -= 0.2f;
-            isPlayingAnotherAnimation = false;
         }
-
         healthBar.fillAmount = enemyHealth;
     }
 
     IEnumerator PlayLightReactAnimation()
     {
-        ChangeAnimationState(ENEMY_LIGHTREACT);
-        yield return new WaitForSeconds(0.8f);
-        SetDefaultAnimationState();
-        isTakingDamage = false;
+        if(!isPlayingAnotherAnimation) 
+        {
+            isPlayingAnotherAnimation = true;
+            ChangeAnimationState(ENEMY_LIGHTREACT);
+            yield return new WaitForSeconds(0.8f);
+            SetDefaultAnimationState();
+            isTakingDamage = false;
+            isPlayingAnotherAnimation = false;
+        }
     }
 
     IEnumerator PlayHeavyReactAnimation()
     {
         ChangeAnimationState(ENEMY_HEAVYREACT);
         yield return new WaitForSeconds(1.2f);
+        this.transform.position = new Vector3(this.transform.position.x + 1.8f, this.transform.position.y, this.transform.position.z);
         SetDefaultAnimationState();
         isTakingDamage = false;
     }
-    
+
     public void SpecialAttackPlaying()
     {
-        if (!isPlayingAnotherAnimation)
-        {
-            isPlayingAnotherAnimation = true;
-            isTakingDamage = true;
-            StartCoroutine(PlaySpecialAttackReactAnim());
-            StopCoroutine(PlaySpecialAttackReactAnim());
-            isPlayingAnotherAnimation = false;
-        }
+        isTakingDamage = true;
+        StartCoroutine(PlaySpecialAttackReactAnim());
+        isTakingDamage = false;
     }
 
     IEnumerator PlaySpecialAttackReactAnim()
@@ -277,6 +267,5 @@ public class EnemyGamePlayManager : MonoBehaviour
         ChangeAnimationState(ENEMY_SPECIALREACT);
         yield return new WaitForSeconds(4.5f);
         SetDefaultAnimationState();
-        isTakingDamage = false;
     }
 }
