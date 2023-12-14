@@ -17544,7 +17544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3539879198354876110
 Transform:
   m_ObjectHideFlags: 0
@@ -17620,11 +17620,13 @@ MonoBehaviour:
   isBlocking: 0
   isTakingDamage: 0
   isSpecialAttack: 0
+  isPlayingAnotherAnimation: 0
   PLAYER_IDLE: 
   PLAYER_WALK: 
   PLAYER_RUN: 
   PLAYER_BACKWALK: 
   PLAYER_LIGHTATTACK: 
+  PLAYER_LIGHTATTACKTOP: 
   PLAYER_HEAVYATTACK: 
   PLAYER_BLOCK: 
   PLAYER_JUMP: 
