@@ -43,6 +43,8 @@ public class EnemyGamePlayManager : MonoBehaviour
     //Animation States
     string ENEMY_IDLE, ENEMY_WALK, ENEMY_BACKWALK, ENEMY_LIGHTATTACK, ENEMY_HEAVYATTACK, ENEMY_BLOCK, ENEMY_LIGHTREACT, ENEMY_HEAVYREACT, ENEMY_SPECIALREACT;
 
+    private AudioSource EnemeyAudio;
+
     void Awake()
     {
         enemyAnimator = GetComponent<Animator>();
@@ -52,6 +54,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void Start()
     {
+
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
 
@@ -66,6 +69,8 @@ public class EnemyGamePlayManager : MonoBehaviour
         current_Stamina_Regen_Time = 0;
         enemy_Start = 0;
 
+        EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
+        
         ENEMY_IDLE = "Idle";
         ENEMY_WALK = "Walking";
         ENEMY_BACKWALK = "BackWalk";
@@ -144,6 +149,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isPlayingAnotherAnimation = true;
                 obj.gameObject.SetActive(true);
                 ChangeAnimationState(ENEMY_LIGHTATTACK);
+                EnemeyAudio.Play();
                 isLightAttack = true;
                 isHeavyAttack = false;
                 yield return new WaitForSeconds(0.5f);
@@ -157,6 +163,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isPlayingAnotherAnimation = true;
                 obj.gameObject.SetActive(true);
                 ChangeAnimationState(ENEMY_HEAVYATTACK);
+                EnemeyAudio.Play();
                 isHeavyAttack = true;
                 isLightAttack = false;
                 yield return new WaitForSeconds(1f);

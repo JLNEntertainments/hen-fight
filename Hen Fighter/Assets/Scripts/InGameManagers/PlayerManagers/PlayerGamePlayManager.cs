@@ -32,6 +32,8 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK;
 
+    
+
     void Start()
     {
         enemyGamePlayManager = FindObjectOfType<EnemyGamePlayManager>();
@@ -43,6 +45,8 @@ public class PlayerGamePlayManager : MonoBehaviour
 
         speed = 2;
         playerHealth = 1f;
+
+         
 
         PLAYER_IDLE = "Idle";
         PLAYER_WALK = "Walking";
