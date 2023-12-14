@@ -60,7 +60,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         speed = 2f;
         enemyHealth = 1f;
-        attack_Distance = 3f;
+        attack_Distance = 2.5f;
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
         default_Attack_Time = 3f;
@@ -255,11 +255,14 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     IEnumerator PlayHeavyReactAnimation()
     {
-        ChangeAnimationState(ENEMY_HEAVYREACT);
-        yield return new WaitForSeconds(1.2f);
-        this.transform.position = new Vector3(this.transform.position.x + 1.8f, this.transform.position.y, this.transform.position.z);
-        SetDefaultAnimationState();
-        isTakingDamage = false;
+        if (!isPlayingAnotherAnimation)
+        {
+            ChangeAnimationState(ENEMY_HEAVYREACT);
+            yield return new WaitForSeconds(1.2f);
+            this.transform.position = new Vector3(this.transform.position.x + 1.8f, this.transform.position.y, this.transform.position.z);
+            SetDefaultAnimationState();
+            isTakingDamage = false;
+        }
     }
 
     public void SpecialAttackPlaying()
@@ -271,8 +274,11 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     IEnumerator PlaySpecialAttackReactAnim()
     {
-        ChangeAnimationState(ENEMY_SPECIALREACT);
-        yield return new WaitForSeconds(4.5f);
-        SetDefaultAnimationState();
+        if (!isPlayingAnotherAnimation)
+        {
+            ChangeAnimationState(ENEMY_SPECIALREACT);
+            yield return new WaitForSeconds(4.5f);
+            SetDefaultAnimationState();
+        }
     }
 }

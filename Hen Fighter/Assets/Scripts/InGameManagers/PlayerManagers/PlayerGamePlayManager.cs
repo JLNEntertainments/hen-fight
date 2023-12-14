@@ -30,7 +30,7 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     //Animation States
     [HideInInspector]
-    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK;
+    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK, PLAYER_DEATH;
 
     
 
@@ -44,9 +44,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         playerRb = this.GetComponent<Rigidbody>();
 
         speed = 2;
-        playerHealth = 1f;
-
-         
+        playerHealth = 0.2f;
 
         PLAYER_IDLE = "Idle";
         PLAYER_WALK = "Walking";
@@ -61,6 +59,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         PLAYER_HEAVYREACT = "HeavyReact";
         PLAYER_CROUCH = "Crouch";
         PLAYER_SPECIALATTACK = "SpecialAttack";
+        PLAYER_DEATH = "DeathReact";
     }
 
     void Update()
@@ -74,11 +73,15 @@ public class PlayerGamePlayManager : MonoBehaviour
         if (joystick.Horizontal > 0.2f)
         {
             if (joystick.Horizontal > 0.5f)
+            {
                 ChangeAnimationState(PLAYER_RUN);
+                UpdateMovementParameters(joystick.Horizontal * 2);
+            }   
             else
+            {
                 ChangeAnimationState(PLAYER_WALK);
-            
-            UpdateMovementParameters(joystick.Horizontal);
+                UpdateMovementParameters(joystick.Horizontal * 2);
+            } 
         }
         else if (joystick.Horizontal < -0.2f)
         {
@@ -124,8 +127,10 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     public void InflictPlayerDamage(string damageType)
     {
-        if (playerHealth < 0)
+        Debug.Log("----- Health : " + playerHealth);
+        if (playerHealth <= 0)
         {
+            ChangeAnimationState(PLAYER_DEATH);
             ScoreManager.Instance.ShowGameOverPanel();
             enemyGamePlayManager.gameObject.SetActive(false);
             this.gameObject.SetActive(true);
