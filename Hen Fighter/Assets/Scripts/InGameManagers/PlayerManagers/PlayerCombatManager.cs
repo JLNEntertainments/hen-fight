@@ -16,9 +16,12 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     float currentAttackTime, defaultAttackTime, remainingStamina;
     int assignmentCnt, randomLightAttack;
 
+    private AudioSource ClawSound;
+
     void Start()
     {
         assignmentCnt = 0;
+      ClawSound  = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
     }
 
     public void AssignplayerAttributes()
@@ -70,11 +73,13 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isHeavyAttack = false;
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
+            ClawSound.Play();
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.8f);
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
             TurnOffAttackpoints();
+            
         }
     }
 
@@ -98,6 +103,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isLightAttack = false;
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
+            ClawSound.Play();
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.8f);
             playerGamePlayManager.SetDefaultAnimationState();
