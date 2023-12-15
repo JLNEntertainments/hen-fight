@@ -44,7 +44,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         playerRb = this.GetComponent<Rigidbody>();
 
         speed = 2;
-        playerHealth = 0.2f;
+        playerHealth = 1f;
 
         PLAYER_IDLE = "Idle";
         PLAYER_WALK = "Walking";
@@ -137,6 +137,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         }
         else
         {
+           
             isTakingDamage = true;
 
             if (damageType == "isLight" && !isPlayingAnotherAnimation)

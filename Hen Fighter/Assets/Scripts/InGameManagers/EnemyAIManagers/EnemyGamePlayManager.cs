@@ -224,7 +224,10 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void InflictEnemyDamage(string damageType)
     {
         isTakingDamage = true;
-
+        if (enemyHealth <0)
+        {
+            ScoreManager.Instance.ShowYouWonpanel();
+        }
         if (damageType == "isLight")
         {
             StartCoroutine(PlayLightReactAnimation());

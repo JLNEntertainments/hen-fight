@@ -18,10 +18,13 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     private AudioSource ClawSound;
 
+    private ParticleSystem particleForPlayer;
+
     void Start()
     {
         assignmentCnt = 0;
       ClawSound  = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
+      particleForPlayer = GameObject.FindGameObjectsWithTag("Particles").GetComponent<ParticleSystem>();
     }
 
     public void AssignplayerAttributes()
@@ -74,6 +77,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             ClawSound.Play();
+            particleForPlayer.Play();
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.8f);
             playerGamePlayManager.SetDefaultAnimationState();
@@ -104,6 +108,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
             ClawSound.Play();
+            particleForPlayer.Play();
             currentAttackTime = 0;
             yield return new WaitForSeconds(0.8f);
             playerGamePlayManager.SetDefaultAnimationState();
