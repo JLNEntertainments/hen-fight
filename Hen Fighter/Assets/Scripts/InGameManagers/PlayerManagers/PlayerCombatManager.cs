@@ -24,7 +24,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         assignmentCnt = 0;
       ClawSound  = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
-      //particleForPlayer = GameObject.FindGameObjectsWithTag("Particles").GetComponent<par>();
+        //particleForPlayer = GameObject.FindGameObjectsWithTag("Particles").GetComponent<par>();
+        GameObject particleObject = GameObject.FindWithTag("Particles");
+        particleForPlayer = particleObject.GetComponent<ParticleSystem>();
     }
 
     public void AssignplayerAttributes()
