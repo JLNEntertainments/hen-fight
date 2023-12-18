@@ -19,7 +19,8 @@ public class EnemyAIDecision : MonoBehaviour
 
     void Update()
     {
-        distanceToPlayer = Vector3.Distance(this.transform.position, enemyGamePlayManager.playerGamePlayManager.transform.position);
+        if(enemyGamePlayManager.isPlayerFound)
+            distanceToPlayer = Vector3.Distance(this.transform.position, enemyGamePlayManager.playerGamePlayManager.transform.position);
 
         defendAttackRandom = Random.Range(0, 5f);
 
