@@ -13,7 +13,10 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     [SerializeField]
     DamageGeneric[] weaponCollider;
     public bool isAttacking;
-    float currentAttackTime, defaultAttackTime, remainingStamina;
+
+    float currentAttackTime, defaultAttackTime, remainingStamina, lightAttackBuffer, heavyAttackBuffer, specialAttackBuffer, blockAttackBuffer;
+    WaitForSeconds lightBuffer, heavyBuffer, spBuffer, blockBuffer;
+
     int assignmentCnt, randomLightAttack;
 
     private AudioSource ClawSound;
@@ -39,6 +42,14 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         clicksCnt = 0;
         defaultAttackTime = 1f;
         currentAttackTime = defaultAttackTime;
+        lightAttackBuffer = heavyAttackBuffer = 0.8f;
+        specialAttackBuffer = 4f;
+        blockAttackBuffer = 1f;
+
+        lightBuffer = new WaitForSeconds(lightAttackBuffer);
+        heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
+        spBuffer = new WaitForSeconds(specialAttackBuffer);
+        blockBuffer = new WaitForSeconds(blockAttackBuffer);
 
         TurnOffAttackpoints();
     }
@@ -81,7 +92,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             ClawSound.Play();
             particleForPlayer.Play();
             currentAttackTime = 0;
-            yield return new WaitForSeconds(0.8f);
+            yield return lightBuffer;
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
             TurnOffAttackpoints();
@@ -112,7 +123,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             ClawSound.Play();
             particleForPlayer.Play();
             currentAttackTime = 0;
-            yield return new WaitForSeconds(0.8f);
+            yield return heavyBuffer;
             playerGamePlayManager.SetDefaultAnimationState();
             playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.transform.position.x + 1.85f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
             isAttacking = false;
@@ -135,7 +146,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isSpecialAttack = true;
             playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_SPECIALATTACK);
             playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1.2f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
-            yield return new WaitForSeconds(3f);
+            yield return spBuffer;
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
             uiManager.specialAttackBtnAnim.SetActive(false);
@@ -158,7 +169,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isPlayingAnotherAnimation = true;
             playerGamePlayManager.isBlocking = true;
             playerGamePlayManager.ChangeAnimationState(playerGamePlayManager.PLAYER_BLOCK);
-            yield return new WaitForSeconds(1f);
+            yield return blockBuffer;
             playerGamePlayManager.SetDefaultAnimationState();
             playerGamePlayManager.isBlocking = false;
             playerGamePlayManager.isPlayingAnotherAnimation = false;

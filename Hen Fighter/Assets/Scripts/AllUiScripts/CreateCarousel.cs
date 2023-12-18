@@ -15,25 +15,16 @@ public class CreateCarousel : MonoBehaviour
     public bool AssumeObject = true; // if true assume the object that is picked, otherwise (false) keep checking what the next item is through raycast.
     public int ChosenObject = 0; //index of the object that is centered in the carousel
     
-   
-   
     public float speedOfrotation = 0.1f; //the speed in which the carousel rotates: values should be between 0.01f -> 1.0f, zero will stop the rotation
-
+    
+    Quaternion newRotation;
+    RaycastHit hit;
 
     private static float diameter = 360.0f; //the diameter is always 360 degrees
     private Transform theRayCaster = null; //create an empty transform
     private float Angle = 0.0f; //the angle for each object in the carousel
     private float newAngle = 0.0f; //the calculated angle
     private bool firstTime = true; //used to calculate the offset for the first time
-
-
-    // public TMP_Text HenName;
-
-  
-
-
-
-
 
     void Start()
     {
@@ -75,10 +66,6 @@ public class CreateCarousel : MonoBehaviour
             newAngle = Angle;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// Correct the carrousel and make sure the first item in the array is the first element in the carousel
-        ///
         theRayCaster.position = transform.position;
         string objectName = "";
         RaycastHit hit;
@@ -101,50 +88,37 @@ public class CreateCarousel : MonoBehaviour
                 }
             }
         }
-
-       // HenName.text = carouselObjects[0].name.ToString();
-        
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (AssumeObject == false)
         {
-            // use raycast to dynamically check which item is selected not recommended unless necessary
-            theRayCaster.position = transform.position;
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, -theRayCaster.forward, out hit, DistanceFromCenter))
-            {
-                Debug.Log(hit.collider.name);//display in the console which element is detected
-             //   HenName.text = carouselObjects[ChosenObject].name.ToString();
-
-            }
-
-            
+            CheckSelectedItem();
         }
+        UpdateRotation();
+    }
 
-        Quaternion newRotation = Quaternion.AngleAxis(newAngle, Vector3.up); // pick the rotation axis and angle
-        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, speedOfrotation);  //animate the carousel
-
-
-       
-    
-
-
-}
-
-
-
-    
-
-
-public void rotateTheCarouselLeft() // call this function to rotate the carousel towards the left
+    void CheckSelectedItem()
     {
+        //use raycast to dynamically check which item is selected not recommended unless necessary
+        theRayCaster.position = transform.position;
+        if (Physics.Raycast(transform.position, -theRayCaster.forward, out hit, DistanceFromCenter))
+        {
+            Debug.Log(hit.collider.name);//display in the console which element is detected
+                                         //HenName.text = carouselObjects[ChosenObject].name.ToString();
+        }
+    }
 
+    void UpdateRotation()
+    {
+        newRotation = Quaternion.AngleAxis(newAngle, Vector3.up); // pick the rotation axis and angle
+        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, speedOfrotation);  //animate the carousel
+    }
+
+    public void rotateTheCarouselLeft() // call this function to rotate the carousel towards the left
+    {
         if (firstTime)// if run the first time calcule the offset
         {
            newAngle = transform.eulerAngles.y;
@@ -160,23 +134,16 @@ public void rotateTheCarouselLeft() // call this function to rotate the carousel
             if (ChosenObject <= 0)
             {
                 ChosenObject = carouselObjects.Length - 1;
-              
-
             }
             else
             {
                 ChosenObject--;
-              
             }
             Debug.Log(carouselObjects[ChosenObject].name); //show in the console the name of the selected element
-                                                           //    HenName.text = carouselObjects[ChosenObject].name.ToString();
-
-
-          
-
+            //HenName.text = carouselObjects[ChosenObject].name.ToString();
         }
-      
     }
+
     public void rotateTheCarouselRight()// call this function to rotate the carousel towards the right
     {
 
@@ -194,24 +161,14 @@ public void rotateTheCarouselLeft() // call this function to rotate the carousel
         {
             if (ChosenObject >= carouselObjects.Length - 1)
             {
-                ChosenObject = 0;
-                
+                ChosenObject = 0; 
             }
             else
             {
                 ChosenObject++;
-           
             }
             Debug.Log(carouselObjects[ChosenObject].name); //show in the console the name of the selected element
-         //   HenName.text = carouselObjects[ChosenObject].name.ToString();
-            
-
-
+            //HenName.text = carouselObjects[ChosenObject].name.ToString();
         }
     }
-
-
-   
-
-
 }

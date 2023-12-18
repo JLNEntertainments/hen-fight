@@ -10,6 +10,7 @@ public class LoadCharacter : MonoBehaviour
 	public TMP_Text label;
 	public GameObject originalObject; // Assign the original GameObject prefab in the Inspector
 	public Vector3 rotationEulerAngles = new Vector3(0f, 90f, 0f);
+
 	void Start()
 	{
 		int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");

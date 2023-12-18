@@ -20,6 +20,9 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public float playerHealth;
 
+    float lightReactBuffer, heavyReactBuffer;
+    WaitForSeconds lightBuffer, heavyBuffer;
+
     Rigidbody playerRb;
 
     [HideInInspector]
@@ -32,8 +35,6 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK, PLAYER_DEATH;
 
-    
-
     void Start()
     {
         enemyGamePlayManager = FindObjectOfType<EnemyGamePlayManager>();
@@ -45,6 +46,11 @@ public class PlayerGamePlayManager : MonoBehaviour
 
         speed = 2;
         playerHealth = 1f;
+        lightReactBuffer = 0.8f;
+        heavyReactBuffer = 1.2f;
+
+        lightBuffer = new WaitForSeconds(lightReactBuffer);
+        heavyBuffer = new WaitForSeconds(heavyReactBuffer);
 
         PLAYER_IDLE = "Idle";
         PLAYER_WALK = "Walking";
@@ -164,7 +170,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     IEnumerator PlayLightReactAnimation()
     {
         ChangeAnimationState(PLAYER_LIGHTREACT);
-        yield return new WaitForSeconds(0.8f);
+        yield return lightBuffer;
         SetDefaultAnimationState();
         isTakingDamage = false;
     }
@@ -172,7 +178,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     IEnumerator PlayHeavyReactAnimation()
     {
         ChangeAnimationState(PLAYER_HEAVYREACT);
-        yield return new WaitForSeconds(1.2f);
+        yield return heavyBuffer;
         SetDefaultAnimationState();
         isTakingDamage = false;
     }

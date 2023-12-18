@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-     void Update()
+    void Update()
     {
         CircleImage.fillAmount = progress;
         TxtProgress.text = Mathf.Floor(progress * 100).ToString();

@@ -6,8 +6,7 @@ public class Gamepass : MonoBehaviour
 {
     public GameObject pausePanel,gamequitPanel;
 
-
-     void Update()
+    void Update()
     {
         if (Input.GetKey("escape"))
         {
@@ -15,6 +14,7 @@ public class Gamepass : MonoBehaviour
             Debug.LogError("ApplicationQuit");
         }
     }
+
     public void PauseButoon()
     {
         pausePanel.SetActive(true);
