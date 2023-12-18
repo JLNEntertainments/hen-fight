@@ -27,7 +27,7 @@ public class TouchAndRotate : MonoBehaviour
                 float rotateY = mouseX * rotationSpeed * Time.deltaTime;
 
                 // Apply rotation to the object
-                transform.Rotate(Vector3.up, rotateY, Space.World);
+                transform.Rotate(Vector3.up, -rotateY, Space.World);
                 //transform.Rotate(Vector3.right, rotateX, Space.World);
 
             }

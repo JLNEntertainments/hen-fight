@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreManager : SingletonGeneric<ScoreManager>
 {
-    [SerializeField] GameObject YouWinPanel;
+    [SerializeField] GameObject YouLostPanel,YouWonpanel,GameOverpanel;
 
 
     static int enemyScore, playerScore;
@@ -17,9 +17,9 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     float staminaRegenRate, defaultStaminRegenRate;
 
-    public TMP_Text ScoretextForPlayer,ScoreTextDisplayOnHealthForPlayer,ScoreTextForEnemy, ScoreTextDisplayOnHealthForEnemy;
+    public TMP_Text ScoretextForPlayer,ScoreTextForEnemy,ScoreDisplayOnGameOverPanelForPlayer;
     [SerializeField]
-    private TMP_Text EnemyHealthBarText,PlayerHealthBarText;
+   // private TMP_Text EnemyHealthBarText,PlayerHealthBarText;
 
     [HideInInspector]
     public float maxStamina;
@@ -77,12 +77,13 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         Debug.Log("Enemy : " + enemyScore);
         //score for player
         ScoretextForPlayer.text =playerScore.ToString();
-        ScoreTextDisplayOnHealthForPlayer.text = playerScore.ToString();
-        EnemyHealthBarText.text = HealthBarValue.ToString();
+        ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
+       // ScoreTextDisplayOnHealthForPlayer.text = playerScore.ToString();
+        //EnemyHealthBarText.text = HealthBarValue.ToString();
 
         //score for enemy
         ScoreTextForEnemy.text = enemyScore.ToString();
-        ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
+       // ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
 
     }
 
@@ -104,12 +105,13 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         Debug.Log("Player : " + playerScore);
         //score for palyer
         ScoretextForPlayer.text = playerScore.ToString();
-        ScoreTextDisplayOnHealthForPlayer.text = playerScore.ToString();
-        EnemyHealthBarText.text = characterStaminaValueEnemy.ToString();
+        ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
+        //ScoreTextDisplayOnHealthForPlayer.text = playerScore.ToString();
+        // EnemyHealthBarText.text = characterStaminaValueEnemy.ToString();
 
         //score for enemy
         ScoreTextForEnemy.text = enemyScore.ToString();
-        ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
+        //ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
     }
 
     void RegenerateStamina()
@@ -129,6 +131,21 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     public void ShowGameOverPanel()
     {
-        YouWinPanel.SetActive(true);
+        YouLostPanel.SetActive(true);
+        StartCoroutine(GameOverPanelDisplay());
+        StopCoroutine(GameOverPanelDisplay());
+    }
+
+    IEnumerator GameOverPanelDisplay()
+    {
+        yield return new WaitForSeconds(3f);
+        GameOverpanel.SetActive(true);
+    }
+
+    public void ShowYouWonpanel()
+    {
+        YouWonpanel.SetActive(true);
+        StartCoroutine(GameOverPanelDisplay());
+        StopCoroutine(GameOverPanelDisplay());
     }
 }
