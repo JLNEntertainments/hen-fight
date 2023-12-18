@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-
 public class SelectChar : MonoBehaviour {
 	
 	// The left marker out of visible scence
@@ -79,59 +78,31 @@ public class SelectChar : MonoBehaviour {
 		{
 			Transform transf = chars[index].transform;
 
-            // If the index is less than left index, the character will dissapear in the left side
-            if (index < leftIndex)
-            {
-                transf.position = Vector3.Lerp(transf.position, markerLeft2.position, Time.deltaTime);
-
-
-
-                // If the index is less than right index, the character will dissapear in the right side
-            }
-			
-			
-           
-
-
-            else if (index > rightIndex)
-            {
-                transf.position = Vector3.Lerp(transf.position, markerRight2.position, Time.deltaTime);
-
-                // If the index is equals to left index, the character will move to the left visible marker
-            }
-			
-
-
+			// If the index is less than left index, the character will dissapear in the left side
+			if (index < leftIndex)
+			{
+				transf.position = Vector3.Lerp(transf.position, markerLeft2.position, Time.deltaTime);
+				// If the index is less than right index, the character will dissapear in the right side
+			}
+			else if (index > rightIndex)
+			{
+				transf.position = Vector3.Lerp(transf.position, markerRight2.position, Time.deltaTime);
+				// If the index is equals to left index, the character will move to the left visible marker
+			}
 			else if (index == leftIndex)
 			{
 				transf.position = Vector3.Lerp(transf.position, markerLeft.position, Time.deltaTime);
-
-
 				// If the index is equals to middle index, the character will move to the middle visible marker
 			}
-			
-
 			else if (index == middleIndex)
 			{
 				transf.position = Vector3.Lerp(transf.position, markerMiddle.position, Time.deltaTime);
-
-
 				// If the index is equals to right index, the character will move to the right visible marker
 			}
-			
 			else if (index == rightIndex)
 			{
 				transf.position = Vector3.Lerp(transf.position, markerRight.position, Time.deltaTime);
-
 			}
-
-			
-			
-			
-
 		}
-
-
 	}
-	
 }

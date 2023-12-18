@@ -8,12 +8,12 @@ public class SwitchToggle : MonoBehaviour
     public GameObject  on, off;
     int index;
 
-     void Start()
+    void Start()
     {
         
     }
 
-     void Update()
+    void Update()
     {
         if(index == 1)
         {
@@ -23,18 +23,13 @@ public class SwitchToggle : MonoBehaviour
 
     public void On()
     {
-
         on.gameObject.SetActive(false);
         off.gameObject.SetActive(true);
-
     }
 
     public void OFF()
     {
-        
-        
         off.gameObject.SetActive(false);
         on.gameObject.SetActive(true);
-
     }
 }

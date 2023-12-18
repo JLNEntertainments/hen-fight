@@ -18,10 +18,11 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     Image healthBar;
 
+    float speed, lightAttackBuffer, heavyAttackBuffer, blockAttackBuffer, lightReactBuffer, heavyReactBuffer, specialReactBuffer;
+    WaitForSeconds lightBuffer, heavyBuffer, blockBuffer, lReactBuffer, hReactBuffer, sReactBuffer;
+
     [HideInInspector]
     public float enemyHealth;
-
-    float speed;
 
     [HideInInspector]
     public float default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time;
@@ -61,6 +62,20 @@ public class EnemyGamePlayManager : MonoBehaviour
         speed = 2f;
         enemyHealth = 1f;
         attack_Distance = 2.5f;
+        lightAttackBuffer = 0.5f;
+        heavyAttackBuffer = 1f;
+        blockAttackBuffer = 1.5f;
+        lightReactBuffer = 0.8f;
+        heavyReactBuffer = 1.2f;
+        specialReactBuffer = 4.5f;
+
+        lightBuffer = new WaitForSeconds(lightAttackBuffer);
+        heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
+        blockBuffer = new WaitForSeconds(blockAttackBuffer);
+        lReactBuffer = new WaitForSeconds(lightReactBuffer);
+        hReactBuffer = new WaitForSeconds(heavyReactBuffer);
+        sReactBuffer = new WaitForSeconds(specialReactBuffer);
+
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
         default_Attack_Time = 3f;
@@ -130,6 +145,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             return;
 
         StartCoroutine(EnemyAttack());
+        StopCoroutine(EnemyAttack());
 
         if (!enemyAIDecision.IsPlayerInAttackRange())
         {
@@ -152,7 +168,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 EnemeyAudio.Play();
                 isLightAttack = true;
                 isHeavyAttack = false;
-                yield return new WaitForSeconds(0.5f);
+                yield return lightBuffer;
                 SetDefaultAnimationState();
                 obj.gameObject.SetActive(false);
                 isPlayingAnotherAnimation = false;
@@ -166,7 +182,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 EnemeyAudio.Play();
                 isHeavyAttack = true;
                 isLightAttack = false;
-                yield return new WaitForSeconds(1f);
+                yield return heavyBuffer;
                 SetDefaultAnimationState();
                 obj.gameObject.SetActive(false);
                 isPlayingAnotherAnimation = false;
@@ -189,7 +205,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         {
             isPlayingAnotherAnimation = true;
             ChangeAnimationState(ENEMY_BLOCK);
-            yield return new WaitForSeconds(1.5f);
+            yield return blockBuffer;
             SetDefaultAnimationState();
             isBlocking = false;
             isPlayingAnotherAnimation = false;
@@ -249,7 +265,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         {
             isPlayingAnotherAnimation = true;
             ChangeAnimationState(ENEMY_LIGHTREACT);
-            yield return new WaitForSeconds(0.8f);
+            yield return lReactBuffer;
             SetDefaultAnimationState();
             isTakingDamage = false;
             isPlayingAnotherAnimation = false;
@@ -261,7 +277,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (!isPlayingAnotherAnimation)
         {
             ChangeAnimationState(ENEMY_HEAVYREACT);
-            yield return new WaitForSeconds(1.2f);
+            yield return hReactBuffer;
             this.transform.position = new Vector3(this.transform.position.x + 1.8f, this.transform.position.y, this.transform.position.z);
             SetDefaultAnimationState();
             isTakingDamage = false;
@@ -280,7 +296,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (!isPlayingAnotherAnimation)
         {
             ChangeAnimationState(ENEMY_SPECIALREACT);
-            yield return new WaitForSeconds(4.5f);
+            yield return sReactBuffer;
             SetDefaultAnimationState();
         }
     }
