@@ -16591,7 +16591,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095280697}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed28a5ef7ea2b404bba0510644693cf1, type: 3}
   m_Name: 
@@ -16618,6 +16618,7 @@ MonoBehaviour:
   PLAYER_HEAVYREACT: 
   PLAYER_CROUCH: 
   PLAYER_SPECIALATTACK: 
+  PLAYER_DEATH: 
 --- !u!54 &1095280700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17820,9 +17821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954bcb2d40575484285e952030dbe0da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterDB: {fileID: 11400000, guid: d4242b428ab8efd49b69db9620377057, type: 2}
-  nameOfTheHen: {fileID: 1696350364}
-  networkHenGameObject: {fileID: 4926560672710180886, guid: 3921960ab3c126f49933b9971d334695, type: 3}
 --- !u!4 &1163307635
 Transform:
   m_ObjectHideFlags: 0
@@ -52046,6 +52044,7 @@ MonoBehaviour:
   PLAYER_HEAVYREACT: 
   PLAYER_CROUCH: 
   PLAYER_SPECIALATTACK: 
+  PLAYER_DEATH: 
 --- !u!1 &1792267526465330090
 GameObject:
   m_ObjectHideFlags: 0
