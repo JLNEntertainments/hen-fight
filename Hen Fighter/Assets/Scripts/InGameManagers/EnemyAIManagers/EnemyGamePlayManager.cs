@@ -105,6 +105,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         {
             playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
             isPlayerFound = true;
+            PlayerCombatManager.Instance.AssignplayerAttributes();
         }
 
         UpdateEnemyRotation();

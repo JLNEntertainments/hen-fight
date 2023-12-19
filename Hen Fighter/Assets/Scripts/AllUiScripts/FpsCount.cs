@@ -10,9 +10,10 @@ public class FpsCount : MonoBehaviour
 
     void Update()
     {
-        DisplayFps();
+       DisplayFps();
     }
 
+    
     void DisplayFps()
     {
         deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;

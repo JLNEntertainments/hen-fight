@@ -31,9 +31,9 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
-        CircleImage.fillAmount = progress;
+        /*CircleImage.fillAmount = progress;
         TxtProgress.text = Mathf.Floor(progress * 100).ToString();
-        Holder.rotation = Quaternion.Euler(new Vector3(0f, 0f, -progress * 360));
+        Holder.rotation = Quaternion.Euler(new Vector3(0f, 0f, -progress * 360));*/
     }
 
     public void SceneChange(string ScreneName)
