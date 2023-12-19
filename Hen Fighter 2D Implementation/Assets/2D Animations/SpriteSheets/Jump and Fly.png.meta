@@ -1,0 +1,905 @@
+fileFormatVersion: 2
+guid: 631f18deadef4ad48b6aeb086ba8ca9d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Jump and Fly_0
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 4610
+        width: 270
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a35a1de700fc8489f55d0547b1dd60
+      internalID: -320548072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_1
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 4609
+        width: 265
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecbdc5011bbfc2e47a04b79420e73f3e
+      internalID: -1350512626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_2
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 4610
+        width: 261
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51cbedd020587ff4aba087c142a71707
+      internalID: 1252408141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_3
+      rect:
+        serializedVersion: 2
+        x: 3789
+        y: 4609
+        width: 261
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0606e26d2026d6547a86ee701e7e3542
+      internalID: -1671381672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_4
+      rect:
+        serializedVersion: 2
+        x: 4987
+        y: 4609
+        width: 261
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fb908b815de964e95fd94f9060a7e5
+      internalID: -203752023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_5
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 3889
+        width: 261
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c036119dca5bd4f459053be5cd204068
+      internalID: -143047683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_6
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 3889
+        width: 264
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b287156df343069439b56c155704a74b
+      internalID: -1581071342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_7
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 3889
+        width: 266
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9118c4ae72fd7646a0e92d48c5ac8ee
+      internalID: -739528687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_8
+      rect:
+        serializedVersion: 2
+        x: 3803
+        y: 3889
+        width: 267
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99fb4ec824cb02743b8b04f3addf1f87
+      internalID: 392850066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_9
+      rect:
+        serializedVersion: 2
+        x: 5004
+        y: 3889
+        width: 268
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21f31abe6e531549a161c14557548cd
+      internalID: 727192001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_10
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 3170
+        width: 259
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37150a26aae342a47a9af8dfc22156bd
+      internalID: 462886858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_11
+      rect:
+        serializedVersion: 2
+        x: 2613
+        y: 3193
+        width: 238
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e37cdc4467fe241ad8e629f1ef74eb
+      internalID: -792824571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_12
+      rect:
+        serializedVersion: 2
+        x: 2852
+        y: 3352
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529cc82b342a6974f90fb79c66c8ccb8
+      internalID: 1555764487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_13
+      rect:
+        serializedVersion: 2
+        x: 3814
+        y: 3218
+        width: 232
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e6fa18d2cb6bf48a689d6e533d885e
+      internalID: -831891519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_14
+      rect:
+        serializedVersion: 2
+        x: 5017
+        y: 3240
+        width: 225
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29989b4dbaa6c254b859977a17532698
+      internalID: 55633279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_15
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 3169
+        width: 267
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb2b47c5126a40419720f6e08454cb6
+      internalID: 1593213765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_16
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 2529
+        width: 221
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5299142264b6b8b4fad094cfa66d716e
+      internalID: 427351726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_17
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 2542
+        width: 230
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2506fba49a017745945cc73104a90f8
+      internalID: 1147963069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_18
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 2546
+        width: 231
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e422eab367797499d8d0f4257c533d
+      internalID: -1176374180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_19
+      rect:
+        serializedVersion: 2
+        x: 3804
+        y: 2592
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae324c3534174d488bad54109c226c0
+      internalID: 369317016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_20
+      rect:
+        serializedVersion: 2
+        x: 3809
+        y: 2550
+        width: 221
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa0b93ebd629f642aba25c624b9da56
+      internalID: -1026567771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_21
+      rect:
+        serializedVersion: 2
+        x: 4992
+        y: 2550
+        width: 221
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fae401a37bf7074f910ce25ce9bde0b
+      internalID: 1368040121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1814
+        width: 222
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11b266ad7c1ba34ba586e17a4df03a5
+      internalID: -637416498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_23
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 1780
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8506efe66abd9f74e9ac9ea2c130b3ec
+      internalID: 587508964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_24
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 1748
+        width: 207
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 650aeeb78c86ce042a048496c171a28f
+      internalID: -1640289008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_25
+      rect:
+        serializedVersion: 2
+        x: 3765
+        y: 1732
+        width: 238
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb4c415cac4793468323e8fb95672ff
+      internalID: -1706329970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_26
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 1729
+        width: 266
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21313420c5086f4db34eac39f04cfe4
+      internalID: -1904872258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_27
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1008
+        width: 264
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e414e03039fcd408240149a9eb5227
+      internalID: -407439555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_28
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 1009
+        width: 256
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e57cca3027a6cb45897ad77fc30230a
+      internalID: -1836061864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_29
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 1009
+        width: 255
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b2befbf6ad5a24cae79302576bff2c
+      internalID: -456922525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_30
+      rect:
+        serializedVersion: 2
+        x: 3796
+        y: 1008
+        width: 261
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e2a755d5a387346bcf4b89435ba615
+      internalID: -1279918241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_31
+      rect:
+        serializedVersion: 2
+        x: 4996
+        y: 1009
+        width: 264
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784f0d3f2f216d1489400147c01906b9
+      internalID: -904033627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_32
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 289
+        width: 265
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d6460ac6b9ba643aafd565b29850c3
+      internalID: -1967262183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_33
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 289
+        width: 270
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea29465db83fda42b8c6dab7cd7eb1c
+      internalID: 1282918332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump and Fly_34
+      rect:
+        serializedVersion: 2
+        x: 2594
+        y: 289
+        width: 270
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef526a6c37f1014c95d38896a006970
+      internalID: -133244921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8bbb2b2231a0faa4a856b35a17bd7e92
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Jump and Fly_0: -320548072
+      Jump and Fly_1: -1350512626
+      Jump and Fly_10: 462886858
+      Jump and Fly_11: -792824571
+      Jump and Fly_12: 1555764487
+      Jump and Fly_13: -831891519
+      Jump and Fly_14: 55633279
+      Jump and Fly_15: 1593213765
+      Jump and Fly_16: 427351726
+      Jump and Fly_17: 1147963069
+      Jump and Fly_18: -1176374180
+      Jump and Fly_19: 369317016
+      Jump and Fly_2: 1252408141
+      Jump and Fly_20: -1026567771
+      Jump and Fly_21: 1368040121
+      Jump and Fly_22: -637416498
+      Jump and Fly_23: 587508964
+      Jump and Fly_24: -1640289008
+      Jump and Fly_25: -1706329970
+      Jump and Fly_26: -1904872258
+      Jump and Fly_27: -407439555
+      Jump and Fly_28: -1836061864
+      Jump and Fly_29: -456922525
+      Jump and Fly_3: -1671381672
+      Jump and Fly_30: -1279918241
+      Jump and Fly_31: -904033627
+      Jump and Fly_32: -1967262183
+      Jump and Fly_33: 1282918332
+      Jump and Fly_34: -133244921
+      Jump and Fly_4: -203752023
+      Jump and Fly_5: -143047683
+      Jump and Fly_6: -1581071342
+      Jump and Fly_7: -739528687
+      Jump and Fly_8: 392850066
+      Jump and Fly_9: 727192001
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

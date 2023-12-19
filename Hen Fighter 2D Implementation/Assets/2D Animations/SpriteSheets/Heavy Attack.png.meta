@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ca44f27cbd9ceb45bf0fb3c06362b2d
+guid: 3af0659a19b54de49abaaebb1598f52d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_0
+      name: Claws attack_0
       rect:
         serializedVersion: 2
-        x: 259
-        y: 4341
-        width: 692
-        height: 366
+        x: 189
+        y: 4608
+        width: 267
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddbddec867a15e74bad528a4a7998a2b
-      internalID: -209948430
+      spriteID: 225b49747bb68d041b47deda5f3812ed
+      internalID: 693867085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_1
+      name: Claws attack_1
       rect:
         serializedVersion: 2
-        x: 1458
-        y: 4341
-        width: 684
-        height: 363
+        x: 1387
+        y: 4608
+        width: 264
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be84e2b0164bf604c8d6eb7d165a6fea
-      internalID: 1784181907
+      spriteID: 2384f0b3423ea4847b8d0460ad3f08f2
+      internalID: 1765318327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_2
+      name: Claws attack_2
       rect:
         serializedVersion: 2
-        x: 2648
-        y: 4337
-        width: 670
-        height: 370
+        x: 2585
+        y: 4608
+        width: 258
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c2fefdaaafe65544b0af56659df23db
-      internalID: -1858875999
+      spriteID: 894e15f7c460d444ba376adca99af615
+      internalID: 779752601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_3
+      name: Claws attack_3
       rect:
         serializedVersion: 2
-        x: 3851
-        y: 4341
-        width: 642
-        height: 369
+        x: 3784
+        y: 4605
+        width: 249
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd85194337226554f915b638b2855229
-      internalID: 699248503
+      spriteID: 3bd1b9440e875a643b08ebae9ec543e3
+      internalID: -707442639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_4
+      name: Claws attack_4
       rect:
         serializedVersion: 2
-        x: 5061
-        y: 4341
-        width: 612
-        height: 363
+        x: 4988
+        y: 4608
+        width: 239
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22473fd93c781c74b8d97445b060ac73
-      internalID: 216496221
+      spriteID: ecf1a2152e4e93c488b27ad97133f4c6
+      internalID: -799979125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_5
+      name: Claws attack_5
       rect:
         serializedVersion: 2
-        x: 271
-        y: 3620
-        width: 583
-        height: 365
+        x: 192
+        y: 3887
+        width: 225
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b3aa9f892b540e48b4c010908f95096
-      internalID: -1862874381
+      spriteID: 4f9e6aaaf9d7f3d43ba8fd6525eaa623
+      internalID: -1918815154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_6
+      name: Claws attack_6
       rect:
         serializedVersion: 2
-        x: 1481
-        y: 3620
-        width: 557
-        height: 358
+        x: 1394
+        y: 3887
+        width: 219
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1a12357758b08e48b5943e1bba2e3d7
-      internalID: -874460627
+      spriteID: b0285fae8976d26448c94f1deb5d49f0
+      internalID: 850130141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_7
+      name: Claws attack_7
       rect:
         serializedVersion: 2
-        x: 2691
-        y: 3620
-        width: 539
-        height: 355
+        x: 2597
+        y: 3887
+        width: 211
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a60a9b99b099d4f47b8d35cb3e5246f8
-      internalID: 284695321
+      spriteID: 22af6c38666019045a1af367ba3e1872
+      internalID: 271006686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_8
+      name: Claws attack_8
       rect:
         serializedVersion: 2
-        x: 3895
-        y: 3620
-        width: 542
-        height: 364
+        x: 3797
+        y: 3887
+        width: 215
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f309517312428143924ead83a683bd5
-      internalID: 232618139
+      spriteID: c466973571208164497fd1d03eed4cad
+      internalID: -896957444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_9
+      name: Claws attack_9
       rect:
         serializedVersion: 2
-        x: 5090
-        y: 3620
-        width: 557
-        height: 390
+        x: 4997
+        y: 3887
+        width: 219
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,20 +320,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a049955cab1367142a405279811f7cee
-      internalID: -1710772182
+      spriteID: d8ce670c17859564c83adca7a0a6de13
+      internalID: -464960274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_10
+      name: Claws attack_10
       rect:
         serializedVersion: 2
-        x: 274
-        y: 2900
-        width: 571
-        height: 421
+        x: 189
+        y: 3166
+        width: 226
+        height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,20 +341,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2d74e79ba9dad042a4909d83f44cc3f
-      internalID: -121552271
+      spriteID: fa221df43ed67f441a17880d3e4d76e9
+      internalID: 847902414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_11
+      name: Claws attack_11
       rect:
         serializedVersion: 2
-        x: 1461
-        y: 2900
-        width: 577
-        height: 448
+        x: 1384
+        y: 3166
+        width: 229
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,20 +362,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57ddc5931f11f5749ade98012bfd8e72
-      internalID: -772645849
+      spriteID: 998f90e6ea3259c4e96687e1f0eca687
+      internalID: 1074319282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_12
+      name: Claws attack_12
       rect:
         serializedVersion: 2
-        x: 2668
-        y: 2900
-        width: 565
-        height: 477
+        x: 2585
+        y: 3166
+        width: 226
+        height: 182
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,20 +383,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64e6ba07a0f68a54dbf89af6ff905480
-      internalID: 886609418
+      spriteID: ff13c2d05f765114abf3de351f57846c
+      internalID: -1496684267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_13
+      name: Claws attack_13
       rect:
         serializedVersion: 2
-        x: 3860
-        y: 2900
-        width: 580
-        height: 518
+        x: 3790
+        y: 3166
+        width: 237
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,20 +404,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d937e66ec14a534093ead24bbce789a
-      internalID: 1073296488
+      spriteID: 84a4e9e49a0b08345be57beb10d8c023
+      internalID: -2113737767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_14
+      name: Claws attack_14
       rect:
         serializedVersion: 2
-        x: 5046
-        y: 2900
-        width: 592
-        height: 580
+        x: 4985
+        y: 3166
+        width: 234
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,20 +425,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 311e442c461510848992815c547681de
-      internalID: -1258593050
+      spriteID: 266b428b49c930943b60aa5b0166ff4e
+      internalID: -1365256079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_15
+      name: Claws attack_15
       rect:
         serializedVersion: 2
-        x: 242
-        y: 2185
-        width: 583
-        height: 629
+        x: 186
+        y: 2451
+        width: 220
+        height: 235
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,20 +446,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 122b4b71538bab544810d831009f9647
-      internalID: -2035800180
+      spriteID: 1f3c0fb1de82767429d21148970f2e67
+      internalID: -825802013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_16
+      name: Claws attack_16
       rect:
         serializedVersion: 2
-        x: 1443
-        y: 2243
-        width: 574
-        height: 586
+        x: 1384
+        y: 2469
+        width: 219
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,20 +467,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c455db8edc32f44a814216f2ce6fdb8
-      internalID: -1670835231
+      spriteID: 1d1c31167330a2e47a5ad4d69ca139cb
+      internalID: 469474952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_17
+      name: Claws attack_17
       rect:
         serializedVersion: 2
-        x: 2644
-        y: 2220
-        width: 644
-        height: 597
+        x: 2586
+        y: 2460
+        width: 246
+        height: 226
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,20 +488,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b551d9e9f90ef441b2ba76e49fb80c7
-      internalID: 673124591
+      spriteID: 52469b80ed4b848439c90205cd04b096
+      internalID: 1407145468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_18
+      name: Claws attack_18
       rect:
         serializedVersion: 2
-        x: 3857
-        y: 2211
-        width: 718
-        height: 598
+        x: 3790
+        y: 2457
+        width: 278
+        height: 226
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,20 +509,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3094ad58b56631c4d8f602ae1bf424a6
-      internalID: -1018368644
+      spriteID: b3aa19ec7f4d4d24bbc152ee276801bf
+      internalID: -473908795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_19
+      name: Claws attack_19
       rect:
         serializedVersion: 2
-        x: 5076
-        y: 2223
-        width: 706
-        height: 597
+        x: 4997
+        y: 2463
+        width: 272
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -530,20 +530,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0570f4945a39cae4ea2ad494dbd41ed3
-      internalID: -862106706
+      spriteID: 3a621d80ba90b2a449abd0b67ea1a313
+      internalID: -1817677521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_20
+      name: Claws attack_20
       rect:
         serializedVersion: 2
-        x: 295
-        y: 1516
-        width: 685
-        height: 601
+        x: 204
+        y: 1748
+        width: 266
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -551,20 +551,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af1e2e7236a387e4491e53533bf3e90e
-      internalID: -796249914
+      spriteID: 9b98ebc3ba6b4e94ba3e49565ab49eff
+      internalID: 238799260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_21
+      name: Claws attack_21
       rect:
         serializedVersion: 2
-        x: 1496
-        y: 1525
-        width: 656
-        height: 592
+        x: 1405
+        y: 1751
+        width: 255
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,20 +572,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9bf5e5aa1a82e542a66b9f05484cb59
-      internalID: 856064617
+      spriteID: d894f54e58e771c49b0ea6a1119f44bb
+      internalID: -1981103536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_22
+      name: Claws attack_22
       rect:
         serializedVersion: 2
-        x: 2683
-        y: 1517
-        width: 629
-        height: 582
+        x: 2600
+        y: 1751
+        width: 246
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,20 +593,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50510dc07f420c643b4e95ca016d25a9
-      internalID: -2112928455
+      spriteID: c7659c55ffe12a94c9894792337513d4
+      internalID: -816452292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_23
+      name: Claws attack_23
       rect:
         serializedVersion: 2
-        x: 3883
-        y: 1467
-        width: 595
-        height: 612
+        x: 3798
+        y: 1735
+        width: 237
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -614,20 +614,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 157ae53cdd12fb348be2ef075fe39a71
-      internalID: -1413140371
+      spriteID: 8d5eea87c08472b4fae5f6c615465718
+      internalID: -1921380962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_24
+      name: Claws attack_24
       rect:
         serializedVersion: 2
-        x: 5093
-        y: 1459
-        width: 571
-        height: 576
+        x: 5000
+        y: 1730
+        width: 225
+        height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -635,20 +635,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1231da82bf7e8fc44b8a8fcccf06cbc7
-      internalID: 4616350
+      spriteID: 590496065c966ac4cac19f5028f9a87b
+      internalID: 1511245002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_25
+      name: Claws attack_25
       rect:
         serializedVersion: 2
-        x: 300
-        y: 740
-        width: 606
-        height: 472
+        x: 198
+        y: 1007
+        width: 240
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -656,20 +656,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25e0b80d93d737842bb447a8ee07aa73
-      internalID: 233314159
+      spriteID: 3b5923ed4fe85ca4c9c7de3f42aeb026
+      internalID: 1579321595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_26
+      name: Claws attack_26
       rect:
         serializedVersion: 2
-        x: 1507
-        y: 740
-        width: 645
-        height: 409
+        x: 1402
+        y: 1007
+        width: 255
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -677,20 +677,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc993ff9bf5d3e34e97a958db31a5cc6
-      internalID: 536068575
+      spriteID: 60719103a24111f4785e2e84eda0f378
+      internalID: 1262134057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_27
+      name: Claws attack_27
       rect:
         serializedVersion: 2
-        x: 2711
-        y: 740
-        width: 657
-        height: 372
+        x: 2603
+        y: 1007
+        width: 258
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -698,20 +698,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24009550bd1ae65489c74ce36941a059
-      internalID: 2006642311
+      spriteID: f86e3d3f2d7174d43bc3f2c8c4b0cec5
+      internalID: 770533466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_28
+      name: Claws attack_28
       rect:
         serializedVersion: 2
-        x: 3914
-        y: 740
-        width: 658
-        height: 354
+        x: 3801
+        y: 1007
+        width: 264
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -719,20 +719,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5782fc0e67def6c48976b34cc4152ae9
-      internalID: -256568917
+      spriteID: b1246d9743b15194383a620e6fa27897
+      internalID: -1341529590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_29
+      name: Claws attack_29
       rect:
         serializedVersion: 2
-        x: 5117
-        y: 740
-        width: 653
-        height: 363
+        x: 5000
+        y: 1007
+        width: 263
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -740,20 +740,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c0a94f04bb82db499c279063a0f1b06
-      internalID: -1469908847
+      spriteID: 9671ce6a9d63ca44db8d859f32961107
+      internalID: 1639530766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_30
+      name: Claws attack_30
       rect:
         serializedVersion: 2
-        x: 303
-        y: 19
-        width: 665
-        height: 372
+        x: 195
+        y: 289
+        width: 269
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,20 +761,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a488548f06fc7a849953e28430a8223e
-      internalID: 1066724292
+      spriteID: a03256bbb9cbdcf4c8d7206333d96c96
+      internalID: -1372684538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_31
+      name: Claws attack_31
       rect:
         serializedVersion: 2
-        x: 1493
-        y: 19
-        width: 676
-        height: 387
+        x: 1393
+        y: 286
+        width: 270
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -782,20 +782,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27e0efbfd99c9d346a997e3c275a6f94
-      internalID: 623870491
+      spriteID: 43f352a7923e883469d40aa84e8b27f4
+      internalID: 1404392535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ezgif.com-gif-to-sprite-converted-min_32
+      name: Claws attack_32
       rect:
         serializedVersion: 2
-        x: 2691
-        y: 20
-        width: 677
-        height: 397
+        x: 2591
+        y: 289
+        width: 273
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -803,8 +803,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22be6c5711de09a4f9d46f89ed9aba4d
-      internalID: 2146808622
+      spriteID: 9a5be866b3396d041878cdfb8005d416
+      internalID: 1089300835
       vertices: []
       indices: 
       edges: []
@@ -812,7 +812,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cb12182afa4160d4ab1f966d09468534
+    spriteID: bde03d4219981a24c860988325507bee
     internalID: 0
     vertices: []
     indices: 
@@ -820,39 +820,39 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ezgif.com-gif-to-sprite-converted-min_0: -209948430
-      ezgif.com-gif-to-sprite-converted-min_1: 1784181907
-      ezgif.com-gif-to-sprite-converted-min_10: -121552271
-      ezgif.com-gif-to-sprite-converted-min_11: -772645849
-      ezgif.com-gif-to-sprite-converted-min_12: 886609418
-      ezgif.com-gif-to-sprite-converted-min_13: 1073296488
-      ezgif.com-gif-to-sprite-converted-min_14: -1258593050
-      ezgif.com-gif-to-sprite-converted-min_15: -2035800180
-      ezgif.com-gif-to-sprite-converted-min_16: -1670835231
-      ezgif.com-gif-to-sprite-converted-min_17: 673124591
-      ezgif.com-gif-to-sprite-converted-min_18: -1018368644
-      ezgif.com-gif-to-sprite-converted-min_19: -862106706
-      ezgif.com-gif-to-sprite-converted-min_2: -1858875999
-      ezgif.com-gif-to-sprite-converted-min_20: -796249914
-      ezgif.com-gif-to-sprite-converted-min_21: 856064617
-      ezgif.com-gif-to-sprite-converted-min_22: -2112928455
-      ezgif.com-gif-to-sprite-converted-min_23: -1413140371
-      ezgif.com-gif-to-sprite-converted-min_24: 4616350
-      ezgif.com-gif-to-sprite-converted-min_25: 233314159
-      ezgif.com-gif-to-sprite-converted-min_26: 536068575
-      ezgif.com-gif-to-sprite-converted-min_27: 2006642311
-      ezgif.com-gif-to-sprite-converted-min_28: -256568917
-      ezgif.com-gif-to-sprite-converted-min_29: -1469908847
-      ezgif.com-gif-to-sprite-converted-min_3: 699248503
-      ezgif.com-gif-to-sprite-converted-min_30: 1066724292
-      ezgif.com-gif-to-sprite-converted-min_31: 623870491
-      ezgif.com-gif-to-sprite-converted-min_32: 2146808622
-      ezgif.com-gif-to-sprite-converted-min_4: 216496221
-      ezgif.com-gif-to-sprite-converted-min_5: -1862874381
-      ezgif.com-gif-to-sprite-converted-min_6: -874460627
-      ezgif.com-gif-to-sprite-converted-min_7: 284695321
-      ezgif.com-gif-to-sprite-converted-min_8: 232618139
-      ezgif.com-gif-to-sprite-converted-min_9: -1710772182
+      Claws attack_0: 693867085
+      Claws attack_1: 1765318327
+      Claws attack_10: 847902414
+      Claws attack_11: 1074319282
+      Claws attack_12: -1496684267
+      Claws attack_13: -2113737767
+      Claws attack_14: -1365256079
+      Claws attack_15: -825802013
+      Claws attack_16: 469474952
+      Claws attack_17: 1407145468
+      Claws attack_18: -473908795
+      Claws attack_19: -1817677521
+      Claws attack_2: 779752601
+      Claws attack_20: 238799260
+      Claws attack_21: -1981103536
+      Claws attack_22: -816452292
+      Claws attack_23: -1921380962
+      Claws attack_24: 1511245002
+      Claws attack_25: 1579321595
+      Claws attack_26: 1262134057
+      Claws attack_27: 770533466
+      Claws attack_28: -1341529590
+      Claws attack_29: 1639530766
+      Claws attack_3: -707442639
+      Claws attack_30: -1372684538
+      Claws attack_31: 1404392535
+      Claws attack_32: 1089300835
+      Claws attack_4: -799979125
+      Claws attack_5: -1918815154
+      Claws attack_6: 850130141
+      Claws attack_7: 271006686
+      Claws attack_8: -896957444
+      Claws attack_9: -464960274
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
