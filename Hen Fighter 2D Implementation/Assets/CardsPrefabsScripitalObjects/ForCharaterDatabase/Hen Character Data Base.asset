@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef5a6a94a355fa4ba3c9373b9f6f54d, type: 3}
+  m_Name: Hen Character Data Base
+  m_EditorClassIdentifier: 
+  Character:
+  - characterName: Dega
+    CharacterofHen: {fileID: 4926560672710180886, guid: 3921960ab3c126f49933b9971d334695, type: 3}
+  - characterName: Paral
+    CharacterofHen: {fileID: 7900909639798985839, guid: 81981945ece02504bb418abce13742b7, type: 3}
+  - characterName: sethuva
+    CharacterofHen: {fileID: 798768614454926236, guid: e1580db767d0cf44e9d56f29def2ea58, type: 3}
+  - characterName: PacchaKaki
+    CharacterofHen: {fileID: 2651494897638821808, guid: 938d7fe3709d90d4f95480f1a2e90df1, type: 3}

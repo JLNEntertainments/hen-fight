@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1791b8e8758b14a900c68641ee2bda, type: 3}
+  m_Name: Dega
+  m_EditorClassIdentifier: 
+  HenName: Dega
+  HenCard: {fileID: 21300000, guid: 4d30434558f2ccd44bddda25c69e9eaf, type: 3}
+  Power: 99
+  Defense: 85
+  DropDown: 1.Super Sharp 2.Matured Moves  3.Sharp Eyes
+  Character:
+  - characterName: Dega
+    CharacterofHen: {fileID: 4926560672710180886, guid: 3921960ab3c126f49933b9971d334695, type: 3}
