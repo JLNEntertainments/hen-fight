@@ -40,15 +40,15 @@ AnimationClip:
     - time: 0.75
       value: {fileID: 523836142, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - time: 0.8333333
-      value: {fileID: -1932019117, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
-    - time: 0.9166667
-      value: {fileID: 1189331676, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
-    - time: 1
       value: {fileID: 2045792590, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
-    - time: 1.0833334
+    - time: 0.9166667
       value: {fileID: 543640016, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
-    - time: 1.1666666
+    - time: 1
       value: {fileID: 138280163, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
+    - time: 1.0833334
+      value: {fileID: -1932019117, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
+    - time: 1.1666666
+      value: {fileID: 1189331676, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - time: 1.25
       value: {fileID: 440795182, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - time: 1.3333334
@@ -122,11 +122,11 @@ AnimationClip:
     - {fileID: -1113467241, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - {fileID: -2109851707, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - {fileID: 523836142, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
-    - {fileID: -1932019117, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
-    - {fileID: 1189331676, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - {fileID: 2045792590, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - {fileID: 543640016, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - {fileID: 138280163, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
+    - {fileID: -1932019117, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
+    - {fileID: 1189331676, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - {fileID: 440795182, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - {fileID: 1127519200, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
     - {fileID: 693772399, guid: f41c44c94015fef408062bd1a34ff865, type: 3}
