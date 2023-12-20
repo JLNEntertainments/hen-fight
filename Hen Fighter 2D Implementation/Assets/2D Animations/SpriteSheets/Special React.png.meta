@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: def67c1376e75fe498a5d48b6fbe7d35
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: reaction for special attack_0
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 6766
+        width: 270
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0350e9f383cb39d49a54457ff8efb2d0
+      internalID: -1422259710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_1
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 6766
+        width: 274
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593ec80c4c93e5440a4e86d19b232103
+      internalID: 843915268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_2
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 6773
+        width: 267
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6893c2e2707878a4181ae65f6cd65ebe
+      internalID: -928571806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_3
+      rect:
+        serializedVersion: 2
+        x: 3791
+        y: 6773
+        width: 274
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0576c7a26d7c63248af61f9182b057bf
+      internalID: -496724410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_4
+      rect:
+        serializedVersion: 2
+        x: 4993
+        y: 6773
+        width: 274
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06b749569eccf8439b1b8aeeaa4f290
+      internalID: 91255182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_5
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 6052
+        width: 267
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef4b3877d87ef44abc511faad10de63
+      internalID: 1577683797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_6
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 6052
+        width: 246
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d9eedfd726f5e49bab78c1fb7a9f49
+      internalID: -1959036016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_7
+      rect:
+        serializedVersion: 2
+        x: 2633
+        y: 6049
+        width: 226
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48ffb0878b69d943b15af1d69b946ce
+      internalID: -1781232695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_8
+      rect:
+        serializedVersion: 2
+        x: 3844
+        y: 6049
+        width: 210
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f434ef1f71437b47b1f21be7265fb2a
+      internalID: -309073004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_9
+      rect:
+        serializedVersion: 2
+        x: 5046
+        y: 6049
+        width: 207
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5970c5c899bde5746aa81b3f5a1395ad
+      internalID: 290406483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_10
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 5328
+        width: 222
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e8fc093f2d2c7488e7c91dd8a5eb0c
+      internalID: 600770526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_11
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 5328
+        width: 225
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb73e31de88d7b48a064ef794ed2120
+      internalID: -60673458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_12
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 5326
+        width: 221
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe91d62d26289fa49a21e2b2b59a20ae
+      internalID: -228491569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_13
+      rect:
+        serializedVersion: 2
+        x: 3833
+        y: 5328
+        width: 218
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6190f3149bdee4e99eb5012d69f262
+      internalID: -137307894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_14
+      rect:
+        serializedVersion: 2
+        x: 5032
+        y: 5326
+        width: 221
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57773c3fc8f9e5142bf0f8996dd187c5
+      internalID: 1526836665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_15
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 4607
+        width: 221
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45602af25ade65a43a0168a54f18fb1d
+      internalID: 1339955202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_16
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 4607
+        width: 222
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb24050d03c63024f923da9cb57f9a3f
+      internalID: 2073280695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_17
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 4607
+        width: 218
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d04ede06cccfcd40976b2e621703b2a
+      internalID: -1724158994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_18
+      rect:
+        serializedVersion: 2
+        x: 3833
+        y: 4607
+        width: 218
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f8cc9ddc5bce845bbfca84ef6cb223
+      internalID: -576819099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_19
+      rect:
+        serializedVersion: 2
+        x: 5032
+        y: 4607
+        width: 218
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7689ec578b677e449bac87eb8d94c31
+      internalID: 755169879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_20
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 3887
+        width: 218
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce5ec4267e2a974c8d608cce0e28351
+      internalID: 73856029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_21
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 3887
+        width: 218
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04008ba4ae6e98b41b4632d973362feb
+      internalID: -1397409216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_22
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 3887
+        width: 218
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73abdc2dfdf31024391c046deccadfb7
+      internalID: -1832582299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_23
+      rect:
+        serializedVersion: 2
+        x: 3833
+        y: 3887
+        width: 218
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0c85948ae789645800e351a9f7159c
+      internalID: 625710608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_24
+      rect:
+        serializedVersion: 2
+        x: 5032
+        y: 3884
+        width: 221
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9000e63c4481c45840d41c10ff85c3
+      internalID: 843681726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_25
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 3163
+        width: 218
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e8279b1393d744ea380cbe1401816b
+      internalID: -282422340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_26
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 3166
+        width: 221
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268522191bba96942a6e477af2b1e0da
+      internalID: 1031986854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_27
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 3166
+        width: 218
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c0498eb624e2043be868e35f33fc32
+      internalID: -1277037574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_28
+      rect:
+        serializedVersion: 2
+        x: 3833
+        y: 3166
+        width: 218
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7799669b36c8f3d43beafefbfa3691ea
+      internalID: 1642472208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_29
+      rect:
+        serializedVersion: 2
+        x: 5032
+        y: 3166
+        width: 217
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee14ebf142ac9cb449083a1ea5b82cc1
+      internalID: -1576623908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_30
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 2445
+        width: 218
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855bd202dfa213442a37f27344d3eb16
+      internalID: -1707531453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_31
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 2446
+        width: 213
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85603b8a1ac7dd8429eb304e5cb8f870
+      internalID: 1851815022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_32
+      rect:
+        serializedVersion: 2
+        x: 2641
+        y: 2456
+        width: 208
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6332ce019399104c8c57be57ebeea87
+      internalID: -493488379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_33
+      rect:
+        serializedVersion: 2
+        x: 3844
+        y: 2477
+        width: 200
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6975b69141c744d9b90a59f3c3a23d
+      internalID: 366957448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_34
+      rect:
+        serializedVersion: 2
+        x: 5056
+        y: 2473
+        width: 186
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71958a99cd3a7674a9ba53e0573626d7
+      internalID: -1546095320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_35
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1749
+        width: 173
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d95cf2e46ad0b642bb6f40853b93f00
+      internalID: -1437022731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_36
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 1739
+        width: 161
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e372b022814a740a9ff73681a48612
+      internalID: -1141388429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_37
+      rect:
+        serializedVersion: 2
+        x: 2659
+        y: 1731
+        width: 169
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95de0351c9515954c8b2fbda1e6671ae
+      internalID: -249994924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_38
+      rect:
+        serializedVersion: 2
+        x: 3861
+        y: 1731
+        width: 169
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773e1cacc33b3e64baa2282ee38f4cc9
+      internalID: -1018694178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_39
+      rect:
+        serializedVersion: 2
+        x: 5053
+        y: 1724
+        width: 189
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e099f07cd68cd1469ac75701b59dd97
+      internalID: -1476693463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_40
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1004
+        width: 228
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957b8d845af980b4ca166b263530fc99
+      internalID: 1603468111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_41
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1004
+        width: 263
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00410a7efd9b1c14393055418bcb3e14
+      internalID: 374807800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_42
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 1004
+        width: 284
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6445aa37e5aed429aaa26113fa7cc6
+      internalID: 1325025981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_43
+      rect:
+        serializedVersion: 2
+        x: 3759
+        y: 1004
+        width: 295
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb05f9d32b7a374bbf0a5d1559d8581
+      internalID: 2120790543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_44
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 1004
+        width: 291
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e31d97fbd7c7af4f976d2ae89f5562a
+      internalID: 766388621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_45
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 284
+        width: 274
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b513a41826d13274c920a171ec7199f7
+      internalID: -98593073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_46
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 284
+        width: 274
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491d0bc487439d34dad884d048ecb4d7
+      internalID: -457800215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_47
+      rect:
+        serializedVersion: 2
+        x: 2589
+        y: 284
+        width: 274
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9361c8379372c4c97f5d7f9c92c4ad
+      internalID: -981625925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_48
+      rect:
+        serializedVersion: 2
+        x: 3791
+        y: 284
+        width: 274
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe28848c56772cd408b4262ba31fcc19
+      internalID: -517394420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for special attack_49
+      rect:
+        serializedVersion: 2
+        x: 4993
+        y: 284
+        width: 271
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08275c3587300044f8554d8c051be7fa
+      internalID: -632460037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 463f17193b18ab741b68695137353ad0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      reaction for special attack_0: -1422259710
+      reaction for special attack_1: 843915268
+      reaction for special attack_10: 600770526
+      reaction for special attack_11: -60673458
+      reaction for special attack_12: -228491569
+      reaction for special attack_13: -137307894
+      reaction for special attack_14: 1526836665
+      reaction for special attack_15: 1339955202
+      reaction for special attack_16: 2073280695
+      reaction for special attack_17: -1724158994
+      reaction for special attack_18: -576819099
+      reaction for special attack_19: 755169879
+      reaction for special attack_2: -928571806
+      reaction for special attack_20: 73856029
+      reaction for special attack_21: -1397409216
+      reaction for special attack_22: -1832582299
+      reaction for special attack_23: 625710608
+      reaction for special attack_24: 843681726
+      reaction for special attack_25: -282422340
+      reaction for special attack_26: 1031986854
+      reaction for special attack_27: -1277037574
+      reaction for special attack_28: 1642472208
+      reaction for special attack_29: -1576623908
+      reaction for special attack_3: -496724410
+      reaction for special attack_30: -1707531453
+      reaction for special attack_31: 1851815022
+      reaction for special attack_32: -493488379
+      reaction for special attack_33: 366957448
+      reaction for special attack_34: -1546095320
+      reaction for special attack_35: -1437022731
+      reaction for special attack_36: -1141388429
+      reaction for special attack_37: -249994924
+      reaction for special attack_38: -1018694178
+      reaction for special attack_39: -1476693463
+      reaction for special attack_4: 91255182
+      reaction for special attack_40: 1603468111
+      reaction for special attack_41: 374807800
+      reaction for special attack_42: 1325025981
+      reaction for special attack_43: 2120790543
+      reaction for special attack_44: 766388621
+      reaction for special attack_45: -98593073
+      reaction for special attack_46: -457800215
+      reaction for special attack_47: -981625925
+      reaction for special attack_48: -517394420
+      reaction for special attack_49: -632460037
+      reaction for special attack_5: 1577683797
+      reaction for special attack_6: -1959036016
+      reaction for special attack_7: -1781232695
+      reaction for special attack_8: -309073004
+      reaction for special attack_9: 290406483
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

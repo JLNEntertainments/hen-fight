@@ -14,7 +14,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     Animator enemyAnimator;
 
-    Rigidbody myBody;
+    Rigidbody2D myBody;
 
     Image healthBar;
 
@@ -49,7 +49,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     void Awake()
     {
         enemyAnimator = GetComponent<Animator>();
-        myBody = GetComponent<Rigidbody>();
+        myBody = GetComponent<Rigidbody2D>();
         enemyAIDecision = GetComponent<EnemyAIDecision>();
     }
 
@@ -59,7 +59,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
 
-        speed = 2f;
+        speed = 1f;
         enemyHealth = 1f;
         attack_Distance = 2.5f;
         lightAttackBuffer = 0.5f;
@@ -115,7 +115,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (enemyAIDecision.IsPlayerInChaseRange())
         {
             transform.LookAt(playerGamePlayManager.transform);
-            myBody.velocity = Vector3.left * speed;
+            myBody.velocity = Vector2.left * speed;
 
             if (myBody.velocity.sqrMagnitude != 0)
             {
@@ -214,7 +214,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void UpdateEnemyRotation()
     {
-        transform.eulerAngles = new Vector3(0, -90f, 0);
+        transform.eulerAngles = new Vector3(0, 180f, 0);
     }
 
     void TurnOffAttackpoints()

@@ -1,0 +1,773 @@
+fileFormatVersion: 2
+guid: da634077c88cf054da2c41680823d9ea
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Reaction to beak attack_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 3888
+        width: 260
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413e7a2e35e6e2f41ac11806699dbaee
+      internalID: -779737772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_1
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 3888
+        width: 262
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe75b91f48ccbb4b861dabc31dfdf31
+      internalID: -1530524689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_2
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 3888
+        width: 251
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94974b0191976a47bd3ca4d1bb37fa6
+      internalID: 181143713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_3
+      rect:
+        serializedVersion: 2
+        x: 3801
+        y: 3892
+        width: 234
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3db38ca5f680a42aa374a6e3a20a2e
+      internalID: 661362880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_4
+      rect:
+        serializedVersion: 2
+        x: 3966
+        y: 4032
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac752c6f888461b47bbf946c86562043
+      internalID: -268888935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_5
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 3888
+        width: 227
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94348cc5a7048de4cbd6a865f772aaa4
+      internalID: 48174028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_6
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 3168
+        width: 240
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51026d55ba2f9a04890fd9c0b1143ee7
+      internalID: -2014356871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 3332
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb967b0ebb907e4db4f515b482ebb5d
+      internalID: 1066872183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_8
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 3172
+        width: 262
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe45fd5690955745946d11e342fa653
+      internalID: -1866932594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_9
+      rect:
+        serializedVersion: 2
+        x: 3709
+        y: 3172
+        width: 251
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54459c726d463a944b41cb5b6e28a952
+      internalID: -1396489419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_10
+      rect:
+        serializedVersion: 2
+        x: 4890
+        y: 3168
+        width: 265
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7421fe56c25328e43b449c1918286418
+      internalID: 1308512281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_11
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 3168
+        width: 232
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de94a3ead730c47448926aed99d314c0
+      internalID: 7551737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_12
+      rect:
+        serializedVersion: 2
+        x: 3704
+        y: 3232
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2794038d3e602b04d959f15eefd98f2f
+      internalID: 1079500438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 2448
+        width: 277
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41caa801c741e194fa93c49f84fc8be3
+      internalID: -600833917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_14
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 2450
+        width: 276
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8209375fdc85754bb4d2e47d05ecaf6
+      internalID: -1466001818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_15
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 2448
+        width: 272
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da7e6ae1c22253469531d059bc3decd
+      internalID: 849572946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_16
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 2448
+        width: 259
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb2aaeeb97cee649bdba6e9d2d532c6
+      internalID: -1761422064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_17
+      rect:
+        serializedVersion: 2
+        x: 4908
+        y: 2448
+        width: 271
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c648be3811eb0046b9300cea3e9cde8
+      internalID: 536120905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_18
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1728
+        width: 271
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebdd6fa461ad706459f29047dc4a3108
+      internalID: -560322964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_19
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 1728
+        width: 259
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3b28bffb2738942a992c80a716d4a3
+      internalID: -1371045944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_20
+      rect:
+        serializedVersion: 2
+        x: 2549
+        y: 1728
+        width: 254
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bc9f0ff14a1fa4da905209935c65bc
+      internalID: 726148841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_21
+      rect:
+        serializedVersion: 2
+        x: 3759
+        y: 1732
+        width: 254
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bc3900c766b594996a99488e3f802e
+      internalID: 539382005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_22
+      rect:
+        serializedVersion: 2
+        x: 4968
+        y: 1728
+        width: 256
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9684b7a7b6f8705489f9baca1a62eac2
+      internalID: -929423737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_23
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1008
+        width: 257
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24af80eb77bf09f45913fb78d57a17e3
+      internalID: -1639399183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_24
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 1008
+        width: 263
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1bd05e5d5526a747bc26527bc78b204
+      internalID: 1142079436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_25
+      rect:
+        serializedVersion: 2
+        x: 2584
+        y: 1012
+        width: 264
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1d4b5d6142ee7489f2f60d1c01bc3a
+      internalID: -1850189498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_26
+      rect:
+        serializedVersion: 2
+        x: 3785
+        y: 1008
+        width: 262
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbcccc4d488ce448b37a28196767ef9
+      internalID: 1128464483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_27
+      rect:
+        serializedVersion: 2
+        x: 4986
+        y: 1012
+        width: 261
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc20d62c01fe365459b361bc2bd6fb5f
+      internalID: 853717895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reaction to beak attack_28
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 288
+        width: 260
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d129702386ea04498d2427d3b11bc3
+      internalID: -2006176930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0db9c5badf62b37448d4df4dcce1bd7b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Reaction to beak attack_0: -779737772
+      Reaction to beak attack_1: -1530524689
+      Reaction to beak attack_10: 1308512281
+      Reaction to beak attack_11: 7551737
+      Reaction to beak attack_12: 1079500438
+      Reaction to beak attack_13: -600833917
+      Reaction to beak attack_14: -1466001818
+      Reaction to beak attack_15: 849572946
+      Reaction to beak attack_16: -1761422064
+      Reaction to beak attack_17: 536120905
+      Reaction to beak attack_18: -560322964
+      Reaction to beak attack_19: -1371045944
+      Reaction to beak attack_2: 181143713
+      Reaction to beak attack_20: 726148841
+      Reaction to beak attack_21: 539382005
+      Reaction to beak attack_22: -929423737
+      Reaction to beak attack_23: -1639399183
+      Reaction to beak attack_24: 1142079436
+      Reaction to beak attack_25: -1850189498
+      Reaction to beak attack_26: 1128464483
+      Reaction to beak attack_27: 853717895
+      Reaction to beak attack_28: -2006176930
+      Reaction to beak attack_3: 661362880
+      Reaction to beak attack_4: -268888935
+      Reaction to beak attack_5: 48174028
+      Reaction to beak attack_6: -2014356871
+      Reaction to beak attack_7: 1066872183
+      Reaction to beak attack_8: -1866932594
+      Reaction to beak attack_9: -1396489419
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

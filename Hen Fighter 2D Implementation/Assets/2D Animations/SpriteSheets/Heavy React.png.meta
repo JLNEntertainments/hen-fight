@@ -1,0 +1,927 @@
+fileFormatVersion: 2
+guid: a0b895dd5be1d7c44a4a78532763ed47
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: reaction for claws attack_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 4609
+        width: 249
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20cc590074144e24ca6cb693fb3f2314
+      internalID: 1712620718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_1
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 4609
+        width: 233
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0037077fda12a9742a3e96f912c22d3a
+      internalID: 1377693006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_2
+      rect:
+        serializedVersion: 2
+        x: 2559
+        y: 4609
+        width: 229
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e032c1d2d13fa341a86176504468d01
+      internalID: 1214030250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_3
+      rect:
+        serializedVersion: 2
+        x: 3749
+        y: 4610
+        width: 237
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c7f0f99f08afc4db0dd1fe7a1b5c26
+      internalID: 226491306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_4
+      rect:
+        serializedVersion: 2
+        x: 4950
+        y: 4614
+        width: 224
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59a285f00c628b43a4e9a3f85fc542b
+      internalID: -1853928885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 3895
+        width: 230
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5e9b77a307eee4dbc360fb53a9b3ec
+      internalID: -1070100317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_6
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 3914
+        width: 220
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c932e14542216844ba6d0633dd88a25b
+      internalID: -1449096710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_7
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 3929
+        width: 206
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ac3c33916421a4e9f2f9db05767d1b
+      internalID: -1356758590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_8
+      rect:
+        serializedVersion: 2
+        x: 3810
+        y: 3956
+        width: 194
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e72ed20775074c4cae72763b699c596
+      internalID: -1373401055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_9
+      rect:
+        serializedVersion: 2
+        x: 5010
+        y: 3952
+        width: 191
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7569d218bf6cc419dbeaa056df3eb1
+      internalID: 979980936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 3214
+        width: 186
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522ff5de7fea80c4ca8ea8d217ff0133
+      internalID: 1883024891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_11
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 3197
+        width: 182
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11aef9191d57a3541a8c17f4646aff12
+      internalID: 446846303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_12
+      rect:
+        serializedVersion: 2
+        x: 2613
+        y: 3194
+        width: 181
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d9dd33dea66fb4bbed148cd1a3f913
+      internalID: 1587680211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_13
+      rect:
+        serializedVersion: 2
+        x: 3815
+        y: 3210
+        width: 175
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7451dcf7621e9f64cbc0d49fd5f801bf
+      internalID: -1748005316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_14
+      rect:
+        serializedVersion: 2
+        x: 5013
+        y: 3224
+        width: 175
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebd5075f94edeb4e8b1068531b6a39b
+      internalID: -767288403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_15
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 2497
+        width: 183
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77070ae997aac1349bbd4ef74316fc0c
+      internalID: 1026300899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_16
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 2469
+        width: 190
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb27e73c517804846af069527fd7364b
+      internalID: 215080432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_17
+      rect:
+        serializedVersion: 2
+        x: 2570
+        y: 2453
+        width: 190
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675ca29bd3db0bf4382e08d022264be9
+      internalID: -167614026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_18
+      rect:
+        serializedVersion: 2
+        x: 3767
+        y: 2456
+        width: 209
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce74810bab32ed4f942a8447e7889c7
+      internalID: -751223935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_19
+      rect:
+        serializedVersion: 2
+        x: 4968
+        y: 2457
+        width: 220
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5211761e8147349bb0c25d108ec115
+      internalID: 970674779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_20
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 2452
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c276c023015186a48ba21146bcdb2753
+      internalID: -245836417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1736
+        width: 216
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8d3ce5698b35c4aa90ecab79cd710a
+      internalID: -995036935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_22
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 1733
+        width: 213
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05fc095009d8124a8f196a9505a0c47
+      internalID: -1236286431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_23
+      rect:
+        serializedVersion: 2
+        x: 2568
+        y: 1732
+        width: 207
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc743962b6277fc40b4b996dac70eb63
+      internalID: -128936984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_24
+      rect:
+        serializedVersion: 2
+        x: 3829
+        y: 1729
+        width: 154
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99240f96994e4ac488064bc7cbaf3c97
+      internalID: 2058203368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_25
+      rect:
+        serializedVersion: 2
+        x: 5046
+        y: 1729
+        width: 179
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27f1d04689152143a5c89f58018eed6
+      internalID: 171008182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_26
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1008
+        width: 205
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6e80c1c5426bb4ea29bbd4420a0c08
+      internalID: 1844677027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_27
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 1009
+        width: 247
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e347db39703c9f44c94c678367a2e9d0
+      internalID: -813367797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_28
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 1009
+        width: 256
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175076cb12a69834c9408cd39d2add25
+      internalID: -1028998167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_29
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 1008
+        width: 255
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed46044d971e2f4282a5bc2ebd61d69
+      internalID: 2147378071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_30
+      rect:
+        serializedVersion: 2
+        x: 4987
+        y: 1008
+        width: 260
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918c8eb9103a5ab4888a4d67b5ebdf4d
+      internalID: 1841638935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_31
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 289
+        width: 260
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc070a138058b7498b8ee48aed92e32
+      internalID: 405683231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_32
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 289
+        width: 258
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38f4ffcb8dd95d438bd4ee608e3916f
+      internalID: -914205064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_33
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 289
+        width: 254
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058903922be13744793fe4927f58da77
+      internalID: -1127438402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_34
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 290
+        width: 255
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7b48e17a05c4c41a04c72d0e11be05
+      internalID: -933288405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reaction for claws attack_35
+      rect:
+        serializedVersion: 2
+        x: 4985
+        y: 289
+        width: 251
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f110f65188b8d6f46a1ed61b126b0dd0
+      internalID: 1774236420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 70ff1f016dcab5042aee082777ad1b3c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      reaction for claws attack_0: 1712620718
+      reaction for claws attack_1: 1377693006
+      reaction for claws attack_10: 1883024891
+      reaction for claws attack_11: 446846303
+      reaction for claws attack_12: 1587680211
+      reaction for claws attack_13: -1748005316
+      reaction for claws attack_14: -767288403
+      reaction for claws attack_15: 1026300899
+      reaction for claws attack_16: 215080432
+      reaction for claws attack_17: -167614026
+      reaction for claws attack_18: -751223935
+      reaction for claws attack_19: 970674779
+      reaction for claws attack_2: 1214030250
+      reaction for claws attack_20: -245836417
+      reaction for claws attack_21: -995036935
+      reaction for claws attack_22: -1236286431
+      reaction for claws attack_23: -128936984
+      reaction for claws attack_24: 2058203368
+      reaction for claws attack_25: 171008182
+      reaction for claws attack_26: 1844677027
+      reaction for claws attack_27: -813367797
+      reaction for claws attack_28: -1028998167
+      reaction for claws attack_29: 2147378071
+      reaction for claws attack_3: 226491306
+      reaction for claws attack_30: 1841638935
+      reaction for claws attack_31: 405683231
+      reaction for claws attack_32: -914205064
+      reaction for claws attack_33: -1127438402
+      reaction for claws attack_34: -933288405
+      reaction for claws attack_35: 1774236420
+      reaction for claws attack_4: -1853928885
+      reaction for claws attack_5: -1070100317
+      reaction for claws attack_6: -1449096710
+      reaction for claws attack_7: -1356758590
+      reaction for claws attack_8: -1373401055
+      reaction for claws attack_9: 979980936
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

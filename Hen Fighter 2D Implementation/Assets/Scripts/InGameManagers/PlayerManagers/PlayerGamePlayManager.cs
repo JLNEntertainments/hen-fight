@@ -14,7 +14,6 @@ public class PlayerGamePlayManager : MonoBehaviour
     Image healthBar;
 
     Animator playerAnimator;
-    Animation objAnim;
 
     int speed;
 

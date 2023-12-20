@@ -21,7 +21,7 @@ public class DamageGeneric : MonoBehaviour
 
     void DetectCollision()
     {
-        Collider[] hit = Physics.OverlapSphere(transform.position, colliderRadius, collisionLayer);
+        Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, colliderRadius, collisionLayer);
         if (hit.Length > 0)
         {
             if (is_Enemy && hit != null && !hit[0].GetComponentInParent<PlayerGamePlayManager>().isBlocking)
