@@ -14,6 +14,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     Image healthBar;
 
     Animator playerAnimator;
+    Animation objAnim;
 
     int speed;
 
@@ -24,16 +25,19 @@ public class PlayerGamePlayManager : MonoBehaviour
     WaitForSeconds lightBuffer, heavyBuffer;
 
     Rigidbody2D playerRb;
+    //BoxCollider2D playerBoxCollider;
 
     [HideInInspector]
     public string currentAnimaton;
 
     [HideInInspector]
     public bool isHeavyAttack, isLightAttack, isBlocking, isTakingDamage, isSpecialAttack, isPlayingAnotherAnimation;
+    [SerializeField]
+    bool isGrounded;
 
     //Animation States
     [HideInInspector]
-    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK, PLAYER_DEATH;
+    public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKRUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK, PLAYER_DEATH;
 
     void Start()
     {
@@ -43,6 +47,7 @@ public class PlayerGamePlayManager : MonoBehaviour
 
         playerAnimator = this.GetComponentInChildren<Animator>();
         playerRb = this.GetComponent<Rigidbody2D>();
+        //playerBoxCollider = this.GetComponent <BoxCollider2D>();
 
         speed = 2;
         playerHealth = 1f;
@@ -55,6 +60,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         PLAYER_IDLE = "Idle";
         PLAYER_WALK = "Walking";
         PLAYER_RUN = "Run";
+        PLAYER_BACKRUN = "BackRun";
         PLAYER_BACKWALK = "BackWalk";
         PLAYER_LIGHTATTACK = "LightAttack";
         PLAYER_HEAVYATTACK = "HeavyAttack";
@@ -91,14 +97,23 @@ public class PlayerGamePlayManager : MonoBehaviour
         }
         else if (joystick.Horizontal < -0.2f)
         {
-            ChangeAnimationState(PLAYER_BACKWALK);
-            UpdateMovementParameters(joystick.Horizontal);
+            if(joystick.Horizontal < -0.5f)
+            {
+                ChangeAnimationState(PLAYER_BACKRUN);
+                UpdateMovementParameters(joystick.Horizontal * 2);
+            }
+            else
+            {
+                ChangeAnimationState(PLAYER_BACKWALK);
+                UpdateMovementParameters(joystick.Horizontal * 2);
+            }
         }
         //For Player Jump Operation
-        else if (joystick.Vertical > 0.2f)
+        else if (joystick.Vertical > 0f && isGrounded)
         {
-            playerRb.AddForce(new Vector3(0f, 4.0f, 0f) * 3.0f, ForceMode2D.Impulse);
+            playerRb.AddForce(new Vector2(0f, 2.0f) * 2.0f, ForceMode2D.Impulse);
             ChangeAnimationState(PLAYER_JUMP);
+            isGrounded = false;
         }
         //For Player Crouch Operations
         else if (joystick.Vertical < -0.2f)
@@ -181,5 +196,15 @@ public class PlayerGamePlayManager : MonoBehaviour
         yield return heavyBuffer;
         SetDefaultAnimationState();
         isTakingDamage = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        isGrounded = true;
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        isGrounded = false;
     }
 }

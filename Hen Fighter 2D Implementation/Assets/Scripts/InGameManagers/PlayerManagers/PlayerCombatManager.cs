@@ -42,9 +42,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         clicksCnt = 0;
         defaultAttackTime = 1f;
         currentAttackTime = defaultAttackTime;
-        lightAttackBuffer = 0.8f;
-        heavyAttackBuffer = 1.5f;
-        specialAttackBuffer = 4f;
+        lightAttackBuffer = 1.2f;
+        heavyAttackBuffer = 1.2f;
+        specialAttackBuffer = 2f;
         blockAttackBuffer = 1f;
 
         lightBuffer = new WaitForSeconds(lightAttackBuffer);
