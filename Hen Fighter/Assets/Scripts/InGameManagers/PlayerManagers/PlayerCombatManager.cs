@@ -34,33 +34,34 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void AssignplayerAttributes()
     {
-        playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
-        playerAnimator = playerGamePlayManager.GetComponent<Animator>();
-        weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
-        uiManager = GetComponent<UIManager>();
+        //if (playerGamePlayManager.enemyGamePlayManager.isPlayerFound && assignmentCnt == 0)
+        //{
+            playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
+            playerAnimator = playerGamePlayManager.GetComponent<Animator>();
+            weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
+            uiManager = GetComponent<UIManager>();
 
-        clicksCnt = 0;
-        defaultAttackTime = 1f;
-        currentAttackTime = defaultAttackTime;
-        lightAttackBuffer = heavyAttackBuffer = 0.8f;
-        specialAttackBuffer = 4f;
-        blockAttackBuffer = 1f;
+            clicksCnt = 0;
+            defaultAttackTime = 1f;
+            currentAttackTime = defaultAttackTime;
+            lightAttackBuffer = heavyAttackBuffer = 0.8f;
+            specialAttackBuffer = 4f;
+            blockAttackBuffer = 1f;
 
-        lightBuffer = new WaitForSeconds(lightAttackBuffer);
-        heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
-        spBuffer = new WaitForSeconds(specialAttackBuffer);
-        blockBuffer = new WaitForSeconds(blockAttackBuffer);
+            lightBuffer = new WaitForSeconds(lightAttackBuffer);
+            heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
+            spBuffer = new WaitForSeconds(specialAttackBuffer);
+            blockBuffer = new WaitForSeconds(blockAttackBuffer);
 
-        TurnOffAttackpoints();
+            TurnOffAttackpoints();
+
+            //assignmentCnt++;
+        //}  
     }
 
     void Update()
     {
-        if(FindObjectOfType<PlayerGamePlayManager>() == true && assignmentCnt == 0)
-        {
-            AssignplayerAttributes();
-            assignmentCnt++;
-        }
+        //AssignplayerAttributes();    
 
         randomLightAttack = Random.Range(0, 2);
         currentAttackTime += Time.deltaTime;
