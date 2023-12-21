@@ -8,13 +8,18 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField]
     public GameObject specialAttackBtnAnim;
-
+    //public Animation HitFX;
+    public Animator HitFx,PlayerHitFx;
+    
+    //AnimationClip HitFX;
     //For specialAttackButton Filling
     [SerializeField] RectTransform Holder;
     [SerializeField] Image CircleImage;
     [SerializeField] TMP_Text TxtProgress;
 
     [SerializeField] [Range(0, 1)] float progress = 0f;
+
+    public ParticleSystem particleForPlayer;
 
     void Start()
     {
@@ -40,6 +45,39 @@ public class UIManager : MonoBehaviour
 	{
 		SceneManager.LoadScene(ScreneName);
 	}
+
+    public void PlayFX()
+    {
+        StartCoroutine(PlayHitFX());
+        StopCoroutine(PlayHitFX());
+    }
+
+    IEnumerator PlayHitFX()
+    {
+        HitFx.gameObject.SetActive(true);
+        HitFx.Play("EnemyBeekAtack");
+        particleForPlayer.Play();
+        yield return new WaitForSeconds(0.3f);
+        HitFx.gameObject.SetActive(false);
+    }
+
+
+
+    public void PlayerFX()
+    {
+        StartCoroutine(PlayerHitFX());
+        StopCoroutine(PlayerHitFX());
+    }
+
+    IEnumerator PlayerHitFX()
+    {
+        PlayerHitFx.gameObject.SetActive(true);
+        PlayerHitFx.Play("EnemyBeekAtack");
+        particleForPlayer.Play();
+        yield return new WaitForSeconds(0.2f);
+        PlayerHitFx.gameObject.SetActive(false);
+    }
+
 
     public void RestartGame()
     {
