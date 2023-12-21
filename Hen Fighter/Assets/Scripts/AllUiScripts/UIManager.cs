@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     public GameObject specialAttackBtnAnim;
     //public Animation HitFX;
-    public Animator HitFx,PlayerHitFx;
+    public Animator HitFx,PlayerHitFx,heavyAttackForEnemy,heavyAttackForPlayer;
     
     //AnimationClip HitFX;
     //For specialAttackButton Filling
@@ -59,6 +59,36 @@ public class UIManager : MonoBehaviour
         particleForPlayer.Play();
         yield return new WaitForSeconds(0.3f);
         HitFx.gameObject.SetActive(false);
+    }
+
+    public void PlayEnemyhaveyAttack()
+    {
+        StartCoroutine(PalyEnemyHaveyFx());
+        StopCoroutine(PalyEnemyHaveyFx());
+    }
+
+    IEnumerator PalyEnemyHaveyFx()
+    {
+        heavyAttackForEnemy.gameObject.SetActive(true);
+        heavyAttackForEnemy.Play("HeavyAttack");
+        particleForPlayer.Play();
+        yield return new WaitForSeconds(0.3f);
+        heavyAttackForEnemy.gameObject.SetActive(false);
+    }
+
+    public void PlayPlayerhaveyAttack()
+    {
+        StartCoroutine(PalyEnemyHaveyFx());
+        StopCoroutine(PalyEnemyHaveyFx());
+    }
+
+    IEnumerator PalyPlayerHaveyFx()
+    {
+        heavyAttackForPlayer.gameObject.SetActive(true);
+        heavyAttackForPlayer.Play("HeavyAttack");
+        particleForPlayer.Play();
+        yield return new WaitForSeconds(0.3f);
+        heavyAttackForPlayer.gameObject.SetActive(false);
     }
 
 
