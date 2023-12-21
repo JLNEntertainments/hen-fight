@@ -144,26 +144,25 @@ public class PlayerGamePlayManager : MonoBehaviour
         else
         {
            
-            isTakingDamage = true;
-
-            if (damageType == "isLight" && !isPlayingAnotherAnimation)
+            if(!isPlayingAnotherAnimation)
             {
                 isPlayingAnotherAnimation = true;
-                StartCoroutine(PlayLightReactAnimation());
-                StopCoroutine(PlayLightReactAnimation());
-                playerHealth -= 0.1f;
+                isTakingDamage = true;
+                if (damageType == "isLight")
+                {
+                    StartCoroutine(PlayLightReactAnimation());
+                    StopCoroutine(PlayLightReactAnimation());
+                    playerHealth -= 0.1f;
+                }
+                else if (damageType == "isHeavy")
+                {
+                    StartCoroutine(PlayHeavyReactAnimation());
+                    StopCoroutine(PlayHeavyReactAnimation());
+                    playerHealth -= 0.2f;
+                }
                 isPlayingAnotherAnimation = false;
+                healthBar.fillAmount = playerHealth;
             }
-            else if (damageType == "isHeavy" && !isPlayingAnotherAnimation)
-            {
-                isPlayingAnotherAnimation = true;
-                StartCoroutine(PlayHeavyReactAnimation());
-                StopCoroutine(PlayHeavyReactAnimation());
-                playerHealth -= 0.2f;
-                isPlayingAnotherAnimation = false;
-            }
-
-            healthBar.fillAmount = playerHealth;
         }
     }
 

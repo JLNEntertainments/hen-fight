@@ -66,7 +66,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnLightAttackBtnPressed()
     {
-        if (playerGamePlayManager.canPerformCombat)
+        if (!playerGamePlayManager.canPerformCombat)
         {
             if (!playerGamePlayManager.isPlayingAnotherAnimation)
             {
@@ -102,7 +102,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnHeavyAttackBtnPressed()
     {
-        if (playerGamePlayManager.canPerformCombat)
+        if (!playerGamePlayManager.canPerformCombat)
         {
             if (!playerGamePlayManager.isPlayingAnotherAnimation)
             {
@@ -138,7 +138,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnSpecialAttackBtnPressed()
     {
-        if (playerGamePlayManager.canPerformCombat)
+        if (!playerGamePlayManager.canPerformCombat)
         {
             if (!playerGamePlayManager.isPlayingAnotherAnimation)
             {
