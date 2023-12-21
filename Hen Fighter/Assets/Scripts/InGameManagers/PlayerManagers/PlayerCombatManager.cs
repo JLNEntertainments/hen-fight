@@ -17,7 +17,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     float currentAttackTime, defaultAttackTime, remainingStamina, lightAttackBuffer, heavyAttackBuffer, specialAttackBuffer, blockAttackBuffer;
     WaitForSeconds lightBuffer, heavyBuffer, spBuffer, blockBuffer;
 
-    int assignmentCnt, randomLightAttack;
+    int randomLightAttack;
 
     private AudioSource ClawSound;
 
@@ -25,44 +25,35 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     void Start()
     {
-        assignmentCnt = 0;
-      ClawSound  = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
-        //particleForPlayer = GameObject.FindGameObjectsWithTag("Particles").GetComponent<par>();
+        ClawSound  = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
         GameObject particleObject = GameObject.FindWithTag("Particles");
         particleForPlayer = particleObject.GetComponent<ParticleSystem>();
     }
 
     public void AssignplayerAttributes()
     {
-        //if (playerGamePlayManager.enemyGamePlayManager.isPlayerFound && assignmentCnt == 0)
-        //{
-            playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
-            playerAnimator = playerGamePlayManager.GetComponent<Animator>();
-            weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
-            uiManager = GetComponent<UIManager>();
+        playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
+        playerAnimator = playerGamePlayManager.GetComponent<Animator>();
+        weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
+        uiManager = GetComponent<UIManager>();
 
-            clicksCnt = 0;
-            defaultAttackTime = 1f;
-            currentAttackTime = defaultAttackTime;
-            lightAttackBuffer = heavyAttackBuffer = 0.8f;
-            specialAttackBuffer = 4f;
-            blockAttackBuffer = 1f;
+        clicksCnt = 0;
+        defaultAttackTime = 1f;
+        currentAttackTime = defaultAttackTime;
+        lightAttackBuffer = heavyAttackBuffer = 0.8f;
+        specialAttackBuffer = 4f;
+        blockAttackBuffer = 1f;
 
-            lightBuffer = new WaitForSeconds(lightAttackBuffer);
-            heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
-            spBuffer = new WaitForSeconds(specialAttackBuffer);
-            blockBuffer = new WaitForSeconds(blockAttackBuffer);
+        lightBuffer = new WaitForSeconds(lightAttackBuffer);
+        heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
+        spBuffer = new WaitForSeconds(specialAttackBuffer);
+        blockBuffer = new WaitForSeconds(blockAttackBuffer);
 
-            TurnOffAttackpoints();
-
-            //assignmentCnt++;
-        //}  
+        TurnOffAttackpoints();
     }
 
     void Update()
-    {
-        //AssignplayerAttributes();    
-
+    { 
         randomLightAttack = Random.Range(0, 2);
         currentAttackTime += Time.deltaTime;
 
@@ -74,10 +65,15 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         if (!playerGamePlayManager.isPlayingAnotherAnimation)
         {
-            playerGamePlayManager.isPlayingAnotherAnimation = true;
-            StartCoroutine(LightAttack());
-            StopCoroutine(LightAttack());
-            playerGamePlayManager.isPlayingAnotherAnimation = false;
+            if (!playerGamePlayManager.canPerformCombat)
+            {
+                playerGamePlayManager.isPlayingAnotherAnimation = true;
+                playerGamePlayManager.canPerformCombat = true;
+                StartCoroutine(LightAttack());
+                StopCoroutine(LightAttack());
+                playerGamePlayManager.isPlayingAnotherAnimation = false;
+                playerGamePlayManager.canPerformCombat = false;
+            }
         }
     }
 
@@ -97,7 +93,6 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
             TurnOffAttackpoints();
-            
         }
     }
 
@@ -105,10 +100,15 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         if(!playerGamePlayManager.isPlayingAnotherAnimation)
         {
-            playerGamePlayManager.isPlayingAnotherAnimation = true;
-            StartCoroutine(HeavyAttack());
-            StopCoroutine(HeavyAttack());
-            playerGamePlayManager.isPlayingAnotherAnimation = false;
+            if (!playerGamePlayManager.canPerformCombat)
+            {
+                playerGamePlayManager.isPlayingAnotherAnimation = true;
+                playerGamePlayManager.canPerformCombat = true;
+                StartCoroutine(HeavyAttack());
+                StopCoroutine(HeavyAttack());
+                playerGamePlayManager.isPlayingAnotherAnimation = false;
+                playerGamePlayManager.canPerformCombat = false;
+            }
         }
     }
 
@@ -134,14 +134,24 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnSpecialAttackBtnPressed()
     {
-        playerGamePlayManager.isTakingDamage = true;
-        StartCoroutine(SpecialAttack());
-        StopCoroutine(SpecialAttack());
+        if (!playerGamePlayManager.isPlayingAnotherAnimation)
+        {
+            if (!playerGamePlayManager.canPerformCombat)
+            {
+                playerGamePlayManager.isPlayingAnotherAnimation = true;
+                playerGamePlayManager.canPerformCombat = true;
+                playerGamePlayManager.isTakingDamage = true;
+                StartCoroutine(SpecialAttack());
+                StopCoroutine(SpecialAttack());
+                playerGamePlayManager.isPlayingAnotherAnimation = false;
+                playerGamePlayManager.canPerformCombat = false;
+            }
+        }
     }
 
     IEnumerator SpecialAttack()
     {
-        if (canHitSpecialAttack())
+        if (canHitSpecialAttack() && !playerGamePlayManager.isTakingDamage)
         {
             isAttacking = true;
             playerGamePlayManager.isSpecialAttack = true;
