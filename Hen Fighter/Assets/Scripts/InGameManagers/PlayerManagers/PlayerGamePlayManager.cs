@@ -29,7 +29,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     public string currentAnimaton;
 
     [HideInInspector]
-    public bool isHeavyAttack, isLightAttack, isBlocking, isTakingDamage, isSpecialAttack, isPlayingAnotherAnimation, canPerformCombat;
+    public bool isHeavyAttack, isLightAttack, isBlocking, isTakingDamage, isSpecialAttack, isPlayingAnotherAnimation;
 
     //Animation States
     [HideInInspector]

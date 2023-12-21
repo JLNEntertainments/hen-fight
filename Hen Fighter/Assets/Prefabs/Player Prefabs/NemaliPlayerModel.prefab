@@ -17539,7 +17539,7 @@ GameObject:
   - component: {fileID: 2510326264746418127}
   - component: {fileID: 2510326264746418125}
   m_Layer: 6
-  m_Name: Nemali Player Model
+  m_Name: NemaliPlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

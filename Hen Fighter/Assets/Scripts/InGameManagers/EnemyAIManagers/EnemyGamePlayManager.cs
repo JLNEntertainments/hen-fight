@@ -113,9 +113,8 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public void FollowTarget()
     {
-        if (enemyAIDecision.IsPlayerInChaseRange() && !isPlayingAnotherAnimation)
+        if (enemyAIDecision.IsPlayerInChaseRange())
         {
-            isPlayingAnotherAnimation = true;
             transform.LookAt(playerGamePlayManager.transform);
             myBody.velocity = Vector3.left * speed;
 
@@ -124,30 +123,21 @@ public class EnemyGamePlayManager : MonoBehaviour
                 ChangeAnimationState(ENEMY_WALK);
                 followPlayer = true;
             }
-            isPlayingAnotherAnimation = false;
         }
     }
 
     public void UnFollowTarget()
     {
-        if(!isPlayingAnotherAnimation)
-        {
-            isPlayingAnotherAnimation = true;
-            ChangeAnimationState(ENEMY_BACKWALK);
-            followPlayer = false;
-            isPlayingAnotherAnimation = false;
-        }
+        ChangeAnimationState(ENEMY_BACKWALK);
+        followPlayer = false;
     }
 
     public void PrepareAttack()
     {
-        if(!isPlayingAnotherAnimation)
-        {
-            myBody.velocity = Vector3.zero;
-            ChangeAnimationState(ENEMY_IDLE);
-            followPlayer = false;
-            attackPlayer = true;
-        }
+        myBody.velocity = Vector3.zero;
+        ChangeAnimationState(ENEMY_IDLE);
+        followPlayer = false;
+        attackPlayer = true;
     }
 
     public void Attack()
@@ -155,14 +145,9 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (!attackPlayer)
             return;
 
-        if(!playerGamePlayManager.canPerformCombat)
-        {
-            playerGamePlayManager.canPerformCombat = true;
-            StartCoroutine(EnemyAttack());
-            StopCoroutine(EnemyAttack());
-            playerGamePlayManager.canPerformCombat = false;
-        }
-        
+        StartCoroutine(EnemyAttack());
+        StopCoroutine(EnemyAttack());
+
         if (!enemyAIDecision.IsPlayerInAttackRange())
         {
             attackPlayer = false;
@@ -294,7 +279,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         {
             ChangeAnimationState(ENEMY_HEAVYREACT);
             yield return hReactBuffer;
-            this.transform.position = new Vector3(this.transform.position.x + 2.2f, this.transform.position.y, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x + 1.8f, this.transform.position.y, this.transform.position.z);
             SetDefaultAnimationState();
             isTakingDamage = false;
         }

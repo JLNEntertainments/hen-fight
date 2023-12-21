@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1111345846535185305}
   - component: {fileID: 1111345846535185304}
   m_Layer: 6
-  m_Name: Pachakaki_Final_Updated Temp
+  m_Name: Pachakaki_Final_Updated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
