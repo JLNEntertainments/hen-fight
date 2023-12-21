@@ -64,10 +64,10 @@ public class EnemyGamePlayManager : MonoBehaviour
         attack_Distance = 2.5f;
         lightAttackBuffer = 0.5f;
         heavyAttackBuffer = 1f;
-        blockAttackBuffer = 1.5f;
+        blockAttackBuffer = 1.2f;
         lightReactBuffer = 0.8f;
-        heavyReactBuffer = 1.2f;
-        specialReactBuffer = 4.5f;
+        heavyReactBuffer = 1.5f;
+        specialReactBuffer = 1f;
 
         lightBuffer = new WaitForSeconds(lightAttackBuffer);
         heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
@@ -250,6 +250,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         {
             ScoreManager.Instance.ShowYouWonpanel();
         }
+
         if (damageType == "isLight")
         {
             StartCoroutine(PlayLightReactAnimation());
@@ -282,11 +283,13 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         if (!isPlayingAnotherAnimation)
         {
+            isPlayingAnotherAnimation = true;
             ChangeAnimationState(ENEMY_HEAVYREACT);
             yield return hReactBuffer;
-            this.transform.position = new Vector3(this.transform.position.x + 1.8f, this.transform.position.y, this.transform.position.z);
+            this.transform.position = new Vector3(this.transform.position.x + 2.2f, this.transform.position.y, this.transform.position.z);
             SetDefaultAnimationState();
             isTakingDamage = false;
+            isPlayingAnotherAnimation = false;
         }
     }
 
@@ -301,9 +304,11 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         if (!isPlayingAnotherAnimation)
         {
+            isPlayingAnotherAnimation = true;
             ChangeAnimationState(ENEMY_SPECIALREACT);
             yield return sReactBuffer;
             SetDefaultAnimationState();
+            isPlayingAnotherAnimation = false;
         }
     }
 }
