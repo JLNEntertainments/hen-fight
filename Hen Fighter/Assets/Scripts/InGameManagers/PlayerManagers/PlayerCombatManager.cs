@@ -68,15 +68,15 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         if (!playerGamePlayManager.canPerformCombat)
         {
+            playerGamePlayManager.canPerformCombat = true;
             if (!playerGamePlayManager.isPlayingAnotherAnimation)
             {
-                playerGamePlayManager.canPerformCombat = true;
                 playerGamePlayManager.isPlayingAnotherAnimation = true;
                 StartCoroutine(LightAttack());
                 StopCoroutine(LightAttack());
                 playerGamePlayManager.isPlayingAnotherAnimation = false;
-                playerGamePlayManager.canPerformCombat = true;
             }
+            playerGamePlayManager.canPerformCombat = false;
         }
     }
 
@@ -95,7 +95,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             yield return lightBuffer;
             playerGamePlayManager.SetDefaultAnimationState();
             isAttacking = false;
-            TurnOffAttackpoints();
+            //TurnOffAttackpoints();
             
         }
     }
@@ -104,15 +104,15 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         if (!playerGamePlayManager.canPerformCombat)
         {
+            playerGamePlayManager.canPerformCombat = true;
             if (!playerGamePlayManager.isPlayingAnotherAnimation)
             {
-                playerGamePlayManager.canPerformCombat = true;
                 playerGamePlayManager.isPlayingAnotherAnimation = true;
                 StartCoroutine(HeavyAttack());
                 StopCoroutine(HeavyAttack());
                 playerGamePlayManager.isPlayingAnotherAnimation = false;
-                playerGamePlayManager.isPlayingAnotherAnimation = false;
             }
+            playerGamePlayManager.canPerformCombat = false;
         }
     }
 
@@ -132,7 +132,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.SetDefaultAnimationState();
             playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.transform.position.x + 1.85f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
             isAttacking = false;
-            TurnOffAttackpoints();
+            //TurnOffAttackpoints();
         }
     }
 
@@ -140,17 +140,17 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         if (!playerGamePlayManager.canPerformCombat)
         {
+            playerGamePlayManager.canPerformCombat = true;
             if (!playerGamePlayManager.isPlayingAnotherAnimation)
             {
-                playerGamePlayManager.canPerformCombat = true;
                 playerGamePlayManager.isPlayingAnotherAnimation = true;
                 playerGamePlayManager.isTakingDamage = true;
                 StartCoroutine(SpecialAttack());
                 StopCoroutine(SpecialAttack());
                 playerGamePlayManager.isTakingDamage = false;
-                playerGamePlayManager.canPerformCombat = false;
                 playerGamePlayManager.isPlayingAnotherAnimation = false;
             }
+            playerGamePlayManager.canPerformCombat = false;
         }
     }
 
