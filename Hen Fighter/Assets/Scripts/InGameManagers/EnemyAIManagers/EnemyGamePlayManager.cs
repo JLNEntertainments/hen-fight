@@ -145,7 +145,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (!attackPlayer)
             return;
 
-        if (playerGamePlayManager.canPerformCombat)
+        if (!playerGamePlayManager.canPerformCombat)
         {
             playerGamePlayManager.canPerformCombat = true;
             StartCoroutine(EnemyAttack());
