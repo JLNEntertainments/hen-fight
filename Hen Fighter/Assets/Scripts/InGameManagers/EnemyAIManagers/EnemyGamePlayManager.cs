@@ -145,8 +145,13 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (!attackPlayer)
             return;
 
-        StartCoroutine(EnemyAttack());
-        StopCoroutine(EnemyAttack());
+        if (playerGamePlayManager.canPerformCombat)
+        {
+            playerGamePlayManager.canPerformCombat = true;
+            StartCoroutine(EnemyAttack());
+            StopCoroutine(EnemyAttack());
+            playerGamePlayManager.canPerformCombat = false;
+        }
 
         if (!enemyAIDecision.IsPlayerInAttackRange())
         {
