@@ -8,6 +8,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 {
     [HideInInspector]
     public PlayerGamePlayManager playerGamePlayManager;
+    UIManager uiManager;
 
     [HideInInspector]
     public EnemyAIDecision enemyAIDecision;
@@ -41,6 +42,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     [SerializeField]
     string currentAnimaton;
 
+    private ParticleSystem particleForPlayer;
     //Animation States
     string ENEMY_IDLE, ENEMY_WALK, ENEMY_BACKWALK, ENEMY_LIGHTATTACK, ENEMY_HEAVYATTACK, ENEMY_BLOCK, ENEMY_LIGHTREACT, ENEMY_HEAVYREACT, ENEMY_SPECIALREACT;
 
@@ -58,6 +60,9 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
+        uiManager = FindObjectOfType<UIManager>();
+        GameObject particleObject = GameObject.FindWithTag("Particles");
+        particleForPlayer = particleObject.GetComponent<ParticleSystem>();
 
         speed = 2f;
         enemyHealth = 1f;
@@ -255,12 +260,16 @@ public class EnemyGamePlayManager : MonoBehaviour
         {
             StartCoroutine(PlayLightReactAnimation());
             StopCoroutine(PlayLightReactAnimation());
+            uiManager.PlayerFX();
+            particleForPlayer.Play();
             enemyHealth -= 0.1f;
         }
         else if (damageType == "isHeavy")
         {
             StartCoroutine(PlayHeavyReactAnimation());
             StopCoroutine(PlayHeavyReactAnimation());
+            uiManager.PlayerFX();
+            particleForPlayer.Play();
             enemyHealth -= 0.2f;
         }
         healthBar.fillAmount = enemyHealth;

@@ -8,6 +8,7 @@ public class PlayerGamePlayManager : MonoBehaviour
 {
     [HideInInspector]
     public EnemyGamePlayManager enemyGamePlayManager;
+    UIManager uiManager;
 
     Joystick joystick;
 
@@ -40,6 +41,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         enemyGamePlayManager = FindObjectOfType<EnemyGamePlayManager>();
         joystick = FindObjectOfType<VariableJoystick>().GetComponent<VariableJoystick>();
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
+        uiManager = FindObjectOfType<UIManager>();
 
         playerAnimator = this.GetComponentInChildren<Animator>();
         playerRb = this.GetComponent<Rigidbody>();
@@ -152,12 +154,14 @@ public class PlayerGamePlayManager : MonoBehaviour
                 {
                     StartCoroutine(PlayLightReactAnimation());
                     StopCoroutine(PlayLightReactAnimation());
+                    uiManager.PlayFX();
                     playerHealth -= 0.1f;
                 }
                 else if (damageType == "isHeavy")
                 {
                     StartCoroutine(PlayHeavyReactAnimation());
                     StopCoroutine(PlayHeavyReactAnimation());
+                    uiManager.PlayFX();
                     playerHealth -= 0.2f;
                 }
                 isPlayingAnotherAnimation = false;
