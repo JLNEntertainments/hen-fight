@@ -145,7 +145,6 @@ public class PlayerGamePlayManager : MonoBehaviour
         }
         else
         {
-           
             if(!isPlayingAnotherAnimation)
             {
                 isPlayingAnotherAnimation = true;
@@ -182,6 +181,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     {
         ChangeAnimationState(PLAYER_HEAVYREACT);
         yield return heavyBuffer;
+        this.transform.position = new Vector3(this.transform.position.x - 2.5f, this.transform.position.y, this.transform.position.z);
         SetDefaultAnimationState();
         isTakingDamage = false;
     }

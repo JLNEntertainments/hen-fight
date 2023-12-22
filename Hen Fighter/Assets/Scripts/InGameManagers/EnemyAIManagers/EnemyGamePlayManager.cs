@@ -83,7 +83,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
-        default_Attack_Time = 3f;
+        default_Attack_Time = 1.5f;
         default_Stamina_Regen_Time = 8f;
         current_Attack_Time = default_Attack_Time;
         current_Stamina_Regen_Time = 0;
@@ -96,7 +96,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         ENEMY_BACKWALK = "BackWalk";
         ENEMY_LIGHTATTACK = "LightAttack";
         ENEMY_HEAVYATTACK = "HeavyAttack";
-        ENEMY_BLOCK = "Crouch";
+        ENEMY_BLOCK = "Block";
         ENEMY_LIGHTREACT = "LightReact";
         ENEMY_HEAVYREACT = "HeavyReact";
         ENEMY_SPECIALREACT = "SpecialReact";
@@ -251,62 +251,58 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void InflictEnemyDamage(string damageType)
     {
         isTakingDamage = true;
-        if (enemyHealth <0)
+        if (enemyHealth < 0)
         {
             ScoreManager.Instance.ShowYouWonpanel();
         }
-
-        if (damageType == "isLight")
+        else
         {
-            StartCoroutine(PlayLightReactAnimation());
-            StopCoroutine(PlayLightReactAnimation());
-            uiManager.PlayerFX();
-            particleForPlayer.Play();
-            enemyHealth -= 0.1f;
-        }
-        else if (damageType == "isHeavy")
-        {
-            StartCoroutine(PlayHeavyReactAnimation());
-            StopCoroutine(PlayHeavyReactAnimation());
-            uiManager.PlayPlayerhaveyAttack();
+            if (damageType == "isLight")
+            {
+                StartCoroutine(PlayLightReactAnimation());
+                StopCoroutine(PlayLightReactAnimation());
+                uiManager.PlayerFX();
+                particleForPlayer.Play();
+                enemyHealth -= 0.1f;
+            }
+            else if (damageType == "isHeavy")
+            {
+                StartCoroutine(PlayHeavyReactAnimation());
+                StopCoroutine(PlayHeavyReactAnimation());
+                uiManager.PlayPlayerhaveyAttack();
 
-            particleForPlayer.Play();
-            enemyHealth -= 0.2f;
+                particleForPlayer.Play();
+                enemyHealth -= 0.2f;
+            }
+            healthBar.fillAmount = enemyHealth;
         }
-        healthBar.fillAmount = enemyHealth;
     }
+       
 
     IEnumerator PlayLightReactAnimation()
     {
-        if(!isPlayingAnotherAnimation) 
-        {
-            isPlayingAnotherAnimation = true;
-            ChangeAnimationState(ENEMY_LIGHTREACT);
-            yield return lReactBuffer;
-            SetDefaultAnimationState();
-            isTakingDamage = false;
-            isPlayingAnotherAnimation = false;
-        }
+        ChangeAnimationState(ENEMY_LIGHTREACT);
+        yield return lReactBuffer;
+        SetDefaultAnimationState();
+        isTakingDamage = false;
+        isPlayingAnotherAnimation = false;
     }
 
     IEnumerator PlayHeavyReactAnimation()
     {
-        if (!isPlayingAnotherAnimation)
-        {
-            isPlayingAnotherAnimation = true;
-            ChangeAnimationState(ENEMY_HEAVYREACT);
-            yield return hReactBuffer;
-            this.transform.position = new Vector3(this.transform.position.x + 2.2f, this.transform.position.y, this.transform.position.z);
-            SetDefaultAnimationState();
-            isTakingDamage = false;
-            isPlayingAnotherAnimation = false;
-        }
+        ChangeAnimationState(ENEMY_HEAVYREACT);
+        yield return hReactBuffer;
+        this.transform.position = new Vector3(this.transform.position.x + 2.2f, this.transform.position.y, this.transform.position.z);
+        SetDefaultAnimationState();
+        isTakingDamage = false;
+        isPlayingAnotherAnimation = false;
     }
 
     public void SpecialAttackPlaying()
     {
         isTakingDamage = true;
         StartCoroutine(PlaySpecialAttackReactAnim());
+        StopCoroutine(PlaySpecialAttackReactAnim());
         isTakingDamage = false;
     }
 
