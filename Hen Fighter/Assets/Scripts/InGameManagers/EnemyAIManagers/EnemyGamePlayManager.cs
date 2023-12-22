@@ -268,7 +268,8 @@ public class EnemyGamePlayManager : MonoBehaviour
         {
             StartCoroutine(PlayHeavyReactAnimation());
             StopCoroutine(PlayHeavyReactAnimation());
-            uiManager.PlayerFX();
+            uiManager.PlayPlayerhaveyAttack();
+
             particleForPlayer.Play();
             enemyHealth -= 0.2f;
         }

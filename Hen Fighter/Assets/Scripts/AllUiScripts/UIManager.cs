@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     public GameObject specialAttackBtnAnim;
     //public Animation HitFX;
-    public Animator HitFx,PlayerHitFx;
+    public Animator HitFx,PlayerHitFx,heavyAttackForEnemy,heavyAttackForPlayer;
     
     //AnimationClip HitFX;
     //For specialAttackButton Filling
@@ -61,6 +61,36 @@ public class UIManager : MonoBehaviour
         HitFx.gameObject.SetActive(false);
     }
 
+    public void PlayEnemyhaveyAttack()
+    {
+        StartCoroutine(PalyEnemyHaveyFx());
+        StopCoroutine(PalyEnemyHaveyFx());
+    }
+
+    IEnumerator PalyEnemyHaveyFx()
+    {
+        heavyAttackForEnemy.gameObject.SetActive(true);
+        heavyAttackForEnemy.Play("HeavyAttackAnim");
+        particleForPlayer.Play();
+        yield return new WaitForSeconds(0.4f);
+        heavyAttackForEnemy.gameObject.SetActive(false);
+    }
+
+    public void PlayPlayerhaveyAttack()
+    {
+        StartCoroutine(PalyPlayerHaveyFx());
+        StopCoroutine(PalyPlayerHaveyFx());
+    }
+
+    IEnumerator PalyPlayerHaveyFx()
+    {
+        heavyAttackForPlayer.gameObject.SetActive(true);
+        heavyAttackForPlayer.Play("HeavyAttackAnim");
+        particleForPlayer.Play();
+        yield return new WaitForSeconds(0.4f);
+        heavyAttackForPlayer.gameObject.SetActive(false);
+    }
+
 
 
     public void PlayerFX()
@@ -71,10 +101,11 @@ public class UIManager : MonoBehaviour
 
     IEnumerator PlayerHitFX()
     {
+        yield return new WaitForSeconds(0.4f);
         PlayerHitFx.gameObject.SetActive(true);
         PlayerHitFx.Play("EnemyBeekAtack");
         particleForPlayer.Play();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         PlayerHitFx.gameObject.SetActive(false);
     }
 

@@ -161,7 +161,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 {
                     StartCoroutine(PlayHeavyReactAnimation());
                     StopCoroutine(PlayHeavyReactAnimation());
-                    uiManager.PlayFX();
+                    uiManager.PlayEnemyhaveyAttack();
                     playerHealth -= 0.2f;
                 }
                 isPlayingAnotherAnimation = false;
