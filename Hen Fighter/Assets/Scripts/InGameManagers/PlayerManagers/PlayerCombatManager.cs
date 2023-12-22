@@ -40,7 +40,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             uiManager = GetComponent<UIManager>();
 
             clicksCnt = 0;
-            defaultAttackTime = 1f;
+            defaultAttackTime = 2f;
             currentAttackTime = defaultAttackTime;
             lightAttackBuffer = heavyAttackBuffer = 0.8f;
             specialAttackBuffer = 4f;
