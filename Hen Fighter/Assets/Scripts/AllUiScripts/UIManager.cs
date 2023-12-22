@@ -70,24 +70,24 @@ public class UIManager : MonoBehaviour
     IEnumerator PalyEnemyHaveyFx()
     {
         heavyAttackForEnemy.gameObject.SetActive(true);
-        heavyAttackForEnemy.Play("HeavyAttack");
+        heavyAttackForEnemy.Play("HeavyAttackAnim");
         particleForPlayer.Play();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         heavyAttackForEnemy.gameObject.SetActive(false);
     }
 
     public void PlayPlayerhaveyAttack()
     {
-        StartCoroutine(PalyEnemyHaveyFx());
-        StopCoroutine(PalyEnemyHaveyFx());
+        StartCoroutine(PalyPlayerHaveyFx());
+        StopCoroutine(PalyPlayerHaveyFx());
     }
 
     IEnumerator PalyPlayerHaveyFx()
     {
         heavyAttackForPlayer.gameObject.SetActive(true);
-        heavyAttackForPlayer.Play("HeavyAttack");
+        heavyAttackForPlayer.Play("HeavyAttackAnim");
         particleForPlayer.Play();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         heavyAttackForPlayer.gameObject.SetActive(false);
     }
 
@@ -101,10 +101,11 @@ public class UIManager : MonoBehaviour
 
     IEnumerator PlayerHitFX()
     {
+        yield return new WaitForSeconds(0.4f);
         PlayerHitFx.gameObject.SetActive(true);
         PlayerHitFx.Play("EnemyBeekAtack");
         particleForPlayer.Play();
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         PlayerHitFx.gameObject.SetActive(false);
     }
 
