@@ -6,11 +6,15 @@ public class Gamepass : MonoBehaviour
 {
     public GameObject pausePanel,gamequitPanel;
 
+    public GameObject DoYouWantToExitGame;
+
     void Update()
     {
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            // Application.Quit();
+            DoYouWantToExitGame.SetActive(true);
+            Time.timeScale = 0;
             Debug.LogError("ApplicationQuit");
         }
     }
@@ -40,7 +44,21 @@ public class Gamepass : MonoBehaviour
     }
     public void GameQuitButton()
     {
+       Application.Quit();
+        Debug.LogError("gameExit");
+    }
+
+
+
+    public void DoYouWantToQuit_Yes()
+    {
         Application.Quit();
         Debug.LogError("gameExit");
+    }
+
+    public void DoYouWantToQuit_NO()
+    {
+        DoYouWantToExitGame.SetActive(false);
+        Time.timeScale = 1;
     }
 }

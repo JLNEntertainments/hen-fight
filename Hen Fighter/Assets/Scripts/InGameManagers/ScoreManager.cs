@@ -102,6 +102,12 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValuePlayer -= (characterStaminaValuePlayer * HeavyAttackDamage);
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
+        else if (attackType.Equals("isSpecial"))
+        {
+            playerScore += 100;
+            characterStaminaValuePlayer -= (characterStaminaValuePlayer * HeavyAttackDamage);
+            PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
+        }
         Debug.Log("Player : " + playerScore);
         //score for palyer
         ScoretextForPlayer.text = playerScore.ToString();
@@ -112,6 +118,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         //score for enemy
         ScoreTextForEnemy.text = enemyScore.ToString();
         //ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
+
+
     }
 
     void RegenerateStamina()

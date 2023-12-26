@@ -5,31 +5,31 @@ using UnityEngine.UI;
 
 public class SwitchToggle : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public Button toggleButton;
+    
+
     public GameObject  on, off;
     int index;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        if(index == 1)
-        {
-           
-        }
-    }
+    private bool muted = false;
 
     public void On()
     {
-        on.gameObject.SetActive(false);
-        off.gameObject.SetActive(true);
-    }
+            muted = true;
+            AudioListener.pause = true;
+            on.gameObject.SetActive(false);
+            off.gameObject.SetActive(true);
+     }
 
     public void OFF()
     {
-        off.gameObject.SetActive(false);
-        on.gameObject.SetActive(true);
+        
+            muted = false;
+            AudioListener.pause = false;
+            on.gameObject.SetActive(false);
+            off.gameObject.SetActive(true);
+        
     }
+
+    
 }

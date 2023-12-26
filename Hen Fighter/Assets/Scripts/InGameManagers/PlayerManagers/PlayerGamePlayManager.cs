@@ -36,12 +36,15 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public string PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK, PLAYER_DEATH;
 
+    private AudioSource ClawSound;
+
     void Start()
     {
         enemyGamePlayManager = FindObjectOfType<EnemyGamePlayManager>();
         joystick = FindObjectOfType<VariableJoystick>().GetComponent<VariableJoystick>();
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
+        ClawSound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
 
         playerAnimator = this.GetComponentInChildren<Animator>();
         playerRb = this.GetComponent<Rigidbody>();
@@ -153,14 +156,26 @@ public class PlayerGamePlayManager : MonoBehaviour
                 {
                     StartCoroutine(PlayLightReactAnimation());
                     StopCoroutine(PlayLightReactAnimation());
+                    ClawSound.Play();
                     uiManager.PlayFX();
                     playerHealth -= 0.1f;
+                    
                 }
                 else if (damageType == "isHeavy")
                 {
                     StartCoroutine(PlayHeavyReactAnimation());
                     StopCoroutine(PlayHeavyReactAnimation());
+                    ClawSound.Play();
                     uiManager.PlayEnemyhaveyAttack();
+                    playerHealth -= 0.2f;
+                    
+                }
+                else if  (damageType == "isSpecial")
+                {
+                    StartCoroutine(PlaySpecialReactAnimation());
+                    StopCoroutine(PlaySpecialReactAnimation());
+                    ClawSound.Play();
+                   // uiManager.PlayEnemyhaveyAttack();
                     playerHealth -= 0.2f;
                 }
                 isPlayingAnotherAnimation = false;
@@ -182,6 +197,13 @@ public class PlayerGamePlayManager : MonoBehaviour
         ChangeAnimationState(PLAYER_HEAVYREACT);
         yield return heavyBuffer;
         this.transform.position = new Vector3(this.transform.position.x - 2.5f, this.transform.position.y, this.transform.position.z);
+        SetDefaultAnimationState();
+        isTakingDamage = false;
+    }
+    IEnumerator PlaySpecialReactAnimation()
+    {
+        ChangeAnimationState(PLAYER_LIGHTREACT);
+        yield return lightBuffer;
         SetDefaultAnimationState();
         isTakingDamage = false;
     }
