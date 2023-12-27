@@ -4,18 +4,34 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource Source;
-    public AudioClip Clip;
+    public string audioTag = "Audio"; // Set your desired tag in the Inspector
+    public AudioClip[] audioClips;
 
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+
     void Start()
     {
-        Source.PlayOneShot(Clip);
+        audioSource = GetComponent<AudioSource>();
+        PlayRandomAudio();
     }
 
-    // Update is called once per frame
-    void Update()
+   public void PlayRandomAudio()
     {
-        
+        // Filter audio clips based on the tag
+        AudioClip[] filteredClips = System.Array.FindAll(audioClips, clip => clip.name.StartsWith(audioTag));
+
+        if (filteredClips.Length > 0)
+        {
+            // Select a random audio clip
+            AudioClip randomClip = filteredClips[Random.Range(0, filteredClips.Length)];
+
+            // Play the selected audio clip
+            audioSource.clip = randomClip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No audio clips with the specified tag found.");
+        }
     }
 }

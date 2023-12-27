@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 {
     Animator playerAnimator;
-    PlayerGamePlayManager playerGamePlayManager;
+    [HideInInspector]
+    public PlayerGamePlayManager playerGamePlayManager;
     UIManager uiManager;
 
     static int clicksCnt;
@@ -21,13 +22,13 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     private AudioSource ClawSound;
 
-   // private ParticleSystem particleForPlayer;
+    private ParticleSystem particleForPlayer;
 
     void Start()
     {
         assignmentCnt = 0;
       ClawSound  = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
-        //particleForPlayer = GameObject.FindGameObjectsWithTag("Particles").GetComponent<par>();
+       // particleForPlayer = GameObject.FindGameObjectsWithTag("Particles").GetComponent<par>();
         
     }
 
@@ -88,7 +89,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isHeavyAttack = false;
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
-            ClawSound.Play();
+           // ClawSound.Play();
            
             currentAttackTime = 0;
             yield return lightBuffer;
@@ -124,7 +125,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isLightAttack = false;
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
-            ClawSound.Play();
+           // ClawSound.Play();
             
             currentAttackTime = 0;
             yield return heavyBuffer;
@@ -167,6 +168,8 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             uiManager.specialAttackBtnAnim.SetActive(false);
             clicksCnt = 0;
             playerGamePlayManager.isSpecialAttack = false;
+            ScoreManager.Instance.UpdatePlayerScore("isSpecialAttack");
+            ClawSound.Play();
         }
     }
 

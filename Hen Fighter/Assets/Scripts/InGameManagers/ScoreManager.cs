@@ -6,6 +6,8 @@ using TMPro;
 
 public class ScoreManager : SingletonGeneric<ScoreManager>
 {
+    
+
     [SerializeField] GameObject YouLostPanel,YouWonpanel,GameOverpanel;
 
 
@@ -14,12 +16,13 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     public float LightAttackDamage;
     public float HeavyAttackDamage;
+    public float SpecialAttackDamage;
 
     float staminaRegenRate, defaultStaminRegenRate;
 
     public TMP_Text ScoretextForPlayer,ScoreTextForEnemy,ScoreDisplayOnGameOverPanelForPlayer;
     [SerializeField]
-   // private TMP_Text EnemyHealthBarText,PlayerHealthBarText;
+    private TMP_Text EnemyHealthBarText,PlayerHealthBarText;
 
     [HideInInspector]
     public float maxStamina;
@@ -41,6 +44,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         characterStaminaValuePlayer = maxStamina;
         enemyScore = 0;
         playerScore = 0;
+       
     }
 
     private void Update()
@@ -78,13 +82,9 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         //score for player
         ScoretextForPlayer.text =playerScore.ToString();
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
-       // ScoreTextDisplayOnHealthForPlayer.text = playerScore.ToString();
-        //EnemyHealthBarText.text = HealthBarValue.ToString();
-
-        //score for enemy
         ScoreTextForEnemy.text = enemyScore.ToString();
-       // ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
-
+        PlayerHealthBarText.text = Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 ).ToString() + "%";
+        
     }
 
     public void UpdatePlayerScore(string attackType)
@@ -102,16 +102,22 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValuePlayer -= (characterStaminaValuePlayer * HeavyAttackDamage);
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
+        else if (attackType.Equals("isSpecialAttack"))
+        {
+            playerScore += 100;
+            characterStaminaValuePlayer -= (characterStaminaValuePlayer * SpecialAttackDamage);
+            PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
+        }
+
+
         Debug.Log("Player : " + playerScore);
         //score for palyer
         ScoretextForPlayer.text = playerScore.ToString();
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
-        //ScoreTextDisplayOnHealthForPlayer.text = playerScore.ToString();
-        // EnemyHealthBarText.text = characterStaminaValueEnemy.ToString();
-
-        //score for enemy
         ScoreTextForEnemy.text = enemyScore.ToString();
-        //ScoreTextDisplayOnHealthForEnemy.text = enemyScore.ToString();
+        EnemyHealthBarText.text = Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.enemyGamePlayManager.enemyHealth * 100).ToString() + "%" ;
+       
+
     }
 
     void RegenerateStamina()
@@ -138,13 +144,15 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     IEnumerator GameOverPanelDisplay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         GameOverpanel.SetActive(true);
+       
     }
 
     public void ShowYouWonpanel()
     {
         YouWonpanel.SetActive(true);
+       
         StartCoroutine(GameOverPanelDisplay());
         StopCoroutine(GameOverPanelDisplay());
     }
