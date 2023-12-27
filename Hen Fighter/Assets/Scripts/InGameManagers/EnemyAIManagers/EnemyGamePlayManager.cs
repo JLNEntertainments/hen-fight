@@ -9,8 +9,9 @@ public class EnemyGamePlayManager : MonoBehaviour
     [HideInInspector]
     public PlayerGamePlayManager playerGamePlayManager;
     UIManager uiManager;
+    AudioManager audioManager;
     //PlayerCombatManager PlayerCombatManager;
-    
+
 
     [HideInInspector]
     public EnemyAIDecision enemyAIDecision;
@@ -37,7 +38,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
 
     [HideInInspector]
-    public bool followPlayer, attackPlayer, isHeavyAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking, isPlayerFound, isPlayingAnotherAnimation;
+    public bool followPlayer, attackPlayer, isHeavyAttack, isSpecialAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking, isPlayerFound, isPlayingAnotherAnimation;
 
     public DamageGeneric[] enemyWeapons;
 
@@ -64,6 +65,8 @@ public class EnemyGamePlayManager : MonoBehaviour
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+
         GameObject particleObject = GameObject.FindWithTag("Particles");
         particleForPlayer = particleObject.GetComponent<ParticleSystem>();
         ClawSound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
@@ -255,7 +258,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void InflictEnemyDamage(string damageType)
     {
         isTakingDamage = true;
-        if (enemyHealth < 0)
+        if (enemyHealth <= 0)
         {
             ScoreManager.Instance.ShowYouWonpanel();
         }
@@ -266,6 +269,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 StartCoroutine(PlayLightReactAnimation());
                 StopCoroutine(PlayLightReactAnimation());
                 ClawSound.Play();
+             //  audioManager.PlayRandomAudio();
                 uiManager.PlayerFX();
                 particleForPlayer.Play();
                 enemyHealth -= 0.1f;
@@ -276,12 +280,26 @@ public class EnemyGamePlayManager : MonoBehaviour
                 StartCoroutine(PlayHeavyReactAnimation());
                 StopCoroutine(PlayHeavyReactAnimation());
                 ClawSound.Play();
+               // audioManager.PlayRandomAudio();
                 uiManager.PlayPlayerhaveyAttack();
                 particleForPlayer.Play();
                 enemyHealth -= 0.2f;
                
             }
+            else if (damageType == "isSpecialAttack")
+            {
+                StartCoroutine(PlaySpecialAttackReactAnim());
+                StopCoroutine(PlaySpecialAttackReactAnim());
+                ClawSound.Play();
+              //  audioManager.PlayRandomAudio();
+                uiManager.PlayPlayerhaveyAttack();
+                particleForPlayer.Play();
+                enemyHealth -= 0.5f;
+
+            }
+
             healthBar.fillAmount = enemyHealth;
+            
         }
     }
        

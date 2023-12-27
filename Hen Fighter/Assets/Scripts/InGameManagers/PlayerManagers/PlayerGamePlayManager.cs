@@ -9,6 +9,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public EnemyGamePlayManager enemyGamePlayManager;
     UIManager uiManager;
+    AudioManager audioManager;
 
     Joystick joystick;
 
@@ -45,6 +46,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
         ClawSound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         playerAnimator = this.GetComponentInChildren<Animator>();
         playerRb = this.GetComponent<Rigidbody>();
@@ -157,6 +159,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                     StartCoroutine(PlayLightReactAnimation());
                     StopCoroutine(PlayLightReactAnimation());
                     ClawSound.Play();
+                   // audioManager.PlayRandomAudio();
                     uiManager.PlayFX();
                     playerHealth -= 0.1f;
                     
@@ -166,17 +169,19 @@ public class PlayerGamePlayManager : MonoBehaviour
                     StartCoroutine(PlayHeavyReactAnimation());
                     StopCoroutine(PlayHeavyReactAnimation());
                     ClawSound.Play();
+                   // audioManager.PlayRandomAudio();
                     uiManager.PlayEnemyhaveyAttack();
                     playerHealth -= 0.2f;
                     
                 }
-                else if  (damageType == "isSpecial")
+                else if  (damageType == "isSpecialAttack")
                 {
                     StartCoroutine(PlaySpecialReactAnimation());
                     StopCoroutine(PlaySpecialReactAnimation());
                     ClawSound.Play();
-                   // uiManager.PlayEnemyhaveyAttack();
-                    playerHealth -= 0.2f;
+                    //audioManager.PlayRandomAudio();
+                    // uiManager.PlayEnemyhaveyAttack();
+                    playerHealth -= 0.5f;
                 }
                 isPlayingAnotherAnimation = false;
                 healthBar.fillAmount = playerHealth;
@@ -202,7 +207,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     }
     IEnumerator PlaySpecialReactAnimation()
     {
-        ChangeAnimationState(PLAYER_LIGHTREACT);
+        ChangeAnimationState(PLAYER_SPECIALATTACK);
         yield return lightBuffer;
         SetDefaultAnimationState();
         isTakingDamage = false;
