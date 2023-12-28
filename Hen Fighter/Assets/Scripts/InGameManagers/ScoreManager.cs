@@ -14,6 +14,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     static int enemyScore, playerScore;
     [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage;
 
+    public float enemyHealth;
     public float LightAttackDamage;
     public float HeavyAttackDamage;
     public float SpecialAttackDamage;
@@ -38,6 +39,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     {
         defaultStaminRegenRate = 2f;
         staminaRegenRate = defaultStaminRegenRate;
+
+        enemyHealth = 1.0f;
 
         maxStamina = 1;
         characterStaminaValueEnemy = maxStamina;
@@ -115,7 +118,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoretextForPlayer.text = playerScore.ToString();
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
         ScoreTextForEnemy.text = enemyScore.ToString();
-        EnemyHealthBarText.text = Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.enemyGamePlayManager.enemyHealth * 100).ToString() + "%" ;
+        EnemyHealthBarText.text = Mathf.RoundToInt(ScoreManager.Instance.enemyHealth * 100).ToString() + "%" ;
        
 
     }

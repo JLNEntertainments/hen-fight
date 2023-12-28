@@ -20,9 +20,6 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     Image healthBar;
 
-    float speed, lightAttackBuffer, heavyAttackBuffer, blockAttackBuffer, lightReactBuffer, heavyReactBuffer, specialReactBuffer;
-    WaitForSeconds lightBuffer, heavyBuffer, blockBuffer, lReactBuffer, hReactBuffer, sReactBuffer;
-
     [HideInInspector]
     public float enemyHealth;
 
@@ -44,8 +41,6 @@ public class EnemyGamePlayManager : MonoBehaviour
     string currentAnimaton;
 
     private ParticleSystem particleForPlayer;
-    //Animation States
-    string ENEMY_READYTOFIGHT, ENEMY_IDLE, ENEMY_WALK, ENEMY_BACKWALK, ENEMY_RUN, ENEMY_BACKRUN, ENEMY_JUMP, ENEMY_JUMPANDFLY, ENEMY_CROUCH, ENEMY_LIGHTATTACK, ENEMY_LIGHTATTACKTOP, ENEMY_HEAVYATTACK, ENEMY_HEAVYATTACKKICK, ENEMY_SPECIALATTACK, ENEMY_BLOCK, ENEMY_LIGHTREACT, ENEMY_HEAVYREACT, ENEMY_DEATHREACT, ENEMY_SPECIALREACT, ENEMY_VICTORYJUMP;
 
     private AudioSource EnemeyAudio;
     private AudioSource ClawSound;
@@ -67,22 +62,9 @@ public class EnemyGamePlayManager : MonoBehaviour
         particleForPlayer = particleObject.GetComponent<ParticleSystem>();
         ClawSound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
 
-        speed = 2f;
-        enemyHealth = 1f;
+        //speed = 2f;
+        //enemyHealth = 1f;
         attack_Distance = 2.5f;
-        lightAttackBuffer = 0.5f;
-        heavyAttackBuffer = 1f;
-        blockAttackBuffer = 1.2f;
-        lightReactBuffer = 0.8f;
-        heavyReactBuffer = 1.5f;
-        specialReactBuffer = 1f;
-
-        lightBuffer = new WaitForSeconds(lightAttackBuffer);
-        heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
-        blockBuffer = new WaitForSeconds(blockAttackBuffer);
-        lReactBuffer = new WaitForSeconds(lightReactBuffer);
-        hReactBuffer = new WaitForSeconds(heavyReactBuffer);
-        sReactBuffer = new WaitForSeconds(specialReactBuffer);
 
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
@@ -94,28 +76,12 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
 
-        ENEMY_READYTOFIGHT = "ReadyToFight";
-        ENEMY_IDLE = "Idle";
-        ENEMY_WALK = "Walking";
-        ENEMY_BACKWALK = "BackWalk";
-        ENEMY_RUN = "Run";
-        ENEMY_BACKRUN = "BackRun";
-        ENEMY_JUMP = "Jump";
-        ENEMY_JUMPANDFLY = "JumpAndFly";
-        ENEMY_CROUCH = "Crouch";
-        ENEMY_LIGHTATTACK = "LightAttack";
-        ENEMY_LIGHTATTACKTOP = "LightAttackTop";
-        ENEMY_HEAVYATTACK = "HeavyAttack";
-        ENEMY_HEAVYATTACKKICK = "HeavyAttackKick";
-        ENEMY_SPECIALATTACK = "SpecialAttack";
-        ENEMY_BLOCK = "Block";
-        ENEMY_LIGHTREACT = "LightReact";
-        ENEMY_HEAVYREACT = "HeavyReact";
-        ENEMY_DEATHREACT = "DeathReact";
-        ENEMY_SPECIALREACT = "SpecialReact";
-        ENEMY_VICTORYJUMP = "VictoryJump";
-
         TurnOffAttackpoints();
+    }
+
+    void AssignAttributes()
+    {
+
     }
 
     void Update()
@@ -136,11 +102,9 @@ public class EnemyGamePlayManager : MonoBehaviour
         {
             enemyAnimator.SetBool("inChaseRange", true);
             transform.LookAt(playerGamePlayManager.transform);
-            myBody.velocity = Vector3.left * speed;
-
+            myBody.velocity = Vector3.left * 2f;
             if (myBody.velocity.sqrMagnitude != 0)
             {
-                
                 followPlayer = true;
             }
         }
@@ -228,7 +192,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void InflictEnemyDamage(string damageType)
     {
         isTakingDamage = true;
-        if (enemyHealth <0)
+        if (ScoreManager.Instance.enemyHealth < 0)
         {
             ScoreManager.Instance.ShowYouWonpanel();
         }
@@ -238,7 +202,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             PlayLightReactAnimation();
             uiManager.PlayerFX();
             particleForPlayer.Play();
-            enemyHealth -= 0.1f;
+            ScoreManager.Instance.enemyHealth -= 0.1f;
         }
         else if (damageType == "isHeavy")
         {
@@ -246,10 +210,10 @@ public class EnemyGamePlayManager : MonoBehaviour
             StopCoroutine(PlayHeavyReactAnimation());
             uiManager.PlayerFX();
             particleForPlayer.Play();
-            enemyHealth -= 0.2f;
+            ScoreManager.Instance.enemyHealth -= 0.2f;
             
         }
-        healthBar.fillAmount = enemyHealth;
+        healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
     }
 
     void PlayLightReactAnimation()

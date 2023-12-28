@@ -96,7 +96,7 @@ public class EnemyAIDecision : MonoBehaviour
 
     bool IsEnemyLowOnHealth()
     {
-        return enemyGamePlayManager.enemyHealth < lowHealthThreshold;
+        return ScoreManager.Instance.enemyHealth < lowHealthThreshold;
     }
 
     bool IsPlayerLowOnStamina()
