@@ -28,7 +28,7 @@ public class EnemyAIDecision : MonoBehaviour
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
 
-        if (enemyGamePlayManager.enemy_Start > 2.5f)
+        if (enemyGamePlayManager.enemy_Start > 5.5f)
             MakeMovementDecision();
     }
 
@@ -75,6 +75,7 @@ public class EnemyAIDecision : MonoBehaviour
         if (IsPlayerPerformingSpecialAttack() && IsPlayerInAttackRange())
         {
             enemyGamePlayManager.SpecialAttackPlaying();
+            enemyGamePlayManager.playerGamePlayManager.isSpecialAttack = false;
         }
     }
 
@@ -95,7 +96,7 @@ public class EnemyAIDecision : MonoBehaviour
 
     bool IsEnemyLowOnHealth()
     {
-        return enemyGamePlayManager.enemyHealth < lowHealthThreshold;
+        return ScoreManager.Instance.enemyHealth < lowHealthThreshold;
     }
 
     bool IsPlayerLowOnStamina()

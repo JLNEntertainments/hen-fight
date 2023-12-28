@@ -10,8 +10,6 @@ public class EnemyGamePlayManager : MonoBehaviour
     public PlayerGamePlayManager playerGamePlayManager;
     UIManager uiManager;
     AudioManager audioManager;
-    //PlayerCombatManager PlayerCombatManager;
-
 
     [HideInInspector]
     public EnemyAIDecision enemyAIDecision;
@@ -21,9 +19,6 @@ public class EnemyGamePlayManager : MonoBehaviour
     Rigidbody myBody;
 
     Image healthBar;
-
-    float speed, lightAttackBuffer, heavyAttackBuffer, blockAttackBuffer, lightReactBuffer, heavyReactBuffer, specialReactBuffer;
-    WaitForSeconds lightBuffer, heavyBuffer, blockBuffer, lReactBuffer, hReactBuffer, sReactBuffer;
 
     [HideInInspector]
     public float enemyHealth;
@@ -46,8 +41,6 @@ public class EnemyGamePlayManager : MonoBehaviour
     string currentAnimaton;
 
     private ParticleSystem particleForPlayer;
-    //Animation States
-    string ENEMY_IDLE, ENEMY_WALK, ENEMY_BACKWALK, ENEMY_LIGHTATTACK, ENEMY_HEAVYATTACK, ENEMY_BLOCK, ENEMY_LIGHTREACT, ENEMY_HEAVYREACT, ENEMY_SPECIALREACT;
 
     private AudioSource EnemeyAudio;
     private AudioSource ClawSound;
@@ -61,54 +54,34 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void Start()
     {
-
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
         audioManager = FindObjectOfType<AudioManager>();
-
         GameObject particleObject = GameObject.FindWithTag("Particles");
         particleForPlayer = particleObject.GetComponent<ParticleSystem>();
         ClawSound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
 
-        speed = 2f;
-        enemyHealth = 1f;
+        //speed = 2f;
+        //enemyHealth = 1f;
         attack_Distance = 2.5f;
-        lightAttackBuffer = 0.5f;
-        heavyAttackBuffer = 1f;
-        blockAttackBuffer = 1.2f;
-        lightReactBuffer = 0.8f;
-        heavyReactBuffer = 1.5f;
-        specialReactBuffer = 1f;
-
-        lightBuffer = new WaitForSeconds(lightAttackBuffer);
-        heavyBuffer = new WaitForSeconds(heavyAttackBuffer);
-        blockBuffer = new WaitForSeconds(blockAttackBuffer);
-        lReactBuffer = new WaitForSeconds(lightReactBuffer);
-        hReactBuffer = new WaitForSeconds(heavyReactBuffer);
-        sReactBuffer = new WaitForSeconds(specialReactBuffer);
 
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
-        default_Attack_Time = 1.5f;
+        default_Attack_Time = 3f;
         default_Stamina_Regen_Time = 8f;
         current_Attack_Time = default_Attack_Time;
         current_Stamina_Regen_Time = 0;
         enemy_Start = 0;
 
         EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
-        
-        ENEMY_IDLE = "Idle";
-        ENEMY_WALK = "Walking";
-        ENEMY_BACKWALK = "BackWalk";
-        ENEMY_LIGHTATTACK = "LightAttack";
-        ENEMY_HEAVYATTACK = "HeavyAttack";
-        ENEMY_BLOCK = "Block";
-        ENEMY_LIGHTREACT = "LightReact";
-        ENEMY_HEAVYREACT = "HeavyReact";
-        ENEMY_SPECIALREACT = "SpecialReact";
 
         TurnOffAttackpoints();
+    }
+
+    void AssignAttributes()
+    {
+
     }
 
     void Update()
@@ -127,12 +100,11 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         if (enemyAIDecision.IsPlayerInChaseRange())
         {
+            enemyAnimator.SetBool("inChaseRange", true);
             transform.LookAt(playerGamePlayManager.transform);
-            myBody.velocity = Vector3.left * speed;
-
+            myBody.velocity = Vector3.left * 2f;
             if (myBody.velocity.sqrMagnitude != 0)
             {
-                ChangeAnimationState(ENEMY_WALK);
                 followPlayer = true;
             }
         }
@@ -140,14 +112,14 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public void UnFollowTarget()
     {
-        ChangeAnimationState(ENEMY_BACKWALK);
+        enemyAnimator.SetTrigger("isBackWalk");
         followPlayer = false;
     }
 
     public void PrepareAttack()
     {
         myBody.velocity = Vector3.zero;
-        ChangeAnimationState(ENEMY_IDLE);
+        enemyAnimator.SetBool("inChaseRange", false);
         followPlayer = false;
         attackPlayer = true;
     }
@@ -160,8 +132,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (!playerGamePlayManager.canPerformCombat)
         {
             playerGamePlayManager.canPerformCombat = true;
-            StartCoroutine(EnemyAttack());
-            StopCoroutine(EnemyAttack());
+            EnemyAttack();
             playerGamePlayManager.canPerformCombat = false;
         }
 
@@ -172,38 +143,29 @@ public class EnemyGamePlayManager : MonoBehaviour
         }
     }
 
-    IEnumerator EnemyAttack()
+    void EnemyAttack()
     {
         int attack = (Random.Range(0, 2));
 
         foreach (var obj in enemyWeapons)
         {
-            if (attack == 1 && obj.gameObject.CompareTag("Beak") && !isPlayingAnotherAnimation)
+            if (attack == 1 && obj.gameObject.CompareTag("Beak"))
             {
-                isPlayingAnotherAnimation = true;
                 obj.gameObject.SetActive(true);
-                ChangeAnimationState(ENEMY_LIGHTATTACK);
-               // EnemeyAudio.Play();
+                enemyAnimator.SetTrigger("isLightAttack");
+                EnemeyAudio.Play();
                 isLightAttack = true;
                 isHeavyAttack = false;
-                yield return lightBuffer;
-                SetDefaultAnimationState();
-                obj.gameObject.SetActive(false);
-                isPlayingAnotherAnimation = false;
+                
             }
 
-            if (attack == 0 && obj.gameObject.CompareTag("Foot") && !isPlayingAnotherAnimation)
+            if (attack == 0 && obj.gameObject.CompareTag("Foot"))
             {
-                isPlayingAnotherAnimation = true;
                 obj.gameObject.SetActive(true);
-                ChangeAnimationState(ENEMY_HEAVYATTACK);
-               // EnemeyAudio.Play();
+                enemyAnimator.SetTrigger("isHeavyAttack");
+                EnemeyAudio.Play();
                 isHeavyAttack = true;
                 isLightAttack = false;
-                yield return heavyBuffer;
-                SetDefaultAnimationState();
-                obj.gameObject.SetActive(false);
-                isPlayingAnotherAnimation = false;
                 //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
             }
         }
@@ -212,22 +174,8 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void Defend()
     {
         isBlocking = true;
-        StartCoroutine(DefendAttack());
-        StopCoroutine(DefendAttack());
-
-    }
-
-    IEnumerator DefendAttack()
-    {
-        if (!isPlayingAnotherAnimation)
-        {
-            isPlayingAnotherAnimation = true;
-            ChangeAnimationState(ENEMY_BLOCK);
-            yield return blockBuffer;
-            SetDefaultAnimationState();
-            isBlocking = false;
-            isPlayingAnotherAnimation = false;
-        }
+        enemyAnimator.SetTrigger("isBlocking");
+        isBlocking = false;
     }
 
     void UpdateEnemyRotation()
@@ -241,105 +189,47 @@ public class EnemyGamePlayManager : MonoBehaviour
             obj.gameObject.SetActive(false);
     }
 
-    void ChangeAnimationState(string newAnimation)
-    {
-        if (currentAnimaton == newAnimation) return;
-
-        enemyAnimator.Play(newAnimation);
-        currentAnimaton = newAnimation;
-    }
-
-    public void SetDefaultAnimationState()
-    {
-        enemyAnimator.Play(ENEMY_IDLE);
-        currentAnimaton = ENEMY_IDLE;
-    }
-
     public void InflictEnemyDamage(string damageType)
     {
         isTakingDamage = true;
-        if (enemyHealth <= 0)
+        if (ScoreManager.Instance.enemyHealth < 0)
         {
             ScoreManager.Instance.ShowYouWonpanel();
         }
-        else
+
+        if (damageType == "isLight")
         {
-            if (damageType == "isLight")
-            {
-                StartCoroutine(PlayLightReactAnimation());
-                StopCoroutine(PlayLightReactAnimation());
-                ClawSound.Play();
-             //  audioManager.PlayRandomAudio();
-                uiManager.PlayerFX();
-                particleForPlayer.Play();
-                enemyHealth -= 0.1f;
-               
-            }
-            else if (damageType == "isHeavy")
-            {
-                StartCoroutine(PlayHeavyReactAnimation());
-                StopCoroutine(PlayHeavyReactAnimation());
-                ClawSound.Play();
-               // audioManager.PlayRandomAudio();
-                uiManager.PlayPlayerhaveyAttack();
-                particleForPlayer.Play();
-                enemyHealth -= 0.2f;
-               
-            }
-            else if (damageType == "isSpecialAttack")
-            {
-                StartCoroutine(PlaySpecialAttackReactAnim());
-                StopCoroutine(PlaySpecialAttackReactAnim());
-                ClawSound.Play();
-              //  audioManager.PlayRandomAudio();
-                uiManager.PlayPlayerhaveyAttack();
-                particleForPlayer.Play();
-                enemyHealth -= 0.5f;
-
-            }
-
-            healthBar.fillAmount = enemyHealth;
+            PlayLightReactAnimation();
+            uiManager.PlayerFX();
+            particleForPlayer.Play();
+            ScoreManager.Instance.enemyHealth -= 0.1f;
+        }
+        else if (damageType == "isHeavy")
+        {
+            StartCoroutine(PlayHeavyReactAnimation());
+            StopCoroutine(PlayHeavyReactAnimation());
+            uiManager.PlayerFX();
+            particleForPlayer.Play();
+            ScoreManager.Instance.enemyHealth -= 0.2f;
             
         }
+        healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
     }
-       
 
-    IEnumerator PlayLightReactAnimation()
+    void PlayLightReactAnimation()
     {
-        ChangeAnimationState(ENEMY_LIGHTREACT);
-        yield return lReactBuffer;
-        SetDefaultAnimationState();
-        isTakingDamage = false;
-        isPlayingAnotherAnimation = false;
+        enemyAnimator.SetTrigger("isLightReact");
     }
 
     IEnumerator PlayHeavyReactAnimation()
     {
-        ChangeAnimationState(ENEMY_HEAVYREACT);
-        yield return hReactBuffer;
-        this.transform.position = new Vector3(this.transform.position.x + 2.2f, this.transform.position.y, this.transform.position.z);
-        SetDefaultAnimationState();
-        isTakingDamage = false;
-        isPlayingAnotherAnimation = false;
+        enemyAnimator.SetTrigger("isHeavyReact");
+        yield return new WaitForSeconds(0.5f);
+        this.transform.position = new Vector3(this.transform.position.x + 2.5f, this.transform.position.y, this.transform.position.z);
     }
 
     public void SpecialAttackPlaying()
     {
-        isTakingDamage = true;
-        StartCoroutine(PlaySpecialAttackReactAnim());
-        StopCoroutine(PlaySpecialAttackReactAnim());
-        isTakingDamage = false;
-    }
-
-    IEnumerator PlaySpecialAttackReactAnim()
-    {
-        if (!isPlayingAnotherAnimation)
-        {
-            isPlayingAnotherAnimation = true;
-            ChangeAnimationState(ENEMY_SPECIALREACT);
-            yield return sReactBuffer;
-            SetDefaultAnimationState();
-            isPlayingAnotherAnimation = false;
-        }
+        enemyAnimator.SetTrigger("isSpecialReact");
     }
 }
