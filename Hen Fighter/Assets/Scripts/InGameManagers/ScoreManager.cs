@@ -6,10 +6,7 @@ using TMPro;
 
 public class ScoreManager : SingletonGeneric<ScoreManager>
 {
-    
-
     [SerializeField] GameObject YouLostPanel,YouWonpanel,GameOverpanel;
-
 
     static int enemyScore, playerScore;
     [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage;
@@ -29,7 +26,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     public float maxStamina;
     public float characterStaminaValueEnemy, characterStaminaValuePlayer;
 
-
     private int HealthBarValue;
 
     public float StaminaBarCharingRate;
@@ -47,7 +43,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         characterStaminaValuePlayer = maxStamina;
         enemyScore = 0;
         playerScore = 0;
-       
     }
 
     private void Update()
@@ -58,14 +53,10 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             RegenerateStamina();
             staminaRegenRate = 0;
         }
-            
     }
 
     public void UpdateEnemyScore(string attackType)
     {
-       
-
-
         if (attackType.Equals("isLight"))
         {
             characterStaminaValueEnemy -= (characterStaminaValueEnemy * LightAttackDamage);
@@ -73,7 +64,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
             enemyScore += 20;
         }
-
         else if (attackType.Equals("isHeavy"))
         {
             enemyScore += 40;
@@ -87,7 +77,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
         ScoreTextForEnemy.text = enemyScore.ToString();
         PlayerHealthBarText.text = Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 ).ToString() + "%";
-        
     }
 
     public void UpdatePlayerScore(string attackType)

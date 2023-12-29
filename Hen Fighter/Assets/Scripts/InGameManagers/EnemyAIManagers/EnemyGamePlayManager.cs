@@ -14,7 +14,8 @@ public class EnemyGamePlayManager : MonoBehaviour
     [HideInInspector]
     public EnemyAIDecision enemyAIDecision;
 
-    Animator enemyAnimator;
+    [HideInInspector]
+    public Animator enemyAnimator;
 
     Rigidbody myBody;
 
@@ -40,7 +41,9 @@ public class EnemyGamePlayManager : MonoBehaviour
     [SerializeField]
     string currentAnimaton;
 
-    private ParticleSystem particleForPlayer;
+    [SerializeField]
+    GameObject particleObject;
+    private ParticleSystem featherParticle;
 
     private AudioSource EnemeyAudio;
     private AudioSource ClawSound;
@@ -58,8 +61,8 @@ public class EnemyGamePlayManager : MonoBehaviour
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
         audioManager = FindObjectOfType<AudioManager>();
-        GameObject particleObject = GameObject.FindWithTag("Particles");
-        particleForPlayer = particleObject.GetComponent<ParticleSystem>();
+        particleObject = GameObject.FindWithTag("Enemy Particles");
+        featherParticle = particleObject.GetComponent<ParticleSystem>();
         ClawSound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
 
         //speed = 2f;
@@ -79,11 +82,6 @@ public class EnemyGamePlayManager : MonoBehaviour
         TurnOffAttackpoints();
     }
 
-    void AssignAttributes()
-    {
-
-    }
-
     void Update()
     {
         if (!isPlayerFound && FindObjectOfType<PlayerGamePlayManager>())
@@ -92,7 +90,6 @@ public class EnemyGamePlayManager : MonoBehaviour
             isPlayerFound = true;
             PlayerCombatManager.Instance.AssignplayerAttributes();
         }
-
         UpdateEnemyRotation();
     }
 
@@ -146,29 +143,36 @@ public class EnemyGamePlayManager : MonoBehaviour
     void EnemyAttack()
     {
         int attack = (Random.Range(0, 2));
-
-        foreach (var obj in enemyWeapons)
+        
+        if(!isPlayingAnotherAnimation)
         {
-            if (attack == 1 && obj.gameObject.CompareTag("Beak"))
+            isPlayingAnotherAnimation = true;
+            foreach (var obj in enemyWeapons)
             {
-                obj.gameObject.SetActive(true);
-                enemyAnimator.SetTrigger("isLightAttack");
-                EnemeyAudio.Play();
-                isLightAttack = true;
-                isHeavyAttack = false;
-                
-            }
+                if (attack == 1 && obj.gameObject.CompareTag("Beak"))
+                {
+                    obj.gameObject.SetActive(true);
+                    enemyAnimator.SetTrigger("isLightAttack");
+                    EnemeyAudio.Play();
+                    isLightAttack = true;
+                    isHeavyAttack = false;
 
-            if (attack == 0 && obj.gameObject.CompareTag("Foot"))
-            {
-                obj.gameObject.SetActive(true);
-                enemyAnimator.SetTrigger("isHeavyAttack");
-                EnemeyAudio.Play();
-                isHeavyAttack = true;
-                isLightAttack = false;
-                //this.transform.position = new Vector3(this.transform.position.x - 1.85f, this.transform.position.y, this.transform.position.z);
+                }
+
+                if (attack == 0 && obj.gameObject.CompareTag("Foot"))
+                {
+                    obj.gameObject.SetActive(true);
+                    enemyAnimator.SetTrigger("isHeavyAttack");
+                    EnemeyAudio.Play();
+                    isHeavyAttack = true;
+                    isLightAttack = false;
+                    this.transform.position = new Vector3(this.transform.position.x - 1.2f, this.transform.position.y, this.transform.position.z);
+                }
             }
+            isPlayingAnotherAnimation = false;
         }
+        else
+            return;
     }
 
     public void Defend()
@@ -183,7 +187,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         transform.eulerAngles = new Vector3(0, -90f, 0);
     }
 
-    void TurnOffAttackpoints()
+    public void TurnOffAttackpoints()
     {
         foreach (var obj in enemyWeapons)
             obj.gameObject.SetActive(false);
@@ -192,28 +196,38 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void InflictEnemyDamage(string damageType)
     {
         isTakingDamage = true;
-        if (ScoreManager.Instance.enemyHealth < 0)
-        {
-            ScoreManager.Instance.ShowYouWonpanel();
-        }
 
-        if (damageType == "isLight")
+        if (!isPlayingAnotherAnimation)
         {
-            PlayLightReactAnimation();
-            uiManager.PlayerFX();
-            particleForPlayer.Play();
-            ScoreManager.Instance.enemyHealth -= 0.1f;
+            isPlayingAnotherAnimation = true;
+            if (damageType == "isLight")
+            {
+                PlayLightReactAnimation();
+                featherParticle.Play();
+                uiManager.EnemyLightFX();
+                ScoreManager.Instance.enemyHealth -= 0.02f;
+            }
+            else if (damageType == "isHeavy")
+            {
+                StartCoroutine(PlayHeavyReactAnimation());
+                featherParticle.Play();
+                StopCoroutine(PlayHeavyReactAnimation());
+                uiManager.EnemyHeavyFX();
+                ScoreManager.Instance.enemyHealth -= 0.04f;
+            }
+            healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
+            isPlayingAnotherAnimation = false;
         }
-        else if (damageType == "isHeavy")
+        else
+            return;
+
+        if (ScoreManager.Instance.enemyHealth <= 0f)
         {
-            StartCoroutine(PlayHeavyReactAnimation());
-            StopCoroutine(PlayHeavyReactAnimation());
-            uiManager.PlayerFX();
-            particleForPlayer.Play();
-            ScoreManager.Instance.enemyHealth -= 0.2f;
-            
+            enemyAnimator.SetTrigger("isDeathReact");
+            playerGamePlayManager.playerAnimator.SetTrigger("hasWon");
+            StartCoroutine(ShowGameOverPanel());
+            StopCoroutine(ShowGameOverPanel());
         }
-        healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
     }
 
     void PlayLightReactAnimation()
@@ -225,11 +239,19 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         enemyAnimator.SetTrigger("isHeavyReact");
         yield return new WaitForSeconds(0.5f);
-        this.transform.position = new Vector3(this.transform.position.x + 2.5f, this.transform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(this.transform.position.x + 1.2f, this.transform.position.y, this.transform.position.z);
     }
 
     public void SpecialAttackPlaying()
     {
         enemyAnimator.SetTrigger("isSpecialReact");
+        ScoreManager.Instance.enemyHealth -= 0.1f;
+        healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
+    }
+
+    IEnumerator ShowGameOverPanel()
+    {
+        yield return new WaitForSeconds(2f);
+        ScoreManager.Instance.ShowYouWonpanel();
     }
 }

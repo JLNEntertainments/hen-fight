@@ -15,15 +15,13 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     Image healthBar;
 
-    Animator playerAnimator;
+    [HideInInspector]
+    public Animator playerAnimator;
 
     int speed;
 
     [HideInInspector]
     public float playerHealth;
-
-    float lightReactBuffer, heavyReactBuffer;
-    WaitForSeconds lightBuffer, heavyBuffer;
 
     Rigidbody playerRb;
 
@@ -33,11 +31,11 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public bool isHeavyAttack, isLightAttack, isBlocking, isTakingDamage, isSpecialAttack, isPlayingAnotherAnimation, canPerformCombat;
 
-    //Animation States
-    [HideInInspector]
-    public string PLAYER_READYTOFIGHT, PLAYER_IDLE, PLAYER_WALK, PLAYER_RUN, PLAYER_BACKRUN, PLAYER_BACKWALK, PLAYER_LIGHTATTACK, PLAYER_LIGHTATTACKTOP, PLAYER_HEAVYATTACK, PLAYER_HEAVYATTACKKICK, PLAYER_BLOCK, PLAYER_JUMP, PLAYER_JUMPANDFLY, PLAYER_LIGHTREACT, PLAYER_HEAVYREACT, PLAYER_CROUCH, PLAYER_SPECIALATTACK, PLAYER_SPECIALREACT, PLAYER_DEATH, PLAYER_VICTORYJUMP;
-
     private AudioSource ClawSound;
+
+    [SerializeField]
+    GameObject particleObject;
+    private ParticleSystem featherParticle;
 
     void Start()
     {
@@ -46,36 +44,14 @@ public class PlayerGamePlayManager : MonoBehaviour
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
 
+        particleObject = GameObject.FindWithTag("Player Particles");
+        featherParticle = particleObject.GetComponent<ParticleSystem>();
+
         playerAnimator = this.GetComponentInChildren<Animator>();
         playerRb = this.GetComponent<Rigidbody>();
 
         speed = 2;
         playerHealth = 1f;
-        lightReactBuffer = 0f;
-        heavyReactBuffer = 0f;
-
-        lightBuffer = new WaitForSeconds(lightReactBuffer);
-        heavyBuffer = new WaitForSeconds(heavyReactBuffer);
-
-        PLAYER_READYTOFIGHT = "ReadyToFight";
-        PLAYER_IDLE = "Idle";
-        PLAYER_WALK = "Walking";
-        PLAYER_BACKWALK = "BackWalk";
-        PLAYER_RUN = "Run";
-        PLAYER_BACKRUN = "BackRun";
-        PLAYER_JUMP = "Jump";
-        PLAYER_CROUCH = "Crouch";
-        PLAYER_LIGHTATTACK = "LightAttack";
-        PLAYER_LIGHTATTACKTOP = "LightAttackTop";
-        PLAYER_HEAVYATTACK = "HeavyAttack";
-        PLAYER_HEAVYATTACKKICK = "HeavyAttackKick";
-        PLAYER_SPECIALATTACK = "SpecialAttack";
-        PLAYER_BLOCK = "Block";
-        PLAYER_LIGHTREACT = "LightReact";
-        PLAYER_HEAVYREACT = "HeavyReact";
-        PLAYER_DEATH = "DeathReact";
-        PLAYER_SPECIALREACT = "SpecialReact";
-        PLAYER_VICTORYJUMP = "VictoryJump";
     }
 
     void Update()
@@ -116,6 +92,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 UpdateMovementParameters(joystick.Horizontal * 0.5f);
             }
         }
+
         //For Player Jump Operation
         else if (joystick.Vertical > 0.3f)
         {
@@ -123,19 +100,21 @@ public class PlayerGamePlayManager : MonoBehaviour
             playerAnimator.SetFloat("joystickDragVertical", joystick.Vertical);
             playerAnimator.SetBool("isJumping", true);
         }
+
         //For Player Crouch Operations
         else if (joystick.Vertical < -0.3f)
         {
             playerAnimator.SetFloat("joystickDragVertical", joystick.Vertical);
             playerAnimator.SetBool("isCrouching", true);
         }
+
         else
         {
             playerAnimator.SetBool("inMotion", false);
             playerAnimator.SetBool("isCrouching", false);
             playerAnimator.SetBool("isJumping", false);
             playerAnimator.SetFloat("joystickDragHorizontal", 0);
-            playerAnimator.SetFloat("joystickDragvertical", 0);
+            playerAnimator.SetFloat("joystickDragVertical", 0);
         }
     }
 
@@ -147,44 +126,51 @@ public class PlayerGamePlayManager : MonoBehaviour
         this.transform.position = new Vector3(move_position.x, this.transform.position.y, this.transform.position.z);
     }
 
-    public void ChangeAnimationState(string newAnimation)
-    {
-        if (currentAnimaton == newAnimation) return;
-
-        playerAnimator.Play(newAnimation);
-        currentAnimaton = newAnimation;
-    }
-
-    public void SetDefaultAnimationState()
-    {
-        ChangeAnimationState(PLAYER_IDLE);
-    }
-
     public void InflictPlayerDamage(string damageType)
     {
-        Debug.Log("----- Health : " + playerHealth);
-        if (playerHealth <= 0)
+        if (!isPlayingAnotherAnimation)
         {
-            ChangeAnimationState(PLAYER_DEATH);
-            ScoreManager.Instance.ShowGameOverPanel();
-            enemyGamePlayManager.gameObject.SetActive(false);
-            this.gameObject.SetActive(true);
-        }
-        else
-        {
+            isPlayingAnotherAnimation = true;
             if (damageType == "isLight")
             {
                 playerAnimator.SetTrigger("isLightReact");
-                uiManager.PlayFX();
-                playerHealth -= 0.1f;
+                featherParticle.Play();
+                uiManager.PlayerLightFX();
+                playerHealth -= 0.02f;
             }
             else if (damageType == "isHeavy")
             {
-                playerAnimator.SetTrigger("isHeavyReact");
-                uiManager.PlayFX();
-                playerHealth -= 0.2f;
+                StartCoroutine(PlayHeavyReactAnimation());
+                featherParticle.Play();
+                StopCoroutine(PlayHeavyReactAnimation());
+                uiManager.PlayerHeavyFX();
+                playerHealth -= 0.04f;
             }
             healthBar.fillAmount = playerHealth;
+            isPlayingAnotherAnimation = false;
         }
+        else
+            return;
+
+        if(playerHealth <= 0f)
+        {
+            playerAnimator.SetTrigger("isDeathReact");
+            enemyGamePlayManager.enemyAnimator.SetTrigger("hasWon");
+            StartCoroutine(ShowGameOverPanel());
+            StopCoroutine(ShowGameOverPanel());
+        }
+    }
+
+    IEnumerator PlayHeavyReactAnimation()
+    {
+        playerAnimator.SetTrigger("isHeavyReact");
+        yield return new WaitForSeconds(0.5f);
+        this.transform.position = new Vector3(this.transform.position.x - 1.2f, this.transform.position.y, this.transform.position.z);
+    }
+
+    IEnumerator ShowGameOverPanel()
+    {
+        yield return new WaitForSeconds(1.5f);
+        ScoreManager.Instance.ShowGameOverPanel();
     }
 }

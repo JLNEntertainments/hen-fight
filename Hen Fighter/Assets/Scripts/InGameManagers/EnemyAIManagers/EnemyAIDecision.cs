@@ -6,7 +6,7 @@ public class EnemyAIDecision : MonoBehaviour
 {
     EnemyGamePlayManager enemyGamePlayManager;
 
-    float lowHealthThreshold = 0.2f;
+    float lowHealthThreshold = 0f;
     float lowStaminaThreshold = 0.3f;
     float distanceToPlayer;
     float defendAttackRandom;
@@ -34,8 +34,9 @@ public class EnemyAIDecision : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if ((enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time) /*&& !enemyGamePlayManager.isTakingDamage*/)
+        if ((enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time))
         {
+            enemyGamePlayManager.TurnOffAttackpoints();
             MakeCombatDecision();
             enemyGamePlayManager.current_Attack_Time = 0;
         }
@@ -48,8 +49,7 @@ public class EnemyAIDecision : MonoBehaviour
         {
             enemyGamePlayManager.Attack();
         }
-
-        if (IsEnemyLowOnHealth())
+        else
         {
             if (enemyGamePlayManager.block_Attack_Time > defendAttackRandom)
             {
@@ -68,11 +68,10 @@ public class EnemyAIDecision : MonoBehaviour
                 enemyGamePlayManager.FollowTarget();
             else if (!IsPlayerLowOnStamina())
                 enemyGamePlayManager.PrepareAttack();
-            else if (IsPlayerLowOnStamina())
-                enemyGamePlayManager.UnFollowTarget();
+            /*else if (IsPlayerLowOnStamina())
+                enemyGamePlayManager.UnFollowTarget();*/
         }
-
-        if (IsPlayerPerformingSpecialAttack() && IsPlayerInAttackRange())
+        else
         {
             enemyGamePlayManager.SpecialAttackPlaying();
             enemyGamePlayManager.playerGamePlayManager.isSpecialAttack = false;

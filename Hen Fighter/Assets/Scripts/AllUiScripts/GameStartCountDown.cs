@@ -20,6 +20,6 @@ public class GameStartCountDown : MonoBehaviour
             yield return 0;
         CountDown.gameObject.SetActive(false);
         Time.timeScale = 1;
-        
+        yield return new WaitForSeconds(1.5f);
     }
 }

@@ -15,7 +15,8 @@ TagManager:
   - TopFloor
   - EnemyAI
   - Audio
-  - Particles
+  - Player Particles
+  - Enemy Particles
   layers:
   - Default
   - TransparentFX
