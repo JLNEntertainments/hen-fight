@@ -23712,7 +23712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1153573187652082251
 Transform:
   m_ObjectHideFlags: 0
@@ -23785,6 +23785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyGamePlayManager: {fileID: 0}
   playerAnimator: {fileID: 0}
+  PlayerFXAnim: []
   playerHealth: 0
   currentAnimaton: 
   isHeavyAttack: 0

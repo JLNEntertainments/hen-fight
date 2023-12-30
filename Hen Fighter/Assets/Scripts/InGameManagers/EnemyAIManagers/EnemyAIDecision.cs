@@ -49,14 +49,14 @@ public class EnemyAIDecision : MonoBehaviour
         {
             enemyGamePlayManager.Attack();
         }
-        else
+        /*else
         {
             if (enemyGamePlayManager.block_Attack_Time > defendAttackRandom)
             {
                 Defend();
                 enemyGamePlayManager.block_Attack_Time = 0;
             }
-        }
+        }*/
     }
 
     void MakeMovementDecision()
@@ -95,7 +95,8 @@ public class EnemyAIDecision : MonoBehaviour
 
     bool IsEnemyLowOnHealth()
     {
-        return ScoreManager.Instance.enemyHealth < lowHealthThreshold;
+        //return ScoreManager.Instance.enemyHealth < lowHealthThreshold;
+        return false;
     }
 
     bool IsPlayerLowOnStamina()
