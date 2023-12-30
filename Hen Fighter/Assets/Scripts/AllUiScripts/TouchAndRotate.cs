@@ -6,12 +6,12 @@ public class TouchAndRotate : MonoBehaviour
 {
     public float rotationSpeed = 5f;
     private Vector2 touchStartPos;
-    public Vector3 newRotation = new Vector3(0f, 0f, 0f); // Set the desired new position in the Inspector
+    public Vector3 newRotation; // Set the desired new position in the Inspector
 
     void OnEnable()
     {
         // Change the position of the GameObject when it is activated
-        transform.rotation = Quaternion.Euler(newRotation);
+        //transform.rotation = Quaternion.Euler(newRotation);
     }
     void Update()
     {

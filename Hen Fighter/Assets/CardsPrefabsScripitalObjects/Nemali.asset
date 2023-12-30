@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1791b8e8758b14a900c68641ee2bda, type: 3}
   m_Name: Nemali
   m_EditorClassIdentifier: 
-  HenName: Nemali
-  HenCard: {fileID: 21300000, guid: db8e5fc97377a8e43ba37f4d58c9c646, type: 3}
-  Power: 55
-  Defense: 36
-  DropDown: '1.High Energy Level  2.flying capacity and it will attack in air '
+  HenName: Parla
+  HenCard: {fileID: 21300000, guid: d2cdca4e0ae003342bf80851921ceb2e, type: 3}
+  Power: 86
+  Defense: 96
+  DropDown: '1.High Energy Level  2.Manipulating Capacity '
+  Character:
+  - characterName: Parla
+    CharacterofHen: {fileID: 7900909639798985839, guid: 81981945ece02504bb418abce13742b7, type: 3}

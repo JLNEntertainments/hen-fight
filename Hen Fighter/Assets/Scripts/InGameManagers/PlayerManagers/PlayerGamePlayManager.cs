@@ -18,6 +18,9 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public Animator playerAnimator;
 
+    [SerializeField]
+    Animator[] PlayerFXAnim;
+
     int speed;
 
     [HideInInspector]
@@ -43,6 +46,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         joystick = FindObjectOfType<VariableJoystick>().GetComponent<VariableJoystick>();
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
+        PlayerFXAnim = this.gameObject.GetComponentsInChildren<Animator>();
 
         particleObject = GameObject.FindWithTag("Player Particles");
         featherParticle = particleObject.GetComponent<ParticleSystem>();
@@ -52,11 +56,48 @@ public class PlayerGamePlayManager : MonoBehaviour
 
         speed = 2;
         playerHealth = 1f;
+
+        TurnOffPlayerFXObjects();
     }
 
     void Update()
     {
         CheckMovement();
+    }
+
+    void TurnOffPlayerFXObjects()
+    {
+        PlayerFXAnim[1].gameObject.SetActive(false);
+        PlayerFXAnim[2].gameObject.SetActive(false);
+    }
+
+    public void PlayerHeavyFX()
+    {
+        StartCoroutine(PlayPlayerHeavyFX());
+        StopCoroutine(PlayPlayerHeavyFX());
+    }
+
+    IEnumerator PlayPlayerHeavyFX()
+    {
+        PlayerFXAnim[2].gameObject.SetActive(true);
+        PlayerFXAnim[2].Play("HeavyAttackAnim");
+        yield return new WaitForSeconds(0.4f);
+        PlayerFXAnim[2].gameObject.SetActive(false);
+    }
+
+    public void PlayerLightFX()
+    {
+        StartCoroutine(PlayPlayerLightFX());
+        StopCoroutine(PlayPlayerLightFX());
+    }
+
+    IEnumerator PlayPlayerLightFX()
+    {
+        yield return new WaitForSeconds(0.4f);
+        PlayerFXAnim[1].gameObject.SetActive(true);
+        PlayerFXAnim[1].Play("EnemyBeekAtack");
+        yield return new WaitForSeconds(0.3f);
+        PlayerFXAnim[1].gameObject.SetActive(false);
     }
 
     void CheckMovement()
@@ -135,7 +176,7 @@ public class PlayerGamePlayManager : MonoBehaviour
             {
                 playerAnimator.SetTrigger("isLightReact");
                 featherParticle.Play();
-                uiManager.PlayerLightFX();
+                PlayerLightFX();
                 playerHealth -= 0.02f;
             }
             else if (damageType == "isHeavy")
@@ -143,7 +184,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 StartCoroutine(PlayHeavyReactAnimation());
                 featherParticle.Play();
                 StopCoroutine(PlayHeavyReactAnimation());
-                uiManager.PlayerHeavyFX();
+                PlayerHeavyFX();
                 playerHealth -= 0.04f;
             }
             healthBar.fillAmount = playerHealth;
