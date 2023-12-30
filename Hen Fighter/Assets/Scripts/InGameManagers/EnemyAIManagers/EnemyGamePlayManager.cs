@@ -17,6 +17,9 @@ public class EnemyGamePlayManager : MonoBehaviour
     [HideInInspector]
     public Animator enemyAnimator;
 
+    [SerializeField]
+    Animator[] EnemyFXAnim;
+
     Rigidbody myBody;
 
     Image healthBar;
@@ -64,6 +67,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         particleObject = GameObject.FindWithTag("Enemy Particles");
         featherParticle = particleObject.GetComponent<ParticleSystem>();
         ClawSound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
+        EnemyFXAnim = this.gameObject.GetComponentsInChildren<Animator>();
 
         //speed = 2f;
         //enemyHealth = 1f;
@@ -80,6 +84,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
 
         TurnOffAttackpoints();
+        TurnOffEnemyFXObjects();
     }
 
     void Update()
@@ -91,6 +96,40 @@ public class EnemyGamePlayManager : MonoBehaviour
             PlayerCombatManager.Instance.AssignplayerAttributes();
         }
         UpdateEnemyRotation();
+    }
+
+    void TurnOffEnemyFXObjects()
+    {
+        EnemyFXAnim[1].gameObject.SetActive(false);
+        EnemyFXAnim[2].gameObject.SetActive(false);
+    }
+
+    public void EnemyLightFX()
+    {
+        StartCoroutine(PlayEnemyLightFX());
+        StopCoroutine(PlayEnemyLightFX());
+    }
+
+    IEnumerator PlayEnemyLightFX()
+    {
+        EnemyFXAnim[1].gameObject.SetActive(true);
+        EnemyFXAnim[1].Play("EnemyBeakAttack");
+        yield return new WaitForSeconds(0.3f);
+        EnemyFXAnim[1].gameObject.SetActive(false);
+    }
+
+    public void EnemyHeavyFX()
+    {
+        StartCoroutine(PlayEnemyHeavyFX());
+        StopCoroutine(PlayEnemyHeavyFX());
+    }
+
+    IEnumerator PlayEnemyHeavyFX()
+    {
+        EnemyFXAnim[2].gameObject.SetActive(true);
+        EnemyFXAnim[2].Play("HeavyAttackAnim");
+        yield return new WaitForSeconds(0.4f);
+        EnemyFXAnim[2].gameObject.SetActive(false);
     }
 
     public void FollowTarget()
@@ -204,7 +243,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             {
                 PlayLightReactAnimation();
                 featherParticle.Play();
-                uiManager.EnemyLightFX();
+                EnemyLightFX();
                 ScoreManager.Instance.enemyHealth -= 0.02f;
             }
             else if (damageType == "isHeavy")
@@ -212,7 +251,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 StartCoroutine(PlayHeavyReactAnimation());
                 featherParticle.Play();
                 StopCoroutine(PlayHeavyReactAnimation());
-                uiManager.EnemyHeavyFX();
+                EnemyHeavyFX();
                 ScoreManager.Instance.enemyHealth -= 0.04f;
             }
             healthBar.fillAmount = ScoreManager.Instance.enemyHealth;

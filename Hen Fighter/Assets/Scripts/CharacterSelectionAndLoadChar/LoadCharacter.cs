@@ -8,9 +8,6 @@ public class LoadCharacter : SingletonGeneric<LoadCharacter>
 	public GameObject[] characterPrefabs;
     public GameObject[] enemyPrefabs;
 
-    [SerializeField]
-    UIManager manager;
-
     [HideInInspector]
     public GameObject enemyClone, playerClone;
     public Transform spawnPoint,SpawnRotaion;
@@ -24,8 +21,6 @@ public class LoadCharacter : SingletonGeneric<LoadCharacter>
 	{
 		SpawnEnemy();
 		SpawnPlayer();
-        PassCharacters();
-
     }
 
 	void SpawnPlayer()
@@ -46,10 +41,5 @@ public class LoadCharacter : SingletonGeneric<LoadCharacter>
         enemyClone.transform.rotation = Quaternion.Euler(enemyrotationEulerAngles);
         label.text = prefab.name;
         enemyClone.SetActive(true);
-    }
-
-    void PassCharacters()
-    {
-        manager.AssignCharacters(enemyClone, playerClone);
     }
 }
