@@ -33,7 +33,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     void Start()
     {
-        defaultStaminRegenRate = 2f;
+        defaultStaminRegenRate = 20f;
         staminaRegenRate = defaultStaminRegenRate;
 
         enemyHealth = 1.0f;
@@ -59,7 +59,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     {
         if (attackType.Equals("isLight"))
         {
-            characterStaminaValueEnemy -= (characterStaminaValueEnemy * LightAttackDamage);
+            characterStaminaValueEnemy -= LightAttackDamage;
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
 
             enemyScore += 20;
@@ -67,7 +67,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         else if (attackType.Equals("isHeavy"))
         {
             enemyScore += 40;
-            characterStaminaValueEnemy -= (characterStaminaValueEnemy * HeavyAttackDamage);
+            characterStaminaValueEnemy -= HeavyAttackDamage;
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
             EnemyStaminaBarImage.fillAmount = EnemyStaminaBarImage.fillAmount - (HealthBarValue * 0.01f);
         }
@@ -84,20 +84,20 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         if (attackType.Equals("isLight"))
         {
             playerScore += 20;
-            characterStaminaValuePlayer -= (characterStaminaValuePlayer * LightAttackDamage);
+            characterStaminaValuePlayer -= LightAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
 
         else if (attackType.Equals("isHeavy"))
         {
             playerScore += 40;
-            characterStaminaValuePlayer -= (characterStaminaValuePlayer * HeavyAttackDamage);
+            characterStaminaValuePlayer -= HeavyAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
         else if (attackType.Equals("isSpecialAttack"))
         {
             playerScore += 100;
-            characterStaminaValuePlayer -= (characterStaminaValuePlayer * SpecialAttackDamage);
+            characterStaminaValuePlayer -= SpecialAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
 
