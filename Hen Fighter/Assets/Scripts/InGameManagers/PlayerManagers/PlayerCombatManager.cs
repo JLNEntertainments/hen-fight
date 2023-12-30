@@ -29,16 +29,16 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void AssignplayerAttributes()
     {
-            playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
-            playerAnimator = playerGamePlayManager.GetComponent<Animator>();
-            weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
-            uiManager = GetComponent<UIManager>();
+        playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
+        playerAnimator = playerGamePlayManager.GetComponent<Animator>();
+        weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
+        uiManager = GetComponent<UIManager>();
 
-            clicksCnt = 0;
-            defaultAttackTime = 1f;
-            currentAttackTime = defaultAttackTime;
+        clicksCnt = 0;
+        defaultAttackTime = 1f;
+        currentAttackTime = defaultAttackTime;
 
-            TurnOffAttackpoints();
+        TurnOffAttackpoints();
     }
 
     void Update()
@@ -53,7 +53,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnLightAttackBtnPressed()
     {
-        if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
+        if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage && canHitLightAttack())
         {
             playerGamePlayManager.isLightAttack = true;
             playerGamePlayManager.isHeavyAttack = false;
@@ -67,7 +67,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnHeavyAttackBtnPressed()
     {
-        if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
+        if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage && canHitHeavyAttack())
         {
             playerGamePlayManager.isHeavyAttack = true;
             playerGamePlayManager.isLightAttack = false;
@@ -111,6 +111,22 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         {
             return false;
         }
+    }
+
+    bool canHitLightAttack()
+    {
+        if (ScoreManager.Instance.characterStaminaValuePlayer >= ScoreManager.Instance.LightAttackDamage)
+            return true;
+        else
+            return false;
+    }
+
+    bool canHitHeavyAttack()
+    {
+        if (ScoreManager.Instance.characterStaminaValuePlayer >= ScoreManager.Instance.HeavyAttackDamage)
+            return true;
+        else
+            return false;
     }
 
     void TurnOffAttackpoints()
