@@ -33,7 +33,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
     void Start()
     {
-        defaultStaminRegenRate = 3f;
+        defaultStaminRegenRate = 1f;
         staminaRegenRate = defaultStaminRegenRate;
 
         enemyHealth = 1.0f;

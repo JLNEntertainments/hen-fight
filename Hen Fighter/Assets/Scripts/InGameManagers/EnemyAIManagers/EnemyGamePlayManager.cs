@@ -149,6 +149,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void UnFollowTarget()
     {
         enemyAnimator.SetTrigger("isBackWalk");
+        myBody.velocity = Vector3.right * 2f;
         followPlayer = false;
     }
 
@@ -188,7 +189,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             isPlayingAnotherAnimation = true;
             foreach (var obj in enemyWeapons)
             {
-                if (attack == 1 && obj.gameObject.CompareTag("Beak"))
+                if (attack == 1 && obj.gameObject.CompareTag("Beak") && canHitLightAttack())
                 {
                     obj.gameObject.SetActive(true);
                     enemyAnimator.SetTrigger("isLightAttack");
@@ -198,7 +199,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
                 }
 
-                if (attack == 0 && obj.gameObject.CompareTag("Foot"))
+                if (attack == 0 && obj.gameObject.CompareTag("Foot") && canHitHeavyAttack())
                 {
                     obj.gameObject.SetActive(true);
                     enemyAnimator.SetTrigger("isHeavyAttack");
@@ -212,6 +213,22 @@ public class EnemyGamePlayManager : MonoBehaviour
         }
         else
             return;
+    }
+
+    bool canHitLightAttack()
+    {
+        if (ScoreManager.Instance.characterStaminaValueEnemy >= ScoreManager.Instance.LightAttackDamage)
+            return true;
+        else
+            return false;
+    }
+
+    bool canHitHeavyAttack()
+    {
+        if (ScoreManager.Instance.characterStaminaValueEnemy >= ScoreManager.Instance.HeavyAttackDamage)
+            return true;
+        else
+            return false;
     }
 
     public void Defend()

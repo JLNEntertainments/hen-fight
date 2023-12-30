@@ -7,7 +7,7 @@ public class EnemyAIDecision : MonoBehaviour
     EnemyGamePlayManager enemyGamePlayManager;
 
     float lowHealthThreshold = 0f;
-    float lowStaminaThreshold = 0.3f;
+    float lowStaminaThreshold = 0.15f;
     float distanceToPlayer;
     float defendAttackRandom;
 
@@ -64,11 +64,11 @@ public class EnemyAIDecision : MonoBehaviour
         //For making decisions when player is not in attack range
         if(!IsPlayerPerformingSpecialAttack())
         {
-            if (IsPlayerInChaseRange() && !IsPlayerLowOnStamina() && !IsEnemyLowOnHealth())
+            if (IsPlayerInChaseRange() && !IsEnemyLowOnHealth())
                 enemyGamePlayManager.FollowTarget();
-            else if (!IsPlayerLowOnStamina())
+            else if (!IsEnemyLowOnStamina())
                 enemyGamePlayManager.PrepareAttack();
-            /*else if (IsPlayerLowOnStamina())
+            /*else if (IsEnemyLowOnStamina())
                 enemyGamePlayManager.UnFollowTarget();*/
         }
         else
@@ -99,9 +99,9 @@ public class EnemyAIDecision : MonoBehaviour
         //return false;
     }
 
-    bool IsPlayerLowOnStamina()
+    bool IsEnemyLowOnStamina()
     {
-        return ScoreManager.Instance.characterStaminaValuePlayer < lowStaminaThreshold;
+        return ScoreManager.Instance.characterStaminaValueEnemy < lowStaminaThreshold;
     }
 
     bool IsPlayerPerformingSpecialAttack()
