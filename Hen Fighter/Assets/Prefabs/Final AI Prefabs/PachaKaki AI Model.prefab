@@ -24328,6 +24328,7 @@ MonoBehaviour:
   playerGamePlayManager: {fileID: 0}
   enemyAIDecision: {fileID: 0}
   enemyAnimator: {fileID: 0}
+  EnemyFXAnim: []
   enemyHealth: 0
   default_Attack_Time: 0
   current_Attack_Time: 0
@@ -24350,6 +24351,10 @@ MonoBehaviour:
   enemyWeapons: []
   currentAnimaton: 
   particleObject: {fileID: 0}
+  Sounds:
+  - {fileID: 8300000, guid: 8013bb7367dd683438577bec8719a831, type: 3}
+  - {fileID: 8300000, guid: c73d52989a48c1c4ba969df4e000dd0c, type: 3}
+  soundTag: Audio
 --- !u!114 &7360553764594538636
 MonoBehaviour:
   m_ObjectHideFlags: 0

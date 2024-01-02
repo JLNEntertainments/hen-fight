@@ -9,7 +9,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     [HideInInspector]
     public PlayerGamePlayManager playerGamePlayManager;
     UIManager uiManager;
-    AudioManager audioManager;
+   
 
     [HideInInspector]
     public EnemyAIDecision enemyAIDecision;
@@ -48,8 +48,9 @@ public class EnemyGamePlayManager : MonoBehaviour
     GameObject particleObject;
     private ParticleSystem featherParticle;
 
-    private AudioSource EnemeyAudio;
-    private AudioSource ClawSound;
+
+    public AudioClip[] Sounds;
+    public string soundTag = "Audio";
 
     void Awake()
     {
@@ -63,10 +64,10 @@ public class EnemyGamePlayManager : MonoBehaviour
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
-        audioManager = FindObjectOfType<AudioManager>();
+    
         particleObject = GameObject.FindWithTag("Enemy Particles");
         featherParticle = particleObject.GetComponent<ParticleSystem>();
-        ClawSound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
+        GameObject[] soundEmitters = GameObject.FindGameObjectsWithTag(soundTag);
         EnemyFXAnim = this.gameObject.GetComponentsInChildren<Animator>();
 
         //speed = 2f;
@@ -81,7 +82,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         current_Stamina_Regen_Time = 0;
         enemy_Start = 0;
 
-        EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
+       // EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
 
         TurnOffAttackpoints();
         TurnOffEnemyFXObjects();
@@ -193,7 +194,8 @@ public class EnemyGamePlayManager : MonoBehaviour
                 {
                     obj.gameObject.SetActive(true);
                     enemyAnimator.SetTrigger("isLightAttack");
-                    EnemeyAudio.Play();
+                    // EnemeyAudio.Play();
+                    PlayRandomSound();
                     isLightAttack = true;
                     isHeavyAttack = false;
 
@@ -203,7 +205,8 @@ public class EnemyGamePlayManager : MonoBehaviour
                 {
                     obj.gameObject.SetActive(true);
                     enemyAnimator.SetTrigger("isHeavyAttack");
-                    EnemeyAudio.Play();
+                    //EnemeyAudio.Play();
+                    PlayRandomSound();
                     isHeavyAttack = true;
                     isLightAttack = false;
                     this.transform.position = new Vector3(this.transform.position.x - 1.2f, this.transform.position.y, this.transform.position.z);
@@ -215,6 +218,21 @@ public class EnemyGamePlayManager : MonoBehaviour
             return;
     }
 
+    private void PlayRandomSound()
+    {
+        if (Sounds.Length > 0)
+        {
+            AudioClip randomClip = Sounds[Random.Range(0, Sounds.Length)];
+            AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.clip = randomClip;
+            audioSource.Play();
+            Destroy(audioSource, randomClip.length);
+        }
+        else
+        {
+            Debug.LogWarning("No sound clips assigned to the AudioManager.");
+        }
+    }
     bool canHitLightAttack()
     {
         if (ScoreManager.Instance.characterStaminaValueEnemy >= ScoreManager.Instance.LightAttackDamage)

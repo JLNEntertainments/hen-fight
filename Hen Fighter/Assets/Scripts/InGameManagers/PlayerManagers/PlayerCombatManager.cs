@@ -20,11 +20,11 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     int randomLightAttack, randomHeavyAttack;
 
-    private AudioSource ClawSound;
+
 
     void Start()
     {
-        ClawSound  = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
+
     }
 
     public void AssignplayerAttributes()
@@ -59,7 +59,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isHeavyAttack = false;
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
-            ClawSound.Play();
+            playerGamePlayManager.PlayRandomSound();
             currentAttackTime = 0;
             playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
@@ -73,7 +73,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerGamePlayManager.isLightAttack = false;
             clicksCnt++;
             PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
-            ClawSound.Play();
+            playerGamePlayManager.PlayRandomSound();
             currentAttackTime = 0;
             playerGamePlayManager.isPlayingAnotherAnimation = false;
         }

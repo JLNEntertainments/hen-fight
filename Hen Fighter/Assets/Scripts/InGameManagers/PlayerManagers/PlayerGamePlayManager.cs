@@ -9,7 +9,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public EnemyGamePlayManager enemyGamePlayManager;
     UIManager uiManager;
-    AudioManager audioManager;
+    
 
     Joystick joystick;
 
@@ -34,11 +34,16 @@ public class PlayerGamePlayManager : MonoBehaviour
     [HideInInspector]
     public bool isHeavyAttack, isLightAttack, isBlocking, isTakingDamage, isSpecialAttack, isPlayingAnotherAnimation, canPerformCombat;
 
-    private AudioSource ClawSound;
+   
 
     [SerializeField]
     GameObject particleObject;
     private ParticleSystem featherParticle;
+
+
+    public AudioClip[] Sounds;
+    public string soundTag = "Audio";
+
 
     void Start()
     {
@@ -56,8 +61,9 @@ public class PlayerGamePlayManager : MonoBehaviour
 
         speed = 2;
         playerHealth = 1f;
-
+     
         TurnOffPlayerFXObjects();
+        GameObject[] soundEmitters = GameObject.FindGameObjectsWithTag(soundTag);
     }
 
     void Update()
@@ -199,6 +205,25 @@ public class PlayerGamePlayManager : MonoBehaviour
             enemyGamePlayManager.enemyAnimator.SetTrigger("hasWon");
             StartCoroutine(ShowGameOverPanel());
             StopCoroutine(ShowGameOverPanel());
+        }
+    }
+
+
+    //For Random Sounds
+    public void PlayRandomSound()
+    {
+        if (Sounds.Length > 0)
+        {
+            // Pick a random sound from the array
+            AudioClip randomClip = Sounds[Random.Range(0, Sounds.Length)];
+            AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.clip = randomClip;
+            audioSource.Play();
+            Destroy(audioSource, randomClip.length);
+        }
+        else
+        {
+            Debug.LogWarning("No sound clips assigned to the AudioManager.");
         }
     }
 
