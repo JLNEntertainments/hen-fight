@@ -378,7 +378,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &45892433
 GameObject:
@@ -4414,8 +4414,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814098372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1034.1, y: -566.1, z: 345.4}
-  m_LocalScale: {x: 4.9429483, y: 4.9429483, z: 4.9429483}
+  m_LocalPosition: {x: -1034.1, y: -574.1, z: 345.4}
+  m_LocalScale: {x: 6.29089, y: 3.4063332, z: 4.9429483}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1385304491}
@@ -6209,7 +6209,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042554720
 GameObject:
@@ -7144,7 +7144,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1125822095
 MonoBehaviour:
@@ -7164,8 +7164,8 @@ MonoBehaviour:
   - {fileID: 6913827526663210327, guid: 752628452b6543142bd5e613c2d2fb95, type: 3}
   - {fileID: 858489930322720322, guid: e35190217d7f43d43902c3086152e608, type: 3}
   enemyPrefabs:
-  - {fileID: 8510584206477578481, guid: 44c56ba04baec34438586ee4ed7c206c, type: 3}
-  - {fileID: 8510584206477578481, guid: 44c56ba04baec34438586ee4ed7c206c, type: 3}
+  - {fileID: 6068393742899803236, guid: c2a627d8100ca0b49891d3adbed1ea6a, type: 3}
+  - {fileID: 6068393742899803236, guid: c2a627d8100ca0b49891d3adbed1ea6a, type: 3}
   enemyClone: {fileID: 0}
   playerClone: {fileID: 0}
   spawnPoint: {fileID: 13493598}
@@ -7956,7 +7956,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1251543543
 GameObject:
@@ -9009,7 +9009,7 @@ RectTransform:
   - {fileID: 2113502848}
   - {fileID: 814098375}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
