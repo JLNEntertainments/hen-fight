@@ -16692,6 +16692,10 @@ MonoBehaviour:
   isPlayingAnotherAnimation: 0
   canPerformCombat: 0
   particleObject: {fileID: 0}
+  Sounds:
+  - {fileID: 8300000, guid: 8013bb7367dd683438577bec8719a831, type: 3}
+  - {fileID: 8300000, guid: c73d52989a48c1c4ba969df4e000dd0c, type: 3}
+  soundTag: Audio
 --- !u!1 &1178017443723737503
 GameObject:
   m_ObjectHideFlags: 0
