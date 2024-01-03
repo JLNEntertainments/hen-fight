@@ -18267,6 +18267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1237878680535132163}
   - component: {fileID: 9026661499453793541}
+  - component: {fileID: 2359614561048792581}
   m_Layer: 6
   m_Name: heckles1
   m_TagString: Untagged
@@ -18353,6 +18354,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.037181035, y: -0.01599976, z: 0.00009804312}
     m_Extent: {x: 0.010399519, y: 0.010294015, z: 0.004829005}
   m_DirtyAABB: 0
+--- !u!136 &2359614561048792581
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691906989521951073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.014673047
+  m_Height: 0.06
+  m_Direction: 1
+  m_Center: {x: 0.0007077415, y: 0.10745996, z: 0.021750724}
 --- !u!1 &717338069273988796
 GameObject:
   m_ObjectHideFlags: 0
@@ -23707,7 +23722,7 @@ GameObject:
   - component: {fileID: 284858878319747914}
   - component: {fileID: 4482773306753878672}
   m_Layer: 6
-  m_Name: Stylized Nemali Player Model
+  m_Name: Stylized Nemali Player Model_Added_Collider
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

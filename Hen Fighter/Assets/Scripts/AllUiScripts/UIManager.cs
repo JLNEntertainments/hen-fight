@@ -36,7 +36,8 @@ public class UIManager : MonoBehaviour
 
     public void SceneChange(string ScreneName)
 	{
-		SceneManager.LoadScene(ScreneName);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(ScreneName);
 	}
 
     public void RestartGame()

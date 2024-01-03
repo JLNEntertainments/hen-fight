@@ -18569,6 +18569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5297273988464404741}
   - component: {fileID: 3419055329317008418}
+  - component: {fileID: 8983133493036883271}
   m_Layer: 7
   m_Name: dbn_1:body4
   m_TagString: Untagged
@@ -18674,6 +18675,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.023551717, y: 0.027854575, z: -0.00027551316}
     m_Extent: {x: 0.05839283, y: 0.050905526, z: 0.04021179}
   m_DirtyAABB: 0
+--- !u!64 &8983133493036883271
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931612101936186087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2009716953153575295
 GameObject:
   m_ObjectHideFlags: 0
@@ -24153,6 +24168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1145015902571152191}
   - component: {fileID: 339246178594717551}
+  - component: {fileID: 2398478278445417176}
   m_Layer: 7
   m_Name: dbn_1:heckles2
   m_TagString: Untagged
@@ -24236,6 +24252,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.024732985, y: -0.014910866, z: -0.000034061726}
     m_Extent: {x: 0.0140225515, y: 0.011087518, z: 0.011823544}
   m_DirtyAABB: 0
+--- !u!136 &2398478278445417176
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051503710756814853}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.017869841
+  m_Height: 0.06
+  m_Direction: 2
+  m_Center: {x: 0.000034065462, y: 0.110916235, z: 0.032634214}
 --- !u!1 &6068393742899803236
 GameObject:
   m_ObjectHideFlags: 0
@@ -24250,7 +24280,7 @@ GameObject:
   - component: {fileID: 7360553764594538627}
   - component: {fileID: 7360553764594538636}
   m_Layer: 7
-  m_Name: PachaKaki AI Model
+  m_Name: PachaKaki AI Model_Added_Colliders
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

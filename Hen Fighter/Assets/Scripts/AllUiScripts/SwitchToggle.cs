@@ -19,15 +19,15 @@ public class SwitchToggle : MonoBehaviour
             AudioListener.pause = true;
             on.gameObject.SetActive(false);
             off.gameObject.SetActive(true);
-     }
+    }
 
     public void OFF()
     {
         
             muted = false;
             AudioListener.pause = false;
-            on.gameObject.SetActive(false);
-            off.gameObject.SetActive(true);
+            on.gameObject.SetActive(true);
+            off.gameObject.SetActive(false);
         
     }
 
