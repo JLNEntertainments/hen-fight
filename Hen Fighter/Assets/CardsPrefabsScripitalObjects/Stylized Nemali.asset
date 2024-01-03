@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1791b8e8758b14a900c68641ee2bda, type: 3}
   m_Name: Stylized Nemali
   m_EditorClassIdentifier: 
-  HenName: Nemali
-  HenCard: {fileID: 21300000, guid: d347b6984d2ece04b990ea20dcded7a0, type: 3}
+  HenName: Stylized Nemali
+  HenCard: {fileID: 21300000, guid: 7d3345e78922c2746b21f44f72666017, type: 3}
   Power: 55
   Defense: 36
   DropDown: '1.High Energy Level  2.flying capacity and it will attack in air '

@@ -205,6 +205,10 @@ public class PlayerGamePlayManager : MonoBehaviour
             enemyGamePlayManager.enemyAnimator.SetTrigger("hasWon");
             StartCoroutine(ShowGameOverPanel());
             StopCoroutine(ShowGameOverPanel());
+
+            StartCoroutine(TestGamonejctShow());
+            StopCoroutine(TestGamonejctShow());
+
         }
     }
 
@@ -238,5 +242,13 @@ public class PlayerGamePlayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         ScoreManager.Instance.ShowGameOverPanel();
+        ScoreManager.Instance.TestGamonejctShow();
+    }
+
+    IEnumerator TestGamonejctShow()
+    {
+        yield return new WaitForSeconds(2.5f);
+       
+        ScoreManager.Instance.TestGamonejctShow();
     }
 }

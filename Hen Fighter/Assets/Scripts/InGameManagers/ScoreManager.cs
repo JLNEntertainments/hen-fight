@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreManager : SingletonGeneric<ScoreManager>
 {
-    [SerializeField] GameObject YouLostPanel,YouWonpanel,GameOverpanel;
+    [SerializeField] GameObject YouLostPanel,YouWonpanel,GameOverpanel,TestGameObject;
 
     static int enemyScore, playerScore;
     [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage;
@@ -76,7 +76,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoretextForPlayer.text =playerScore.ToString();
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
         ScoreTextForEnemy.text = enemyScore.ToString();
-        PlayerHealthBarText.text = Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 ).ToString() + "%";
+        PlayerHealthBarText.text = Mathf.Max(0, Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 )).ToString() + "%";
+      
     }
 
     public void UpdatePlayerScore(string attackType)
@@ -107,8 +108,9 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoretextForPlayer.text = playerScore.ToString();
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
         ScoreTextForEnemy.text = enemyScore.ToString();
-        EnemyHealthBarText.text = Mathf.RoundToInt(ScoreManager.Instance.enemyHealth * 100).ToString() + "%" ;
+        EnemyHealthBarText.text = Mathf.Max(0,Mathf.RoundToInt ( ScoreManager.Instance.enemyHealth * 100)).ToString() + "%" ;
        
+
 
     }
 
@@ -132,20 +134,34 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         YouLostPanel.SetActive(true);
         StartCoroutine(GameOverPanelDisplay());
         StopCoroutine(GameOverPanelDisplay());
+        
+    }
+
+    public void TestGamonejctShow()
+    {
+        StartCoroutine(testGameobject());
+        StopCoroutine(testGameobject());
     }
 
     IEnumerator GameOverPanelDisplay()
     {
         yield return new WaitForSeconds(2f);
         GameOverpanel.SetActive(true);
-       
+        // Time.timeScale = 0f;
     }
-
+    
     public void ShowYouWonpanel()
     {
         YouWonpanel.SetActive(true);
-       
         StartCoroutine(GameOverPanelDisplay());
         StopCoroutine(GameOverPanelDisplay());
+    }
+
+    IEnumerator testGameobject()
+    {
+        yield return new WaitForSeconds(3f);
+        TestGameObject.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }
