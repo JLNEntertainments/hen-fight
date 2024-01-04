@@ -25,16 +25,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     Image healthBar;
 
     [HideInInspector]
-    public float enemyHealth;
-
-    [HideInInspector]
-    public float default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time;
-
-    [HideInInspector]
-    public float attack_Distance;
-
-    [HideInInspector]
-    public float current_Stamina_Regen_Time, default_Stamina_Regen_Time;
+    public float enemyHealth, attack_Distance, current_Stamina_Regen_Time, default_Stamina_Regen_Time, default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time;
 
     [HideInInspector]
     public bool followPlayer, attackPlayer, isHeavyAttack, isSpecialAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking, isPlayerFound, isPlayingAnotherAnimation;
@@ -51,6 +42,8 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public AudioClip[] Sounds;
     public string soundTag = "Audio";
+
+    int randomLightAttack, randomHeavyAttack;
 
     void Awake()
     {
@@ -90,6 +83,9 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void Update()
     {
+        randomLightAttack = Random.Range(0, 2);
+        randomHeavyAttack = Random.Range(0, 2);
+
         if (!isPlayerFound && FindObjectOfType<PlayerGamePlayManager>())
         {
             playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
@@ -193,23 +189,37 @@ public class EnemyGamePlayManager : MonoBehaviour
                 if (attack == 1 && obj.gameObject.CompareTag("Beak") && canHitLightAttack())
                 {
                     obj.gameObject.SetActive(true);
-                    enemyAnimator.SetTrigger("isLightAttack");
-                    // EnemeyAudio.Play();
+                    if (randomLightAttack == 0)
+                    {
+                        enemyAnimator.SetTrigger("isLightAttack");
+                        enemyAnimator.SetInteger("LightAttackIndex", 1);
+                    }
+                    else
+                    {
+                        enemyAnimator.SetTrigger("isLightAttack");
+                        enemyAnimator.SetInteger("LightAttackIndex", 2);
+                    }
                     PlayRandomSound();
                     isLightAttack = true;
                     isHeavyAttack = false;
-
                 }
-
-                if (attack == 0 && obj.gameObject.CompareTag("Foot") && canHitHeavyAttack())
+                else if (attack == 0 && obj.gameObject.CompareTag("Foot") && canHitHeavyAttack())
                 {
                     obj.gameObject.SetActive(true);
-                    enemyAnimator.SetTrigger("isHeavyAttack");
-                    //EnemeyAudio.Play();
+                    if (randomHeavyAttack == 0)
+                    {
+                        enemyAnimator.SetTrigger("isHeavyAttack");
+                        enemyAnimator.SetInteger("HeavyAttackIndex", 1);
+                        this.transform.position = new Vector3(this.transform.position.x - 1.2f, this.transform.position.y, this.transform.position.z);
+                    }
+                    else
+                    {
+                        enemyAnimator.SetTrigger("isHeavyAttack");
+                        enemyAnimator.SetInteger("HeavyAttackIndex", 2);
+                    }
                     PlayRandomSound();
                     isHeavyAttack = true;
                     isLightAttack = false;
-                    this.transform.position = new Vector3(this.transform.position.x - 1.2f, this.transform.position.y, this.transform.position.z);
                 }
             }
             isPlayingAnotherAnimation = false;

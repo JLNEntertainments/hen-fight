@@ -20,13 +20,6 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     int randomLightAttack, randomHeavyAttack;
 
-
-
-    void Start()
-    {
-
-    }
-
     public void AssignplayerAttributes()
     {
         playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
@@ -87,9 +80,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             playerAnimator.SetTrigger("isSpecialAttack");
 
             if (playerGamePlayManager.enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
-                playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x + 0.2f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
-            else
-                playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x + 1.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+                playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 0.8f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+            /*else
+                playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x + 1.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);*/
             
             uiManager.specialAttackBtnAnim.SetActive(false);
             clicksCnt = 0;

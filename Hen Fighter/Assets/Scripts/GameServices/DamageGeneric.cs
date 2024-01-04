@@ -8,11 +8,15 @@ public class DamageGeneric : MonoBehaviour
     [SerializeField]
     LayerMask collisionLayer;
     
-    [SerializeField]
     float colliderRadius;
 
     [SerializeField]
     bool is_Player, is_Enemy;
+
+    void Start()
+    {
+        colliderRadius = 0.8f;
+    }
 
     void FixedUpdate()
     {
