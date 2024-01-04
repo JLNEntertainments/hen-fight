@@ -115,13 +115,13 @@ public class PlayerGamePlayManager : MonoBehaviour
             {
                 playerAnimator.SetBool("inMotion", true);
                 playerAnimator.SetFloat("joystickDragHorizontal", joystick.Horizontal);
-                UpdateMovementParameters(joystick.Horizontal * 1.5f);
+                UpdateMovementParameters(joystick.Horizontal * 0.8f);
             }   
             else if(joystick.Horizontal > 0.1f)
             {
                 playerAnimator.SetBool("inMotion", true);
                 playerAnimator.SetFloat("joystickDragHorizontal", joystick.Horizontal);
-                UpdateMovementParameters(joystick.Horizontal * 0.5f);
+                UpdateMovementParameters(joystick.Horizontal * 0.2f);
             } 
         }
         else if (joystick.Horizontal < -0.1f)
@@ -130,19 +130,20 @@ public class PlayerGamePlayManager : MonoBehaviour
             {
                 playerAnimator.SetBool("inMotion", true);
                 playerAnimator.SetFloat("joystickDragHorizontal", joystick.Horizontal);
-                UpdateMovementParameters(joystick.Horizontal * 1.5f);
+                UpdateMovementParameters(joystick.Horizontal * 0.8f);
             }
             else if(joystick.Horizontal < -0.1f)
             {
                 playerAnimator.SetBool("inMotion", true);
                 playerAnimator.SetFloat("joystickDragHorizontal", joystick.Horizontal);
-                UpdateMovementParameters(joystick.Horizontal * 0.5f);
+                UpdateMovementParameters(joystick.Horizontal * 0.2f);
             }
         }
 
         //For Player Jump Operation
         else if (joystick.Vertical > 0.3f)
         {
+            playerAnimator.SetFloat("joystickDragHorizontal", 0);
             playerRb.AddForce(new Vector3(0f, 4.0f, 0f) * 3.0f, ForceMode.Impulse);
             playerAnimator.SetFloat("joystickDragVertical", joystick.Vertical);
             playerAnimator.SetBool("isJumping", true);
@@ -151,6 +152,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         //For Player Crouch Operations
         else if (joystick.Vertical < -0.3f)
         {
+            playerAnimator.SetFloat("joystickDragHorizontal", 0);
             playerAnimator.SetFloat("joystickDragVertical", joystick.Vertical);
             playerAnimator.SetBool("isCrouching", true);
         }
