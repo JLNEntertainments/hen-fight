@@ -23707,7 +23707,7 @@ GameObject:
   - component: {fileID: 284858878319747914}
   - component: {fileID: 4482773306753878672}
   m_Layer: 6
-  m_Name: Stylized Nemali Player Model_Added_Collider
+  m_Name: Stylized Nemali Model
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
