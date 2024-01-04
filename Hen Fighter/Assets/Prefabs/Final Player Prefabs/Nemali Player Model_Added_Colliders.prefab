@@ -16834,8 +16834,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8354424595240142430}
   - component: {fileID: 6948406064831618500}
-  - component: {fileID: 6148538155969706359}
-  - component: {fileID: 4070005731293354779}
   m_Layer: 6
   m_Name: nemali_char_v02:polySurface12
   m_TagString: Untagged
@@ -16919,34 +16917,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.03253985, y: -0.018879177, z: 0.012187335}
     m_Extent: {x: 0.012157355, y: 0.007969361, z: 0.009580105}
   m_DirtyAABB: 0
---- !u!136 &6148538155969706359
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398569918835486849}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.009
-  m_Height: 0.05
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.107301876, z: 0.03206086}
---- !u!136 &4070005731293354779
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398569918835486849}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.009
-  m_Height: 0.05
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.12, z: 0.03}
 --- !u!1 &1509778008615407716
 GameObject:
   m_ObjectHideFlags: 0
@@ -26759,6 +26729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1389006299989202807}
   - component: {fileID: 1389006299989202804}
+  - component: {fileID: 7069852705514078991}
   m_Layer: 6
   m_Name: nemali_char_v02:Root_M
   m_TagString: Untagged
@@ -26798,6 +26769,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.068451196, y: 0.15, z: 0.053080954}
   m_Center: {x: 0.0034131561, y: -0.045, z: -0.002086344}
+--- !u!136 &7069852705514078991
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6217726061819550591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.024428375
+  m_Height: 0.064159565
+  m_Direction: 0
+  m_Center: {x: -0.057919934, y: -0.016558561, z: -4.8156457e-10}
 --- !u!1 &6246271804410305913
 GameObject:
   m_ObjectHideFlags: 0

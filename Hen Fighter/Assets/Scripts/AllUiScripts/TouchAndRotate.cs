@@ -6,12 +6,12 @@ public class TouchAndRotate : MonoBehaviour
 {
     public float rotationSpeed = 5f;
     private Vector2 touchStartPos;
-    public Vector3 newRotation; // Set the desired new position in the Inspector
+    public Vector3 newRotation = new Vector3(0,0,0); // Set the desired new position in the Inspector
 
     void OnEnable()
     {
         // Change the position of the GameObject when it is activated
-        //transform.rotation = Quaternion.Euler(newRotation);
+        transform.rotation = Quaternion.Euler(newRotation);
     }
     void Update()
     {
@@ -19,7 +19,7 @@ public class TouchAndRotate : MonoBehaviour
         {
 
             // Get the mouse movement
-            float mouseX = Input.GetAxis("Mouse X");
+                float mouseX = Input.GetAxis("Mouse X");
                 float mouseY = Input.GetAxis("Mouse Y");
 
                 // Rotate the object based on mouse movement
@@ -32,5 +32,9 @@ public class TouchAndRotate : MonoBehaviour
 
             }
         }
-    }
+
+  
+}
+
+
 
