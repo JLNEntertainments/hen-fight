@@ -72,7 +72,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         //speed = 2f;
         //enemyHealth = 1f;
-        attack_Distance = 2.5f;
+        attack_Distance = 3f;
 
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
