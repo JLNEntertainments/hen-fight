@@ -32300,7 +32300,6 @@ GameObject:
   m_Component:
   - component: {fileID: 414130863851883924}
   - component: {fileID: 5992019040358570615}
-  - component: {fileID: 5992019040320411638}
   - component: {fileID: 1389203109235939012}
   m_Layer: 7
   m_Name: Root_M
@@ -32329,19 +32328,6 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.49398214, y: -90.065216, z: -156.36993}
 --- !u!65 &5992019040358570615
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4861117130213365777}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.068451196, y: 0.15, z: 0.053080954}
-  m_Center: {x: 0.0034131561, y: -0.045, z: -0.002086344}
---- !u!65 &5992019040320411638
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36558,7 +36544,6 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 64
-  colliderRadius: 1
   is_Player: 0
   is_Enemy: 1
 --- !u!1 &6007811407492590105
@@ -36608,7 +36593,6 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 64
-  colliderRadius: 1
   is_Player: 0
   is_Enemy: 1
 --- !u!1 &6043020278931118051
@@ -47718,7 +47702,7 @@ GameObject:
   - component: {fileID: 7973111326281216841}
   - component: {fileID: 7973111326281216840}
   m_Layer: 7
-  m_Name: Stylized Nemali AI Model
+  m_Name: Stylized Nemali Model
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47799,14 +47783,14 @@ MonoBehaviour:
   enemyAnimator: {fileID: 0}
   EnemyFXAnim: []
   enemyHealth: 0
+  attack_Distance: 0
+  current_Stamina_Regen_Time: 0
+  default_Stamina_Regen_Time: 0
   default_Attack_Time: 0
   current_Attack_Time: 0
   enemy_Start: 0
   enemy_Stamina: 0
   block_Attack_Time: 0
-  attack_Distance: 0
-  current_Stamina_Regen_Time: 0
-  default_Stamina_Regen_Time: 0
   followPlayer: 0
   attackPlayer: 0
   isHeavyAttack: 0

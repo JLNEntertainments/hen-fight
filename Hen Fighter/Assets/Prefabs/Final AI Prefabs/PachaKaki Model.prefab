@@ -24265,7 +24265,7 @@ GameObject:
   - component: {fileID: 7360553764594538627}
   - component: {fileID: 7360553764594538636}
   m_Layer: 7
-  m_Name: PachaKaki AI Model_Added_Colliders
+  m_Name: PachaKaki Model
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

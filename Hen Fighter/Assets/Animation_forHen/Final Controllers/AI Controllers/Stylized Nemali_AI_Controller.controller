@@ -951,7 +951,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Nemali_AI_Controller
+  m_Name: Stylized Nemali_AI_Controller
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: inChaseRange
