@@ -210,7 +210,8 @@ public class EnemyGamePlayManager : MonoBehaviour
                     {
                         enemyAnimator.SetTrigger("isHeavyAttack");
                         enemyAnimator.SetInteger("HeavyAttackIndex", 1);
-                        this.transform.position = new Vector3(this.transform.position.x - 1.2f, this.transform.position.y, this.transform.position.z);
+                        StartCoroutine(HeavyAttackOffset());
+                        StopCoroutine(HeavyAttackOffset());
                     }
                     else
                     {
@@ -226,6 +227,12 @@ public class EnemyGamePlayManager : MonoBehaviour
         }
         else
             return;
+    }
+
+    IEnumerator HeavyAttackOffset()
+    {
+        yield return new WaitForSeconds(0.8f);
+        this.transform.position = new Vector3(this.transform.position.x - 3f, this.transform.position.y, this.transform.position.z);
     }
 
     private void PlayRandomSound()

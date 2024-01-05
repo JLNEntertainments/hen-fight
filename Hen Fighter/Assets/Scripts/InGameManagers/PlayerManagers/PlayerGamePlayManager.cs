@@ -116,25 +116,26 @@ public class PlayerGamePlayManager : MonoBehaviour
                 playerAnimator.SetBool("inMotion", true);
                 playerAnimator.SetFloat("joystickDragHorizontal", joystick.Horizontal);
                 UpdateMovementParameters(joystick.Horizontal * 0.8f);
-            }   
-            else if(joystick.Horizontal > 0.1f)
+            }
+            else if (joystick.Horizontal > 0.1f && joystick.Horizontal < 0.3f)
             {
-                playerAnimator.SetBool("inMotion", true);
+                playerAnimator.SetBool("isWalking", true);
                 playerAnimator.SetFloat("joystickDragHorizontal", joystick.Horizontal);
                 UpdateMovementParameters(joystick.Horizontal * 0.2f);
-            } 
+            }
         }
+
         else if (joystick.Horizontal < -0.1f)
         {
-            if(joystick.Horizontal < -0.3f)
+            if (joystick.Horizontal < -0.3f)
             {
                 playerAnimator.SetBool("inMotion", true);
                 playerAnimator.SetFloat("joystickDragHorizontal", joystick.Horizontal);
                 UpdateMovementParameters(joystick.Horizontal * 0.8f);
             }
-            else if(joystick.Horizontal < -0.1f)
+            else if (joystick.Horizontal < -0.1f)
             {
-                playerAnimator.SetBool("inMotion", true);
+                playerAnimator.SetBool("isBackWalking", true);
                 playerAnimator.SetFloat("joystickDragHorizontal", joystick.Horizontal);
                 UpdateMovementParameters(joystick.Horizontal * 0.2f);
             }
@@ -159,6 +160,8 @@ public class PlayerGamePlayManager : MonoBehaviour
 
         else
         {
+            playerAnimator.SetBool("isWalking", false);
+            playerAnimator.SetBool("isBackWalking", false);
             playerAnimator.SetBool("inMotion", false);
             playerAnimator.SetBool("isCrouching", false);
             playerAnimator.SetBool("isJumping", false);
@@ -237,7 +240,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     {
         playerAnimator.SetTrigger("isHeavyReact");
         yield return new WaitForSeconds(0.5f);
-        this.transform.position = new Vector3(this.transform.position.x - 1.2f, this.transform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(this.transform.position.x + 2f, this.transform.position.y, this.transform.position.z);
     }
 
     IEnumerator ShowGameOverPanel()

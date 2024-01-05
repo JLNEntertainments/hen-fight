@@ -81,9 +81,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
             if (playerGamePlayManager.enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
                 playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 0.8f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
-            /*else
-                playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x + 1.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);*/
-            
+            else
+                playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+
             uiManager.specialAttackBtnAnim.SetActive(false);
             clicksCnt = 0;
             playerGamePlayManager.isPlayingAnotherAnimation = false;
