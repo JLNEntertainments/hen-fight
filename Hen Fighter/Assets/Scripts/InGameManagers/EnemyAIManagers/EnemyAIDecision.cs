@@ -28,8 +28,8 @@ public class EnemyAIDecision : MonoBehaviour
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
 
-        if (enemyGamePlayManager.enemy_Start > 5.5f)
-            MakeMovementDecision();
+        /*if (enemyGamePlayManager.enemy_Start > 5.5f)
+            MakeMovementDecision();*/
     }
 
     private void FixedUpdate()

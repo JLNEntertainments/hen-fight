@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a2cdb37605a26154aa71a4643e1c6c0d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 47a2eec62355f77408ddd889ef5e59b2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -249,7 +249,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7003cff844069324399b82d4719632e2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8ec3947c71d8f204fb00f7067bd9560a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -774,7 +774,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8c0ddcc6bd7f05149a5df574d38a5e84, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8e5d393820294ee429968c0f4ec2b1d5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1217,6 +1217,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: inMotion
+    m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: joystickDragHorizontal
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1166841412452055072}
@@ -1739,6 +1742,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: inMotion
+    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: joystickDragHorizontal
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1166841412452055072}

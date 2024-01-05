@@ -47702,7 +47702,7 @@ GameObject:
   - component: {fileID: 7973111326281216841}
   - component: {fileID: 7973111326281216840}
   m_Layer: 7
-  m_Name: Stylized Nemali Model
+  m_Name: Stylized Nemali AI Model
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
