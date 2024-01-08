@@ -74,11 +74,14 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnSpecialAttackBtnPressed()
     {
+        playerGamePlayManager.isHeavyAttack = false;
+        playerGamePlayManager.isLightAttack = false;
+
         if (canHitSpecialAttack())
         {
             playerGamePlayManager.isSpecialAttack = true;
             playerAnimator.SetTrigger("isSpecialAttack");
-
+            weaponCollider[1].gameObject.SetActive(true);
             if (playerGamePlayManager.enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
                 playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 0.8f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
             else
@@ -87,7 +90,15 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             uiManager.specialAttackBtnAnim.SetActive(false);
             clicksCnt = 0;
             playerGamePlayManager.isPlayingAnotherAnimation = false;
+            StartCoroutine(SpecialAttackBuffer());
+            StopCoroutine(SpecialAttackBuffer());
         }
+    }
+
+    IEnumerator SpecialAttackBuffer()
+    {
+        yield return new WaitForSeconds(0.1f);
+        TurnOffAttackpoints();
     }
 
     public void OnBlockAttackBtnPressed()

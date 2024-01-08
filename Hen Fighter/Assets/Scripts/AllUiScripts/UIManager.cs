@@ -10,7 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     public GameObject specialAttackBtnAnim;
 
+
     public GameObject DoYouWantToExitGame;
+    public GameObject settingPaneel;
     
     //For specialAttackButton Animation
     [SerializeField] RectTransform Holder;
@@ -27,7 +29,9 @@ public class UIManager : MonoBehaviour
             if (Input.GetKey(KeyCode.Escape))
             {
                 DoYouWantToExitGame.SetActive(true);
+                settingPaneel.SetActive(false);
                 //Application.Quit();
+                Time.timeScale = 0f;
                 return;
             }
         }

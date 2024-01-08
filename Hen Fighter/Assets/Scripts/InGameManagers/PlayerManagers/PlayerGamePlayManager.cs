@@ -14,6 +14,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     Joystick joystick;
 
     Image healthBar;
+    Image healtBarBack;
 
     [HideInInspector]
     public Animator playerAnimator;
@@ -25,6 +26,8 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     [HideInInspector]
     public float playerHealth;
+    private float lerpSpeed = 0.05f;
+
 
     Rigidbody playerRb;
 
@@ -50,6 +53,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         enemyGamePlayManager = FindObjectOfType<EnemyGamePlayManager>();
         joystick = FindObjectOfType<VariableJoystick>().GetComponent<VariableJoystick>();
         healthBar = GameObject.FindGameObjectWithTag("P_HealthBar").GetComponentInChildren<Image>();
+        healtBarBack = GameObject.FindGameObjectWithTag("P_HealthBarBack").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
         PlayerFXAnim = this.gameObject.GetComponentsInChildren<Animator>();
 
@@ -69,6 +73,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     void Update()
     {
         CheckMovement();
+      
     }
 
     void TurnOffPlayerFXObjects()
@@ -198,6 +203,12 @@ public class PlayerGamePlayManager : MonoBehaviour
                 PlayerHeavyFX();
                 playerHealth -= 0.04f;
             }
+            else if (damageType == "isSpecialAttack")
+            {
+                featherParticle.Play();
+                PlayerLightFX();
+                playerHealth -= 0.05f;
+            }
             healthBar.fillAmount = playerHealth;
             isPlayingAnotherAnimation = false;
         }
@@ -252,8 +263,11 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     IEnumerator TestGamonejctShow()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.3f);
        
         ScoreManager.Instance.TestGamonejctShow();
     }
+
+
+
 }

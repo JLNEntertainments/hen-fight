@@ -59,6 +59,8 @@ public class Gamepass : MonoBehaviour
     public void DoYouWantToQuit_NO()
     {
         DoYouWantToExitGame.SetActive(false);
+        pausePanel.SetActive(false);
         Time.timeScale = 1;
+
     }
 }

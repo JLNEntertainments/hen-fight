@@ -21334,7 +21334,6 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 64
-  colliderRadius: 1
   is_Player: 0
   is_Enemy: 1
 --- !u!1 &4300059046293942725
@@ -21384,7 +21383,6 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 64
-  colliderRadius: 1
   is_Player: 0
   is_Enemy: 1
 --- !u!1 &4320388743315717961
@@ -24345,14 +24343,14 @@ MonoBehaviour:
   enemyAnimator: {fileID: 0}
   EnemyFXAnim: []
   enemyHealth: 0
+  attack_Distance: 0
+  current_Stamina_Regen_Time: 0
+  default_Stamina_Regen_Time: 0
   default_Attack_Time: 0
   current_Attack_Time: 0
   enemy_Start: 0
   enemy_Stamina: 0
   block_Attack_Time: 0
-  attack_Distance: 0
-  current_Stamina_Regen_Time: 0
-  default_Stamina_Regen_Time: 0
   followPlayer: 0
   attackPlayer: 0
   isHeavyAttack: 0
@@ -27048,7 +27046,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7636864979845102455}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.017869841
   m_Height: 0.051934965
   m_Direction: 0
