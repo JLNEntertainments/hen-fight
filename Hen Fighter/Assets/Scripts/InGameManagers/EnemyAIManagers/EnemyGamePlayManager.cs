@@ -297,6 +297,8 @@ public class EnemyGamePlayManager : MonoBehaviour
                 featherParticle.Play();
                 EnemyLightFX();
                 ScoreManager.Instance.enemyHealth -= 0.02f;
+                healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
+                isPlayingAnotherAnimation = false;
             }
             else if (damageType == "isHeavy")
             {
@@ -305,9 +307,15 @@ public class EnemyGamePlayManager : MonoBehaviour
                 StopCoroutine(PlayHeavyReactAnimation());
                 EnemyHeavyFX();
                 ScoreManager.Instance.enemyHealth -= 0.04f;
+                healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
+                isPlayingAnotherAnimation = false;
             }
-            healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
-            isPlayingAnotherAnimation = false;
+            else if(damageType == "isSpeciaAttack")
+            {
+                ScoreManager.Instance.enemyHealth -= 0.1f;
+                healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
+            }
+            
         }
         else
             return;
@@ -339,8 +347,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void SpecialAttackPlaying()
     {
         enemyAnimator.SetTrigger("isSpecialReact");
-        ScoreManager.Instance.enemyHealth -= 0.1f;
-        healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
+        
     }
 
     IEnumerator ShowGameOverPanel()
@@ -350,7 +357,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     }
     IEnumerator TestGamonejctShow()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.3f);
 
         ScoreManager.Instance.TestGamonejctShow();
     }

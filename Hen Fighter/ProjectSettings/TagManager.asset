@@ -17,6 +17,9 @@ TagManager:
   - Audio
   - Player Particles
   - Enemy Particles
+  - Particles
+  - P_HealthBarBack
+  - E_HealthBarBack
   layers:
   - Default
   - TransparentFX

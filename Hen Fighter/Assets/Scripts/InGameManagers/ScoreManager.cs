@@ -71,6 +71,14 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
             EnemyStaminaBarImage.fillAmount = EnemyStaminaBarImage.fillAmount - (HealthBarValue * 0.01f);
         }
+
+        else if (attackType.Equals("isSpecialReact"))
+        {
+            enemyScore += 100;
+            characterStaminaValueEnemy -= HeavyAttackDamage;
+            EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
+            EnemyStaminaBarImage.fillAmount = EnemyStaminaBarImage.fillAmount - (HealthBarValue * 0.01f);
+        }
         Debug.Log("Enemy : " + enemyScore);
         //score for player
         ScoretextForPlayer.text =playerScore.ToString();
@@ -120,12 +128,35 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         {
             characterStaminaValueEnemy += StaminaBarCharingRate / 10f;
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
-        }
 
-        if(characterStaminaValuePlayer < maxStamina)
+        if (characterStaminaValueEnemy >= 0.276 && characterStaminaValueEnemy < 0.5)
+        {
+                EnemyStaminaBarImage.color = Color.red;
+        }
+       
+       
+        else 
+        {
+                EnemyStaminaBarImage.color = Color.yellow;
+        }
+    }
+
+
+
+        if (characterStaminaValuePlayer < maxStamina)
         {
             characterStaminaValuePlayer += StaminaBarCharingRate / 10f;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
+        }
+        if (characterStaminaValuePlayer >= 0.276 && characterStaminaValuePlayer < 0.5)
+        {
+            PlayerStaminaBarImage.color = Color.red;
+        }
+       
+        else
+        {
+            PlayerStaminaBarImage.color = Color.yellow;
+
         }
     }
 
