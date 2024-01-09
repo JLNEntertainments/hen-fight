@@ -15,7 +15,7 @@ public class DamageGeneric : MonoBehaviour
 
     void Start()
     {
-        colliderRadius = 0.8f;
+        colliderRadius = 1f;
     }
 
     void FixedUpdate()
