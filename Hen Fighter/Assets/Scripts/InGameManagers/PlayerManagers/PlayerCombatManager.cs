@@ -46,29 +46,43 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnLightAttackBtnPressed()
     {
-        if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage && canHitLightAttack())
+        if(canHitLightAttack())
         {
-            playerGamePlayManager.isLightAttack = true;
-            playerGamePlayManager.isHeavyAttack = false;
-            clicksCnt++;
-            PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
-            playerGamePlayManager.PlayRandomSound();
-            currentAttackTime = 0;
-            playerGamePlayManager.isPlayingAnotherAnimation = false;
+            if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
+            {
+                playerGamePlayManager.isLightAttack = true;
+                playerGamePlayManager.isHeavyAttack = false;
+                clicksCnt++;
+                PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
+                playerGamePlayManager.PlayRandomSound();
+                currentAttackTime = 0;
+                playerGamePlayManager.isPlayingAnotherAnimation = false;
+            }
+        }
+        else
+        {
+            playerAnimator.SetTrigger("isLowStamina");
         }
     }
 
     public void OnHeavyAttackBtnPressed()
     {
-        if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage && canHitHeavyAttack())
+        if(canHitHeavyAttack())
         {
-            playerGamePlayManager.isHeavyAttack = true;
-            playerGamePlayManager.isLightAttack = false;
-            clicksCnt++;
-            PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
-            playerGamePlayManager.PlayRandomSound();
-            currentAttackTime = 0;
-            playerGamePlayManager.isPlayingAnotherAnimation = false;
+            if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
+            {
+                playerGamePlayManager.isHeavyAttack = true;
+                playerGamePlayManager.isLightAttack = false;
+                clicksCnt++;
+                PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
+                playerGamePlayManager.PlayRandomSound();
+                currentAttackTime = 0;
+                playerGamePlayManager.isPlayingAnotherAnimation = false;
+            } 
+        }
+        else
+        {
+            playerAnimator.SetTrigger("isLowStamina");
         }
     }
 
@@ -196,8 +210,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     IEnumerator HeavyAttackOffset()
     {
-        yield return new WaitForSeconds(0.4f);
-        playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.transform.position.x + 1.2f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+        /*yield return new WaitForSeconds(0.4f);
+        playerGamePlayManager.transform.localPosition = new Vector3(playerGamePlayManager.transform.localPosition.x + 1.2f, playerGamePlayManager.transform.localPosition.y, playerGamePlayManager.transform.localPosition.z);*/
+        yield return new WaitForSeconds(0.1f);
         TurnOffAttackpoints();
     }
 }

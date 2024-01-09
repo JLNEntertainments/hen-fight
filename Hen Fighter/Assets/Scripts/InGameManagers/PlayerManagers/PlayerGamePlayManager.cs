@@ -197,9 +197,11 @@ public class PlayerGamePlayManager : MonoBehaviour
             }
             else if (damageType == "isHeavy")
             {
-                StartCoroutine(PlayHeavyReactAnimation());
+                /*StartCoroutine(PlayHeavyReactAnimation());
+                StopCoroutine(PlayHeavyReactAnimation());*/
+
                 featherParticle.Play();
-                StopCoroutine(PlayHeavyReactAnimation());
+                playerAnimator.SetTrigger("isHeavyReact");
                 PlayerHeavyFX();
                 playerHealth -= 0.04f;
             }
@@ -229,7 +231,6 @@ public class PlayerGamePlayManager : MonoBehaviour
 
             StartCoroutine(TestGamonejctShow());
             StopCoroutine(TestGamonejctShow());
-
         }
     }
 
@@ -298,10 +299,6 @@ public class PlayerGamePlayManager : MonoBehaviour
     IEnumerator TestGamonejctShow()
     {
         yield return new WaitForSeconds(2.3f);
-       
         ScoreManager.Instance.TestGamonejctShow();
     }
-
-
-
 }

@@ -193,42 +193,50 @@ public class EnemyGamePlayManager : MonoBehaviour
             isPlayingAnotherAnimation = true;
             foreach (var obj in enemyWeapons)
             {
-                if (attack == 1 && obj.gameObject.CompareTag("Beak") && canHitLightAttack())
+                if (canHitLightAttack())
                 {
-                    obj.gameObject.SetActive(true);
-                    if (randomLightAttack == 0)
+                    if (attack == 1 && obj.gameObject.CompareTag("Beak"))
                     {
-                        enemyAnimator.SetTrigger("isLightAttack");
-                        enemyAnimator.SetInteger("LightAttackIndex", 1);
+                        obj.gameObject.SetActive(true);
+                        if (randomLightAttack == 0)
+                        {
+                            enemyAnimator.SetTrigger("isLightAttack");
+                            enemyAnimator.SetInteger("LightAttackIndex", 1);
+                        }
+                        else
+                        {
+                            enemyAnimator.SetTrigger("isLightAttack");
+                            enemyAnimator.SetInteger("LightAttackIndex", 2);
+                        }
+                        PlayRandomSound();
+                        isLightAttack = true;
+                        isHeavyAttack = false;
                     }
-                    else
-                    {
-                        enemyAnimator.SetTrigger("isLightAttack");
-                        enemyAnimator.SetInteger("LightAttackIndex", 2);
-                    }
-                    PlayRandomSound();
-                    isLightAttack = true;
-                    isHeavyAttack = false;
                 }
-                else if (attack == 0 && obj.gameObject.CompareTag("Foot") && canHitHeavyAttack())
+                else if (canHitHeavyAttack())
                 {
-                    obj.gameObject.SetActive(true);
-                    if (randomHeavyAttack == 0)
+                    if (attack == 0 && obj.gameObject.CompareTag("Foot"))
                     {
-                        enemyAnimator.SetTrigger("isHeavyAttack");
-                        enemyAnimator.SetInteger("HeavyAttackIndex", 1);
-                        StartCoroutine(HeavyAttackOffset());
-                        StopCoroutine(HeavyAttackOffset());
+                        obj.gameObject.SetActive(true);
+                        if (randomHeavyAttack == 0)
+                        {
+                            enemyAnimator.SetTrigger("isHeavyAttack");
+                            enemyAnimator.SetInteger("HeavyAttackIndex", 1);
+                            /*StartCoroutine(HeavyAttackOffset());
+                            StopCoroutine(HeavyAttackOffset());*/
+                        }
+                        else
+                        {
+                            enemyAnimator.SetTrigger("isHeavyAttack");
+                            enemyAnimator.SetInteger("HeavyAttackIndex", 2);
+                        }
+                        PlayRandomSound();
+                        isHeavyAttack = true;
+                        isLightAttack = false;
                     }
-                    else
-                    {
-                        enemyAnimator.SetTrigger("isHeavyAttack");
-                        enemyAnimator.SetInteger("HeavyAttackIndex", 2);
-                    }
-                    PlayRandomSound();
-                    isHeavyAttack = true;
-                    isLightAttack = false;
                 }
+                else
+                    enemyAnimator.SetTrigger("isLowStamina");
             }
             isPlayingAnotherAnimation = false;
         }
@@ -312,9 +320,11 @@ public class EnemyGamePlayManager : MonoBehaviour
             }
             else if (damageType == "isHeavy")
             {
-                StartCoroutine(PlayHeavyReactAnimation());
+                /*StartCoroutine(PlayHeavyReactAnimation());
+                StopCoroutine(PlayHeavyReactAnimation());*/
+
+                enemyAnimator.SetTrigger("isHeavyReact");
                 featherParticle.Play();
-                StopCoroutine(PlayHeavyReactAnimation());
                 EnemyHeavyFX();
                 ScoreManager.Instance.enemyHealth -= 0.04f;
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
@@ -332,7 +342,6 @@ public class EnemyGamePlayManager : MonoBehaviour
                 StartCoroutine(DelayedDecreaseHealtBarBack(1.0f));
                 
             }
-
         }
         else
             return;
@@ -377,8 +386,6 @@ public class EnemyGamePlayManager : MonoBehaviour
         image.fillAmount = targetFillAmount;
     }
 
-
-
     void PlayLightReactAnimation()
     {
         enemyAnimator.SetTrigger("isLightReact");
@@ -394,7 +401,6 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void SpecialAttackPlaying()
     {
         enemyAnimator.SetTrigger("isSpecialReact");
-        
     }
 
     IEnumerator ShowGameOverPanel()
@@ -402,10 +408,10 @@ public class EnemyGamePlayManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         ScoreManager.Instance.ShowYouWonpanel();
     }
+
     IEnumerator TestGamonejctShow()
     {
         yield return new WaitForSeconds(2.3f);
-
         ScoreManager.Instance.TestGamonejctShow();
     }
 }
