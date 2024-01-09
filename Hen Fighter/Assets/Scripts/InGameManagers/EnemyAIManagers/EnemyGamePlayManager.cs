@@ -23,6 +23,10 @@ public class EnemyGamePlayManager : MonoBehaviour
     Rigidbody myBody;
 
     Image healthBar;
+    Image HealthBarBack;
+    private float lerpSpeed = 0.05f;
+
+    private Coroutine decreaseFillCoroutine;
 
     [HideInInspector]
     public float enemyHealth, attack_Distance, current_Stamina_Regen_Time, default_Stamina_Regen_Time, default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time;
@@ -43,6 +47,8 @@ public class EnemyGamePlayManager : MonoBehaviour
     public AudioClip[] Sounds;
     public string soundTag = "Audio";
 
+    
+
     int randomLightAttack, randomHeavyAttack;
 
     void Awake()
@@ -56,6 +62,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
+        HealthBarBack = GameObject.FindGameObjectWithTag("E_HealthBarBack").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
     
         particleObject = GameObject.FindWithTag("Enemy Particles");
@@ -299,6 +306,9 @@ public class EnemyGamePlayManager : MonoBehaviour
                 ScoreManager.Instance.enemyHealth -= 0.02f;
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
                 isPlayingAnotherAnimation = false;
+
+                // Add this line to start the coroutine
+                StartCoroutine(DelayedDecreaseHealtBarBack(1.0f));
             }
             else if (damageType == "isHeavy")
             {
@@ -309,13 +319,20 @@ public class EnemyGamePlayManager : MonoBehaviour
                 ScoreManager.Instance.enemyHealth -= 0.04f;
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
                 isPlayingAnotherAnimation = false;
+
+                // Add this line to start the coroutine
+                StartCoroutine(DelayedDecreaseHealtBarBack(1.0f));
             }
             else if(damageType == "isSpeciaAttack")
             {
                 ScoreManager.Instance.enemyHealth -= 0.1f;
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
+
+                // Add this line to start the coroutine
+                StartCoroutine(DelayedDecreaseHealtBarBack(1.0f));
+                
             }
-            
+
         }
         else
             return;
@@ -331,6 +348,36 @@ public class EnemyGamePlayManager : MonoBehaviour
             StopCoroutine(ShowGameOverPanel());
         }
     }
+
+    // Coroutine to decrease healtBarBack after a delay
+    private IEnumerator DelayedDecreaseHealtBarBack(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Now call the coroutine to gradually decrease fill amount over time
+        float targetFillAmountBack = enemyHealth;  // You may adjust this based on your requirement
+        StartCoroutine(DecreaseFillAmountOverTime(HealthBarBack, targetFillAmountBack));
+    }
+
+    // Coroutine to gradually decrease fill amount over time
+    private IEnumerator DecreaseFillAmountOverTime(Image image, float targetFillAmount)
+    {
+        float duration = Mathf.Abs(image.fillAmount - targetFillAmount) / lerpSpeed;
+        float elapsedTime = 0.2f;
+        float startFillAmount = image.fillAmount;
+
+        while (elapsedTime < duration)
+        {
+            image.fillAmount = Mathf.Lerp(startFillAmount, targetFillAmount, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the final fill amount is exactly the target fill amount
+        image.fillAmount = targetFillAmount;
+    }
+
+
 
     void PlayLightReactAnimation()
     {
