@@ -68,7 +68,7 @@ public class EnemyAIDecision : MonoBehaviour
                 enemyGamePlayManager.FollowTarget();
             else if (!IsEnemyLowOnStamina())
                 enemyGamePlayManager.PrepareAttack();
-            /*else if (IsEnemyLowOnStamina())
+           /* else if (IsEnemyLowOnStamina())
                 enemyGamePlayManager.UnFollowTarget();*/
         }
         else

@@ -9,7 +9,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     [SerializeField] GameObject YouLostPanel,YouWonpanel,GameOverpanel,TestGameObject;
 
     static int enemyScore, playerScore;
-    [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage;
+    [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage, PlayerStaminaBarImageBack;
 
     public float enemyHealth;
     public float LightAttackDamage;
@@ -23,13 +23,21 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     private TMP_Text EnemyHealthBarText,PlayerHealthBarText;
 
     [HideInInspector]
-    public float maxStamina;
+    public float maxStamina = 1;
     public float characterStaminaValueEnemy, characterStaminaValuePlayer;
+    public float health;
+    private float lerpSpeed = 0.05f;
+    
 
     private int HealthBarValue;
 
     public float StaminaBarCharingRate;
     public Coroutine StaminaBarRecharge;
+
+
+    public TMP_Text LightAttackText;
+
+    public TMP_Text damageTextPrefab;
 
     void Start()
     {
@@ -63,6 +71,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
 
             enemyScore += 20;
+            DisplayTextForTwoSeconds("LightAtatck");
+           
         }
         else if (attackType.Equals("isHeavy"))
         {
@@ -70,6 +80,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValueEnemy -= HeavyAttackDamage;
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
             EnemyStaminaBarImage.fillAmount = EnemyStaminaBarImage.fillAmount - (HealthBarValue * 0.01f);
+            DisplayTextForTwoSeconds("LightAtatck");
+            
         }
 
         else if (attackType.Equals("isSpecialReact"))
@@ -78,6 +90,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValueEnemy -= HeavyAttackDamage;
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
             EnemyStaminaBarImage.fillAmount = EnemyStaminaBarImage.fillAmount - (HealthBarValue * 0.01f);
+            DisplayTextForTwoSeconds("SpecialReact");
+           
         }
         Debug.Log("Enemy : " + enemyScore);
         //score for player
@@ -86,6 +100,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoreTextForEnemy.text = enemyScore.ToString();
         PlayerHealthBarText.text = Mathf.Max(0, Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 )).ToString() + "%";
       
+
     }
 
     public void UpdatePlayerScore(string attackType)
@@ -95,6 +110,11 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             playerScore += 20;
             characterStaminaValuePlayer -= LightAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
+            DisplayTextForTwoSeconds("LightAtatck");
+
+            UpdatePlayerHealth();
+
+
         }
 
         else if (attackType.Equals("isHeavy"))
@@ -102,15 +122,20 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             playerScore += 40;
             characterStaminaValuePlayer -= HeavyAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
+            DisplayTextForTwoSeconds("ISlightAtatck");
+
+            UpdatePlayerHealth();
+
         }
-        else if (attackType.Equals("isSpecialAttack"))
+        else if (attackType.Equals("HeavyAttack"))
         {
             playerScore += 100;
             characterStaminaValuePlayer -= SpecialAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
+
+            UpdatePlayerHealth();
+
         }
-
-
         Debug.Log("Player : " + playerScore);
         //score for palyer
         ScoretextForPlayer.text = playerScore.ToString();
@@ -121,6 +146,51 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
 
     }
+
+    void UpdatePlayerHealth()
+    {
+        float playerHealthPercentage = Mathf.Clamp01(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth) * 100;
+        int roundedPercentage = 100 - Mathf.RoundToInt(playerHealthPercentage);
+        damageTextPrefab.text = roundedPercentage.ToString() + "%";
+        StartCoroutine(HidePlayerHealthText());
+    }
+
+    IEnumerator HidePlayerHealthText()
+    {
+        yield return new WaitForSeconds(1f);
+
+        // Hide the PlayerHealthBarText after 1 second
+        damageTextPrefab.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(1f);
+
+        // Reactivate the PlayerHealthBarText
+        damageTextPrefab.gameObject.SetActive(true);
+    }
+
+
+    IEnumerator DisplayTextForTime(string text, float displayTime)
+    {
+        LightAttackText.text = text;
+        LightAttackText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(displayTime);
+
+        LightAttackText.gameObject.SetActive(false);
+    }
+
+
+   
+
+    // Call this method whenever you want to display the text for 2 seconds
+    public void DisplayTextForTwoSeconds(string text)
+    {
+        StartCoroutine(DisplayTextForTime(text, 2.0f));
+    }
+
+
+
+
 
     void RegenerateStamina()
     {
@@ -133,8 +203,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         {
                 EnemyStaminaBarImage.color = Color.red;
         }
-       
-       
         else 
         {
                 EnemyStaminaBarImage.color = Color.yellow;
@@ -195,4 +263,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 
         Time.timeScale = 0f;
     }
+
+
+
 }

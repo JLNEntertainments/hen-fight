@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
             {
                 DoYouWantToExitGame.SetActive(true);
                 settingPaneel.SetActive(false);
+                Debug.LogError("GameOverByEscape");
                 //Application.Quit();
                 Time.timeScale = 0f;
                 return;

@@ -210,6 +210,11 @@ public class PlayerGamePlayManager : MonoBehaviour
                 playerHealth -= 0.05f;
             }
             healthBar.fillAmount = playerHealth;
+
+            // Schedule a coroutine to decrease healtBarBack after a delay of 2 seconds
+            StartCoroutine(DelayedDecreaseHealtBarBack(1.0f));
+
+
             isPlayingAnotherAnimation = false;
         }
         else
@@ -226,6 +231,35 @@ public class PlayerGamePlayManager : MonoBehaviour
             StopCoroutine(TestGamonejctShow());
 
         }
+    }
+
+
+    // Coroutine to decrease healtBarBack after a delay
+    private IEnumerator DelayedDecreaseHealtBarBack(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Now call the coroutine to gradually decrease fill amount over time
+        float targetFillAmountBack = playerHealth;  // You may adjust this based on your requirement
+        StartCoroutine(DecreaseFillAmountOverTime(healtBarBack, targetFillAmountBack));
+    }
+
+    // Coroutine to gradually decrease fill amount over time
+    private IEnumerator DecreaseFillAmountOverTime(Image image, float targetFillAmount)
+    {
+        float duration = Mathf.Abs(image.fillAmount - targetFillAmount) / lerpSpeed;
+        float elapsedTime = 0.2f;
+        float startFillAmount = image.fillAmount;
+
+        while (elapsedTime < duration)
+        {
+            image.fillAmount = Mathf.Lerp(startFillAmount, targetFillAmount, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the final fill amount is exactly the target fill amount
+        image.fillAmount = targetFillAmount;
     }
 
 
