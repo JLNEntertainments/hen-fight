@@ -18,28 +18,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] RectTransform Holder;
     [SerializeField] Image CircleImage;
     [SerializeField] TMP_Text TxtProgress;
-
-    
-
     [SerializeField] [Range(0, 1)] float progress = 0f;
 
     void Start()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
-       /* if (Application.platform == RuntimePlatform.Android)
-        {
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                Time.timeScale = 0f;
-                DoYouWantToExitGame.SetActive(true);
-                settingPaneel.SetActive(false);
-                Debug.LogError("GameOverByEscape");
-                //Application.Quit();
-                Time.timeScale = 0f;
-                return;
-            }
-        }
-        */
     }
 
     public void SceneChange(string ScreneName)

@@ -52,11 +52,13 @@ public class DamageGeneric : MonoBehaviour
                 {
                     hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isHeavy");
                     ScoreManager.Instance.UpdatePlayerScore("isHeavy");
+                   PlayerCombatManager.Instance.clicksCnt++;
                 }
                 else if (hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isLightAttack)
                 {
                     hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isLight");
                     ScoreManager.Instance.UpdatePlayerScore("isLight");
+                    PlayerCombatManager.Instance.clicksCnt++;
                 }
                 else if (hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isSpecialAttack)
                 {

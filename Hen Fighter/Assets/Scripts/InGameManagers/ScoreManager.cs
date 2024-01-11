@@ -8,6 +8,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
 {
     [SerializeField] GameObject YouLostPanel,YouWonpanel,GameOverpanel,TestGameObject;
 
+    UIManager uiManager;
+
     static int enemyScore, playerScore;
     [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage;
 
@@ -213,12 +215,14 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     {
         yield return new WaitForSeconds(2f);
         GameOverpanel.SetActive(true);
+       
         // Time.timeScale = 0f;
     }
     
     public void ShowYouWonpanel()
     {
         YouWonpanel.SetActive(true);
+       
         StartCoroutine(GameOverPanelDisplay());
         StopCoroutine(GameOverPanelDisplay());
     }
