@@ -23,6 +23,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     int randomLightAttack, randomHeavyAttack;
 
+    public GameObject SuperPowetText;
+
+
     private void Start()
     {
         HitCountTex.gameObject.SetActive(false);
@@ -74,6 +77,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                     PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
                     playerGamePlayManager.PlayRandomSound();
                     currentAttackTime = 0;
+                    playerGamePlayManager.isPlayingAnotherAnimation = false;
                 }
             }
             else
@@ -102,6 +106,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                     PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
                     playerGamePlayManager.PlayRandomSound();
                     currentAttackTime = 0;
+                    playerGamePlayManager.isPlayingAnotherAnimation = false;
                 }
             }
             else
@@ -131,12 +136,13 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                     playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
 
                 uiManager.specialAttackBtnAnim.SetActive(false);
+                SuperPowetText.gameObject.SetActive(false);
                 clicksCnt = 0;
                 playerGamePlayManager.isPlayingAnotherAnimation = false;
                 StartCoroutine(SpecialAttackBuffer());
                 StopCoroutine(SpecialAttackBuffer());
             }
-            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
     }
 
@@ -159,8 +165,10 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     {
         remainingStamina = (ScoreManager.Instance.maxStamina / 2);
         uiManager.specialAttackBtnAnim.SetActive(true);
+        SuperPowetText.gameObject.SetActive(true);
         if (ScoreManager.Instance.characterStaminaValuePlayer >= remainingStamina && clicksCnt >= 3 && !playerGamePlayManager.isSpecialAttack)
         {
+            
             return true;
         }
         else

@@ -22,6 +22,9 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     [SerializeField]
     private TMP_Text EnemyHealthBarText,PlayerHealthBarText;
 
+    [SerializeField]
+    private TMP_Text PlayerStaminaText, EnemyStaminaText;
+
     [HideInInspector]
     public float maxStamina = 1;
     public float characterStaminaValueEnemy, characterStaminaValuePlayer;
@@ -34,14 +37,11 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     public float StaminaBarCharingRate;
     public Coroutine StaminaBarRecharge;
 
-
-    private Animator playerStaminaBarAnimator;
-
     public TMP_Text damageTextPrefab;
 
     public TMP_Text OutOfStamina;
 
-
+    public GameObject staminaBarBgAnimPlayer, staminaBarBgAnimEnemy;
 
     float damageValue = 0f;
 
@@ -106,7 +106,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
         ScoreTextForEnemy.text = enemyScore.ToString();
         PlayerHealthBarText.text = Mathf.Max(0, Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 )).ToString() + "%";
-      
+        EnemyStaminaText.text = Mathf.Max(0, Mathf.RoundToInt(characterStaminaValueEnemy * 100)).ToString() + "%";
 
     }
 
@@ -148,45 +148,10 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
         ScoreTextForEnemy.text = enemyScore.ToString();
         EnemyHealthBarText.text = Mathf.Max(0,Mathf.RoundToInt ( ScoreManager.Instance.enemyHealth * 100)).ToString() + "%" ;
+        PlayerStaminaText.text = Mathf.Max(0, Mathf.RoundToInt(characterStaminaValuePlayer * 100)).ToString() + "%";
 
-       
+
     }
-
-   /* void UpdatePlayerHealth()
-    {
-        float playerHealthPercentage = Mathf.Clamp01(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth) * 100;
-        int roundedPercentage = 100 - Mathf.RoundToInt(playerHealthPercentage);
-        damageTextPrefab.text = roundedPercentage.ToString() + "%";
-      StartCoroutine(HidePlayerHealthText(damageValue, 1f));
-    }
-
-    IEnumerator HidePlayerHealthText(float damageValue, float delay)
-    {
-
-        yield return new WaitForSeconds(1f);
-
-        // Display the damage value in the text
-        damageTextPrefab.text = "-" + Mathf.RoundToInt(damageValue).ToString();
-
-        yield return new WaitForSeconds(delay);
-
-        // Set the text to "0%" for all damageTextPrefab instances
-        damageTextPrefab.text = "0%";
-        damageTextPrefab.gameObject.SetActive(true);
-    }*/
-
-
-   
-
-
-   
-
-    // Call this method whenever you want to display the text for 2 seconds
-   
-
-
-
-
 
     void RegenerateStamina()
     {
@@ -198,11 +163,13 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         if (characterStaminaValueEnemy <= 0.24)
         {
                 EnemyStaminaBarImage.color = Color.red;
-        }
+                staminaBarBgAnimEnemy.gameObject.SetActive(true);
+            }
         else 
         {
                 EnemyStaminaBarImage.color = Color.yellow;
-        }
+                staminaBarBgAnimEnemy.gameObject.SetActive(false);
+            }
     }
 
 
@@ -216,12 +183,14 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         {
             PlayerStaminaBarImage.color = Color.red;
             OutOfStamina.gameObject.SetActive(true);
+            staminaBarBgAnimPlayer.gameObject.SetActive(true);
         }
        
         else
         {
             PlayerStaminaBarImage.color = Color.yellow;
             OutOfStamina.gameObject.SetActive(false);
+            staminaBarBgAnimPlayer.gameObject.SetActive(false);
 
         }
     }

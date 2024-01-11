@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject specialAttackBtnAnim;
 
 
-    public GameObject DoYouWantToExitGame;
+   // public GameObject DoYouWantToExitGame;
     public GameObject settingPaneel;
     
     //For specialAttackButton Animation
@@ -26,10 +26,11 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
-        if (Application.platform == RuntimePlatform.Android)
+       /* if (Application.platform == RuntimePlatform.Android)
         {
             if (Input.GetKey(KeyCode.Escape))
             {
+                Time.timeScale = 0f;
                 DoYouWantToExitGame.SetActive(true);
                 settingPaneel.SetActive(false);
                 Debug.LogError("GameOverByEscape");
@@ -38,7 +39,7 @@ public class UIManager : MonoBehaviour
                 return;
             }
         }
-        
+        */
     }
 
     public void SceneChange(string ScreneName)
