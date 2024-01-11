@@ -45,7 +45,7 @@ public class EnemyAIDecision : MonoBehaviour
     private void MakeCombatDecision()
     {
         //For making decisions when player is in attack range
-        if (!IsEnemyLowOnHealth())
+        if (!IsEnemyLowOnHealth() && enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time)
         {
             enemyGamePlayManager.Attack();
         }

@@ -133,7 +133,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             damageValue = HeavyAttackDamage;
 
         }
-        else if (attackType.Equals("HeavyAttack"))
+        else if (attackType.Equals("isSpecialAttack"))
         {
             playerScore += 100;
             characterStaminaValuePlayer -= SpecialAttackDamage;

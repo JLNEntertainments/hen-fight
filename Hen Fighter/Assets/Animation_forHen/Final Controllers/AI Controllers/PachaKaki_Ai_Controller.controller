@@ -158,7 +158,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HeavyReact 0
-  m_Speed: 1.2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6971540112393658449}
@@ -291,9 +291,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.13
+  m_TransitionDuration: 0.75
   m_TransitionOffset: 0
-  m_ExitTime: 0.9
+  m_ExitTime: 0.62
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -412,7 +412,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SpecialReact
-  m_Speed: 1.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5949137610525256077}
@@ -1705,10 +1705,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.55302954
+  m_TransitionDuration: 0.34
   m_TransitionOffset: 0
-  m_ExitTime: 0.50428015
-  m_HasExitTime: 0
+  m_ExitTime: 0.61
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1

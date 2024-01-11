@@ -219,10 +219,8 @@ public class PlayerGamePlayManager : MonoBehaviour
 
             isPlayingAnotherAnimation = false;
         }
-        else
-            return;
 
-        if(playerHealth <= 0f)
+        if (playerHealth <= 0f)
         {
             playerAnimator.SetTrigger("isDeathReact");
             enemyGamePlayManager.enemyAnimator.SetTrigger("hasWon");
