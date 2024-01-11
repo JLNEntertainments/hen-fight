@@ -15,7 +15,7 @@ public class DamageGeneric : MonoBehaviour
 
     void Start()
     {
-        colliderRadius = 1f;
+        colliderRadius = 0.8f;
     }
 
     void FixedUpdate()
@@ -61,7 +61,7 @@ public class DamageGeneric : MonoBehaviour
                 else if (hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isSpecialAttack)
                 {
                     hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isSpecialAttack");
-                    ScoreManager.Instance.UpdatePlayerScore("isSpecialAttack");
+                    
                 }
             }
             this.gameObject.SetActive(false);

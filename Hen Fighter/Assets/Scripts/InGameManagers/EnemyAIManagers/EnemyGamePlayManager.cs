@@ -78,7 +78,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
-        default_Attack_Time = 2f;
+        default_Attack_Time = 4f;
         default_Stamina_Regen_Time = 8f;
         current_Attack_Time = default_Attack_Time;
         current_Stamina_Regen_Time = 0;
@@ -176,11 +176,11 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (!attackPlayer)
             return;
 
-        if (!playerGamePlayManager.canPerformCombat)
+        if (!playerGamePlayManager.canPerformCombat && !playerGamePlayManager.isPlayingAnotherAnimation)
         {
-            playerGamePlayManager.canPerformCombat = true;
+            playerGamePlayManager.canPerformCombat = playerGamePlayManager.isPlayingAnotherAnimation = true;
             EnemyAttack();
-            playerGamePlayManager.canPerformCombat = false;
+            playerGamePlayManager.canPerformCombat = playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
 
         if (!enemyAIDecision.IsPlayerInAttackRange())
@@ -192,62 +192,48 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void EnemyAttack()
     {
-        int attack = (Random.Range(0, 2));
-        
-        if(!isPlayingAnotherAnimation)
+        int attack = (Random.Range(0, 3));
+        foreach (var obj in enemyWeapons)
         {
-            isPlayingAnotherAnimation = true;
-            foreach (var obj in enemyWeapons)
+            if (attack == 1 && obj.gameObject.CompareTag("Beak") && canHitLightAttack())
             {
-                if (canHitLightAttack())
+                obj.gameObject.SetActive(true);
+                if (randomLightAttack == 0)
                 {
-                    if (attack == 1 && obj.gameObject.CompareTag("Beak"))
-                    {
-                        obj.gameObject.SetActive(true);
-                        if (randomLightAttack == 0)
-                        {
-                            enemyAnimator.SetTrigger("isLightAttack");
-                            enemyAnimator.SetInteger("LightAttackIndex", 1);
-                        }
-                        else
-                        {
-                            enemyAnimator.SetTrigger("isLightAttack");
-                            enemyAnimator.SetInteger("LightAttackIndex", 2);
-                        }
-                        PlayRandomSound();
-                        isLightAttack = true;
-                        isHeavyAttack = false;
-                    }
-                }
-                else if (canHitHeavyAttack())
-                {
-                    if (attack == 0 && obj.gameObject.CompareTag("Foot"))
-                    {
-                        obj.gameObject.SetActive(true);
-                        if (randomHeavyAttack == 0)
-                        {
-                            enemyAnimator.SetTrigger("isHeavyAttack");
-                            enemyAnimator.SetInteger("HeavyAttackIndex", 1);
-                            /*StartCoroutine(HeavyAttackOffset());
-                            StopCoroutine(HeavyAttackOffset());*/
-                        }
-                        else
-                        {
-                            enemyAnimator.SetTrigger("isHeavyAttack");
-                            enemyAnimator.SetInteger("HeavyAttackIndex", 2);
-                        }
-                        PlayRandomSound();
-                        isHeavyAttack = true;
-                        isLightAttack = false;
-                    }
+                    enemyAnimator.SetTrigger("isLightAttack");
+                    enemyAnimator.SetInteger("LightAttackIndex", 1);
                 }
                 else
-                    enemyAnimator.SetTrigger("isLowStamina");
+                {
+                    enemyAnimator.SetTrigger("isLightAttack");
+                    enemyAnimator.SetInteger("LightAttackIndex", 2);
+                }
+                PlayRandomSound();
+                isLightAttack = true;
+                isHeavyAttack = false;
             }
-            isPlayingAnotherAnimation = false;
+            else if ((attack == 0 || attack == 2) && obj.gameObject.CompareTag("Foot") && canHitHeavyAttack())
+            {
+                obj.gameObject.SetActive(true);
+                if (randomHeavyAttack == 0)
+                {
+                    enemyAnimator.SetTrigger("isHeavyAttack");
+                    enemyAnimator.SetInteger("HeavyAttackIndex", 1);
+                    /*StartCoroutine(HeavyAttackOffset());
+                    StopCoroutine(HeavyAttackOffset());*/
+                }
+                else
+                {
+                    enemyAnimator.SetTrigger("isHeavyAttack");
+                    enemyAnimator.SetInteger("HeavyAttackIndex", 2);
+                }
+                PlayRandomSound();
+                isHeavyAttack = true;
+                isLightAttack = false;
+            }
+            else if(!canHitHeavyAttack() && !canHitLightAttack())
+                enemyAnimator.SetTrigger("isLowStamina");
         }
-        else
-            return;
     }
 
     IEnumerator HeavyAttackOffset()
@@ -343,7 +329,6 @@ public class EnemyGamePlayManager : MonoBehaviour
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
                 // Add this line to start the coroutine
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
-                
             }
         }
         else

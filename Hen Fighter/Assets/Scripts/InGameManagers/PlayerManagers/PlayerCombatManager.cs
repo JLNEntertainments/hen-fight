@@ -13,8 +13,6 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     static int clicksCnt;
 
-
-
     [SerializeField]
     DamageGeneric[] weaponCollider;
     public bool isAttacking;
@@ -24,8 +22,6 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     float currentAttackTime, defaultAttackTime, remainingStamina;
 
     int randomLightAttack, randomHeavyAttack;
-
-
 
     private void Start()
     {
@@ -62,49 +58,57 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnLightAttackBtnPressed()
     {
-        if (canHitLightAttack())
+        if (!playerGamePlayManager.isPlayingAnotherAnimation)
         {
-            if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            if (canHitLightAttack())
             {
-                playerGamePlayManager.isLightAttack = true;
-                playerGamePlayManager.isHeavyAttack = false;
-                clicksCnt++;
-                Debug.Log("----" + clicksCnt );
-                HitCountTex.text = " Hits - " + clicksCnt.ToString();
-                HitCountTex.gameObject.SetActive(true);
-                PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
-                playerGamePlayManager.PlayRandomSound();
-                currentAttackTime = 0;
-                playerGamePlayManager.isPlayingAnotherAnimation = false;
+                if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
+                {
+                    playerGamePlayManager.isLightAttack = true;
+                    playerGamePlayManager.isHeavyAttack = false;
+                    clicksCnt++;
+                    Debug.Log("----" + clicksCnt);
+                    HitCountTex.text = " Hits - " + clicksCnt.ToString();
+                    HitCountTex.gameObject.SetActive(true);
+                    PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
+                    playerGamePlayManager.PlayRandomSound();
+                    currentAttackTime = 0;
+                }
             }
-        }
-        else
-        {
-            playerAnimator.SetTrigger("isLowStamina");
+            else
+            {
+                playerAnimator.SetTrigger("isLowStamina");
+            }
+            playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
     }
 
     public void OnHeavyAttackBtnPressed()
     {
-        if (canHitHeavyAttack())
+        if (!playerGamePlayManager.isPlayingAnotherAnimation)
         {
-            if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            if (canHitHeavyAttack())
             {
-                playerGamePlayManager.isHeavyAttack = true;
-                playerGamePlayManager.isLightAttack = false;
-                clicksCnt++;
-                Debug.Log("----" + clicksCnt);
-                HitCountTex.text = " Hits - " + clicksCnt.ToString();
-                HitCountTex.gameObject.SetActive(true);
-                PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
-                playerGamePlayManager.PlayRandomSound();
-                currentAttackTime = 0;
-                playerGamePlayManager.isPlayingAnotherAnimation = false;
+                if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
+                {
+                    playerGamePlayManager.isHeavyAttack = true;
+                    playerGamePlayManager.isLightAttack = false;
+                    clicksCnt++;
+                    Debug.Log("----" + clicksCnt);
+                    HitCountTex.text = " Hits - " + clicksCnt.ToString();
+                    HitCountTex.gameObject.SetActive(true);
+                    PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
+                    playerGamePlayManager.PlayRandomSound();
+                    currentAttackTime = 0;
+                }
             }
-        }
-        else
-        {
-            playerAnimator.SetTrigger("isLowStamina");
+            else
+            {
+                playerAnimator.SetTrigger("isLowStamina");
+            }
+            playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
     }
 
@@ -113,27 +117,34 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         playerGamePlayManager.isHeavyAttack = false;
         playerGamePlayManager.isLightAttack = false;
 
-        if (canHitSpecialAttack())
+        if (!playerGamePlayManager.isPlayingAnotherAnimation)
         {
-            playerGamePlayManager.isSpecialAttack = true;
-            playerAnimator.SetTrigger("isSpecialAttack");
-            weaponCollider[1].gameObject.SetActive(true);
-            if (playerGamePlayManager.enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
-                playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 0.8f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
-            else
-                playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            if (canHitSpecialAttack())
+            {
+                playerGamePlayManager.isSpecialAttack = true;
+                playerAnimator.SetTrigger("isSpecialAttack");
+                weaponCollider[1].gameObject.SetActive(true);
+                if (playerGamePlayManager.enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
+                    playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 0.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+                else
+                    playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
 
-            uiManager.specialAttackBtnAnim.SetActive(false);
-            clicksCnt = 0;
-            playerGamePlayManager.isPlayingAnotherAnimation = false;
-            StartCoroutine(SpecialAttackBuffer());
-            StopCoroutine(SpecialAttackBuffer());
+                uiManager.specialAttackBtnAnim.SetActive(false);
+                clicksCnt = 0;
+                playerGamePlayManager.isPlayingAnotherAnimation = false;
+                StartCoroutine(SpecialAttackBuffer());
+                StopCoroutine(SpecialAttackBuffer());
+            }
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
         }
     }
 
     IEnumerator SpecialAttackBuffer()
     {
         yield return new WaitForSeconds(0.1f);
+        //playerGamePlayManager.isSpecialAttack = false;
+        ScoreManager.Instance.UpdatePlayerScore("isSpecialAttack");
         TurnOffAttackpoints();
     }
 
@@ -147,9 +158,9 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     bool canHitSpecialAttack()
     {
         remainingStamina = (ScoreManager.Instance.maxStamina / 2);
+        uiManager.specialAttackBtnAnim.SetActive(true);
         if (ScoreManager.Instance.characterStaminaValuePlayer >= remainingStamina && clicksCnt >= 3 && !playerGamePlayManager.isSpecialAttack)
         {
-            uiManager.specialAttackBtnAnim.SetActive(true);
             return true;
         }
         else
@@ -182,74 +193,57 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     void PlayAttackAnimation(bool heavyAttack, bool lightAttack)
     {
-        if (!playerGamePlayManager.isPlayingAnotherAnimation)
-        {
-            playerGamePlayManager.isPlayingAnotherAnimation = true;
-            foreach (var obj in weaponCollider)
-            {
-                if (lightAttack && obj.gameObject.CompareTag("Beak"))
-                {
-                    if (randomLightAttack == 0)
-                    {
-                        playerAnimator.SetTrigger("isLightAttack");
-                        playerAnimator.SetInteger("LightAttackIndex", 1);
-                        obj.gameObject.SetActive(true);
-                        return;
-                    }
-                    else
-                    {
-                        playerAnimator.SetTrigger("isLightAttack");
-                        playerAnimator.SetInteger("LightAttackIndex", 2);
-                        obj.gameObject.SetActive(true);
-                        return;
-                    }
-                }
-                else if (heavyAttack && obj.gameObject.CompareTag("Foot"))
-                {
 
-                    if (randomHeavyAttack == 0)
-                    {
-                        playerAnimator.SetTrigger("isHeavyAttack");
-                        playerAnimator.SetInteger("HeavyAttackIndex", 1);
-                        obj.gameObject.SetActive(true);
-                        StartCoroutine(HeavyAttackOffset());
-                        StopCoroutine(HeavyAttackOffset());
-                        return;
-                    }
-                    else
-                    {
-                        playerAnimator.SetTrigger("isHeavyAttack");
-                        playerAnimator.SetInteger("HeavyAttackIndex", 2);
-                        obj.gameObject.SetActive(true);
-                        return;
-                    }
+        foreach (var obj in weaponCollider)
+        {
+            if (lightAttack && obj.gameObject.CompareTag("Beak"))
+            {
+                if (randomLightAttack == 0)
+                {
+                    playerAnimator.SetTrigger("isLightAttack");
+                    playerAnimator.SetInteger("LightAttackIndex", 1);
+                    obj.gameObject.SetActive(true);
+                    return;
+                }
+                else
+                {
+                    playerAnimator.SetTrigger("isLightAttack");
+                    playerAnimator.SetInteger("LightAttackIndex", 2);
+                    obj.gameObject.SetActive(true);
+                    return;
+                }
+            }
+            else if (heavyAttack && obj.gameObject.CompareTag("Foot"))
+            {
+
+                if (randomHeavyAttack == 0)
+                {
+                    playerAnimator.SetTrigger("isHeavyAttack");
+                    playerAnimator.SetInteger("HeavyAttackIndex", 1);
+                    obj.gameObject.SetActive(true);
+                    return;
+                }
+                else
+                {
+                    playerAnimator.SetTrigger("isHeavyAttack");
+                    playerAnimator.SetInteger("HeavyAttackIndex", 2);
+                    obj.gameObject.SetActive(true);
+                    return;
                 }
             }
         }
-        else
-            return;
     }
-
-    IEnumerator HeavyAttackOffset()
-    {
-        /*yield return new WaitForSeconds(0.4f);
-        playerGamePlayManager.transform.localPosition = new Vector3(playerGamePlayManager.transform.localPosition.x + 1.2f, playerGamePlayManager.transform.localPosition.y, playerGamePlayManager.transform.localPosition.z);*/
-        yield return new WaitForSeconds(0.1f);
-        playerAnimator.SetTrigger("isIdle");
-        TurnOffAttackpoints();
-    }
-
 
     IEnumerator ResetHitCountAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (clicksCnt > 3)
+       /* if (clicksCnt > 3)
         {
             // Reset the HitCount after the delay
             clicksCnt = 0;
             HitCountTex.text = " Hits - " + clicksCnt.ToString();
             
-        }
+        }*/
         StartCoroutine(DisableHitCountTextAfterDelay(0.5f));
     }
 
