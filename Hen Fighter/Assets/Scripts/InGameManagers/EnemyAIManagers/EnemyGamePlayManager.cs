@@ -24,7 +24,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     Image healthBar;
     Image HealthBarBack;
-    private float lerpSpeed = 0.05f;
+    private float lerpSpeed = 0.01f;
 
     private Coroutine decreaseFillCoroutine;
 
@@ -51,6 +51,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     int randomLightAttack, randomHeavyAttack;
 
+
     void Awake()
     {
         enemyAnimator = GetComponent<Animator>();
@@ -60,6 +61,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void Start()
     {
+        
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         HealthBarBack = GameObject.FindGameObjectWithTag("E_HealthBarBack").GetComponentInChildren<Image>();
@@ -76,7 +78,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         enemy_Stamina = ScoreManager.Instance.characterStaminaValueEnemy;
 
-        default_Attack_Time = 3f;
+        default_Attack_Time = 2f;
         default_Stamina_Regen_Time = 8f;
         current_Attack_Time = default_Attack_Time;
         current_Stamina_Regen_Time = 0;
@@ -86,6 +88,10 @@ public class EnemyGamePlayManager : MonoBehaviour
 
         TurnOffAttackpoints();
         TurnOffEnemyFXObjects();
+
+        
+
+
     }
 
     void Update()
@@ -316,30 +322,27 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isPlayingAnotherAnimation = false;
 
                 // Add this line to start the coroutine
-                StartCoroutine(DelayedDecreaseHealtBarBack(1.0f));
+                StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
             }
             else if (damageType == "isHeavy")
             {
-                /*StartCoroutine(PlayHeavyReactAnimation());
-                StopCoroutine(PlayHeavyReactAnimation());*/
-
                 enemyAnimator.SetTrigger("isHeavyReact");
                 featherParticle.Play();
                 EnemyHeavyFX();
+                StartCoroutine(PlayHeavyReactAnimation());
+                StopCoroutine(PlayHeavyReactAnimation());
                 ScoreManager.Instance.enemyHealth -= 0.04f;
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
                 isPlayingAnotherAnimation = false;
-
                 // Add this line to start the coroutine
-                StartCoroutine(DelayedDecreaseHealtBarBack(1.0f));
+                StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
             }
             else if(damageType == "isSpeciaAttack")
             {
                 ScoreManager.Instance.enemyHealth -= 0.1f;
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
-
                 // Add this line to start the coroutine
-                StartCoroutine(DelayedDecreaseHealtBarBack(1.0f));
+                StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
                 
             }
         }
@@ -393,10 +396,12 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     IEnumerator PlayHeavyReactAnimation()
     {
-        enemyAnimator.SetTrigger("isHeavyReact");
+       // enemyAnimator.SetTrigger("isHeavyReact");
         yield return new WaitForSeconds(0.5f);
-        this.transform.position = new Vector3(this.transform.position.x + 1.2f, this.transform.position.y, this.transform.position.z);
+        // this.transform.position = new Vector3(this.transform.position.x + 1.2f, this.transform.position.y, this.transform.position.z);
+        enemyAnimator.SetTrigger("isIdle");
     }
+
 
     public void SpecialAttackPlaying()
     {

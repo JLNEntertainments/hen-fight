@@ -20,6 +20,7 @@ TagManager:
   - Particles
   - P_HealthBarBack
   - E_HealthBarBack
+  - AnimationForHealthBar
   layers:
   - Default
   - TransparentFX
