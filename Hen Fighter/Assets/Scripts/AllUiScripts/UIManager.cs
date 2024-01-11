@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] Image CircleImage;
     [SerializeField] TMP_Text TxtProgress;
 
+    
+
     [SerializeField] [Range(0, 1)] float progress = 0f;
 
     void Start()

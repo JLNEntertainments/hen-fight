@@ -9,7 +9,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     [SerializeField] GameObject YouLostPanel,YouWonpanel,GameOverpanel,TestGameObject;
 
     static int enemyScore, playerScore;
-    [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage, PlayerStaminaBarImageBack;
+    [SerializeField]private Image EnemyStaminaBarImage,PlayerStaminaBarImage;
 
     public float enemyHealth;
     public float LightAttackDamage;
@@ -35,9 +35,15 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
     public Coroutine StaminaBarRecharge;
 
 
-    public TMP_Text LightAttackText;
+    private Animator playerStaminaBarAnimator;
 
     public TMP_Text damageTextPrefab;
+
+    public TMP_Text OutOfStamina;
+
+
+
+    float damageValue = 0f;
 
     void Start()
     {
@@ -51,6 +57,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         characterStaminaValuePlayer = maxStamina;
         enemyScore = 0;
         playerScore = 0;
+      
     }
 
     private void Update()
@@ -71,7 +78,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
 
             enemyScore += 20;
-            DisplayTextForTwoSeconds("LightAtatck");
+           
            
         }
         else if (attackType.Equals("isHeavy"))
@@ -80,7 +87,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValueEnemy -= HeavyAttackDamage;
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
             EnemyStaminaBarImage.fillAmount = EnemyStaminaBarImage.fillAmount - (HealthBarValue * 0.01f);
-            DisplayTextForTwoSeconds("LightAtatck");
+            
             
         }
 
@@ -90,7 +97,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValueEnemy -= HeavyAttackDamage;
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
             EnemyStaminaBarImage.fillAmount = EnemyStaminaBarImage.fillAmount - (HealthBarValue * 0.01f);
-            DisplayTextForTwoSeconds("SpecialReact");
+           
            
         }
         Debug.Log("Enemy : " + enemyScore);
@@ -110,9 +117,9 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             playerScore += 20;
             characterStaminaValuePlayer -= LightAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
-            DisplayTextForTwoSeconds("LightAtatck");
 
-            UpdatePlayerHealth();
+
+            damageValue = LightAttackDamage;
 
 
         }
@@ -122,9 +129,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             playerScore += 40;
             characterStaminaValuePlayer -= HeavyAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
-            DisplayTextForTwoSeconds("ISlightAtatck");
 
-            UpdatePlayerHealth();
+            damageValue = HeavyAttackDamage;
 
         }
         else if (attackType.Equals("HeavyAttack"))
@@ -133,7 +139,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValuePlayer -= SpecialAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
 
-            UpdatePlayerHealth();
+            damageValue = SpecialAttackDamage;
 
         }
         Debug.Log("Player : " + playerScore);
@@ -142,51 +148,41 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
         ScoreTextForEnemy.text = enemyScore.ToString();
         EnemyHealthBarText.text = Mathf.Max(0,Mathf.RoundToInt ( ScoreManager.Instance.enemyHealth * 100)).ToString() + "%" ;
+
        
-
-
     }
 
-    void UpdatePlayerHealth()
+   /* void UpdatePlayerHealth()
     {
         float playerHealthPercentage = Mathf.Clamp01(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth) * 100;
         int roundedPercentage = 100 - Mathf.RoundToInt(playerHealthPercentage);
         damageTextPrefab.text = roundedPercentage.ToString() + "%";
-        StartCoroutine(HidePlayerHealthText());
+      StartCoroutine(HidePlayerHealthText(damageValue, 1f));
     }
 
-    IEnumerator HidePlayerHealthText()
+    IEnumerator HidePlayerHealthText(float damageValue, float delay)
     {
-        yield return new WaitForSeconds(1f);
-
-        // Hide the PlayerHealthBarText after 1 second
-        damageTextPrefab.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(1f);
 
-        // Reactivate the PlayerHealthBarText
+        // Display the damage value in the text
+        damageTextPrefab.text = "-" + Mathf.RoundToInt(damageValue).ToString();
+
+        yield return new WaitForSeconds(delay);
+
+        // Set the text to "0%" for all damageTextPrefab instances
+        damageTextPrefab.text = "0%";
         damageTextPrefab.gameObject.SetActive(true);
-    }
+    }*/
 
 
-    IEnumerator DisplayTextForTime(string text, float displayTime)
-    {
-        LightAttackText.text = text;
-        LightAttackText.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(displayTime);
-
-        LightAttackText.gameObject.SetActive(false);
-    }
+   
 
 
    
 
     // Call this method whenever you want to display the text for 2 seconds
-    public void DisplayTextForTwoSeconds(string text)
-    {
-        StartCoroutine(DisplayTextForTime(text, 2.0f));
-    }
+   
 
 
 
@@ -199,7 +195,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValueEnemy += StaminaBarCharingRate / 10f;
             EnemyStaminaBarImage.fillAmount = characterStaminaValueEnemy;
 
-        if (characterStaminaValueEnemy >= 0.276 && characterStaminaValueEnemy < 0.5)
+        if (characterStaminaValueEnemy <= 0.24)
         {
                 EnemyStaminaBarImage.color = Color.red;
         }
@@ -216,14 +212,16 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             characterStaminaValuePlayer += StaminaBarCharingRate / 10f;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
         }
-        if (characterStaminaValuePlayer >= 0.276 && characterStaminaValuePlayer < 0.5)
+        if (characterStaminaValuePlayer <= 0.24)
         {
             PlayerStaminaBarImage.color = Color.red;
+            OutOfStamina.gameObject.SetActive(true);
         }
        
         else
         {
             PlayerStaminaBarImage.color = Color.yellow;
+            OutOfStamina.gameObject.SetActive(false);
 
         }
     }

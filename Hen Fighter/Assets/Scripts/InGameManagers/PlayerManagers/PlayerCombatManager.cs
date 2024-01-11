@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 {
@@ -12,21 +13,31 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     static int clicksCnt;
 
+
+
     [SerializeField]
     DamageGeneric[] weaponCollider;
     public bool isAttacking;
+
+    public TMP_Text HitCountTex;
 
     float currentAttackTime, defaultAttackTime, remainingStamina;
 
     int randomLightAttack, randomHeavyAttack;
 
+
+
+    private void Start()
+    {
+        HitCountTex.gameObject.SetActive(false);
+    }
     public void AssignplayerAttributes()
     {
         playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
         playerAnimator = playerGamePlayManager.GetComponent<Animator>();
         weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
         uiManager = GetComponent<UIManager>();
-
+        HitCountTex.text = clicksCnt.ToString();
         clicksCnt = 0;
         defaultAttackTime = 1f;
         currentAttackTime = defaultAttackTime;
@@ -35,24 +46,32 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     }
 
     void Update()
-    { 
+    {
         randomLightAttack = Random.Range(0, 2);
         randomHeavyAttack = Random.Range(0, 2);
         currentAttackTime += Time.deltaTime;
 
         if (clicksCnt >= 3)
             canHitSpecialAttack();
+
+        if (currentAttackTime > 1f && clicksCnt > 0)
+        {
+            StartCoroutine(ResetHitCountAfterDelay(1f));
+        }
     }
 
     public void OnLightAttackBtnPressed()
     {
-        if(canHitLightAttack())
+        if (canHitLightAttack())
         {
             if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
             {
                 playerGamePlayManager.isLightAttack = true;
                 playerGamePlayManager.isHeavyAttack = false;
                 clicksCnt++;
+                Debug.Log("----" + clicksCnt );
+                HitCountTex.text = " Hits - " + clicksCnt.ToString();
+                HitCountTex.gameObject.SetActive(true);
                 PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
                 playerGamePlayManager.PlayRandomSound();
                 currentAttackTime = 0;
@@ -67,18 +86,21 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public void OnHeavyAttackBtnPressed()
     {
-        if(canHitHeavyAttack())
+        if (canHitHeavyAttack())
         {
             if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
             {
                 playerGamePlayManager.isHeavyAttack = true;
                 playerGamePlayManager.isLightAttack = false;
                 clicksCnt++;
+                Debug.Log("----" + clicksCnt);
+                HitCountTex.text = " Hits - " + clicksCnt.ToString();
+                HitCountTex.gameObject.SetActive(true);
                 PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
                 playerGamePlayManager.PlayRandomSound();
                 currentAttackTime = 0;
                 playerGamePlayManager.isPlayingAnotherAnimation = false;
-            } 
+            }
         }
         else
         {
@@ -213,6 +235,30 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         /*yield return new WaitForSeconds(0.4f);
         playerGamePlayManager.transform.localPosition = new Vector3(playerGamePlayManager.transform.localPosition.x + 1.2f, playerGamePlayManager.transform.localPosition.y, playerGamePlayManager.transform.localPosition.z);*/
         yield return new WaitForSeconds(0.1f);
+        playerAnimator.SetTrigger("isIdle");
         TurnOffAttackpoints();
     }
+
+
+    IEnumerator ResetHitCountAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (clicksCnt > 3)
+        {
+            // Reset the HitCount after the delay
+            clicksCnt = 0;
+            HitCountTex.text = " Hits - " + clicksCnt.ToString();
+            
+        }
+        StartCoroutine(DisableHitCountTextAfterDelay(0.5f));
+    }
+
+    IEnumerator DisableHitCountTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Disable the TMP_Text component or set the text to an empty string
+        HitCountTex.gameObject.SetActive(false);
+    }
+
 }

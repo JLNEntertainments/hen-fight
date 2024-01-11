@@ -26,7 +26,7 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     [HideInInspector]
     public float playerHealth;
-    private float lerpSpeed = 0.05f;
+    private float lerpSpeed = 0.01f;
 
 
     Rigidbody playerRb;
