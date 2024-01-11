@@ -22160,6 +22160,7 @@ GameObject:
   - component: {fileID: 1156214687}
   - component: {fileID: 1156214686}
   - component: {fileID: 1156214689}
+  - component: {fileID: 1156214690}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -22263,6 +22264,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156214684}
   m_Enabled: 1
+--- !u!114 &1156214690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156214684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9debd593a3abdc4398e9bf1cb5570ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausePanel: {fileID: 1696350362}
+  gamequitPanel: {fileID: 1696350362}
+  DoYouWantToExitGame: {fileID: 8901286437323042150}
+  gameAudioSource: {fileID: 258901164}
 --- !u!1 &1164844208
 GameObject:
   m_ObjectHideFlags: 0
@@ -22380,7 +22397,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialAttackBtnAnim: {fileID: 0}
-  DoYouWantToExitGame: {fileID: 8901286437323042150}
   settingPaneel: {fileID: 0}
   Holder: {fileID: 0}
   CircleImage: {fileID: 0}
@@ -138430,7 +138446,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1156214690}
         m_TargetAssemblyTypeName: Gamepass, Assembly-CSharp
         m_MethodName: DoYouWantToQuit_Yes
         m_Mode: 1
@@ -138775,7 +138791,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1156214690}
         m_TargetAssemblyTypeName: Gamepass, Assembly-CSharp
         m_MethodName: DoYouWantToQuit_NO
         m_Mode: 1
