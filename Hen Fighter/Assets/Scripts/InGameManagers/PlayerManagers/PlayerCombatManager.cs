@@ -11,7 +11,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
     public PlayerGamePlayManager playerGamePlayManager;
     UIManager uiManager;
 
-    static int clicksCnt;
+    public  int clicksCnt;
 
     [SerializeField]
     DamageGeneric[] weaponCollider;
@@ -70,7 +70,6 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                 {
                     playerGamePlayManager.isLightAttack = true;
                     playerGamePlayManager.isHeavyAttack = false;
-                    clicksCnt++;
                     Debug.Log("----" + clicksCnt);
                     HitCountTex.text = " Hits - " + clicksCnt.ToString();
                     HitCountTex.gameObject.SetActive(true);
@@ -99,7 +98,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                 {
                     playerGamePlayManager.isHeavyAttack = true;
                     playerGamePlayManager.isLightAttack = false;
-                    clicksCnt++;
+                   
                     Debug.Log("----" + clicksCnt);
                     HitCountTex.text = " Hits - " + clicksCnt.ToString();
                     HitCountTex.gameObject.SetActive(true);
@@ -124,16 +123,17 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
         if (!playerGamePlayManager.isPlayingAnotherAnimation)
         {
-            playerGamePlayManager.isPlayingAnotherAnimation = true;
+            
             if (canHitSpecialAttack())
             {
+                playerGamePlayManager.isPlayingAnotherAnimation = true;
                 playerGamePlayManager.isSpecialAttack = true;
                 playerAnimator.SetTrigger("isSpecialAttack");
                 weaponCollider[1].gameObject.SetActive(true);
                 if (playerGamePlayManager.enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
-                    playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 0.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+                    playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
                 else
-                    playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1.5f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
+                    playerGamePlayManager.transform.position = new Vector3(playerGamePlayManager.enemyGamePlayManager.transform.position.x - 1f, playerGamePlayManager.transform.position.y, playerGamePlayManager.transform.position.z);
 
                 uiManager.specialAttackBtnAnim.SetActive(false);
                 SuperPowetText.gameObject.SetActive(false);

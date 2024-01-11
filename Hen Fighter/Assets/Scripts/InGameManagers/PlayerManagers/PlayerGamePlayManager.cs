@@ -64,8 +64,9 @@ public class PlayerGamePlayManager : MonoBehaviour
         playerRb = this.GetComponent<Rigidbody>();
 
         speed = 2;
-        playerHealth = 1f;
-     
+         playerHealth = 1f;
+
+        /*playerHealth = 0.1f;*/
         TurnOffPlayerFXObjects();
         GameObject[] soundEmitters = GameObject.FindGameObjectsWithTag(soundTag);
     }
