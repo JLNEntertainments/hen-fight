@@ -69,6 +69,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         {
             RegenerateStamina();
             staminaRegenRate = 0;
+            PlayerStaminaText.text = Mathf.Max(0, Mathf.RoundToInt(characterStaminaValuePlayer * 100)).ToString() + "%";
+            EnemyStaminaText.text = Mathf.Max(0, Mathf.RoundToInt(characterStaminaValueEnemy * 100)).ToString() + "%";
         }
     }
 
@@ -110,6 +112,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         PlayerHealthBarText.text = Mathf.Max(0, Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 )).ToString() + "%";
         EnemyStaminaText.text = Mathf.Max(0, Mathf.RoundToInt(characterStaminaValueEnemy * 100)).ToString() + "%";
 
+
     }
 
     public void UpdatePlayerScore(string attackType)
@@ -119,8 +122,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             playerScore += 20;
             characterStaminaValuePlayer -= LightAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
-
-
             damageValue = LightAttackDamage;
 
 
@@ -131,7 +132,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             playerScore += 40;
             characterStaminaValuePlayer -= HeavyAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
-
             damageValue = HeavyAttackDamage;
 
         }
@@ -140,7 +140,6 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
             playerScore += 100;
             characterStaminaValuePlayer -= SpecialAttackDamage;
             PlayerStaminaBarImage.fillAmount = characterStaminaValuePlayer;
-
             damageValue = SpecialAttackDamage;
 
         }
@@ -165,11 +164,13 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         if (characterStaminaValueEnemy <= 0.24)
         {
                 EnemyStaminaBarImage.color = Color.red;
+                PlayerStaminaText.color = Color.white;
                 staminaBarBgAnimEnemy.gameObject.SetActive(true);
             }
         else 
         {
                 EnemyStaminaBarImage.color = Color.yellow;
+                PlayerStaminaText.color = Color.red;
                 staminaBarBgAnimEnemy.gameObject.SetActive(false);
             }
     }
@@ -184,6 +185,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         if (characterStaminaValuePlayer <= 0.24)
         {
             PlayerStaminaBarImage.color = Color.red;
+            PlayerStaminaText.color = Color.white;
             OutOfStamina.gameObject.SetActive(true);
             staminaBarBgAnimPlayer.gameObject.SetActive(true);
         }
@@ -191,6 +193,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         else
         {
             PlayerStaminaBarImage.color = Color.yellow;
+            PlayerStaminaText.color = Color.red;
             OutOfStamina.gameObject.SetActive(false);
             staminaBarBgAnimPlayer.gameObject.SetActive(false);
 
