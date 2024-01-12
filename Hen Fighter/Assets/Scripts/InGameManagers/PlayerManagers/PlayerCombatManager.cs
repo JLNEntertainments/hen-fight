@@ -13,13 +13,14 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     public  int clicksCnt;
 
-    [SerializeField]
-    DamageGeneric[] weaponCollider;
+    [HideInInspector]
+    public DamageGeneric[] weaponCollider;
     public bool isAttacking;
 
     public TMP_Text HitCountTex;
 
-    float currentAttackTime, defaultAttackTime, remainingStamina;
+    [HideInInspector]
+    public float currentAttackTime, defaultAttackTime, remainingStamina;
 
     int randomLightAttack, randomHeavyAttack;
 
@@ -68,7 +69,8 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             {
                 if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
                 {
-                    playerGamePlayManager.isLightAttack = true;
+                    playerGamePlayManager.PlayAnimation("LightAttack");
+                    /*playerGamePlayManager.isLightAttack = true;
                     playerGamePlayManager.isHeavyAttack = false;
                     Debug.Log("----" + clicksCnt);
                     HitCountTex.text = " Hits - " + clicksCnt.ToString();
@@ -76,7 +78,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                     PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
                     playerGamePlayManager.PlayRandomSound();
                     currentAttackTime = 0;
-                    playerGamePlayManager.isPlayingAnotherAnimation = false;
+                    playerGamePlayManager.isPlayingAnotherAnimation = false;*/
                 }
             }
             else
@@ -85,6 +87,8 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             }
             playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
+        else
+            playerGamePlayManager.SetDefaultAnimationState();
     }
 
     public void OnHeavyAttackBtnPressed()
@@ -96,7 +100,8 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             {
                 if (currentAttackTime > defaultAttackTime && !playerGamePlayManager.isTakingDamage)
                 {
-                    playerGamePlayManager.isHeavyAttack = true;
+                    playerGamePlayManager.PlayAnimation("HeavyAttack");
+                    /*playerGamePlayManager.isHeavyAttack = true;
                     playerGamePlayManager.isLightAttack = false;
                    
                     Debug.Log("----" + clicksCnt);
@@ -105,7 +110,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                     PlayAttackAnimation(playerGamePlayManager.isHeavyAttack, playerGamePlayManager.isLightAttack);
                     playerGamePlayManager.PlayRandomSound();
                     currentAttackTime = 0;
-                    playerGamePlayManager.isPlayingAnotherAnimation = false;
+                    playerGamePlayManager.isPlayingAnotherAnimation = false;*/
                 }
             }
             else
@@ -114,6 +119,8 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             }
             playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
+        else
+            playerGamePlayManager.SetDefaultAnimationState();
     }
 
     public void OnSpecialAttackBtnPressed()
@@ -123,10 +130,11 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
         if (!playerGamePlayManager.isPlayingAnotherAnimation)
         {
-            
+            playerGamePlayManager.isPlayingAnotherAnimation = true;
             if (canHitSpecialAttack())
             {
-                playerGamePlayManager.isPlayingAnotherAnimation = true;
+                playerGamePlayManager.PlayAnimation("SpecialAttack");
+                /*playerGamePlayManager.isPlayingAnotherAnimation = true;
                 playerGamePlayManager.isSpecialAttack = true;
                 playerAnimator.SetTrigger("isSpecialAttack");
                 weaponCollider[1].gameObject.SetActive(true);
@@ -138,12 +146,14 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                 uiManager.specialAttackBtnAnim.SetActive(false);
                 SuperPowetText.gameObject.SetActive(false);
                 clicksCnt = 0;
-                playerGamePlayManager.isPlayingAnotherAnimation = false;
+                playerGamePlayManager.isPlayingAnotherAnimation = false;*/
                 StartCoroutine(SpecialAttackBuffer());
                 StopCoroutine(SpecialAttackBuffer());
             }
             playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
+        else
+            playerGamePlayManager.SetDefaultAnimationState();
     }
 
     IEnumerator SpecialAttackBuffer()
@@ -168,7 +178,6 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         SuperPowetText.gameObject.SetActive(true);
         if (ScoreManager.Instance.characterStaminaValuePlayer >= remainingStamina && clicksCnt >= 3 && !playerGamePlayManager.isSpecialAttack)
         {
-            
             return true;
         }
         else
@@ -199,7 +208,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
             obj.gameObject.SetActive(false);
     }
 
-    void PlayAttackAnimation(bool heavyAttack, bool lightAttack)
+    public void PlayAttackAnimation(bool heavyAttack, bool lightAttack)
     {
 
         foreach (var obj in weaponCollider)

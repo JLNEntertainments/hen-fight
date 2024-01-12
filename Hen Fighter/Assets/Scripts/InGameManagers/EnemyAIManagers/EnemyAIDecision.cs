@@ -10,16 +10,19 @@ public class EnemyAIDecision : MonoBehaviour
     float lowStaminaThreshold = 0.15f;
     float distanceToPlayer;
     float defendAttackRandom;
+    int random;
 
     private void Start()
     {
         enemyGamePlayManager = this.GetComponent<EnemyGamePlayManager>();
         defendAttackRandom = 5f;
+
+        InvokeRepeating("GetRandomIndex", 7f, 5f);
     }
 
     void Update()
     {
-        if(enemyGamePlayManager.isPlayerFound)
+        if (enemyGamePlayManager.isPlayerFound)
             distanceToPlayer = Vector3.Distance(this.transform.position, enemyGamePlayManager.playerGamePlayManager.transform.position);
 
         defendAttackRandom = Random.Range(0, 5f);
@@ -29,7 +32,7 @@ public class EnemyAIDecision : MonoBehaviour
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
 
         if (enemyGamePlayManager.enemy_Start > 5.5f)
-            MakeMovementDecision();
+            MakeMovementDecision();  
     }
 
     private void FixedUpdate()
@@ -42,10 +45,15 @@ public class EnemyAIDecision : MonoBehaviour
         }
     }
 
+    void GetRandomIndex()
+    {
+        random = Random.Range(0, 2);
+    }
+
     private void MakeCombatDecision()
     {
         //For making decisions when player is in attack range
-        if (!IsEnemyLowOnHealth() && enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time)
+        if (!IsEnemyLowOnHealth() && enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time && !enemyGamePlayManager.unfollowTarget)
         {
             enemyGamePlayManager.Attack();
         }
@@ -64,16 +72,29 @@ public class EnemyAIDecision : MonoBehaviour
         //For making decisions when player is not in attack range
         if(!IsPlayerPerformingSpecialAttack())
         {
-            if (IsPlayerInChaseRange() && !IsEnemyLowOnHealth())
-                enemyGamePlayManager.FollowTarget();
-            else if (!IsEnemyLowOnStamina())
-                enemyGamePlayManager.PrepareAttack();
-           /* else if (IsEnemyLowOnStamina())
-                enemyGamePlayManager.UnFollowTarget();*/
+            enemyGamePlayManager.enemy_Unfollow_Time = 0;
+            if (!enemyGamePlayManager.unfollowTarget && random == 0)
+            {
+                if (IsPlayerInChaseRange() && !IsEnemyLowOnHealth())
+                    enemyGamePlayManager.FollowTarget();
+                else if (!IsEnemyLowOnStamina())
+                    enemyGamePlayManager.PrepareAttack();
+            }
+            else
+            {
+                enemyGamePlayManager.UnFollowTarget();
+                enemyGamePlayManager.unfollowTarget = false;
+            }
+
         }
+        /*else if (enemyGamePlayManager.enemy_Unfollow_Time > 6f)
+        {
+            enemyGamePlayManager.UnFollowTarget();
+            enemyGamePlayManager.enemy_Unfollow_Time = 0;
+        }*/
         else
         {
-            enemyGamePlayManager.SpecialAttackPlaying();
+            enemyGamePlayManager.PlayAnimation("SpecialReact");
             enemyGamePlayManager.playerGamePlayManager.isSpecialAttack = false;
         }
     }
