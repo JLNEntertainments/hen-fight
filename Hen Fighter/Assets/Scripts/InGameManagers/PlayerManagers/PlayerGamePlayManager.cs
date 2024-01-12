@@ -28,6 +28,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     public float playerHealth;
     private float lerpSpeed = 0.01f;
 
+    AnimationState currentState;
 
     Rigidbody playerRb;
 
@@ -46,6 +47,7 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     public AudioClip[] Sounds;
     public string soundTag = "Audio";
+    string PLAYER_IDLE;
 
 
     void Start()
@@ -64,11 +66,13 @@ public class PlayerGamePlayManager : MonoBehaviour
         playerRb = this.GetComponent<Rigidbody>();
 
         speed = 2;
-         playerHealth = 1f;
+        playerHealth = 1f;
 
         /*playerHealth = 0.1f;*/
         TurnOffPlayerFXObjects();
         GameObject[] soundEmitters = GameObject.FindGameObjectsWithTag(soundTag);
+
+        PLAYER_IDLE = "Idle";
     }
 
     void Update()
@@ -191,26 +195,32 @@ public class PlayerGamePlayManager : MonoBehaviour
             isPlayingAnotherAnimation = true;
             if (damageType == "isLight")
             {
-                playerAnimator.SetTrigger("isLightReact");
+                /*playerAnimator.SetTrigger("isLightReact");
                 featherParticle.Play();
                 PlayerLightFX();
-                playerHealth -= 0.02f;
+                playerHealth -= 0.02f;*/
+
+                PlayAnimation("LightReact");
             }
             else if (damageType == "isHeavy")
             {
                 /*StartCoroutine(PlayHeavyReactAnimation());
                 StopCoroutine(PlayHeavyReactAnimation());*/
 
-                featherParticle.Play();
+                /*featherParticle.Play();
                 playerAnimator.SetTrigger("isHeavyReact");
                 PlayerHeavyFX();
-                playerHealth -= 0.04f;
+                playerHealth -= 0.04f;*/
+
+                PlayAnimation("HeavyReact");
             }
             else if (damageType == "isSpecialAttack")
             {
-                featherParticle.Play();
+                /*featherParticle.Play();
                 PlayerLightFX();
-                playerHealth -= 0.05f;
+                playerHealth -= 0.05f;*/
+
+                PlayAnimation("SpecialReact");
             }
             healthBar.fillAmount = playerHealth;
 
@@ -220,6 +230,8 @@ public class PlayerGamePlayManager : MonoBehaviour
 
             isPlayingAnotherAnimation = false;
         }
+        else
+            SetDefaultAnimationState();
 
         if (playerHealth <= 0f)
         {
@@ -300,4 +312,88 @@ public class PlayerGamePlayManager : MonoBehaviour
         yield return new WaitForSeconds(2.3f);
         ScoreManager.Instance.TestGamonejctShow();
     }
+
+    public void PlayAnimation(string animationName)
+    {
+        switch(animationName) 
+        {
+            case "SpecialAttack":
+
+                isSpecialAttack = true;
+                playerAnimator.SetTrigger("isSpecialAttack");
+                PlayerCombatManager.Instance.weaponCollider[1].gameObject.SetActive(true);
+                if (enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
+                    transform.position = new Vector3(enemyGamePlayManager.transform.position.x - 1f, transform.position.y, transform.position.z);
+                else
+                    transform.position = new Vector3(enemyGamePlayManager.transform.position.x - 1f, transform.position.y, transform.position.z);
+
+                uiManager.specialAttackBtnAnim.SetActive(false);
+                PlayerCombatManager.Instance.SuperPowetText.gameObject.SetActive(false);
+                PlayerCombatManager.Instance.clicksCnt = 0;
+
+                break;
+
+
+            case "LightAttack":
+
+                isLightAttack = true;
+                isHeavyAttack = false;
+                PlayerCombatManager.Instance.HitCountTex.text = " Hits - " + PlayerCombatManager.Instance.clicksCnt.ToString();
+                PlayerCombatManager.Instance.HitCountTex.gameObject.SetActive(true);
+                PlayerCombatManager.Instance.PlayAttackAnimation(isHeavyAttack, isLightAttack);
+                PlayRandomSound();
+                PlayerCombatManager.Instance.currentAttackTime = 0;
+
+                break;
+
+
+            case "HeavyAttack":
+
+                isHeavyAttack = true;
+                isLightAttack = false;
+                PlayerCombatManager.Instance.HitCountTex.text = " Hits - " + PlayerCombatManager.Instance.clicksCnt.ToString();
+                PlayerCombatManager.Instance.HitCountTex.gameObject.SetActive(true);
+                PlayerCombatManager.Instance.PlayAttackAnimation(isHeavyAttack, isLightAttack);
+                PlayRandomSound();
+                PlayerCombatManager.Instance.currentAttackTime = 0;
+                
+                break;
+
+
+            case "HeavyReact":
+
+                featherParticle.Play();
+                playerAnimator.SetTrigger("isHeavyReact");
+                PlayerHeavyFX();
+                playerHealth -= 0.04f;
+
+                break;
+
+
+            case "LightReact":
+
+                playerAnimator.SetTrigger("isLightReact");
+                featherParticle.Play();
+                PlayerLightFX();
+                playerHealth -= 0.02f;
+
+                break;
+
+
+            case "SpecialReact":
+
+                featherParticle.Play();
+                PlayerLightFX();
+                playerHealth -= 0.05f;
+
+                break;
+        }
+    }
+
+    public void SetDefaultAnimationState()
+    {
+        playerAnimator.Play(PLAYER_IDLE);
+        currentAnimaton = PLAYER_IDLE;
+    }
+
 }
