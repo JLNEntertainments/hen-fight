@@ -325,6 +325,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 isSpecialAttack = true;
                 playerAnimator.SetTrigger("isSpecialAttack");
                 PlayerCombatManager.Instance.weaponCollider[1].gameObject.SetActive(true);
+                PlayerCombatManager.Instance.playerCapsuleCollider.gameObject.SetActive(false);
                 if (enemyGamePlayManager.enemyAIDecision.IsPlayerInAttackRange())
                     transform.position = new Vector3(enemyGamePlayManager.transform.position.x - 1f, transform.position.y, transform.position.z);
                 else
@@ -332,6 +333,7 @@ public class PlayerGamePlayManager : MonoBehaviour
 
                 uiManager.specialAttackBtnAnim.SetActive(false);
                 PlayerCombatManager.Instance.SuperPowetText.gameObject.SetActive(false);
+                PlayerCombatManager.Instance.playerCapsuleCollider.gameObject.SetActive(true);
                 PlayerCombatManager.Instance.clicksCnt = 0;
 
                 break;

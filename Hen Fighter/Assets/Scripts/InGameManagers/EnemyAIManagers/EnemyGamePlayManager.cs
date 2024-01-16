@@ -366,7 +366,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 PlayRandomSound();
                 // Add this line to start the coroutine
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
-               
+                
             }
 
         }

@@ -65,7 +65,7 @@ public class DamageGeneric : MonoBehaviour
                 }
                 else if (hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isSpecialAttack)
                 {
-                   
+                    
                     hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isSpecialAttack");
                     
                 }

@@ -15,6 +15,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
 
     [HideInInspector]
     public DamageGeneric[] weaponCollider;
+    public CapsuleCollider playerCapsuleCollider;
     public bool isAttacking;
 
     public TMP_Text HitCountTex;
@@ -36,6 +37,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
         playerGamePlayManager = FindObjectOfType<PlayerGamePlayManager>();
         playerAnimator = playerGamePlayManager.GetComponent<Animator>();
         weaponCollider = playerAnimator.GetComponentsInChildren<DamageGeneric>();
+        playerCapsuleCollider = playerAnimator.GetComponentInChildren<CapsuleCollider>();
         uiManager = GetComponent<UIManager>();
         HitCountTex.text = clicksCnt.ToString();
         clicksCnt = 0;
@@ -149,6 +151,7 @@ public class PlayerCombatManager : SingletonGeneric<PlayerCombatManager>
                 playerGamePlayManager.isPlayingAnotherAnimation = false;*/
                 StartCoroutine(SpecialAttackBuffer());
                 StopCoroutine(SpecialAttackBuffer());
+
             }
             playerGamePlayManager.isPlayingAnotherAnimation = false;
         }
