@@ -201,6 +201,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 playerHealth -= 0.02f;*/
 
                 PlayAnimation("LightReact");
+                PlayRandomSound();
             }
             else if (damageType == "isHeavy")
             {
@@ -213,6 +214,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 playerHealth -= 0.04f;*/
 
                 PlayAnimation("HeavyReact");
+                PlayRandomSound();
             }
             else if (damageType == "isSpecialAttack")
             {
@@ -221,6 +223,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 playerHealth -= 0.05f;*/
 
                 PlayAnimation("SpecialReact");
+                PlayRandomSound();
             }
             healthBar.fillAmount = playerHealth;
 
@@ -341,7 +344,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 PlayerCombatManager.Instance.HitCountTex.text = " Hits - " + PlayerCombatManager.Instance.clicksCnt.ToString();
                 PlayerCombatManager.Instance.HitCountTex.gameObject.SetActive(true);
                 PlayerCombatManager.Instance.PlayAttackAnimation(isHeavyAttack, isLightAttack);
-                PlayRandomSound();
+                
                 PlayerCombatManager.Instance.currentAttackTime = 0;
 
                 break;
@@ -354,7 +357,7 @@ public class PlayerGamePlayManager : MonoBehaviour
                 PlayerCombatManager.Instance.HitCountTex.text = " Hits - " + PlayerCombatManager.Instance.clicksCnt.ToString();
                 PlayerCombatManager.Instance.HitCountTex.gameObject.SetActive(true);
                 PlayerCombatManager.Instance.PlayAttackAnimation(isHeavyAttack, isLightAttack);
-                PlayRandomSound();
+                
                 PlayerCombatManager.Instance.currentAttackTime = 0;
                 
                 break;
