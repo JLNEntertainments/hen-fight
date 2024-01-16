@@ -11,6 +11,7 @@ public class EnemyAIDecision : MonoBehaviour
     float distanceToPlayer;
     float defendAttackRandom;
     int random;
+    public bool backWalkToggle;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class EnemyAIDecision : MonoBehaviour
         defendAttackRandom = 5f;
 
         InvokeRepeating("GetRandomIndex", 7f, 5f);
+        InvokeRepeating("SetBackWalkToggle", 3f, 2f);
     }
 
     void Update()
@@ -31,8 +33,11 @@ public class EnemyAIDecision : MonoBehaviour
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
 
-        if (enemyGamePlayManager.enemy_Start > 5.5f)
-            MakeMovementDecision();  
+        if (enemyGamePlayManager.enemy_Start > 5.5f) 
+        {
+            MakeMovementDecision();
+            enemyGamePlayManager.enemy_Unfollow_Time += 1f;
+        }  
     }
 
     private void FixedUpdate()
@@ -48,6 +53,11 @@ public class EnemyAIDecision : MonoBehaviour
     void GetRandomIndex()
     {
         random = Random.Range(0, 2);
+    }
+
+    void SetBackWalkToggle()
+    {
+        backWalkToggle = true;
     }
 
     private void MakeCombatDecision()
@@ -72,7 +82,7 @@ public class EnemyAIDecision : MonoBehaviour
         //For making decisions when player is not in attack range
         if(!IsPlayerPerformingSpecialAttack())
         {
-            enemyGamePlayManager.enemy_Unfollow_Time = 0;
+            
             if (!enemyGamePlayManager.unfollowTarget && random == 0)
             {
                 if (IsPlayerInChaseRange() && !IsEnemyLowOnHealth())
@@ -80,7 +90,7 @@ public class EnemyAIDecision : MonoBehaviour
                 else if (!IsEnemyLowOnStamina())
                     enemyGamePlayManager.PrepareAttack();
             }
-            else
+            else if(random == 1 && enemyGamePlayManager.enemy_Unfollow_Time > 5f && backWalkToggle)
             {
                 enemyGamePlayManager.UnFollowTarget();
                 enemyGamePlayManager.unfollowTarget = false;
@@ -92,6 +102,7 @@ public class EnemyAIDecision : MonoBehaviour
             enemyGamePlayManager.UnFollowTarget();
             enemyGamePlayManager.enemy_Unfollow_Time = 0;
         }*/
+
         else
         {
             enemyGamePlayManager.PlayAnimation("SpecialReact");

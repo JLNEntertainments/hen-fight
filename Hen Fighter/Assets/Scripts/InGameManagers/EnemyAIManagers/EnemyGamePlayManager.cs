@@ -151,6 +151,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             if(!isPlayingAnotherAnimation)
             {
                 isPlayingAnotherAnimation = true;
+                unfollowTarget = false;
                 PlayAnimation("Walking");
             }
             else
@@ -303,9 +304,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public void Defend()
     {
-        isBlocking = true;
-        enemyAnimator.SetTrigger("isBlocking");
-        isBlocking = false;
+        PlayAnimation("Defend");
     }
 
     void UpdateEnemyRotation()
@@ -532,16 +531,23 @@ public class EnemyGamePlayManager : MonoBehaviour
 
             case "BackWalk":
 
-                //enemy_Unfollow_Time = 0;
-
-                while (enemy_Unfollow_Time < 2f)
+                float temp_enemy_Unfollow_Time = 0;
+                enemy_Unfollow_Time = 0;
+                while (temp_enemy_Unfollow_Time < 0.1f && enemyAIDecision.backWalkToggle)
                 {
                     enemyAnimator.SetBool("inChaseRange", false);
                     enemyAnimator.SetBool("BackWalk", true);
-                    myBody.velocity = Vector3.right * 2f;
-                    enemy_Unfollow_Time += 1;
+                    myBody.velocity = Vector3.right * 0.5f;
+                    temp_enemy_Unfollow_Time += 1;
 
-                    Debug.Log("-----" + enemy_Unfollow_Time);
+                    if (enemy_Unfollow_Time == 2)
+                    {
+                        enemyAIDecision.backWalkToggle = false;
+                        break;
+                    }
+                        
+
+                    Debug.Log("-----" + temp_enemy_Unfollow_Time);
                 }
                 
                 break;
@@ -559,6 +565,14 @@ public class EnemyGamePlayManager : MonoBehaviour
                     unfollowTarget = false;
                 }
                 isPlayingAnotherAnimation = false;
+
+                break;
+
+            case "Defend":
+
+                isBlocking = true;
+                enemyAnimator.SetTrigger("isBlocking");
+                isBlocking = false;
 
                 break;
         }
