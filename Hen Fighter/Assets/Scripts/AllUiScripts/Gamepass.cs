@@ -26,6 +26,7 @@ public class Gamepass : MonoBehaviour
 
     public void PauseButoon()
     {
+        
         pausePanel.SetActive(true);
         Time.timeScale = 0;
     }

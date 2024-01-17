@@ -6515,7 +6515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4a6fb0a10bead409a6f838bb556600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  ObjectMusic: {fileID: 0}
   toggleButton: {fileID: 0}
   on: {fileID: 1251543543}
   off: {fileID: 2048184338}
@@ -7544,7 +7544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4a6fb0a10bead409a6f838bb556600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1015311111}
+  ObjectMusic: {fileID: 0}
   toggleButton: {fileID: 2139837165}
   on: {fileID: 2139837163}
   off: {fileID: 2024446753}
@@ -8856,6 +8856,7 @@ MonoBehaviour:
   playerGamePlayManager: {fileID: 0}
   clicksCnt: 0
   weaponCollider: []
+  playerCapsuleCollider: {fileID: 0}
   isAttacking: 0
   HitCountTex: {fileID: 766775994}
   currentAttackTime: 0
@@ -11879,9 +11880,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1015311112}
   - component: {fileID: 1015311111}
+  - component: {fileID: 1015311113}
   m_Layer: 0
   m_Name: HenClawAudioSource
-  m_TagString: Audio
+  m_TagString: GameMusic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11997,6 +11999,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1015311113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015311110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6c79ca61c40c847839e333992ef742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1042554720
 GameObject:
   m_ObjectHideFlags: 0

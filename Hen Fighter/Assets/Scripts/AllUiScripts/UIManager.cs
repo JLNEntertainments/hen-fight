@@ -28,11 +28,15 @@ public class UIManager : MonoBehaviour
     public void SceneChange(string ScreneName)
 	{
         Time.timeScale = 1f;
-        SceneManager.LoadScene(ScreneName);
-	}
+
+        
+            SceneManager.LoadScene(ScreneName);
+    }
 
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    
 }

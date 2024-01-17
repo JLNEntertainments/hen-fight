@@ -69,6 +69,8 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         {
             RegenerateStamina();
             staminaRegenRate = 0;
+            characterStaminaValuePlayer = Mathf.Clamp01(characterStaminaValuePlayer);
+            characterStaminaValueEnemy = Mathf.Clamp01(characterStaminaValueEnemy);
             PlayerStaminaText.text = Mathf.Max(0, Mathf.RoundToInt(characterStaminaValuePlayer * 100)).ToString() + "%";
             EnemyStaminaText.text = Mathf.Max(0, Mathf.RoundToInt(characterStaminaValueEnemy * 100)).ToString() + "%";
         }
