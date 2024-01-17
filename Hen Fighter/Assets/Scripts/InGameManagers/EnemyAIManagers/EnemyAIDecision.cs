@@ -19,7 +19,7 @@ public class EnemyAIDecision : MonoBehaviour
         defendAttackRandom = 5f;
 
         InvokeRepeating("GetRandomIndex", 7f, 5f);
-        InvokeRepeating("SetBackWalkToggle", 3f, 2f);
+        //InvokeRepeating("SetBackWalkToggle", 3f, 2f);
     }
 
     void Update()
@@ -32,11 +32,11 @@ public class EnemyAIDecision : MonoBehaviour
         enemyGamePlayManager.current_Attack_Time += Time.deltaTime;
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
+        enemyGamePlayManager.enemy_Unfollow_Time += Time.deltaTime;
 
         if (enemyGamePlayManager.enemy_Start > 5.5f) 
         {
             MakeMovementDecision();
-            enemyGamePlayManager.enemy_Unfollow_Time += 1f;
         }  
     }
 
@@ -90,7 +90,7 @@ public class EnemyAIDecision : MonoBehaviour
                 else if (!IsEnemyLowOnStamina())
                     enemyGamePlayManager.PrepareAttack();
             }
-            else if(random == 1 && enemyGamePlayManager.enemy_Unfollow_Time > 5f && backWalkToggle)
+            else if(random == 1 && enemyGamePlayManager.enemy_Unfollow_Time == 5f && !backWalkToggle)
             {
                 enemyGamePlayManager.UnFollowTarget();
                 enemyGamePlayManager.unfollowTarget = false;

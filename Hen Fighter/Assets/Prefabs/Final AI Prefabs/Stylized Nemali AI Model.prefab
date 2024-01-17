@@ -32338,8 +32338,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.068451196, y: 0.04179423, z: 0.018628133}
-  m_Center: {x: 0.0034131387, y: 0.003843611, z: -0.0035320327}
+  m_Size: {x: 0.10361468, y: 0.041794233, z: 0.018628133}
+  m_Center: {x: 0.02099471, y: 0.003843612, z: -0.0035320309}
 --- !u!136 &1389203109235939012
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47791,8 +47791,10 @@ MonoBehaviour:
   enemy_Start: 0
   enemy_Stamina: 0
   block_Attack_Time: 0
+  enemy_Unfollow_Time: 0
   followPlayer: 0
   attackPlayer: 0
+  unfollowTarget: 0
   isHeavyAttack: 0
   isSpecialAttack: 0
   isLightAttack: 0
@@ -47821,6 +47823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b112d0b1cd8414d929bc67d92f84c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backWalkToggle: 0
 --- !u!1 &8544473897004723019
 GameObject:
   m_ObjectHideFlags: 0
