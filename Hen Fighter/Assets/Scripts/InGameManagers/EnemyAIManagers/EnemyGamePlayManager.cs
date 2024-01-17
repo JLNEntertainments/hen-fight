@@ -11,7 +11,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     UIManager uiManager;
 
 
-   
+
 
     [HideInInspector]
     public EnemyAIDecision enemyAIDecision;
@@ -31,7 +31,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     private Coroutine decreaseFillCoroutine;
 
     [HideInInspector]
-    public float enemyHealth, attack_Distance, current_Stamina_Regen_Time, default_Stamina_Regen_Time, default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time, enemy_Unfollow_Time;
+    public float enemyHealth, attack_Distance, current_Stamina_Regen_Time, default_Stamina_Regen_Time, default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time, enemy_Unfollow_Time, temp_enemy_Unfollow_Time;
 
     [HideInInspector]
     public bool followPlayer, attackPlayer, unfollowTarget, isHeavyAttack, isSpecialAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking, isPlayerFound, isPlayingAnotherAnimation;
@@ -49,7 +49,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public AudioClip[] Sounds;
     public string soundTag = "Audio";
     string ENEMY_IDLE;
-    
+
 
     int randomLightAttack, randomHeavyAttack;
 
@@ -63,12 +63,12 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void Start()
     {
-        
+
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         HealthBarBack = GameObject.FindGameObjectWithTag("E_HealthBarBack").GetComponentInChildren<Image>();
         uiManager = FindObjectOfType<UIManager>();
-    
+
         particleObject = GameObject.FindWithTag("Enemy Particles");
         featherParticle = particleObject.GetComponent<ParticleSystem>();
         GameObject[] soundEmitters = GameObject.FindGameObjectsWithTag(soundTag);
@@ -86,7 +86,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         current_Stamina_Regen_Time = 0;
         enemy_Start = 0;
 
-       // EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
+        // EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
 
         TurnOffAttackpoints();
         TurnOffEnemyFXObjects();
@@ -150,7 +150,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         if (enemyAIDecision.IsPlayerInChaseRange())
         {
-            if(!isPlayingAnotherAnimation)
+            if (!isPlayingAnotherAnimation)
             {
                 isPlayingAnotherAnimation = true;
                 unfollowTarget = false;
@@ -190,7 +190,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         enemyAnimator.SetBool("BackWalk", false);
-        
+
     }
 
     public void PrepareAttack()
@@ -267,7 +267,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isHeavyAttack = true;
                 isLightAttack = false;*/
             }
-            else if(!canHitHeavyAttack() && !canHitLightAttack())
+            else if (!canHitHeavyAttack() && !canHitLightAttack())
                 enemyAnimator.SetTrigger("isLowStamina");
         }
     }
@@ -357,7 +357,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 // Add this line to start the coroutine
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
             }
-            else if(damageType == "isSpecialAttack")
+            else if (damageType == "isSpecialAttack")
             {
                 /*ScoreManager.Instance.enemyHealth -= 0.1f;
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;*/
@@ -366,12 +366,12 @@ public class EnemyGamePlayManager : MonoBehaviour
                 PlayRandomSound();
                 // Add this line to start the coroutine
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
-                
+
             }
 
         }
         else
-           SetDefaultAnimationState();
+            SetDefaultAnimationState();
 
         if (ScoreManager.Instance.enemyHealth <= 0f)
         {
@@ -385,7 +385,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             StartCoroutine(TestGamonejctShow());
             StopCoroutine(ShowGameOverPanel());*/
         }
-        
+
     }
 
     // Coroutine to decrease healtBarBack after a delay
@@ -423,7 +423,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     IEnumerator PlayHeavyReactAnimation()
     {
-       // enemyAnimator.SetTrigger("isHeavyReact");
+        // enemyAnimator.SetTrigger("isHeavyReact");
         yield return new WaitForSeconds(0.5f);
         // this.transform.position = new Vector3(this.transform.position.x + 1.2f, this.transform.position.y, this.transform.position.z);
         enemyAnimator.SetTrigger("isIdle");
@@ -448,7 +448,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public void PlayAnimation(string animationName)
     {
-        switch(animationName) 
+        switch (animationName)
         {
 
             case "LightAttack":
@@ -463,7 +463,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                     enemyAnimator.SetTrigger("isLightAttack");
                     enemyAnimator.SetInteger("LightAttackIndex", 2);
                 }
-                
+
                 isLightAttack = true;
                 isHeavyAttack = false;
 
@@ -482,7 +482,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                     enemyAnimator.SetTrigger("isHeavyAttack");
                     enemyAnimator.SetInteger("HeavyAttackIndex", 2);
                 }
-                
+
                 isHeavyAttack = true;
                 isLightAttack = false;
 
@@ -539,25 +539,21 @@ public class EnemyGamePlayManager : MonoBehaviour
 
             case "BackWalk":
 
-                float temp_enemy_Unfollow_Time = 0;
-                enemy_Unfollow_Time = 0;
-                while (temp_enemy_Unfollow_Time < 0.1f && enemyAIDecision.backWalkToggle)
+                if(!enemyAIDecision.backWalkToggle)
                 {
                     enemyAnimator.SetBool("inChaseRange", false);
                     enemyAnimator.SetBool("BackWalk", true);
-                    myBody.velocity = Vector3.right * 0.5f;
+                    myBody.velocity = Vector3.right * 1f;
                     temp_enemy_Unfollow_Time += 1;
-
-                    if (enemy_Unfollow_Time == 2)
+                    
+                    if (temp_enemy_Unfollow_Time == 2)
                     {
                         enemyAIDecision.backWalkToggle = false;
                         break;
                     }
-                        
-
                     Debug.Log("-----" + temp_enemy_Unfollow_Time);
                 }
-                
+
                 break;
 
 
@@ -575,6 +571,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isPlayingAnotherAnimation = false;
 
                 break;
+
 
             case "Defend":
 
