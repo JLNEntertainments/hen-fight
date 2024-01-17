@@ -9,6 +9,8 @@ public class EnemyGamePlayManager : MonoBehaviour
     [HideInInspector]
     public PlayerGamePlayManager playerGamePlayManager;
     UIManager uiManager;
+
+
    
 
     [HideInInspector]
@@ -335,6 +337,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isPlayingAnotherAnimation = false;*/
 
                 PlayAnimation("LightReact");
+                PlayRandomSound();
                 // Add this line to start the coroutine
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
             }
@@ -350,6 +353,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                 isPlayingAnotherAnimation = false;*/
 
                 PlayAnimation("HeavyReact");
+                PlayRandomSound();
                 // Add this line to start the coroutine
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
             }
@@ -359,9 +363,12 @@ public class EnemyGamePlayManager : MonoBehaviour
                 healthBar.fillAmount = ScoreManager.Instance.enemyHealth;*/
 
                 PlayAnimation("SpecialReact");
+                PlayRandomSound();
                 // Add this line to start the coroutine
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
+                
             }
+
         }
         else
            SetDefaultAnimationState();
@@ -378,6 +385,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             StartCoroutine(TestGamonejctShow());
             StopCoroutine(ShowGameOverPanel());*/
         }
+        
     }
 
     // Coroutine to decrease healtBarBack after a delay
@@ -455,7 +463,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                     enemyAnimator.SetTrigger("isLightAttack");
                     enemyAnimator.SetInteger("LightAttackIndex", 2);
                 }
-                PlayRandomSound();
+                
                 isLightAttack = true;
                 isHeavyAttack = false;
 
@@ -474,7 +482,7 @@ public class EnemyGamePlayManager : MonoBehaviour
                     enemyAnimator.SetTrigger("isHeavyAttack");
                     enemyAnimator.SetInteger("HeavyAttackIndex", 2);
                 }
-                PlayRandomSound();
+                
                 isHeavyAttack = true;
                 isLightAttack = false;
 

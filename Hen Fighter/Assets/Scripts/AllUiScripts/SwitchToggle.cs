@@ -3,33 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SwitchToggle : MonoBehaviour
-{
-    public AudioSource audioSource;
-    public Button toggleButton;
-    
 
+public  class SwitchToggle : MonoBehaviour
+{
+    public GameObject ObjectMusic;
+    private AudioSource audioSource;
+    public Button toggleButton;
     public GameObject  on, off;
-    int index;
-    private bool muted = false;
+    static bool muted = false;
+
+
+    public void Awake()
+    {
+        muted = PlayerPrefs.GetInt("Soundmuted") == 1;
+        UpdateUI();
+
+    }
 
     public void On()
     {
-            muted = true;
-            AudioListener.pause = true;
-            on.gameObject.SetActive(false);
-            off.gameObject.SetActive(true);
+        if (!muted)
+        {
+            ToggleSound();
+        }
     }
 
     public void OFF()
     {
-        
-            muted = false;
-            AudioListener.pause = false;
-            on.gameObject.SetActive(true);
-            off.gameObject.SetActive(false);
-        
+        if (muted)
+        {
+            ToggleSound();
+        }
     }
 
-    
+
+    private void ToggleSound()
+    {
+        ObjectMusic = GameObject.FindWithTag("GameMusic");
+        audioSource = ObjectMusic.GetComponent<AudioSource>();
+        muted = !muted;
+        PlayerPrefs.SetInt("Soundmuted", muted ? 1 : 0);
+        AudioListener.pause = muted;
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        on.SetActive(!muted);
+        off.SetActive(muted);
+    }
 }

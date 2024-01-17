@@ -13,9 +13,12 @@ public class DamageGeneric : MonoBehaviour
     [SerializeField]
     bool is_Player, is_Enemy;
 
+    
     void Start()
     {
         colliderRadius = 0.8f;
+
+        
     }
 
     void FixedUpdate()
@@ -62,6 +65,7 @@ public class DamageGeneric : MonoBehaviour
                 }
                 else if (hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isSpecialAttack)
                 {
+                    
                     hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isSpecialAttack");
                     
                 }
