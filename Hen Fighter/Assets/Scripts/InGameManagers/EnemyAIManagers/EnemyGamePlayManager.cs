@@ -10,9 +10,6 @@ public class EnemyGamePlayManager : MonoBehaviour
     public PlayerGamePlayManager playerGamePlayManager;
     UIManager uiManager;
 
-
-
-
     [HideInInspector]
     public EnemyAIDecision enemyAIDecision;
 
@@ -31,7 +28,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     private Coroutine decreaseFillCoroutine;
 
     [HideInInspector]
-    public float enemyHealth, attack_Distance, current_Stamina_Regen_Time, default_Stamina_Regen_Time, default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time, enemy_Unfollow_Time, temp_enemy_Unfollow_Time;
+    public float enemyHealth, attack_Distance, current_Stamina_Regen_Time, default_Stamina_Regen_Time, default_Attack_Time, current_Attack_Time, enemy_Start, enemy_Stamina, block_Attack_Time, enemy_Unfollow_Time;
 
     [HideInInspector]
     public bool followPlayer, attackPlayer, unfollowTarget, isHeavyAttack, isSpecialAttack, isLightAttack, isTakingDamage, isAttacking, isBlocking, isPlayerFound, isPlayingAnotherAnimation;
@@ -45,14 +42,11 @@ public class EnemyGamePlayManager : MonoBehaviour
     GameObject particleObject;
     private ParticleSystem featherParticle;
 
-
     public AudioClip[] Sounds;
     public string soundTag = "Audio";
     string ENEMY_IDLE;
 
-
     int randomLightAttack, randomHeavyAttack;
-
 
     void Awake()
     {
@@ -63,7 +57,6 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void Start()
     {
-
         enemyWeapons = GetComponentsInChildren<DamageGeneric>();
         healthBar = GameObject.FindGameObjectWithTag("E_HealthBar").GetComponentInChildren<Image>();
         HealthBarBack = GameObject.FindGameObjectWithTag("E_HealthBarBack").GetComponentInChildren<Image>();
@@ -86,20 +79,14 @@ public class EnemyGamePlayManager : MonoBehaviour
         current_Stamina_Regen_Time = 0;
         enemy_Start = 0;
 
-        // EnemeyAudio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioSource>();
-
         TurnOffAttackpoints();
         TurnOffEnemyFXObjects();
 
         ENEMY_IDLE = "Idle";
-
-        //InvokeRepeating("UnfollowTarget", 12f, 5f);
     }
 
     void Update()
     {
-        //enemy_Unfollow_Time += Time.deltaTime;
-
         randomLightAttack = Random.Range(0, 2);
         randomHeavyAttack = Random.Range(0, 2);
 
@@ -158,14 +145,6 @@ public class EnemyGamePlayManager : MonoBehaviour
             }
             else
                 SetDefaultAnimationState();
-
-            /*enemyAnimator.SetBool("inChaseRange", true);
-            transform.LookAt(playerGamePlayManager.transform);
-            myBody.velocity = Vector3.left * 2f;
-            if (myBody.velocity.sqrMagnitude != 0)
-            {
-                followPlayer = true;
-            }*/
         }
     }
 
@@ -184,13 +163,6 @@ public class EnemyGamePlayManager : MonoBehaviour
             SetDefaultAnimationState();
 
         isPlayingAnotherAnimation = false;
-    }
-
-    IEnumerator UnFollowAnimation()
-    {
-        yield return new WaitForSeconds(1.5f);
-        enemyAnimator.SetBool("BackWalk", false);
-
     }
 
     public void PrepareAttack()
@@ -226,47 +198,21 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     void EnemyAttack()
     {
-        int attack = (Random.Range(0, 3));
+        int attack = (Random.Range(0, 4));
         foreach (var obj in enemyWeapons)
         {
             if (attack == 1 && obj.gameObject.CompareTag("Beak") && canHitLightAttack())
             {
                 obj.gameObject.SetActive(true);
                 PlayAnimation("LightAttack");
-
-                /*if (randomLightAttack == 0)
-                {
-                    enemyAnimator.SetTrigger("isLightAttack");
-                    enemyAnimator.SetInteger("LightAttackIndex", 1);
-                }
-                else
-                {
-                    enemyAnimator.SetTrigger("isLightAttack");
-                    enemyAnimator.SetInteger("LightAttackIndex", 2);
-                }
-                PlayRandomSound();
-                isLightAttack = true;
-                isHeavyAttack = false;*/
             }
             else if ((attack == 0 || attack == 2) && obj.gameObject.CompareTag("Foot") && canHitHeavyAttack())
             {
                 obj.gameObject.SetActive(true);
                 PlayAnimation("HeavyAttack");
-
-                /*if (randomHeavyAttack == 0)
-                {
-                    enemyAnimator.SetTrigger("isHeavyAttack");
-                    enemyAnimator.SetInteger("HeavyAttackIndex", 1);
-                }
-                else
-                {
-                    enemyAnimator.SetTrigger("isHeavyAttack");
-                    enemyAnimator.SetInteger("HeavyAttackIndex", 2);
-                }
-                PlayRandomSound();
-                isHeavyAttack = true;
-                isLightAttack = false;*/
             }
+            else if (attack == 2)
+                Defend();
             else if (!canHitHeavyAttack() && !canHitLightAttack())
                 enemyAnimator.SetTrigger("isLowStamina");
         }
@@ -329,46 +275,25 @@ public class EnemyGamePlayManager : MonoBehaviour
             isPlayingAnotherAnimation = true;
             if (damageType == "isLight")
             {
-                /*PlayLightReactAnimation();
-                featherParticle.Play();
-                EnemyLightFX();
-                ScoreManager.Instance.enemyHealth -= 0.02f;
-                healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
-                isPlayingAnotherAnimation = false;*/
-
                 PlayAnimation("LightReact");
                 PlayRandomSound();
-                // Add this line to start the coroutine
+                
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
             }
             else if (damageType == "isHeavy")
             {
-                /*enemyAnimator.SetTrigger("isHeavyReact");
-                featherParticle.Play();
-                EnemyHeavyFX();
-                StartCoroutine(PlayHeavyReactAnimation());
-                StopCoroutine(PlayHeavyReactAnimation());
-                ScoreManager.Instance.enemyHealth -= 0.04f;
-                healthBar.fillAmount = ScoreManager.Instance.enemyHealth;
-                isPlayingAnotherAnimation = false;*/
-
                 PlayAnimation("HeavyReact");
                 PlayRandomSound();
-                // Add this line to start the coroutine
+                
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
             }
             else if (damageType == "isSpecialAttack")
             {
-                /*ScoreManager.Instance.enemyHealth -= 0.1f;
-                healthBar.fillAmount = ScoreManager.Instance.enemyHealth;*/
-
                 PlayAnimation("SpecialReact");
                 PlayRandomSound();
-                // Add this line to start the coroutine
+                
                 StartCoroutine(DelayedDecreaseHealtBarBack(0.01f));
-
             }
-
         }
         else
             SetDefaultAnimationState();
@@ -376,16 +301,7 @@ public class EnemyGamePlayManager : MonoBehaviour
         if (ScoreManager.Instance.enemyHealth <= 0f)
         {
             PlayAnimation("DeathReact");
-
-            /*enemyAnimator.SetTrigger("isDeathReact");
-            playerGamePlayManager.playerAnimator.SetTrigger("hasWon");
-            StartCoroutine(ShowGameOverPanel());
-            StopCoroutine(ShowGameOverPanel());
-
-            StartCoroutine(TestGamonejctShow());
-            StopCoroutine(ShowGameOverPanel());*/
         }
-
     }
 
     // Coroutine to decrease healtBarBack after a delay
@@ -393,8 +309,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        // Now call the coroutine to gradually decrease fill amount over time
-        float targetFillAmountBack = enemyHealth;  // You may adjust this based on your requirement
+        float targetFillAmountBack = enemyHealth;  
         StartCoroutine(DecreaseFillAmountOverTime(HealthBarBack, targetFillAmountBack));
     }
 
@@ -411,8 +326,6 @@ public class EnemyGamePlayManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        // Ensure the final fill amount is exactly the target fill amount
         image.fillAmount = targetFillAmount;
     }
 
@@ -423,15 +336,8 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     IEnumerator PlayHeavyReactAnimation()
     {
-        // enemyAnimator.SetTrigger("isHeavyReact");
         yield return new WaitForSeconds(0.5f);
-        // this.transform.position = new Vector3(this.transform.position.x + 1.2f, this.transform.position.y, this.transform.position.z);
         enemyAnimator.SetTrigger("isIdle");
-    }
-
-    public void SpecialAttackPlaying()
-    {
-        enemyAnimator.SetTrigger("isSpecialReact");
     }
 
     IEnumerator ShowGameOverPanel()
@@ -449,8 +355,7 @@ public class EnemyGamePlayManager : MonoBehaviour
     public void PlayAnimation(string animationName)
     {
         switch (animationName)
-        {
-
+        { 
             case "LightAttack":
 
                 if (randomLightAttack == 0)
@@ -539,20 +444,18 @@ public class EnemyGamePlayManager : MonoBehaviour
 
             case "BackWalk":
 
-                if(!enemyAIDecision.backWalkToggle)
+                float temp_enemy_Unfollow_Time = 0;
+                
+                while (temp_enemy_Unfollow_Time < 5f)
                 {
                     enemyAnimator.SetBool("inChaseRange", false);
                     enemyAnimator.SetBool("BackWalk", true);
                     myBody.velocity = Vector3.right * 1f;
                     temp_enemy_Unfollow_Time += 1;
-                    
-                    if (temp_enemy_Unfollow_Time == 2)
-                    {
-                        enemyAIDecision.backWalkToggle = false;
-                        break;
-                    }
+
                     Debug.Log("-----" + temp_enemy_Unfollow_Time);
                 }
+                isPlayingAnotherAnimation = false;
 
                 break;
 

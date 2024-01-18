@@ -23,13 +23,13 @@ public class LevelBounds : MonoBehaviour
             timer += 1f;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            enemyPrefab.enemyAnimator.SetBool("BackWalk", false);
             enemyPrefab.enemyAIDecision.backWalkToggle = false;
             enemyPrefab.enemy_Unfollow_Time = 0f;
         }
-            
     }
 }
