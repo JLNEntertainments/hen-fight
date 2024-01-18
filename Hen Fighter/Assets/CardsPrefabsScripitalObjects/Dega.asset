@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Dega
   m_EditorClassIdentifier: 
   HenName: Dega
-  HenCard: {fileID: 21300000, guid: 4d30434558f2ccd44bddda25c69e9eaf, type: 3}
-  Power: 99
-  Defense: 85
-  DropDown: 1.Super Sharp 2.Matured Moves  3.Sharp Eyes
-  Character:
-  - characterName: Dega
-    CharacterofHen: {fileID: 4926560672710180886, guid: 3921960ab3c126f49933b9971d334695, type: 3}
+  HenCard: {fileID: 21300000, guid: d347b6984d2ece04b990ea20dcded7a0, type: 3}
+  Power: 86
+  Defense: 96
+  DropDown: '1.High Energy Level  2.Manipulating Capacity '

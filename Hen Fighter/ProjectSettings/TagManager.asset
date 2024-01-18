@@ -15,7 +15,12 @@ TagManager:
   - TopFloor
   - EnemyAI
   - Audio
+  - Player Particles
+  - Enemy Particles
   - Particles
+  - P_HealthBarBack
+  - E_HealthBarBack
+  - AnimationForHealthBar
   layers:
   - Default
   - TransparentFX

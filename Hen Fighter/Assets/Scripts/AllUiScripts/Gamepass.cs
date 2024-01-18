@@ -8,19 +8,25 @@ public class Gamepass : MonoBehaviour
 
     public GameObject DoYouWantToExitGame;
 
+    public AudioSource gameAudioSource;
+
     void Update()
     {
         if (Input.GetKey("escape"))
         {
+            
             // Application.Quit();
             DoYouWantToExitGame.SetActive(true);
-            Time.timeScale = 0;
+            
             Debug.LogError("ApplicationQuit");
+            Time.timeScale = 0;
+            gameAudioSource.Stop();
         }
     }
 
     public void PauseButoon()
     {
+        
         pausePanel.SetActive(true);
         Time.timeScale = 0;
     }
@@ -35,18 +41,24 @@ public class Gamepass : MonoBehaviour
     {
         pausePanel.SetActive(false);
         gamequitPanel.SetActive(true);
+        DoYouWantToExitGame.SetActive(false);
+        Time.timeScale = 0;
 
     }
     public void NoquitButton()
     {
         ContinueButtoon();
         gamequitPanel.SetActive(false);
+        DoYouWantToExitGame.SetActive(false);
+
+
     }
     public void GameQuitButton()
     {
        Application.Quit();
         Debug.LogError("gameExit");
     }
+
 
 
 
@@ -58,7 +70,11 @@ public class Gamepass : MonoBehaviour
 
     public void DoYouWantToQuit_NO()
     {
+        gameAudioSource.Play();
+        gamequitPanel.SetActive(false);
         DoYouWantToExitGame.SetActive(false);
+        pausePanel.SetActive(false);
         Time.timeScale = 1;
+
     }
 }

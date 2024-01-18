@@ -3,117 +3,40 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
     public GameObject specialAttackBtnAnim;
-    //public Animation HitFX;
-    public Animator HitFx,PlayerHitFx,heavyAttackForEnemy,heavyAttackForPlayer;
 
-    public GameObject DoYouWantToExitGame;
+
+   // public GameObject DoYouWantToExitGame;
+    public GameObject settingPaneel;
     
-    //AnimationClip HitFX;
-    //For specialAttackButton Filling
+    //For specialAttackButton Animation
     [SerializeField] RectTransform Holder;
     [SerializeField] Image CircleImage;
     [SerializeField] TMP_Text TxtProgress;
-
     [SerializeField] [Range(0, 1)] float progress = 0f;
-
-    public ParticleSystem particleForPlayer;
 
     void Start()
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                DoYouWantToExitGame.SetActive(true);
-             // Application.Quit();
-                return;
-            }
-        }
-    }
-    void Update()
-    {
-        /*CircleImage.fillAmount = progress;
-        TxtProgress.text = Mathf.Floor(progress * 100).ToString();
-        Holder.rotation = Quaternion.Euler(new Vector3(0f, 0f, -progress * 360));*/
     }
 
     public void SceneChange(string ScreneName)
 	{
-		SceneManager.LoadScene(ScreneName);
-	}
+        Time.timeScale = 1f;
 
-    public void PlayFX()
-    {
-        StartCoroutine(PlayHitFX());
-        StopCoroutine(PlayHitFX());
+        
+            SceneManager.LoadScene(ScreneName);
     }
-
-    IEnumerator PlayHitFX()
-    {
-        HitFx.gameObject.SetActive(true);
-        HitFx.Play("EnemyBeekAtack");
-        particleForPlayer.Play();
-        yield return new WaitForSeconds(0.3f);
-        HitFx.gameObject.SetActive(false);
-    }
-
-    public void PlayEnemyhaveyAttack()
-    {
-        StartCoroutine(PalyEnemyHaveyFx());
-        StopCoroutine(PalyEnemyHaveyFx());
-    }
-
-    IEnumerator PalyEnemyHaveyFx()
-    {
-        heavyAttackForEnemy.gameObject.SetActive(true);
-        heavyAttackForEnemy.Play("HeavyAttackAnim");
-        particleForPlayer.Play();
-        yield return new WaitForSeconds(0.4f);
-        heavyAttackForEnemy.gameObject.SetActive(false);
-    }
-
-    public void PlayPlayerhaveyAttack()
-    {
-        StartCoroutine(PalyPlayerHaveyFx());
-        StopCoroutine(PalyPlayerHaveyFx());
-    }
-
-    IEnumerator PalyPlayerHaveyFx()
-    {
-        heavyAttackForPlayer.gameObject.SetActive(true);
-        heavyAttackForPlayer.Play("HeavyAttackAnim");
-        particleForPlayer.Play();
-        yield return new WaitForSeconds(0.4f);
-        heavyAttackForPlayer.gameObject.SetActive(false);
-    }
-
-
-
-    public void PlayerFX()
-    {
-        StartCoroutine(PlayerHitFX());
-        StopCoroutine(PlayerHitFX());
-    }
-
-    IEnumerator PlayerHitFX()
-    {
-        yield return new WaitForSeconds(0.4f);
-        PlayerHitFx.gameObject.SetActive(true);
-        PlayerHitFx.Play("EnemyBeekAtack");
-        particleForPlayer.Play();
-        yield return new WaitForSeconds(0.3f);
-        PlayerHitFx.gameObject.SetActive(false);
-    }
-
 
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    
 }

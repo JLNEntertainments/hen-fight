@@ -8,11 +8,18 @@ public class DamageGeneric : MonoBehaviour
     [SerializeField]
     LayerMask collisionLayer;
     
-    [SerializeField]
     float colliderRadius;
 
     [SerializeField]
     bool is_Player, is_Enemy;
+
+    
+    void Start()
+    {
+        colliderRadius = 0.8f;
+
+        
+    }
 
     void FixedUpdate()
     {
@@ -41,9 +48,6 @@ public class DamageGeneric : MonoBehaviour
                     hit[0].GetComponentInParent<PlayerGamePlayManager>().InflictPlayerDamage("isSpecialAttack");
                     ScoreManager.Instance.UpdateEnemyScore("isSpecialAttack");
                 }
-
-
-
             }
             if (is_Player && hit != null)
             {
@@ -51,17 +55,20 @@ public class DamageGeneric : MonoBehaviour
                 {
                     hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isHeavy");
                     ScoreManager.Instance.UpdatePlayerScore("isHeavy");
+                   PlayerCombatManager.Instance.clicksCnt++;
                 }
                 else if (hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isLightAttack)
                 {
                     hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isLight");
                     ScoreManager.Instance.UpdatePlayerScore("isLight");
-
+                    PlayerCombatManager.Instance.clicksCnt++;
                 }
-                
-
-
-
+                else if (hit[0].GetComponentInParent<EnemyGamePlayManager>().playerGamePlayManager.isSpecialAttack)
+                {
+                    
+                    hit[0].GetComponentInParent<EnemyGamePlayManager>().InflictEnemyDamage("isSpecialAttack");
+                    
+                }
             }
             this.gameObject.SetActive(false);
         }

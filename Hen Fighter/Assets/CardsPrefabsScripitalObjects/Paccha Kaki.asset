@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Paccha Kaki
   m_EditorClassIdentifier: 
   HenName: Paccha Kaki
-  HenCard: {fileID: 21300000, guid: d347b6984d2ece04b990ea20dcded7a0, type: 3}
+  HenCard: {fileID: 21300000, guid: 4d30434558f2ccd44bddda25c69e9eaf, type: 3}
   Power: 40
   Defense: 80
   DropDown: '1.High Energy level  2.High Anxiety Level '
-  Character:
-  - characterName: Paccha Kaki
-    CharacterofHen: {fileID: 8565989754001320100, guid: 6c6efa8a0c3f17644949c200aea22819, type: 3}

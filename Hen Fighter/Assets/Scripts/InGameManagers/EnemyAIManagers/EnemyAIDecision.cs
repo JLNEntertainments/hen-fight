@@ -6,20 +6,25 @@ public class EnemyAIDecision : MonoBehaviour
 {
     EnemyGamePlayManager enemyGamePlayManager;
 
-    float lowHealthThreshold = 0.2f;
-    float lowStaminaThreshold = 0.3f;
+    float lowHealthThreshold = 0f;
+    float lowStaminaThreshold = 0.15f;
     float distanceToPlayer;
     float defendAttackRandom;
+    int random;
+    public bool backWalkToggle;
 
     private void Start()
     {
         enemyGamePlayManager = this.GetComponent<EnemyGamePlayManager>();
         defendAttackRandom = 5f;
+
+        InvokeRepeating("GetRandomIndex", 7f, 4f);
+        //InvokeRepeating("SetBackWalkToggle", 3f, 5f);
     }
 
     void Update()
     {
-        if(enemyGamePlayManager.isPlayerFound)
+        if (enemyGamePlayManager.isPlayerFound)
             distanceToPlayer = Vector3.Distance(this.transform.position, enemyGamePlayManager.playerGamePlayManager.transform.position);
 
         defendAttackRandom = Random.Range(0, 5f);
@@ -28,35 +33,48 @@ public class EnemyAIDecision : MonoBehaviour
         enemyGamePlayManager.enemy_Start += Time.deltaTime;
         enemyGamePlayManager.block_Attack_Time += Time.deltaTime;
 
-        if (enemyGamePlayManager.enemy_Start > 5.5f)
+        if (enemyGamePlayManager.enemy_Start > 5.5f) 
+        {
             MakeMovementDecision();
+            enemyGamePlayManager.enemy_Unfollow_Time += Time.deltaTime;
+        }  
     }
 
     private void FixedUpdate()
     {
-        if ((enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time) /*&& !enemyGamePlayManager.isTakingDamage*/)
+        if ((enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time))
         {
+            enemyGamePlayManager.TurnOffAttackpoints();
             MakeCombatDecision();
             enemyGamePlayManager.current_Attack_Time = 0;
         }
     }
 
+    void GetRandomIndex()
+    {
+        random = Random.Range(0, 2);
+    }
+
+    void SetBackWalkToggle()
+    {
+        backWalkToggle = true;
+    }
+
     private void MakeCombatDecision()
     {
         //For making decisions when player is in attack range
-        if (!IsEnemyLowOnHealth())
+        if (!IsEnemyLowOnHealth() && enemyGamePlayManager.current_Attack_Time > enemyGamePlayManager.default_Attack_Time && !enemyGamePlayManager.unfollowTarget)
         {
             enemyGamePlayManager.Attack();
         }
-
-        if (IsEnemyLowOnHealth())
+        /*else
         {
             if (enemyGamePlayManager.block_Attack_Time > defendAttackRandom)
             {
                 Defend();
                 enemyGamePlayManager.block_Attack_Time = 0;
             }
-        }
+        }*/
     }
 
     void MakeMovementDecision()
@@ -64,17 +82,30 @@ public class EnemyAIDecision : MonoBehaviour
         //For making decisions when player is not in attack range
         if(!IsPlayerPerformingSpecialAttack())
         {
-            if (IsPlayerInChaseRange() && !IsPlayerLowOnStamina() && !IsEnemyLowOnHealth())
-                enemyGamePlayManager.FollowTarget();
-            else if (!IsPlayerLowOnStamina())
-                enemyGamePlayManager.PrepareAttack();
-            else if (IsPlayerLowOnStamina())
+            Debug.Log("------" + enemyGamePlayManager.enemy_Unfollow_Time);
+            if (!enemyGamePlayManager.unfollowTarget && random == 0)
+            {
+                if (IsPlayerInChaseRange() && !IsEnemyLowOnHealth())
+                    enemyGamePlayManager.FollowTarget();
+                else if (!IsEnemyLowOnStamina())
+                    enemyGamePlayManager.PrepareAttack();
+            }
+            else if(random == 1 && enemyGamePlayManager.enemy_Unfollow_Time > 10f)
+            {
                 enemyGamePlayManager.UnFollowTarget();
-        }
+                enemyGamePlayManager.unfollowTarget = false;
+            }
 
-        if (IsPlayerPerformingSpecialAttack() && IsPlayerInAttackRange())
+        }
+        /*else if (enemyGamePlayManager.enemy_Unfollow_Time > 6f)
         {
-            enemyGamePlayManager.SpecialAttackPlaying();
+            enemyGamePlayManager.UnFollowTarget();
+            enemyGamePlayManager.enemy_Unfollow_Time = 0;
+        }*/
+
+        else
+        {
+            enemyGamePlayManager.PlayAnimation("SpecialReact");
             enemyGamePlayManager.playerGamePlayManager.isSpecialAttack = false;
         }
     }
@@ -97,11 +128,12 @@ public class EnemyAIDecision : MonoBehaviour
     bool IsEnemyLowOnHealth()
     {
         return ScoreManager.Instance.enemyHealth < lowHealthThreshold;
+        //return false;
     }
 
-    bool IsPlayerLowOnStamina()
+    bool IsEnemyLowOnStamina()
     {
-        return ScoreManager.Instance.characterStaminaValuePlayer < lowStaminaThreshold;
+        return ScoreManager.Instance.characterStaminaValueEnemy < lowStaminaThreshold;
     }
 
     bool IsPlayerPerformingSpecialAttack()
