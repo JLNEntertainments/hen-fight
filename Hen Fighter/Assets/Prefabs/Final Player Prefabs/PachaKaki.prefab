@@ -16724,24 +16724,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed28a5ef7ea2b404bba0510644693cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyGamePlayManager: {fileID: 0}
-  playerAnimator: {fileID: 0}
-  PlayerFXAnim: []
-  playerHealth: 0
-  currentAnimaton: 
-  isHeavyAttack: 0
-  isLightAttack: 0
-  isBlocking: 0
-  isTakingDamage: 0
-  isSpecialAttack: 0
-  isPlayingAnotherAnimation: 0
-  canPerformCombat: 0
-  particleObject: {fileID: 0}
-  Sounds:
-  - {fileID: 8300000, guid: 8013bb7367dd683438577bec8719a831, type: 3}
-  - {fileID: 8300000, guid: c73d52989a48c1c4ba969df4e000dd0c, type: 3}
-  - {fileID: 8300000, guid: a3e5a2dac7ce3174d998b92497da3166, type: 3}
-  soundTag: Audio
+  joystick: {fileID: 0}
+  speed: 2
+  jumpForce: 4
+  walkThreshold: 0.3
+  runThreshold: 0.8
+  enemyTransform: {fileID: 0}
 --- !u!1 &1178017443723737503
 GameObject:
   m_ObjectHideFlags: 0
@@ -20330,8 +20318,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4289929992399586590}
-  - component: {fileID: 6419314151859439600}
-  - component: {fileID: 1500848809763542283}
   m_Layer: 6
   m_Name: dbn_1:Root_M
   m_TagString: Untagged
@@ -20358,33 +20344,6 @@ Transform:
   m_Father: {fileID: 6816218895351742408}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 3.3675203, y: -88.770515, z: -177.7867}
---- !u!65 &6419314151859439600
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3610733639381338235}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.068451196, y: 0.04179423, z: 0.018628133}
-  m_Center: {x: 0.0034131387, y: 0.003843611, z: -0.0035320327}
---- !u!136 &1500848809763542283
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3610733639381338235}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.022566495
-  m_Height: 0.067046195
-  m_Direction: 0
-  m_Center: {x: -0.056476567, y: -0.0053033587, z: 3.7597525e-10}
 --- !u!1 &3697595731656892443
 GameObject:
   m_ObjectHideFlags: 0

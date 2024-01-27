@@ -111,7 +111,7 @@ public class ScoreManager : SingletonGeneric<ScoreManager>
         ScoretextForPlayer.text =playerScore.ToString();
         ScoreDisplayOnGameOverPanelForPlayer.text = playerScore.ToString();
         ScoreTextForEnemy.text = enemyScore.ToString();
-        PlayerHealthBarText.text = Mathf.Max(0, Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 )).ToString() + "%";
+        //PlayerHealthBarText.text = Mathf.Max(0, Mathf.RoundToInt(PlayerCombatManager.Instance.playerGamePlayManager.playerHealth * 100 )).ToString() + "%";
         EnemyStaminaText.text = Mathf.Max(0, Mathf.RoundToInt(characterStaminaValueEnemy * 100)).ToString() + "%";
 
 

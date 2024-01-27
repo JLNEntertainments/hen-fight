@@ -176,24 +176,7 @@ public class EnemyGamePlayManager : MonoBehaviour
 
     public void Attack()
     {
-        if (!attackPlayer)
-            return;
-
-        if (!playerGamePlayManager.canPerformCombat && !playerGamePlayManager.isPlayingAnotherAnimation)
-        {
-            playerGamePlayManager.canPerformCombat = playerGamePlayManager.isPlayingAnotherAnimation = true;
-            EnemyAttack();
-            playerGamePlayManager.canPerformCombat = playerGamePlayManager.isPlayingAnotherAnimation = false;
-        }
-        else
-            SetDefaultAnimationState();
-
-        if (!enemyAIDecision.IsPlayerInAttackRange())
-        {
-            attackPlayer = false;
-            followPlayer = true;
-            unfollowTarget = false;
-        }
+       
     }
 
     void EnemyAttack()
@@ -432,7 +415,7 @@ public class EnemyGamePlayManager : MonoBehaviour
             case "DeathReact":
 
                 enemyAnimator.SetTrigger("isDeathReact");
-                playerGamePlayManager.playerAnimator.SetTrigger("hasWon");
+                //playerGamePlayManager.playerAnimator.SetTrigger("hasWon");
                 StartCoroutine(ShowGameOverPanel());
                 StopCoroutine(ShowGameOverPanel());
 

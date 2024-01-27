@@ -80,34 +80,7 @@ public class EnemyAIDecision : MonoBehaviour
     void MakeMovementDecision()
     {
         //For making decisions when player is not in attack range
-        if(!IsPlayerPerformingSpecialAttack())
-        {
-            Debug.Log("------" + enemyGamePlayManager.enemy_Unfollow_Time);
-            if (!enemyGamePlayManager.unfollowTarget && random == 0)
-            {
-                if (IsPlayerInChaseRange() && !IsEnemyLowOnHealth())
-                    enemyGamePlayManager.FollowTarget();
-                else if (!IsEnemyLowOnStamina())
-                    enemyGamePlayManager.PrepareAttack();
-            }
-            else if(random == 1 && enemyGamePlayManager.enemy_Unfollow_Time > 10f)
-            {
-                enemyGamePlayManager.UnFollowTarget();
-                enemyGamePlayManager.unfollowTarget = false;
-            }
-
-        }
-        /*else if (enemyGamePlayManager.enemy_Unfollow_Time > 6f)
-        {
-            enemyGamePlayManager.UnFollowTarget();
-            enemyGamePlayManager.enemy_Unfollow_Time = 0;
-        }*/
-
-        else
-        {
-            enemyGamePlayManager.PlayAnimation("SpecialReact");
-            enemyGamePlayManager.playerGamePlayManager.isSpecialAttack = false;
-        }
+        
     }
 
     public bool IsPlayerInAttackRange()
@@ -120,10 +93,7 @@ public class EnemyAIDecision : MonoBehaviour
         return distanceToPlayer > enemyGamePlayManager.attack_Distance;
     }
 
-    bool IsPlayerLowOnHealth()
-    {
-        return enemyGamePlayManager.playerGamePlayManager.playerHealth < lowHealthThreshold;
-    }
+    
 
     bool IsEnemyLowOnHealth()
     {
@@ -136,10 +106,7 @@ public class EnemyAIDecision : MonoBehaviour
         return ScoreManager.Instance.characterStaminaValueEnemy < lowStaminaThreshold;
     }
 
-    bool IsPlayerPerformingSpecialAttack()
-    {
-        return enemyGamePlayManager.playerGamePlayManager.isSpecialAttack;
-    }
+   
 
     private void Attack()
     {
