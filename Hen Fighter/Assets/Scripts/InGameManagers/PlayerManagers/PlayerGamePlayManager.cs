@@ -9,7 +9,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     private Rigidbody playerRb;
 
     [SerializeField]
-    private float speed = 2f;
+    private float speed = 6f;
     [SerializeField]
     private float jumpForce = 4f;
     [SerializeField]
@@ -25,6 +25,7 @@ public class PlayerGamePlayManager : MonoBehaviour
     private int attackIntensity = 1;
     private float comboTimer = 0f;
     private float comboMaxTime = 1.5f; // Time window for next attack button press
+
 
     void Start()
     {
@@ -145,117 +146,140 @@ public class PlayerGamePlayManager : MonoBehaviour
     public void PerformLightAttack()
     {
         // Use the class-level attackIntensity variable
-        // int attackIntensity = DetermineAttackIntensity(); // Remove this line
+        //int attackIntensity = DetermineAttackIntensity(); // Remove this line
 
         int variation = Random.Range(0, 3); // For three variations
 
-        switch (attackIntensity)
-        {
-            case 1:
-                ExecuteAttackLevel1(variation);
-                break;
-            case 2:
-                ExecuteAttackLevel1(variation); // ExecuteAttackLevel2(variation);
-                break;
-            case 3:
-                ExecuteAttackLevel1(variation); // ExecuteAttackLevel3(variation);
-                break;
-        }
+        ExecuteBeakAttackLevel(variation, attackIntensity);
 
         IncrementCombo();
     }
 
-    void ExecuteAttackLevel1(int variation)
+    void ExecuteBeakAttackLevel(int variation, int attackInt)
     {
-        Debug.Log("Attack level: 1, Variation: " + variation);
+        Debug.Log("Attack level: "+ attackIntensity+ " , Variation: " + variation);
 
         // Determine the specific movement based on variation
         switch (variation) //
         {
             case 0:
-                PerformStandardBeakAttack();
+                PerformStandardBeakAttack(attackInt);
                 break;
             case 1:
-                PerformJumpingBeakAttack();
+                PerformJumpingBeakAttack(attackInt);
                 break;
             case 2:
-                PerformUppercutBeakAttack();
+                PerformUppercutBeakAttack(attackInt);
                 break;
         }
 
         // Trigger corresponding animation for this variation
-        playerAnimator.SetTrigger("BeakAttack" + variation);
+        // playerAnimator.SetTrigger("BeakAttack" + variation); this is to be called where finally deciding the attack based on intensity and variation
     }
 
-    void PerformStandardBeakAttack()
+    void PerformStandardBeakAttack(int attackInt)
     {
+        float intensityOffset = 1.0f;
+
+        if (attackInt == 2)
+        {
+            intensityOffset = 5.0f;
+        }
+        else if (attackInt == 3)
+        {
+            intensityOffset = 15.0f;
+        }
         // Increase the forward force for a more pronounced forward attack
-        Vector3 forwardForce = transform.forward * 15f; // Forward force
+        Vector3 forwardForce = transform.forward * (15f + intensityOffset); // Forward force
         playerRb.AddForce(forwardForce, ForceMode.Impulse);
 
         // Apply a reduced upward force to prevent too much elevation
         Vector3 upwardForce = Vector3.up * 5f; // Reduced upward force
         playerRb.AddForce(upwardForce, ForceMode.Impulse);
 
-       
     }
 
 
-    void PerformJumpingBeakAttack()
+    void PerformJumpingBeakAttack(int attackInt)
     {
+        float intensityOffset = 1.0f;
+
+        if (attackInt == 2)
+        {
+            intensityOffset = 2.0f;
+        }
+        else if (attackInt == 3)
+        {
+            intensityOffset = 10.0f;
+        }
         // Apply a stronger upward force for a pronounced jumping attack
-        Vector3 upwardForce = Vector3.up * 5f; // Increased upward force
+        Vector3 upwardForce = Vector3.up * (5f + intensityOffset); // Increased upward force
         playerRb.AddForce(upwardForce, ForceMode.Impulse);
 
         // Delay the forward force slightly to simulate the leap before lunging forward
-        StartCoroutine(DelayedForwardAttack(0.001f)); // Delay for 0.2 seconds
+        StartCoroutine(DelayedForwardAttack(0.001f, attackInt)); // Delay for 0.2 seconds
     }
 
-    IEnumerator DelayedForwardAttack(float delay)
+    IEnumerator DelayedForwardAttack(float delay, int attackInt)
     {
+        float intensityOffset = 1.0f;
+
+        if (attackInt == 2)
+        {
+            intensityOffset = 5.0f;
+        }
+        else if (attackInt == 3)
+        {
+            intensityOffset = 15.0f;
+        }
         yield return new WaitForSeconds(delay);
 
         // Forward force applied after the upward leap
-        Vector3 forwardForce = transform.forward * 15f; // Forward force similar to standard attack
+        Vector3 forwardForce = transform.forward * (15f + intensityOffset); // Forward force similar to standard attack
         playerRb.AddForce(forwardForce, ForceMode.Impulse);
     }
 
 
-    void PerformUppercutBeakAttack()
+    void PerformUppercutBeakAttack(int attackInt)
     {
+        float intensityOffset = 1.0f;
+
+        if (attackInt == 2)
+        {
+            intensityOffset = 5.0f;
+        }
+        else if (attackInt == 3)
+        {
+            intensityOffset = 15.0f;
+        }
         // Apply an upward force to launch the player upwards, simulating the start of an uppercut
-        Vector3 upwardForce = Vector3.up * 10f; // Strong upward force for a pronounced lift
+        Vector3 upwardForce = Vector3.up * (10f + intensityOffset); // Strong upward force for a pronounced lift
         playerRb.AddForce(upwardForce, ForceMode.Impulse);
 
         // Delay the forward force to simulate the player preparing for the uppercut
-        StartCoroutine(DelayedUppercutForwardAttack(0.05f)); // Delay for 0.2 seconds to prepare for the forward strike
+        StartCoroutine(DelayedUppercutForwardAttack(0.05f, attackInt)); // Delay for 0.2 seconds to prepare for the forward strike
     }
 
-    IEnumerator DelayedUppercutForwardAttack(float delay)
+    IEnumerator DelayedUppercutForwardAttack(float delay, int attackInt)
     {
+        float intensityOffset = 1.0f;
+
+        if (attackInt == 2)
+        {
+            intensityOffset = 5.0f;
+        }
+        else if (attackInt == 3)
+        {
+            intensityOffset = 15.0f;
+        }
         yield return new WaitForSeconds(delay);
 
         // Apply a forward force at an upward angle to complete the uppercut motion
         Vector3 uppercutAngle = Quaternion.Euler(45, 0, 0) * transform.forward; // 45-degree angle upwards
-        Vector3 uppercutForce = uppercutAngle * 15f; // Forward force similar to standard attack but angled upward
+        Vector3 uppercutForce = uppercutAngle * (15f + intensityOffset); // Forward force similar to standard attack but angled upward
         playerRb.AddForce(uppercutForce, ForceMode.Impulse);
     }
 
-
-
-    void ExecuteAttackLevel2(int variation)
-    {
-        Debug.Log("Attack level: 2");
-        // Apply movement and physics for level 1 attack with the specified variation
-        // Trigger corresponding animation
-    }
-
-    void ExecuteAttackLevel3(int variation)
-    {
-        Debug.Log("Attack level: 3");
-        // Apply movement and physics for level 1 attack with the specified variation
-        // Trigger corresponding animation
-    }
 
     // Similarly, implement ExecuteAttackLevel2 and ExecuteAttackLevel3
 }
