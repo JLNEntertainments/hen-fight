@@ -28,7 +28,15 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     public bool isPlayerControlled = true;
 
+    private float airTime = 0.0f;
+    private const float maxAirTime = 0.4f;
+
+    float retreatMultiplier = 5.0f; // this may vary based on the level of impact
     private float distanceToEnemy;
+    bool isUnderAttack = false;
+    bool canRetaliate = true;
+    float retreatSpeed = 2.0f;
+    float safeDistance = 3.0f;
     void Start()
     {
         playerAnimator = GetComponentInChildren<Animator>();
@@ -60,7 +68,89 @@ public class PlayerGamePlayManager : MonoBehaviour
                 ResetCombo();
             }
         }
+
+        if (!IsGrounded())
+        {
+            airTime += Time.deltaTime;
+        }
+        else
+        {
+            airTime = 0.0f;
+        }
+        // Check if the character has been in the air for too long
+        if (airTime >= maxAirTime)
+        {
+            EnsureGrounding();
+        }
+
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject == enemyTransform.gameObject)
+        {
+            Rigidbody enemyRb = enemyTransform.GetComponent<Rigidbody>();
+
+            // Calculate and apply the initial collision force
+            Vector3 collisionForce = CalculateCollisionForce();
+            enemyRb.AddForce(collisionForce, ForceMode.Impulse);
+
+            // Additional logic, such as triggering animations or starting the retreat coroutine
+            StartCoroutine(EnemyAdditionalPushback());
+        }
+    }
+
+
+    void ApplyCollisionForces(Collision collision)
+    {
+        Rigidbody enemyRb = enemyTransform.GetComponent<Rigidbody>();
+        Vector3 collisionForce = CalculateCollisionForce();
+        enemyRb.AddForce(collisionForce, ForceMode.Impulse);
+    }
+
+    IEnumerator EnemyAdditionalPushback()
+    {
+        float pushbackDuration = 0.2f; // Duration of the pushback
+        float pushbackSpeed = 0.8f; // Speed of the pushback
+        float maxAcceptableDistance = 3.0f; // Set your maximum acceptable distance
+        Vector3 pushbackDirection = (enemyTransform.position - transform.position).normalized;
+
+        float startTime = Time.time;
+        while (Time.time < startTime + pushbackDuration)
+        {
+            Vector3 proposedNewPosition = enemyTransform.position + pushbackDirection * pushbackSpeed * Time.deltaTime;
+
+            // Check if the proposed new position is within the maximum acceptable distance
+            if (Vector3.Distance(transform.position, proposedNewPosition) <= maxAcceptableDistance)
+            {
+                enemyTransform.position = proposedNewPosition;
+            }
+            else
+            {
+                // Break the loop if the distance exceeds the maximum acceptable limit
+                break;
+            }
+            yield return null;
+        }
+    }
+
+    Vector3 CalculateCollisionForce()
+    {
+        // Example calculation: using relative velocity and mass
+        // Note: You should adjust this logic based on your game's requirements
+
+        Vector3 relativeVelocity = playerRb.velocity - enemyTransform.GetComponent<Rigidbody>().velocity;
+        float combinedMass = playerRb.mass + enemyTransform.GetComponent<Rigidbody>().mass;
+
+        // The direction should be away from the player, normalized to get a direction vector
+        Vector3 forceDirection = (enemyTransform.position - transform.position).normalized;
+
+        // Calculate the force based on your game's physics rules
+        float forceMagnitude = relativeVelocity.magnitude * combinedMass * retreatMultiplier;
+
+        return forceDirection * forceMagnitude;
+    }
+
 
     private float CalculateDistanceToEnemy()
     {
@@ -79,6 +169,34 @@ public class PlayerGamePlayManager : MonoBehaviour
         // Randomly choose to defend at times
     }
 
+    void EnsureGrounding()
+    {
+        RaycastHit hit;
+        float maxDistanceToGround = 50.0f; // Maximum distance to check for the ground
+        float groundingForce = 10.0f; // Force applied to ground the character
+
+        if (!IsGrounded() && Physics.Raycast(transform.position, Vector3.down, out hit, maxDistanceToGround))
+        {
+            // Calculate the distance to the ground
+            float distanceToGround = hit.distance;
+
+            // If the character is too high above the ground, apply a downward force
+            if (distanceToGround > 0.1f) // You can adjust this threshold
+            {
+                playerRb.AddForce(Vector3.down * groundingForce, ForceMode.Impulse);
+            }
+            else
+            {
+                // If the character is close to the ground, you can adjust the position directly
+                transform.position = new Vector3(transform.position.x, hit.point.y, transform.position.z);
+            }
+        }
+
+        // Reset air time
+        airTime = 0.0f;
+    }
+
+ 
     void IncrementCombo()
     {
         comboTimer = comboMaxTime;
@@ -226,6 +344,17 @@ public class PlayerGamePlayManager : MonoBehaviour
         Vector3 upwardForce = Vector3.up * 5f; // Reduced upward force
         playerRb.AddForce(upwardForce, ForceMode.Impulse);
 
+    }
+
+    bool IsGrounded()
+    {
+        float groundCheckDistance = 0.1f; // Distance to check for the ground
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance))
+        {
+            return hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"); // Replace "Ground" with your ground layer name
+        }
+        return false;
     }
 
 
