@@ -26,7 +26,9 @@ public class PlayerGamePlayManager : MonoBehaviour
     private float comboTimer = 0f;
     private float comboMaxTime = 1.5f; // Time window for next attack button press
 
+    public bool isPlayerControlled = true;
 
+    private float distanceToEnemy;
     void Start()
     {
         playerAnimator = GetComponentInChildren<Animator>();
@@ -35,10 +37,20 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     void Update()
     {
-        HandleMovement();
-        RotateTowardsEnemy();
+        if (isPlayerControlled)
+        {
+            HandlePlayerMovement();
+            // Existing player input handling
+        }
+        else
+        {
+            HandleAIMovement();
+            // AI behavior update
+        }
 
-        
+        RotateTowardsEnemy();
+        distanceToEnemy = CalculateDistanceToEnemy();
+
         // Combo timing logic
         if (comboTimer > 0)
         {
@@ -48,6 +60,23 @@ public class PlayerGamePlayManager : MonoBehaviour
                 ResetCombo();
             }
         }
+    }
+
+    private float CalculateDistanceToEnemy()
+    {
+        if (enemyTransform != null)
+        {
+            return Vector3.Distance(transform.position, enemyTransform.position);
+        }
+        return float.MaxValue; // Return a large number if the enemy is not assigned
+    }
+    void HandleAIMovement()
+    {
+        // Example AI logic (pseudocode)
+        // Determine distance to player
+        // If close enough, decide to attack
+        // If far, move towards player
+        // Randomly choose to defend at times
     }
 
     void IncrementCombo()
@@ -65,7 +94,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         attackIntensity = 1;
         comboTimer = 0;
     }
-    void HandleMovement()
+    void HandlePlayerMovement()
     {
         if (joystick == null) return;
 

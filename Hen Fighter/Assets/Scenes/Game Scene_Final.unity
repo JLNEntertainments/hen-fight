@@ -13010,6 +13010,7 @@ MonoBehaviour:
   walkThreshold: 0.3
   runThreshold: 0.8
   enemyTransform: {fileID: 0}
+  isPlayerControlled: 1
 --- !u!1 &1135250915
 GameObject:
   m_ObjectHideFlags: 0
@@ -14114,8 +14115,20 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 332400472938241490, guid: 42b1da44afb024a479931babd59eabf8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 332400472938241490, guid: 42b1da44afb024a479931babd59eabf8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 332400472938241490, guid: 42b1da44afb024a479931babd59eabf8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 332400472938241490, guid: 42b1da44afb024a479931babd59eabf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8
+      value: -2.83
       objectReference: {fileID: 0}
     - target: {fileID: 332400472938241490, guid: 42b1da44afb024a479931babd59eabf8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17118,20 +17131,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 332400472938241490, guid: 42b1da44afb024a479931babd59eabf8, type: 3}
   m_PrefabInstance: {fileID: 2011404453}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1626287587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626287582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d56989ffee99545bd37323adf197dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyTransform: {fileID: 1021815779}
-  speed: 2
 --- !u!65 &1626287590
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17145,6 +17144,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.055229258, y: 0.11790516, z: 0.10768069}
   m_Center: {x: 0.0029795708, y: 0.05895258, z: 0.0038403573}
+--- !u!114 &1626287591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626287582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed28a5ef7ea2b404bba0510644693cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  speed: 6
+  jumpForce: 4
+  walkThreshold: 0.3
+  runThreshold: 0.8
+  enemyTransform: {fileID: 1021815779}
+  isPlayerControlled: 0
 --- !u!1 &1648483949
 GameObject:
   m_ObjectHideFlags: 0
