@@ -100,19 +100,11 @@ public class PlayerGamePlayManager : MonoBehaviour
         }
     }
 
-
-    void ApplyCollisionForces(Collision collision)
-    {
-        Rigidbody enemyRb = enemyTransform.GetComponent<Rigidbody>();
-        Vector3 collisionForce = CalculateCollisionForce();
-        enemyRb.AddForce(collisionForce, ForceMode.Impulse);
-    }
-
     IEnumerator EnemyAdditionalPushback()
     {
         float pushbackDuration = 0.2f; // Duration of the pushback
         float pushbackSpeed = 0.8f; // Speed of the pushback
-        float maxAcceptableDistance = 3.0f; // Set your maximum acceptable distance
+        float maxAcceptableDistance = 4f; // Set your maximum acceptable distance
         Vector3 pushbackDirection = (enemyTransform.position - transform.position).normalized;
 
         float startTime = Time.time;
@@ -134,22 +126,46 @@ public class PlayerGamePlayManager : MonoBehaviour
         }
     }
 
-    Vector3 CalculateCollisionForce()
+    /*Vector3 CalculateCollisionForce()
     {
         // Example calculation: using relative velocity and mass
         // Note: You should adjust this logic based on your game's requirements
 
         Vector3 relativeVelocity = playerRb.velocity - enemyTransform.GetComponent<Rigidbody>().velocity;
+        Debug.Log("relative velocity: " + relativeVelocity);
+
         float combinedMass = playerRb.mass + enemyTransform.GetComponent<Rigidbody>().mass;
 
         // The direction should be away from the player, normalized to get a direction vector
         Vector3 forceDirection = (enemyTransform.position - transform.position).normalized;
-
+        
         // Calculate the force based on your game's physics rules
         float forceMagnitude = relativeVelocity.magnitude * combinedMass * retreatMultiplier;
 
         return forceDirection * forceMagnitude;
+    }*/
+
+    Vector3 CalculateCollisionForce()
+    {
+        // Calculate the relative velocity
+        Vector3 relativeVelocity = playerRb.velocity - enemyTransform.GetComponent<Rigidbody>().velocity;
+        
+        // Check the absolute values of the x and y components of the relative velocity
+        if (Mathf.Abs(relativeVelocity.x) > 0.7f || Mathf.Abs(relativeVelocity.y) > 0.5f)
+        {
+            // Return a zero vector if the condition is met
+            return Vector3.zero;
+        }
+        Debug.Log("Relative velocity: " + relativeVelocity);
+
+        // Continue with the original force calculation if the condition is not met
+        float combinedMass = playerRb.mass + enemyTransform.GetComponent<Rigidbody>().mass;
+        Vector3 forceDirection = (enemyTransform.position - transform.position).normalized;
+        float forceMagnitude = relativeVelocity.magnitude * combinedMass * retreatMultiplier;
+
+        return forceDirection * forceMagnitude;
     }
+
 
 
     private float CalculateDistanceToEnemy()
