@@ -1473,7 +1473,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23278
+  m_Name: pb_Mesh23264
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13011,6 +13011,7 @@ MonoBehaviour:
   runThreshold: 0.8
   enemyTransform: {fileID: 0}
   isPlayerControlled: 1
+  verticalBounceThreshold: 0.3
 --- !u!1 &1135250915
 GameObject:
   m_ObjectHideFlags: 0
@@ -14300,6 +14301,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 332400472938241495, guid: 42b1da44afb024a479931babd59eabf8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c3129344f399b544698efd632540cd56, type: 2}
     - target: {fileID: 334462562539258109, guid: 42b1da44afb024a479931babd59eabf8, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -15088,7 +15093,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229488323}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 43cc6266b4877c44b8e9bb327930a576, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -17236,7 +17241,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626287582}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 43cc6266b4877c44b8e9bb327930a576, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -17261,6 +17266,7 @@ MonoBehaviour:
   runThreshold: 0.8
   enemyTransform: {fileID: 1021815779}
   isPlayerControlled: 0
+  verticalBounceThreshold: 0.3
 --- !u!1 &1648483949
 GameObject:
   m_ObjectHideFlags: 0

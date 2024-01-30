@@ -37,6 +37,8 @@ public class PlayerGamePlayManager : MonoBehaviour
     bool canRetaliate = true;
     float retreatSpeed = 2.0f;
     float safeDistance = 3.0f;
+    [SerializeField]
+    private float verticalBounceThreshold = 0.3f;
     void Start()
     {
         playerAnimator = GetComponentInChildren<Animator>();
@@ -87,6 +89,19 @@ public class PlayerGamePlayManager : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        // Check if the collision is mostly vertical
+        if (Mathf.Abs(collision.contacts[0].normal.y) > verticalBounceThreshold) // SomeThreshold = 0.2
+        {
+            // Reduce the vertical component of the velocity
+            Vector3 velocity = GetComponent<Rigidbody>().velocity;
+            velocity.y = 0;
+            GetComponent<Rigidbody>().velocity = velocity;
+        }
+    }
+
+
+    /*void OnCollisionEnter(Collision collision)
+    {
         if (collision.gameObject == enemyTransform.gameObject)
         {
             Rigidbody enemyRb = enemyTransform.GetComponent<Rigidbody>();
@@ -98,9 +113,9 @@ public class PlayerGamePlayManager : MonoBehaviour
             // Additional logic, such as triggering animations or starting the retreat coroutine
             StartCoroutine(EnemyAdditionalPushback());
         }
-    }
+    }*/
 
-    IEnumerator EnemyAdditionalPushback()
+    /*IEnumerator EnemyAdditionalPushback()
     {
         float pushbackDuration = 0.2f; // Duration of the pushback
         float pushbackSpeed = 0.8f; // Speed of the pushback
@@ -124,7 +139,7 @@ public class PlayerGamePlayManager : MonoBehaviour
             }
             yield return null;
         }
-    }
+    }*/
 
     /*Vector3 CalculateCollisionForce()
     {
@@ -145,7 +160,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         return forceDirection * forceMagnitude;
     }*/
 
-    Vector3 CalculateCollisionForce()
+    /*Vector3 CalculateCollisionForce()
     {
         // Calculate the relative velocity
         Vector3 relativeVelocity = playerRb.velocity - enemyTransform.GetComponent<Rigidbody>().velocity;
@@ -164,7 +179,7 @@ public class PlayerGamePlayManager : MonoBehaviour
         float forceMagnitude = relativeVelocity.magnitude * combinedMass * retreatMultiplier;
 
         return forceDirection * forceMagnitude;
-    }
+    }*/
 
 
 
